@@ -81,14 +81,14 @@
 
 //  ====================================================================================
 
-    _AGM_standard = [
+    _ACE_standard = [
 //      [ClassName, Gearbox,Extra Supplies,Standard Supplies],
         [_bandage, 100,75,40],
         [_morph, 100,50,20],
         [_barrel, 20,10,6]
     ];
 
-    _AGM_Advanced = [
+    _ACE_Advanced = [
         [_epi, 100,20],
         [_blood, 100,10]
     ];
@@ -106,11 +106,11 @@
     _Supplies = {
         if (GOL_Gear_Extra) Then {
                 { [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddItemCargo; } forEach _standard;
-                { [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddItemCargo; } forEach _AGM_standard;
-                { [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddItemCargo; } forEach _AGM_Advanced;
+                { [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddItemCargo; } forEach _ACE_standard;
+                { [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddItemCargo; } forEach _ACE_Advanced;
         } else {
                 { [_cargo, (_x select 0), (_x select 3)] call GOL_Fnc_AddItemCargo; } forEach _standard;
-                { [_cargo, (_x select 0), (_x select 3)] call GOL_Fnc_AddItemCargo; } forEach _AGM_standard;
+                { [_cargo, (_x select 0), (_x select 3)] call GOL_Fnc_AddItemCargo; } forEach _ACE_standard;
         };
     };
 
@@ -145,8 +145,8 @@
             }], "bis_fnc_call", true, true] call BIS_fnc_MP;
 
             { [_cargo, (_x select 0), (_x select 1)] call GOL_Fnc_AddItemCargo; } forEach _standard;
-            { [_cargo, (_x select 0), (_x select 1)] call GOL_Fnc_AddItemCargo; } forEach _AGM_standard;
-            { [_cargo, (_x select 0), (_x select 1)] call GOL_Fnc_AddItemCargo; } forEach _AGM_Advanced;
+            { [_cargo, (_x select 0), (_x select 1)] call GOL_Fnc_AddItemCargo; } forEach _ACE_standard;
+            { [_cargo, (_x select 0), (_x select 1)] call GOL_Fnc_AddItemCargo; } forEach _ACE_Advanced;
 
         };
 

@@ -183,7 +183,6 @@
 				[_smokegrenadeP,3],
 				[_grenademini,1]
 			] call GOL_Fnc_AddObject;
-			_unit setVariable ["AGM_IsMedic", true, true];
 		};
 
 	};
