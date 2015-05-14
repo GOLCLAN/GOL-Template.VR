@@ -5,8 +5,8 @@
 // *	A simpler way of adding gear to a unit
 // *
 // *	Usage:
-// *	[_unit, _riflemag, 5] call GVL_Fnc_AddMagazineCargo;
-// *	[player, "30Rnd_mas_556x45_Stanag", 5] call GVL_Fnc_AddWeaponCargo;
+// *	[_unit, _riflemag, 5] call GOL_Fnc_AddMagazineCargo;
+// *	[player, "30Rnd_mas_556x45_Stanag", 5] call GOL_Fnc_AddWeaponCargo;
 // *
 // *	Parameters:
 // *	0:	Unit:		Target that should get the weapons
@@ -21,7 +21,7 @@
 	_item = [_this, 1, "", [""]] call BIS_fnc_param;
 	_number = [_this, 2, 1, [0]] call BIS_fnc_param;
 
-	_DebugName = "GVL_Fnc_AddWeaponCargo";
+	_DebugName = "GOL_Fnc_AddWeaponCargo";
 	scriptName _DebugName;
 
 	if !(typeName _unit == "OBJECT") exitWith {

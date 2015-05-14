@@ -40,9 +40,9 @@
 // ================================================================
 
 		if (isServer) then {
-			#include "Version.bin";
-//			[] call GOL_Fnc_Module_Init;
-//			[] call GOL_Fnc_radioSettings;
+			#include "Version.hpp";
+			[] call GOL_Fnc_Module_Init;
+			[] call GOL_Fnc_radioSettings;
 		};
 
 		private ["_DebugName"];

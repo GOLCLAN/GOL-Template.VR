@@ -4,7 +4,10 @@
 		class coreLoop {};
 		class corePreInit { preInit = 1; };
 		class corePostInit { postInit = 1; };
+		class DebugLog {};
+		class GetConfig {};
+		class Hint {};
 		class Module_Init {};
 	};
-//	#include "Notes\functionList.hpp"
-//	#include "Functions\functionList.hpp"
+
+	#include "Functions\functionList.hpp"

@@ -4,13 +4,11 @@
 		scriptName _DebugName;
 
 		["------ Framework PostInit ------",[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;
-
 		[] call GOL_Fnc_HeadlessClient;
-		[] call GOL_Fnc_NotesInit;
 		[] call GOL_Fnc_radioSettings;
-		[] spawn GOL_Fnc_AudioDetectorAI;
-		[] spawn GOL_Fnc_PlayerSync;
 		[] spawn GOL_Fnc_CoreLoop;
+//		[] spawn GOL_Fnc_AudioDetectorAI;
+
 
 		if (hasInterface) then {
 // *		Loads Mandatory Player functions

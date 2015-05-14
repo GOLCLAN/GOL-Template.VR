@@ -23,33 +23,33 @@
 // *	Selects the faction for Blufor to use by players
 // *
 #ifdef SelectFromParams
-	class GVL_Params_Faction_West {
+	class GOL_Params_Faction_West {
 		title = "Selection of West Factions";
 		values[] = {1,2,3,4};
 		texts[] = {"NATO","FIA","USMC","BAF"};
-		default = getNumber (missionconfigfile >> "GVL_FRAMEWORK" >> "Modules" >> "Gear" >> "Blufor");
+		default = getNumber (missionconfigfile >> "GOL_FRAMEWORK" >> "Modules" >> "Gear" >> "Blufor");
 	};
 
 // ====================================================================================
 // *
 // *	Selects the faction for Opfor to use by players
 // *
-	class GVL_Params_Faction_East {
+	class GOL_Params_Faction_East {
 		title = "Selection of East Factions";
 		values[] = {1,2,3,4};
 		texts[] = {"CSAT","Russians","Guerilla (Not avilable atm)","Insurgents (Not avilable atm)"};
-		default = (getNumber (missionconfigfile >> "GVL_FRAMEWORK" >> "Modules" >> "Gear" >> "Opfor"));
+		default = (getNumber (missionconfigfile >> "GOL_FRAMEWORK" >> "Modules" >> "Gear" >> "Opfor"));
 	};
 
 // ====================================================================================
 // *
 // *	Selects the faction for Independent to use by players
 // *
-	class GVL_Params_Faction_Independent {
+	class GOL_Params_Faction_Independent {
 		title = "Selection of Independent Factions";
 		values[] = {1};
 		texts[] = {"AAF"};
-		default = (getNumber (missionconfigfile >> "GVL_FRAMEWORK" >> "Modules" >> "Gear" >> "Independent"));
+		default = (getNumber (missionconfigfile >> "GOL_FRAMEWORK" >> "Modules" >> "Gear" >> "Independent"));
 	};
 #endif
 
@@ -58,7 +58,7 @@
 // *	Adds extra gear to some soldiers
 // *	Example. Medical supplies for AG's, M203 Grenades, Rockets for the AT
 // *
-class GVL_Params_Extra_Gear {
+class GOL_Params_Extra_Gear {
 	title = "Enable Extra Gear";
 	values[] = {0,1,2};
 	texts[] = {"Standard Gear","Add Extra Supplies","Add Extra and Additional Supplies"};
@@ -72,13 +72,14 @@ class GVL_Params_Extra_Gear {
 // *
 // *	Disables firing by deleting all bullets fired in the beginning of the mission
 // *
-class GVL_Params_SafeStart {
+/*
+class GOL_Params_SafeStart {
 	title = "Safe Start";
 	values[] = {0,1,2,3,4,5,6,7,8,9,10,15};
 	texts[] = {"Disabled","1","2","3","4","5","6","7","8","9","10","15"};
 	default = 5;
 };
-
+*/
 // ====================================================================================
 // *
 // *	Enables the Teleportation to the Fire Team leader for every player by using the "GOL Menu"

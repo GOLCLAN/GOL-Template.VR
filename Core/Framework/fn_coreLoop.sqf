@@ -6,7 +6,7 @@
 		if (isServer) then {
 			[] spawn {
 				{ _x disableai "MOVE"; }ForEach (playableUnits + switchableUnits);
-				[500] spawn GOL_Fnc_LightningRandom;
+//				[500] spawn GOL_Fnc_LightningRandom;
 				while {true} do {
 //					sleep 10;
 					if (fog > 0.02) then {setviewDistance (viewDistance * (1 - fog))};
@@ -18,6 +18,7 @@
 						[] call GOL_fnc_Curator_AddPlayers;
 					};
 				};
+
 			};
 			[] spawn {
 				GOL_PersistentArray = [];

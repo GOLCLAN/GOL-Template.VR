@@ -56,27 +56,27 @@ _weaponCamo = {
 			_rifle = "rhs_weap_m16a4_carryhandle";
 			_rifle_mag = "rhs_mag_30Rnd_556x45_M855A1_Stanag";
 			_rifle_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
-				_primaryRifle = ["rhsusf_acc_eotech_552","GVL_Flashlight_wide"];
+				_primaryRifle = ["rhsusf_acc_eotech_552","GOL_Flashlight_wide"];
 
 			_rifleGL = "rhs_weap_m16a4_carryhandle_M203";
 			_rifleGL_mag = "rhs_mag_30Rnd_556x45_M855A1_Stanag";
 			_rifleGL_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
-				_primaryRifleGL = ["rhsusf_acc_eotech_552","GVL_Flashlight_wide"];
+				_primaryRifleGL = ["rhsusf_acc_eotech_552","GOL_Flashlight_wide"];
 
 			_rifleALT = "rhs_weap_m16a4_carryhandle_grip_pmag";
 			_rifleALT_mag = "rhs_mag_30Rnd_556x45_M855A1_Stanag";
 			_rifleALT_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
-				_primaryRifleALT = ["rhsusf_acc_eotech_552","GVL_Flashlight_wide"];
+				_primaryRifleALT = ["rhsusf_acc_eotech_552","GOL_Flashlight_wide"];
 
 			_carbine = "rhs_weap_m4_grip";
 			_carbine_mag = "rhs_mag_30Rnd_556x45_M855A1_Stanag";
 			_carbine_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
-				_primaryCarbine = ["rhsusf_acc_eotech_552","GVL_Flashlight_wide"];
+				_primaryCarbine = ["rhsusf_acc_eotech_552","GOL_Flashlight_wide"];
 
 			_LMG = "rhs_weap_m249_pip";
 			_LMG_mag = "rhsusf_200Rnd_556x45_soft_pouch";
 			_LMG_mag_tr = "rhsusf_200Rnd_556x45_soft_pouch";
-				_primaryLMG = ["CUP_optic_CompM2_Woodland","GVL_Flashlight_wide"];
+				_primaryLMG = ["CUP_optic_CompM2_Woodland","GOL_Flashlight_wide"];
 
 			// Rifleman AT
 			_LAT = "rhs_weap_M136_hedp";

@@ -69,58 +69,58 @@
 	    case 1: {
 			switch (_typeofUnit) do {
 			    case "pl": {
-					[[_rifle]] call GVL_Fnc_AddObject;
+					[[_rifle]] call GOL_Fnc_AddObject;
 					_primaryAttachments = _primaryRifle;
 					_unit setVariable ["AGM_IsMedic", true, true];
 			    };
 
 			    case "fac": {
-					[[_rifle]] call GVL_Fnc_AddObject;
+					[[_rifle]] call GOL_Fnc_AddObject;
 					_primaryAttachments = _primaryRifle;
 			    };
 
 			    case "ftl": {
-					[[_rifleGL]] call GVL_Fnc_AddObject;
+					[[_rifleGL]] call GOL_Fnc_AddObject;
 					_primaryAttachments = _primaryRifleGL;
 			    };
 
 			    case "r": {
-					[[_rifle]] call GVL_Fnc_AddObject;
+					[[_rifle]] call GOL_Fnc_AddObject;
 					_primaryAttachments = _primaryRifle;
 			    };
 
 			    case "g": {
-					[[_rifleGL]] call GVL_Fnc_AddObject;
+					[[_rifleGL]] call GOL_Fnc_AddObject;
 					_primaryAttachments = _primaryRifleGL;
 			    };
 
 			    case "ag": {
-					[[_rifle]] call GVL_Fnc_AddObject;
+					[[_rifle]] call GOL_Fnc_AddObject;
 					_primaryAttachments = _primaryRifle;
 					_unit setVariable ["AGM_IsMedic", true, true];
 			    };
 
 			    case "ar": {
-					[[_LMG]] call GVL_Fnc_AddObject;
+					[[_LMG]] call GOL_Fnc_AddObject;
 					_primaryAttachments = _primaryLMG;
 			    };
 
 			    case "lr": {
-					[[_rifleALT]] call GVL_Fnc_AddObject;
+					[[_rifleALT]] call GOL_Fnc_AddObject;
 					_primaryAttachments = _primaryRifle;
 			    };
 
 			    case "p": {
-					[[_carbine]] call GVL_Fnc_AddObject;
+					[[_carbine]] call GOL_Fnc_AddObject;
 					_primaryAttachments = _primaryCarbine;
 					_unit setVariable ["AGM_IsMedic", true, true];
 			    };
 			};
 	    	if (_typeofUnit in _binoArray) then {
-				[[_rangefinder]] call GVL_Fnc_AddObject;
+				[[_rangefinder]] call GOL_Fnc_AddObject;
 	    	};
 	    	if (_typeofUnit in _pistolArray) then {
-				[[_pistol]] call GVL_Fnc_AddObject;
+				[[_pistol]] call GOL_Fnc_AddObject;
 				_secondaryAttachments = _secondaryPistol;
 	    	};
 	    };

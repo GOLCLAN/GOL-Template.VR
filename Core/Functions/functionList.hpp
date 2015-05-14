@@ -1,8 +1,6 @@
-
-	class Framework_Core {
+/*
+	class Functions {
 		file = "GOL_Core\Libraries\Functions\Framework\Functions";
-		class HeadlessClient{};
-		class PlayerSync{};
-		class RadioSettings{};
-		class RemoteExecuterHC{};
 	};
+*/
+		#include "Curator\functionList.hpp"

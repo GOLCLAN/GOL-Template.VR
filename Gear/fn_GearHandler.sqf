@@ -7,8 +7,8 @@
 // *		Also makes sure that the unit spawns with correct variables and such
 // *
 // *	Usage:
-// *		[this,"pl"] call GVL_Fnc_GearHandler;
-// *		[this,"gear_box",[false,true]] call GVL_Fnc_GearHandler;
+// *		[this,"pl"] call GOL_Fnc_GearHandler;
+// *		[this,"gear_box",[false,true]] call GOL_Fnc_GearHandler;
 // *
 // *	Parameters:
 // *		0: Object:	Unit / Object
@@ -68,66 +68,66 @@ _this spawn {
 	// ================================================================
 	// *	Gear Configurations
 
-	switch ((["Gear", "Blufor"] call GVL_Fnc_GetConfig)) do {
+	switch ((["Gear", "Blufor"] call GOL_Fnc_GetConfig)) do {
 		case 2:	{
-			GVL_Faction_West = "FIA";
+			GOL_Faction_West = "FIA";
 		};
 		case 3:	{
-			GVL_Faction_West = "USMC";
+			GOL_Faction_West = "USMC";
 		};
 		case 4:	{
-			GVL_Faction_West = "BAF";
+			GOL_Faction_West = "BAF";
 		};
 		default	{
-			GVL_Faction_West = "NATO";
+			GOL_Faction_West = "NATO";
 		};
 	};
 
-	switch ((["Gear", "Opfor"] call GVL_Fnc_GetConfig)) do {
+	switch ((["Gear", "Opfor"] call GOL_Fnc_GetConfig)) do {
 		case 2:	{
-			GVL_Faction_East = "Russians";
+			GOL_Faction_East = "Russians";
 		};
 		case 3:	{
-			GVL_Faction_East = "Guerillas";
+			GOL_Faction_East = "Guerillas";
 		};
 		case 4:	{
-			GVL_Faction_East = "Insurgents";
+			GOL_Faction_East = "Insurgents";
 		};
 		default	{
-			GVL_Faction_East = "CSAT";
+			GOL_Faction_East = "CSAT";
 		};
 	};
 
-	switch ((["Gear", "Independent"] call GVL_Fnc_GetConfig)) do {
+	switch ((["Gear", "Independent"] call GOL_Fnc_GetConfig)) do {
 		default	{
-			GVL_Faction_Indep = "AAF";
+			GOL_Faction_Indep = "AAF";
 		};
 	};
 
 	// ================================================================
 	// *	Creates backup of the faction if it for some reason would need to reset to the originial
 
-	if (isNil "GVL_Faction_West_Orgi" || isNil "GVL_Faction_East_Orgi" || isNil "GVL_Faction_Indep_Orgi") Then {
-		GVL_Faction_West_Orgi = GVL_Faction_West;
-		compileFinal GVL_Faction_West_Orgi;
-		GVL_Faction_East_Orgi = GVL_Faction_East;
-		compileFinal GVL_Faction_East_Orgi;
-		GVL_Faction_Indep_Orgi = GVL_Faction_Indep;
-		compileFinal GVL_Faction_Indep_Orgi;
+	if (isNil "GOL_Faction_West_Orgi" || isNil "GOL_Faction_East_Orgi" || isNil "GOL_Faction_Indep_Orgi") Then {
+		GOL_Faction_West_Orgi = GOL_Faction_West;
+		compileFinal GOL_Faction_West_Orgi;
+		GOL_Faction_East_Orgi = GOL_Faction_East;
+		compileFinal GOL_Faction_East_Orgi;
+		GOL_Faction_Indep_Orgi = GOL_Faction_Indep;
+		compileFinal GOL_Faction_Indep_Orgi;
 	};
 
 	//	====================================================================================
 	//	SELECTING FROM PARAMETERS IF EXTRA GEAR IS ENABLED
 
-	GVL_Gear_Additional = false;
-	GVL_Gear_Extra = false;
-	if (("GVL_Params_Extra_Gear" call BIS_fnc_getParamValue) >= 1) then {
-		if (("GVL_Params_Extra_Gear" call BIS_fnc_getParamValue) == 2) then {
-			GVL_Gear_Additional = true;
+	GOL_Gear_Additional = false;
+	GOL_Gear_Extra = false;
+	if (("GOL_Params_Extra_Gear" call BIS_fnc_getParamValue) >= 1) then {
+		if (("GOL_Params_Extra_Gear" call BIS_fnc_getParamValue) == 2) then {
+			GOL_Gear_Additional = true;
 		};
-		GVL_Gear_Extra = true;
+		GOL_Gear_Extra = true;
 	};
-	_camo = (["Gear", "Camoflage"] call GVL_Fnc_GetConfig);
+	_camo = (["Gear", "Camoflage"] call GOL_Fnc_GetConfig);
 
 	//	====================================================================================
 
@@ -143,20 +143,20 @@ _this spawn {
 
 		switch (side _unit) do {
 		    case Blufor: {
-				[] call compile preprocessFileLineNumbers ("GVL_Core\Modules\Gear\Factions\" + GVL_Faction_West +".sqf");
+				[] call compile preprocessFileLineNumbers ("Gear\Factions\Classes\" + GOL_Faction_West +".sqf");
 		    };
 		    case Opfor: {
-				[] call compile preprocessFileLineNumbers ("GVL_Core\Modules\Gear\Factions\" + GVL_Faction_East +".sqf");
+				[] call compile preprocessFileLineNumbers ("Gear\Factions\Classes\" + GOL_Faction_East +".sqf");
 		    };
 		    case Independent: {
-				[] call compile preprocessFileLineNumbers ("GVL_Core\Modules\Gear\Factions\" + GVL_Faction_Indep +".sqf");
+				[] call compile preprocessFileLineNumbers ("Gear\Factions\Classes\" + GOL_Faction_Indep +".sqf");
 		    };
 		};
 
+		#include "Factions\Default.sqf"
+
 		if !(_captivity == 0) then { _unit setCaptive _captivity; };
-
-
-		[] call GVL_Fnc_Attachments;
+		[] call GOL_Fnc_Attachments;
 		_unit selectWeapon primaryWeapon _unit;
 		[_unit, _typeofUnit, _Color, (_this select 2)] Spawn {
 		    waitUntil {sleep 0.1; !isNull player};
@@ -164,21 +164,20 @@ _this spawn {
 			if (!local _unit || !alive _unit) exitWith {false};
 			if (!isMultiplayer || hasInterface) then {
 				_unit switchMove "AmovPknlMstpSlowWrflDnon";
-				_unit setVariable ["GVL_Role_Done", true, true];
+				_unit setVariable ["GOL_Role_Done", true, true];
 				sleep 2;
 				[_unit, (_this select 2)] call AGM_Interaction_fnc_joinTeam;
 				if (isPlayer _unit) then {
-					if !(isNil "GVL_Gear_Respawn") Then { player removeEventHandler ["respawn", GVL_Gear_Respawn]; };
-					GVL_Gear_Respawn = player addEventHandler ["respawn", { [player, player getVariable "GVL_Loadout"] call GVL_Fnc_GearHandler; } ];
+					if !(isNil "GOL_Gear_Respawn") Then { player removeEventHandler ["respawn", GOL_Gear_Respawn]; };
+					GOL_Gear_Respawn = player addEventHandler ["respawn", { [player, player getVariable "GOL_Loadout"] call GOL_Fnc_GearHandler; } ];
 					[_unit, currentWeapon _unit, currentMuzzle _unit] call AGM_SafeMode_fnc_lockSafety;
-					waitUntil {sleep 5; player distance (markerPos ([_unit] call GVL_Fnc_GetSide)) > 100; !GVL_Spectator_Enabled};
+/*					waitUntil {sleep 5; player distance (markerPos ([_unit] call GOL_Fnc_GetSide)) > 100; !GOL_Spectator_Enabled};
 					if ((currentWeapon _unit) in (_unit getVariable ["AGM_SafeMode_safedWeapons", []])) then {
 						[_unit, currentWeapon _unit, currentMuzzle _unit] call AGM_SafeMode_fnc_unlockSafety;
-					};
+					};	*/
 				};
 			};
 		};
-
 
 	} else {
 
@@ -187,7 +186,7 @@ _this spawn {
 			_boxConfigs = [_this, 2, [true,true,false], [[]]] call BIS_fnc_param;	// Defines the unit
 
 			if (!_isMan && !_isCar && !_isTank) then {	// box
-				[_unit,_typeofUnit,_boxConfigs] call GVL_Fnc_GearCargo;
+//				[_unit,_typeofUnit,_boxConfigs] call GOL_Fnc_GearCargo;
 			};
 
 	//		If object is a car or a tank
@@ -196,9 +195,9 @@ _this spawn {
 				waitUntil {!isNil "AGM_Logistics_loadedItemsDummy"};
 
 				if ((_boxConfigs select 3)) Then {
-						[_unit,["","west"],[_boxConfigs]] call GVL_Fnc_GearHandler;
-//						[_unit,["","east"],[_boxConfigs]] call GVL_Fnc_GearHandler;
-//						[_unit,["","indep"],[_boxConfigs]] call GVL_Fnc_GearHandler;
+//						[_unit,["","west"],[_boxConfigs]] call GOL_Fnc_GearHandler;
+//						[_unit,["","east"],[_boxConfigs]] call GOL_Fnc_GearHandler;
+//						[_unit,["","indep"],[_boxConfigs]] call GOL_Fnc_GearHandler;
 
 				};
 
@@ -223,7 +222,7 @@ _this spawn {
 
 				for "_i" from 0 to 2 do {
 					_item = ['arma2_crate_empty', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObject;
-					[_item,["small_box","west"],[true,true]] call GVL_Fnc_GearHandler;
+					[_item,["small_box","west"],[true,true]] call GOL_Fnc_GearHandler;
 					[_unit, _item] call AGM_Logistics_fnc_initLoadedObject;
 				};
 			};
@@ -231,7 +230,7 @@ _this spawn {
 	};
 
 	if (!isMultiplayer && !(_unit == player) && _isMan) exitWith {false};	// Prevents ai spaming the rpt
-	_DebugName = "GVL_Fnc_GearHandler";
+	_DebugName = "GOL_Fnc_GearHandler";
 	scriptName _DebugName;
-	[["Unit: %1 || Loadout: %2 ",_unit, _typeofUnit],[_DebugName,__FILE__,__LINE__],"log"] call GVL_Fnc_DebugLog;
+	[["Unit: %1 || Loadout: %2 ",_unit, _typeofUnit],[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;
 };
