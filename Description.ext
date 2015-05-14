@@ -43,32 +43,11 @@
 			Default_AI = "w_nato";	// STRING: Defines the default ai faction from the start of the mission
 
 			class Gear {
-				#define	SelectFromParams	true;	// Allow Admin to select faction from the lobby screen | Disable remove entire line
+//				#define	SelectFromParams	true;	// Allow Admin to select faction from the lobby screen | Disable remove entire line
 				Camoflage = false;	// BOOL:	0: Woodland	| 1: Desert
 				Blufor = 3;			// NUMBER:	1: NATO	| 2: FIA		| 3: USMC		|	4: BAF			|
-				Opfor = 3;			// NUMBER:	1: CSAT	| 2: Russians	| 3: Guerilla	|	4: Insurgents	|
+				Opfor = 2;			// NUMBER:	1: CSAT	| 2: Russians	| 3: Guerilla	|	4: Insurgents	|
 				Independent = 1;	// NUMBER:	1: AAF	|
-			};
-
-			class MissionStart {
-				Enabled = false;	// BOOL: Enabled: True, Disabled: False, if false then nothing under it matters
-				SafeStart = true;	// BOOL: How many tickets each player gets for the mission,	use "0" to not allow any respawns
-				AreaLimit = true;	// BOOL: Enabled makes players limited to a radius of starting area
-				Radius = 100;		// NUMBER: Radius from player spawn
-			};
-/*
-			class Cache {
-				Enabled = false;	// BOOL, Enabled: True, Disabled: False, if false it will not start
-				Man = 50;			// NUMBER: Caching distance for units
-				Land = 50;			// NUMBER: Caching distance for Vehicles
-				Air = 300;			// NUMBER: Caching distance for Aircrafts
-				excludeAir = false;		// BOOL, if enabled Aircrafts will not be cached
-			};
-*/
-			class RespawnLimit {
-				Enabled = false;		// Enabled: True, Disabled: False, if false then nothing under it matters
-				Allow_JIP = true;	// Disabled if you dont want people to join the session mid-game, if people join the they will be sent in to spectator mode
-				Tickets = 1;		// Amount of respawns for each player, use "0" for only one life
 			};
 		};
 	};
@@ -93,7 +72,8 @@
 		//	Loads all Modules
 //			#include "GOL_Core\Modules\functionList.hpp"
 
-//			#include "Gear\functionList.hpp"
+			#include "Core\functionList.hpp"
+			#include "Gear\functionList.hpp"
 
 		};
 	};

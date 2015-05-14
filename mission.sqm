@@ -68,7 +68,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					text="wpl";
-					init="[this,""pl"",""1-Actual""] call GVL_Fnc_GearHandler;";
+					init="[this,""pl"",""1-Actual""] call GOL_Fnc_GearHandler;";
 					description="1-Actual - Platoon Leader";
 				};
 				class Item1
@@ -82,7 +82,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="wfac";
-					init="[this,""fac"",""1-Actual""] call GVL_Fnc_GearHandler;";
+					init="[this,""fac"",""1-Actual""] call GOL_Fnc_GearHandler;";
 					description="1-Actual - FAC";
 				};
 			};
@@ -106,7 +106,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="w1a1";
-					init="[this,""ftl"",""1-1 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""ftl"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-1 Alpha - Squad Leader";
 				};
 				class Item1
@@ -120,7 +120,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1a2";
-					init="[this,""r"",""1-1 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""r"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-1 Alpha - Rifleman";
 				};
 				class Item2
@@ -134,7 +134,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1a3";
-					init="[this,""g"",""1-1 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""g"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-1 Alpha - Grenadier";
 				};
 				class Item3
@@ -148,7 +148,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1a4";
-					init="[this,""ag"",""1-1 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""ag"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-1 Alpha - Assist. Gunner";
 				};
 				class Item4
@@ -162,7 +162,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1a5";
-					init="[this,""ar"",""1-1 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""ar"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-1 Alpha - Automatic Rifleman";
 				};
 				class Item5
@@ -176,7 +176,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1a6";
-					init="[this,""lr"",""1-1 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""lr"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-1 Alpha - Light Rifleman";
 				};
 			};
@@ -200,7 +200,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="w1b1";
-					init="[this,""ftl"",""1-1 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""ftl"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-1 Bravo - Fire Team Leader";
 				};
 				class Item1
@@ -214,7 +214,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1b2";
-					init="[this,""r"",""1-1 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""r"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-1 Bravo - Rifleman";
 				};
 				class Item2
@@ -228,7 +228,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1b3";
-					init="[this,""g"",""1-1 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""g"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-1 Bravo - Grenadier";
 				};
 				class Item3
@@ -242,7 +242,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1b4";
-					init="[this,""ag"",""1-1 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""ag"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-1 Bravo - Assist. Gunner";
 				};
 				class Item4
@@ -256,7 +256,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1b5";
-					init="[this,""ar"",""1-1 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""ar"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-1 Bravo - Automatic Rifleman";
 				};
 				class Item5
@@ -270,7 +270,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1b6";
-					init="[this,""lr"",""1-1 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""lr"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-1 Bravo - Light Rifleman";
 				};
 			};
@@ -294,7 +294,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="w1c1";
-					init="[this,""ftl"",""1-1 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""ftl"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-1 Charlie - Fire Team Leader";
 				};
 				class Item1
@@ -308,7 +308,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1c2";
-					init="[this,""r"",""1-1 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""r"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-1 Charlie - Rifleman";
 				};
 				class Item2
@@ -322,7 +322,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1c3";
-					init="[this,""g"",""1-1 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""g"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-1 Charlie - Grenadier";
 				};
 				class Item3
@@ -336,7 +336,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1c4";
-					init="[this,""ag"",""1-1 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""ag"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-1 Charlie - Assist. Gunner";
 				};
 				class Item4
@@ -350,7 +350,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1c5";
-					init="[this,""ar"",""1-1 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""ar"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-1 Charlie - Automatic Rifleman";
 				};
 				class Item5
@@ -364,7 +364,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1c6";
-					init="[this,""lr"",""1-1 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""lr"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-1 Charlie - Light Rifleman";
 				};
 			};
@@ -388,7 +388,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="w2a1";
-					init="[this,""ftl"",""1-2 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""ftl"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-2 Alpha - Squad Leader";
 				};
 				class Item1
@@ -402,7 +402,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2a2";
-					init="[this,""r"",""1-2 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""r"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-2 Alpha - Rifleman";
 				};
 				class Item2
@@ -416,7 +416,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2a3";
-					init="[this,""g"",""1-2 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""g"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-2 Alpha - Grenadier";
 				};
 				class Item3
@@ -430,7 +430,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2a4";
-					init="[this,""ag"",""1-2 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""ag"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-2 Alpha - Assist. Gunner";
 				};
 				class Item4
@@ -444,7 +444,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2a5";
-					init="[this,""ar"",""1-2 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""ar"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-2 Alpha - Automatic Rifleman";
 				};
 				class Item5
@@ -458,7 +458,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2a6";
-					init="[this,""lr"",""1-2 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""lr"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-2 Alpha - Light Rifleman";
 				};
 			};
@@ -482,7 +482,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="w2b1";
-					init="[this,""ftl"",""1-2 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""ftl"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-2 Bravo - Fire Team Leader";
 				};
 				class Item1
@@ -496,7 +496,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2b2";
-					init="[this,""r"",""1-2 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""r"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-2 Bravo - Rifleman";
 				};
 				class Item2
@@ -510,7 +510,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2b3";
-					init="[this,""g"",""1-2 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""g"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-2 Bravo - Grenadier";
 				};
 				class Item3
@@ -524,7 +524,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2b4";
-					init="[this,""ag"",""1-2 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""ag"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-2 Bravo - Assist. Gunner";
 				};
 				class Item4
@@ -538,7 +538,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2b5";
-					init="[this,""ar"",""1-2 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""ar"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-2 Bravo - Automatic Rifleman";
 				};
 				class Item5
@@ -552,7 +552,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2b6";
-					init="[this,""lr"",""1-2 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""lr"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-2 Bravo - Light Rifleman";
 				};
 			};
@@ -576,7 +576,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="w2c1";
-					init="[this,""ftl"",""1-2 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""ftl"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-2 Charlie - Fire Team Leader";
 				};
 				class Item1
@@ -590,7 +590,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2c2";
-					init="[this,""r"",""1-2 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""r"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-2 Charlie - Rifleman";
 				};
 				class Item2
@@ -604,7 +604,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2c3";
-					init="[this,""g"",""1-2 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""g"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-2 Charlie - Grenadier";
 				};
 				class Item3
@@ -618,7 +618,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2c4";
-					init="[this,""ag"",""1-2 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""ag"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-2 Charlie - Assist. Gunner";
 				};
 				class Item4
@@ -632,7 +632,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2c5";
-					init="[this,""ar"",""1-2 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""ar"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-2 Charlie - Automatic Rifleman";
 				};
 				class Item5
@@ -646,7 +646,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2c6";
-					init="[this,""lr"",""1-2 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""lr"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-2 Charlie - Light Rifleman";
 				};
 			};
@@ -670,7 +670,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="wecho1";
-					init="[this,""p"",""AAC""] call GVL_Fnc_GearHandler;";
+					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
 					description="Echo 1";
 				};
 				class Item1
@@ -684,7 +684,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="wecho2";
-					init="[this,""p"",""AAC""] call GVL_Fnc_GearHandler;";
+					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
 					description="Echo 2";
 				};
 				class Item2
@@ -698,7 +698,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="wecho3";
-					init="[this,""p"",""AAC""] call GVL_Fnc_GearHandler;";
+					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
 					description="Echo 3";
 				};
 				class Item3
@@ -712,7 +712,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="wecho4";
-					init="[this,""p"",""AAC""] call GVL_Fnc_GearHandler;";
+					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
 					description="Echo 4";
 				};
 			};
@@ -755,7 +755,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					text="epl";
-					init="[this,""pl"",""1-Actual""] call GVL_Fnc_GearHandler;";
+					init="[this,""pl"",""1-Actual""] call GOL_Fnc_GearHandler;";
 					description="1-Actual - Platoon Leader";
 				};
 				class Item1
@@ -769,7 +769,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="efac";
-					init="[this,""fac"",""1-Actual""] call GVL_Fnc_GearHandler;";
+					init="[this,""fac"",""1-Actual""] call GOL_Fnc_GearHandler;";
 					description="1-Actual - FAC";
 				};
 			};
@@ -793,7 +793,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="e1a1";
-					init="[this,""ftl"",""1-1 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""ftl"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-1 Alpha - Squad Leader";
 				};
 				class Item1
@@ -807,7 +807,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1a2";
-					init="[this,""r"",""1-1 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""r"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-1 Alpha - Rifleman";
 				};
 				class Item2
@@ -821,7 +821,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1a3";
-					init="[this,""g"",""1-1 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""g"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-1 Alpha - Grenadier";
 				};
 				class Item3
@@ -835,7 +835,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1a4";
-					init="[this,""ag"",""1-1 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""ag"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-1 Alpha - Assist. Gunner";
 				};
 				class Item4
@@ -849,7 +849,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1a5";
-					init="[this,""ar"",""1-1 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""ar"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-1 Alpha - Automatic Rifleman";
 				};
 				class Item5
@@ -863,7 +863,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1a6";
-					init="[this,""lr"",""1-1 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""lr"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-1 Alpha - Light Rifleman";
 				};
 			};
@@ -887,7 +887,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="e1b1";
-					init="[this,""ftl"",""1-1 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""ftl"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-1 Bravo - Squad Leader";
 				};
 				class Item1
@@ -901,7 +901,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1b2";
-					init="[this,""r"",""1-1 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""r"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-1 Bravo - Rifleman";
 				};
 				class Item2
@@ -915,7 +915,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1b3";
-					init="[this,""g"",""1-1 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""g"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-1 Bravo - Grenadier";
 				};
 				class Item3
@@ -929,7 +929,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1b4";
-					init="[this,""ag"",""1-1 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""ag"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-1 Bravo - Assist. Gunner";
 				};
 				class Item4
@@ -943,7 +943,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1b5";
-					init="[this,""ar"",""1-1 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""ar"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-1 Bravo - Automatic Rifleman";
 				};
 				class Item5
@@ -957,7 +957,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1b6";
-					init="[this,""lr"",""1-1 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""lr"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-1 Bravo - Light Rifleman";
 				};
 			};
@@ -981,7 +981,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="e1c1";
-					init="[this,""ftl"",""1-1 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""ftl"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-1 Charlie - Squad Leader";
 				};
 				class Item1
@@ -995,7 +995,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1c2";
-					init="[this,""r"",""1-1 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""r"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-1 Charlie - Rifleman";
 				};
 				class Item2
@@ -1009,7 +1009,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1c3";
-					init="[this,""g"",""1-1 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""g"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-1 Charlie - Grenadier";
 				};
 				class Item3
@@ -1023,7 +1023,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1c4";
-					init="[this,""ag"",""1-1 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""ag"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-1 Charlie - Assist. Gunner";
 				};
 				class Item4
@@ -1037,7 +1037,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1c5";
-					init="[this,""ar"",""1-1 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""ar"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-1 Charlie - Automatic Rifleman";
 				};
 				class Item5
@@ -1051,7 +1051,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1c6";
-					init="[this,""lr"",""1-1 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""lr"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-1 Charlie - Light Rifleman";
 				};
 			};
@@ -1075,7 +1075,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="e2a1";
-					init="[this,""ftl"",""1-2 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""ftl"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-2 Alpha - Squad Leader";
 				};
 				class Item1
@@ -1089,7 +1089,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2a2";
-					init="[this,""r"",""1-2 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""r"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-2 Alpha - Rifleman";
 				};
 				class Item2
@@ -1103,7 +1103,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2a3";
-					init="[this,""g"",""1-2 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""g"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-2 Alpha - Grenadier";
 				};
 				class Item3
@@ -1117,7 +1117,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2a4";
-					init="[this,""ag"",""1-2 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""ag"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-2 Alpha - Assist. Gunner";
 				};
 				class Item4
@@ -1131,7 +1131,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2a5";
-					init="[this,""ar"",""1-2 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""ar"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-2 Alpha - Automatic Rifleman";
 				};
 				class Item5
@@ -1145,7 +1145,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2a6";
-					init="[this,""lr"",""1-2 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""lr"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-2 Alpha - Light Rifleman";
 				};
 			};
@@ -1169,7 +1169,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="e2b1";
-					init="[this,""ftl"",""1-2 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""ftl"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-2 Bravo - Squad Leader";
 				};
 				class Item1
@@ -1183,7 +1183,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2b2";
-					init="[this,""r"",""1-2 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""r"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-2 Bravo - Rifleman";
 				};
 				class Item2
@@ -1197,7 +1197,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2b3";
-					init="[this,""g"",""1-2 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""g"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-2 Bravo - Grenadier";
 				};
 				class Item3
@@ -1211,7 +1211,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2b4";
-					init="[this,""ag"",""1-2 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""ag"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-2 Bravo - Assist. Gunner";
 				};
 				class Item4
@@ -1225,7 +1225,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2b5";
-					init="[this,""ar"",""1-2 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""ar"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-2 Bravo - Automatic Rifleman";
 				};
 				class Item5
@@ -1239,7 +1239,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2b6";
-					init="[this,""lr"",""1-2 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""lr"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-2 Bravo - Light Rifleman";
 				};
 			};
@@ -1263,7 +1263,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="e2c1";
-					init="[this,""ftl"",""1-2 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""ftl"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-2 Charlie - Squad Leader";
 				};
 				class Item1
@@ -1277,7 +1277,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2c2";
-					init="[this,""r"",""1-2 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""r"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-2 Charlie - Rifleman";
 				};
 				class Item2
@@ -1291,7 +1291,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2c3";
-					init="[this,""g"",""1-2 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""g"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-2 Charlie - Grenadier";
 				};
 				class Item3
@@ -1305,7 +1305,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2c4";
-					init="[this,""ag"",""1-2 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""ag"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-2 Charlie - Assist. Gunner";
 				};
 				class Item4
@@ -1319,7 +1319,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2c5";
-					init="[this,""ar"",""1-2 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""ar"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-2 Charlie - Automatic Rifleman";
 				};
 				class Item5
@@ -1333,7 +1333,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2c6";
-					init="[this,""lr"",""1-2 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""lr"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-2 Charlie - Light Rifleman";
 				};
 			};
@@ -1357,7 +1357,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="eecho1";
-					init="[this,""p"",""AAC""] call GVL_Fnc_GearHandler;";
+					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
 					description="Echo 1";
 				};
 				class Item1
@@ -1371,7 +1371,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="eecho2";
-					init="[this,""p"",""AAC""] call GVL_Fnc_GearHandler;";
+					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
 					description="Echo 2";
 				};
 				class Item2
@@ -1385,7 +1385,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="eecho3";
-					init="[this,""p"",""AAC""] call GVL_Fnc_GearHandler;";
+					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
 					description="Echo 3";
 				};
 				class Item3
@@ -1399,7 +1399,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="eecho4";
-					init="[this,""p"",""AAC""] call GVL_Fnc_GearHandler;";
+					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
 					description="Echo 4";
 				};
 			};
@@ -1423,7 +1423,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					text="ipl";
-					init="[this,""pl"",""1-Actual""] call GVL_Fnc_GearHandler;";
+					init="[this,""pl"",""1-Actual""] call GOL_Fnc_GearHandler;";
 					description="1-Actual - Platoon Leader";
 				};
 				class Item1
@@ -1437,7 +1437,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="ifac";
-					init="[this,""fac"",""1-Actual""] call GVL_Fnc_GearHandler;";
+					init="[this,""fac"",""1-Actual""] call GOL_Fnc_GearHandler;";
 					description="1-Actual - FAC";
 				};
 			};
@@ -1461,7 +1461,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="i1a1";
-					init="[this,""ftl"",""1-1 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""ftl"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-1 Alpha - Squad Leader";
 				};
 				class Item1
@@ -1475,7 +1475,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1a2";
-					init="[this,""r"",""1-1 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""r"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-1 Alpha - Rifleman";
 				};
 				class Item2
@@ -1489,7 +1489,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1a3";
-					init="[this,""g"",""1-1 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""g"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-1 Alpha - Grenadier";
 				};
 				class Item3
@@ -1503,7 +1503,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1a4";
-					init="[this,""ag"",""1-1 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""ag"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-1 Alpha - Assist. Gunner";
 				};
 				class Item4
@@ -1517,7 +1517,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1a5";
-					init="[this,""ar"",""1-1 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""ar"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-1 Alpha - Automatic Rifleman";
 				};
 				class Item5
@@ -1531,7 +1531,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1a6";
-					init="[this,""lr"",""1-1 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""lr"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-1 Alpha - Light Rifleman";
 				};
 			};
@@ -1555,7 +1555,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="i1b1";
-					init="[this,""ftl"",""1-1 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""ftl"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-1 Bravo - Squad Leader";
 				};
 				class Item1
@@ -1569,7 +1569,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1b2";
-					init="[this,""r"",""1-1 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""r"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-1 Bravo - Rifleman";
 				};
 				class Item2
@@ -1583,7 +1583,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1b3";
-					init="[this,""g"",""1-1 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""g"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-1 Bravo - Grenadier";
 				};
 				class Item3
@@ -1597,7 +1597,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1b4";
-					init="[this,""ag"",""1-1 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""ag"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-1 Bravo - Assist. Gunner";
 				};
 				class Item4
@@ -1611,7 +1611,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1b5";
-					init="[this,""ar"",""1-1 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""ar"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-1 Bravo - Automatic Rifleman";
 				};
 				class Item5
@@ -1625,7 +1625,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1b6";
-					init="[this,""lr"",""1-1 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""lr"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-1 Bravo - Light Rifleman";
 				};
 			};
@@ -1649,7 +1649,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="i1c1";
-					init="[this,""ftl"",""1-1 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""ftl"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-1 Charlie - Squad Leader";
 				};
 				class Item1
@@ -1663,7 +1663,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1c2";
-					init="[this,""r"",""1-1 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""r"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-1 Charlie - Rifleman";
 				};
 				class Item2
@@ -1677,7 +1677,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1c3";
-					init="[this,""g"",""1-1 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""g"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-1 Charlie - Grenadier";
 				};
 				class Item3
@@ -1691,7 +1691,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1c4";
-					init="[this,""ag"",""1-1 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""ag"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-1 Charlie - Assist. Gunner";
 				};
 				class Item4
@@ -1705,7 +1705,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1c5";
-					init="[this,""ar"",""1-1 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""ar"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-1 Charlie - Automatic Rifleman";
 				};
 				class Item5
@@ -1719,7 +1719,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1c6";
-					init="[this,""lr"",""1-1 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""lr"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-1 Charlie - Light Rifleman";
 				};
 			};
@@ -1743,7 +1743,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="i2a1";
-					init="[this,""ftl"",""1-2 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""ftl"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-2 Alpha - Squad Leader";
 				};
 				class Item1
@@ -1757,7 +1757,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2a2";
-					init="[this,""r"",""1-2 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""r"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-2 Alpha - Rifleman";
 				};
 				class Item2
@@ -1771,7 +1771,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2a3";
-					init="[this,""g"",""1-2 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""g"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-2 Alpha - Grenadier";
 				};
 				class Item3
@@ -1785,7 +1785,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2a4";
-					init="[this,""ag"",""1-2 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""ag"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-2 Alpha - Assist. Gunner";
 				};
 				class Item4
@@ -1799,7 +1799,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2a5";
-					init="[this,""ar"",""1-2 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""ar"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-2 Alpha - Automatic Rifleman";
 				};
 				class Item5
@@ -1813,7 +1813,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2a6";
-					init="[this,""lr"",""1-2 Alpha""] call GVL_Fnc_GearHandler;";
+					init="[this,""lr"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-2 Alpha - Light Rifleman";
 				};
 			};
@@ -1837,7 +1837,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="i2b1";
-					init="[this,""ftl"",""1-2 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""ftl"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-2 Bravo - Squad Leader";
 				};
 				class Item1
@@ -1851,7 +1851,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2b2";
-					init="[this,""r"",""1-2 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""r"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-2 Bravo - Rifleman";
 				};
 				class Item2
@@ -1865,7 +1865,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2b3";
-					init="[this,""g"",""1-2 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""g"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-2 Bravo - Grenadier";
 				};
 				class Item3
@@ -1879,7 +1879,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2b4";
-					init="[this,""ag"",""1-2 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""ag"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-2 Bravo - Assist. Gunner";
 				};
 				class Item4
@@ -1893,7 +1893,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2b5";
-					init="[this,""ar"",""1-2 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""ar"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-2 Bravo - Automatic Rifleman";
 				};
 				class Item5
@@ -1907,7 +1907,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2b6";
-					init="[this,""lr"",""1-2 Bravo""] call GVL_Fnc_GearHandler;";
+					init="[this,""lr"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
 					description="1-2 Bravo - Light Rifleman";
 				};
 			};
@@ -1931,7 +1931,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="i2c1";
-					init="[this,""ftl"",""1-2 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""ftl"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-2 Charlie - Squad Leader";
 				};
 				class Item1
@@ -1945,7 +1945,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2c2";
-					init="[this,""r"",""1-2 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""r"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-2 Charlie - Rifleman";
 				};
 				class Item2
@@ -1959,7 +1959,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2c3";
-					init="[this,""g"",""1-2 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""g"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-2 Charlie - Grenadier";
 				};
 				class Item3
@@ -1973,7 +1973,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2c4";
-					init="[this,""ag"",""1-2 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""ag"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-2 Charlie - Assist. Gunner";
 				};
 				class Item4
@@ -1987,7 +1987,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2c5";
-					init="[this,""ar"",""1-2 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""ar"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-2 Charlie - Automatic Rifleman";
 				};
 				class Item5
@@ -2001,7 +2001,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2c6";
-					init="[this,""lr"",""1-2 Charlie""] call GVL_Fnc_GearHandler;";
+					init="[this,""lr"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
 					description="1-2 Charlie - Light Rifleman";
 				};
 			};
@@ -2025,7 +2025,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="iecho1";
-					init="[this,""p"",""AAC""] call GVL_Fnc_GearHandler;";
+					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
 					description="Echo 1";
 				};
 				class Item1
@@ -2039,7 +2039,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="iecho2";
-					init="[this,""p"",""AAC""] call GVL_Fnc_GearHandler;";
+					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
 					description="Echo 2";
 				};
 				class Item2
@@ -2053,7 +2053,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="iecho3";
-					init="[this,""p"",""AAC""] call GVL_Fnc_GearHandler;";
+					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
 					description="Echo 3";
 				};
 				class Item3
@@ -2067,7 +2067,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="iecho4";
-					init="[this,""p"",""AAC""] call GVL_Fnc_GearHandler;";
+					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
 					description="Echo 4";
 				};
 			};
@@ -2337,7 +2337,7 @@ class Mission
 			vehicle="O_CargoNet_01_ammo_F";
 			lock="UNLOCKED";
 			skill=0.2;
-			init="[this,[""big_box"",""east""],[true,false]] call GVL_Fnc_GearHandler;";
+			init="[this,[""big_box"",""east""],[true,false]] call GOL_Fnc_GearHandler;";
 		};
 		class Item24
 		{
@@ -2348,7 +2348,7 @@ class Mission
 			vehicle="Box_East_Ammo_F";
 			lock="UNLOCKED";
 			skill=0.2;
-			init="[this,[""small_box"",""east""],[true,false]] call GVL_Fnc_GearHandler;";
+			init="[this,[""small_box"",""east""],[true,false]] call GOL_Fnc_GearHandler;";
 		};
 		class Item25
 		{
@@ -2359,7 +2359,7 @@ class Mission
 			vehicle="B_CargoNet_01_ammo_F";
 			lock="UNLOCKED";
 			skill=0.2;
-			init="[this,[""big_box"",""west""],[true,true]] call GVL_Fnc_GearHandler;";
+			init="[this,[""big_box"",""west""],[true,true]] call GOL_Fnc_GearHandler;";
 		};
 		class Item26
 		{
@@ -2370,7 +2370,7 @@ class Mission
 			vehicle="Box_NATO_Ammo_F";
 			lock="UNLOCKED";
 			skill=0.2;
-			init="[this,[""small_box"",""west""],[true,true]] call GVL_Fnc_GearHandler;";
+			init="[this,[""small_box"",""west""],[true,true]] call GOL_Fnc_GearHandler;";
 		};
 		class Item27
 		{
@@ -2381,7 +2381,7 @@ class Mission
 			vehicle="I_CargoNet_01_ammo_F";
 			lock="UNLOCKED";
 			skill=0.2;
-			init="[this,[""big_box"",""indep""],[true,false]] call GVL_Fnc_GearHandler;";
+			init="[this,[""big_box"",""indep""],[true,false]] call GOL_Fnc_GearHandler;";
 		};
 		class Item28
 		{
@@ -2392,7 +2392,7 @@ class Mission
 			vehicle="Box_IND_Ammo_F";
 			lock="UNLOCKED";
 			skill=0.2;
-			init="[this,[""small_box"",""indep""],[true,false]] call GVL_Fnc_GearHandler;";
+			init="[this,[""small_box"",""indep""],[true,false]] call GOL_Fnc_GearHandler;";
 		};
 		class Item29
 		{
@@ -2403,7 +2403,7 @@ class Mission
 			vehicle="Box_NATO_Support_F";
 			lock="UNLOCKED";
 			skill=0.2;
-			init="[this,""misc_box"",[false,true]] call GVL_Fnc_GearHandler;";
+			init="[this,""misc_box"",[false,true]] call GOL_Fnc_GearHandler;";
 		};
 		class Item30
 		{
@@ -2414,7 +2414,7 @@ class Mission
 			vehicle="Box_NATO_AmmoOrd_F";
 			lock="UNLOCKED";
 			skill=0.2;
-			init="[this,""med_box"",[false,true]] call GVL_Fnc_GearHandler;";
+			init="[this,""med_box"",[false,true]] call GOL_Fnc_GearHandler;";
 		};
 		class Item31
 		{
@@ -2425,7 +2425,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			lock="UNLOCKED";
 			skill=0.2;
-			init="[this,""gear_box"",[false,true]] call GVL_Fnc_GearHandler;";
+			init="[this,""gear_box"",[false,true]] call GOL_Fnc_GearHandler;";
 		};
 		class Item32
 		{
@@ -2436,7 +2436,7 @@ class Mission
 			vehicle="Box_NATO_WpsSpecial_F";
 			lock="UNLOCKED";
 			skill=0.2;
-			init="[this,""a_box"",[false,true]] call GVL_Fnc_GearHandler;";
+			init="[this,""a_box"",[false,true]] call GOL_Fnc_GearHandler;";
 		};
 	};
 	class Markers
