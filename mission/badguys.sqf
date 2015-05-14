@@ -1,4 +1,8 @@
-sleep 0.5;
+if (isNil ("ZONE1")) then {
+	ZONE1 = 0; 
+	ZONE2 = 0; 
+	ZONE3 = 0;
+};
 
 if (ZONE1 == 1) then {
 	ZONE1 = 2;
