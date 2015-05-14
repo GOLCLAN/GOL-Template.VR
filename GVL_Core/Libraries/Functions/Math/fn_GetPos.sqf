@@ -1,0 +1,54 @@
+
+// ================================================================
+// *	AUTHOR: GuzzenVonLidl
+// *
+// *	Description:
+// *		Gets location of a marker, object or array ([0,0,0])
+// *
+// *	Usage:
+// *		[MHQ] call GVL_Fnc_GetPos;	// Object
+// *		["Hello"] call GVL_Fnc_GetPos;	// Marker
+// *
+// *	Parameters:
+// *		0:	OBJECT || STRING || ARRAY - Gets location from a place
+// *
+// *	Returning Value:
+// *		Position
+// *
+// ================================================================
+
+	private ["_type","_returnValue","_DebugName"];
+
+	_type = _this select 0;
+
+	switch (typeName _type) do {
+
+		case "STRING": {
+			_returnValue = getMarkerPos _type;
+		};
+
+		case "OBJECT": {
+			_returnValue = getPosATL _type;
+		};
+
+		case "GROUP": {
+			_returnValue = getPosATL (leader _type);
+		};
+
+		case "LOCATION": {
+			_returnValue = position _type;
+		};
+
+		case "ARRAY": {
+			_returnValue = _type;
+		};
+
+		default {
+			_DebugName = "GVL_Fnc_GetPos";
+			scriptName _DebugName;
+			[["%1 was passed to this function, only accepts STRING, OBJECT, GROUP, LOCATION or ARRAY", (typeName _type)],[_DebugName,__FILE__,__LINE__],"log"] call GVL_Fnc_DebugLog;
+		};
+
+	};
+
+	_returnValue

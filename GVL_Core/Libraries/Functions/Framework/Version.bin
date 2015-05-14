@@ -1,0 +1,14 @@
+// *	Framework Information
+
+		GVL_Author = "GuzzenVonLidl";
+		GVL_Version = "1.1019";
+		GVL_Teamspeak = "teamspeak.gol-clan.co.uk";
+		GVL_url = "http://www.gol-clan.co.uk/";
+
+		publicVariable "GVL_Author";
+		publicVariable "GVL_Version";
+		publicVariable "GVL_Teamspeak";
+		publicVariable "GVL_url";
+
+		GVL_Addon_Mission_Variable = true;
+		publicVariable "GVL_Addon_Mission_Variable";
