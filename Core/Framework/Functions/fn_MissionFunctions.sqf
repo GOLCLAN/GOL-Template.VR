@@ -3,11 +3,13 @@ Fnc_Populate = {
 	_unitcount = _this select 1;
 	_radius = _this select 2;
 	_type = _this select 3;
-	GoLUnitCount = 0; GoLPopulateLoop = 0;
+	_groupsize = _this select 4;
+	GoLUnitCount = 0;
 	BuildingListArray = nearestObjects [_markerPOS, ["house"], _radius]; BuildingListArray call BIS_fnc_arrayShuffle;
 	ObjectMarkerList = _markerPOS nearObjects _radius; ObjectMarkerList call BIS_fnc_arrayShuffle;
 	
 	while {GoLUnitCount <= _unitcount} do {
+		if (GoLUnitCount == _unitcount) exitWith {};
 		if (_type == "buildings") then { 
 			PopulateType = 0;
 		}; 
@@ -16,43 +18,23 @@ Fnc_Populate = {
 		};
 		
 		if (PopulateType == 0) then {
+			GoLUnitCount = GoLUnitCount + 1; sleep 1;
 			_building = BuildingListArray call BIS_fnc_selectRandom;
 			_buildingenterable = [_building] call BIS_fnc_isBuildingEnterable;
 			if (_buildingenterable) then {
 				_buildingpos = [_building] call BIS_fnc_buildingPositions; _buildingpos = _buildingpos call BIS_fnc_selectRandom;
 				[_marker, _buildingpos, "UP", 1] call Fnc_SpawnUnit;
 				_count = count BuildingListArray; if (_count > 15) then { BuildingListArray = BuildingListArray - [_building]; };
-				GoLUnitCount = GoLUnitCount + 1; sleep 1;
 			};	
 		};
 	
 		if (PopulateType == 1) then {
-			_count = count ObjectMarkerList;
-
-			if (_count >= 2) then { 
-				_wp1 = ObjectMarkerList call BIS_fnc_selectRandom; randPoS1 = getPosASL _wp1;
-				_wp2 = ObjectMarkerList call BIS_fnc_selectRandom; randPoS2 = getPosASL _wp2;	
-				ObjectMarkerList = ObjectMarkerList - [_wp1];
-				ObjectMarkerList = ObjectMarkerList - [_wp2];
-			};
-			
-			if (_count < 1) then {
-				// hint format["%1", _markerPOS];
-				randPoS1 = [(_markerPOS select 0) + random(500), (_markerPOS select 1) + random(500), _markerPOS select 2];
-				randPoS2 = [(_markerPOS select 0) - random(500), (_markerPOS select 1) - random(500), _markerPOS select 2];
-			};
-			
-			["DeathSquad", _marker, 3] call Fnc_SpawnGroup;
-			sleep 0.3;
-			["DeathSquad", randPoS1, 1, "MOVE", "STAG COLUMN", "YELLOW", "SAFE", "LIMITED"] call Fnc_wayPoint;
-			["DeathSquad", randPoS2, 2, "MOVE", "STAG COLUMN", "YELLOW", "SAFE", "LIMITED"] call Fnc_wayPoint;
-			["DeathSquad", randPoS1, 3, "CYCLE", "STAG COLUMN", "YELLOW", "SAFE", "LIMITED"] call Fnc_wayPoint;
-			GoLUnitCount = GoLUnitCount + 3; sleep 2;
+			GoLUnitCount = GoLUnitCount + 4; sleep 2;
+			["DeathSquad", _marker, _groupsize] call Fnc_SpawnGroup;
+			[NewGroup, _marker, _radius, 3, "MOVE", "SAFE", "RED", "LIMITED", "FILE", "", [3,6,9]] call CBA_fnc_taskPatrol;
 		};
-		// Safety net
-		if (GoLUnitCount <= 5 && GoLPopulateLoop >= 30) exitWith {}; GoLPopulateLoop = GoLPopulateLoop + 1;
 	};
-		// ObjectMarkerList = nil;
+		ObjectMarkerList = nil;
 };
 
 Fnc_SpawnUnit = {

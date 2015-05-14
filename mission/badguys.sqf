@@ -1,6 +1,6 @@
 if (ZONE1 == 1) then {
 	ZONE1 = 2;
-	["zone1", [493.509,1297.22,0.00143909], "UP", 1] spawn Fnc_SpawnUnit;
+
 };
 
 if (ZONE2 == 1) then {
@@ -71,7 +71,7 @@ if (ZONE3 == 1) then {
 	["zone1", 10, 125, "buildings"] spawn Fnc_Populate;
 	["zone1", 18, 225, "patrols"] spawn Fnc_Populate;
 	
-	Spawn Marker Name, Number of Units, Spawn Radius, Populate Type buildings, patrols		
+	Spawn Marker Name, Number of Units, Spawn Radius, Populate Type buildings, patrols, Group Size
 	
 	---[STATIC-UNITS]---
 	
