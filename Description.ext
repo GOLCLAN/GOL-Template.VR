@@ -1,4 +1,4 @@
-// *	DO NOT CHANCE THE ORDER/STRUCTIOR OF THE FILE R
+// *	DO NOT CHANCE THE ORDER/STRUCTIOR OF THE FILE
 // https://community.bistudio.com/wiki/Description.ext
 // ==============================================================================
 
@@ -74,6 +74,7 @@
 
 			#include "Core\functionList.hpp"
 			#include "Gear\functionList.hpp"
+			#include "mission\functionList.hpp"
 
 		};
 	};
