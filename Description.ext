@@ -3,10 +3,10 @@
 // ==============================================================================
 
 // *	Settings for the mission
-	briefingName = "GVL FRAMEWORK";
-	overviewText = "Testing Version of the framework and all its content";
+	briefingName = "GOL@108 Template";
+	overviewText = "Testing Version of the Template and all its content";
 
-	author = "GuzzenVonLidl";						// shown in loading screen and briefing
+	author = "GOL Editing Team";						// shown in loading screen and briefing
 	Mission_version = "1";
 	onLoadName = "";								// Loading screen name
 	onLoadMission = "";								// Loading screen text
@@ -26,12 +26,12 @@
 // ==============================================================================
 
 // *	Includes the most nessasary configs for the framework to work
-	#include "GVL_Core\Libraries\Cfg\Variables.cpp"
+//	#include "GOL_Core\Libraries\Cfg\Variables.cpp"
 
 // ==============================================================================
 
 // *	Framework settings
-	class GVL_FRAMEWORK {
+	class GOL_FRAMEWORK {
 
 		class Modules {
 			Debug_Config = 2;		// NUMBER:	| 0: Disabled
@@ -43,7 +43,7 @@
 			Default_AI = "w_nato";	// STRING: Defines the default ai faction from the start of the mission
 
 			class Gear {
-//				#define	SelectFromParams	true;	// Allow Admin to select faction from the lobby screen | Disable remove entire line
+				#define	SelectFromParams	true;	// Allow Admin to select faction from the lobby screen | Disable remove entire line
 				Camoflage = false;	// BOOL:	0: Woodland	| 1: Desert
 				Blufor = 3;			// NUMBER:	1: NATO	| 2: FIA		| 3: USMC		|	4: BAF			|
 				Opfor = 3;			// NUMBER:	1: CSAT	| 2: Russians	| 3: Guerilla	|	4: Insurgents	|
@@ -77,7 +77,7 @@
 
 // *	Includes framework params
 	class Params {
-		#include "GVL_Core\Libraries\Cfg\Params.cpp"
+//		#include "GOL_Core\Libraries\Cfg\Params.cpp"
 	};
 
 // ==============================================================================
@@ -85,19 +85,15 @@
 // *	Mandatory functions for the framework to work
 	class CfgFunctions {
 
-		class GVL {
+		class GOL {
 
 		//	Loads all Functions
-			#include "GVL_Core\Libraries\Functions\functionList.hpp"
+//			#include "GOL_Core\Libraries\Functions\functionList.hpp"
 
 		//	Loads all Modules
-			#include "GVL_Core\Modules\functionList.hpp"
-		};
+//			#include "GOL_Core\Modules\functionList.hpp"
 
-		class F {
-			#include "GVL_Core\Modules\Spectator\functions.hpp"
+//			#include "Gear\functionList.hpp"
+
 		};
 	};
-
-// *	Menu components for the Spectator Script
-		#include "GVL_Core\Modules\Spectator\config.hpp"
