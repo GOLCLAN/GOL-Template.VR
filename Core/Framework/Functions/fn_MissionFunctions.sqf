@@ -31,7 +31,7 @@ Fnc_Populate = {
 		if (PopulateType == 1) then {
 			GoLUnitCount = GoLUnitCount + 4; sleep 2;
 			["DeathSquad", _marker, _groupsize] call Fnc_SpawnGroup;
-			[NewGroup, _marker, _radius, 7, "MOVE", "SAFE", "RED", "LIMITED", "FILE", "", [3,6,9]] call CBA_fnc_taskPatrol;
+			[NewGroup, _marker, _radius, 7, "MOVE", "NORMAL", "RED", "LIMITED", "FILE", "", [3,6,9]] call CBA_fnc_taskPatrol;
 		};
 	};
 		ObjectMarkerList = nil;

@@ -98,16 +98,16 @@ if (ZONE3 == 1) then {
 	
 	["Zone1Group1", "zone1", 5] spawn Fnc_SpawnGroup;
 	sleep 0.3;
-	["Zone1Group1", [10785.7,8221.48,0.00154114], 1, "MOVE", "STAG COLUMN", "YELLOW", "SAFE", "LIMITED"] spawn Fnc_wayPoint;
-	["Zone1Group1", [10877.9,8095.71,0.00172424], 2, "MOVE", "STAG COLUMN", "YELLOW", "SAFE", "LIMITED"] spawn Fnc_wayPoint;
-	["Zone1Group1", [10785.7,8221.48,0.00154114], 3, "CYCLE", "STAG COLUMN", "YELLOW", "SAFE", "LIMITED"] spawn Fnc_wayPoint;
+	["Zone1Group1", [10785.7,8221.48,0.00154114], 1, "MOVE", "STAG COLUMN", "YELLOW", "NORMAL", "LIMITED"] spawn Fnc_wayPoint;
+	["Zone1Group1", [10877.9,8095.71,0.00172424], 2, "MOVE", "STAG COLUMN", "YELLOW", "NORMAL", "LIMITED"] spawn Fnc_wayPoint;
+	["Zone1Group1", [10785.7,8221.48,0.00154114], 3, "CYCLE", "STAG COLUMN", "YELLOW", "NORMAL", "LIMITED"] spawn Fnc_wayPoint;
 	sleep 2;
 	
 	Group Name, Spawn Marker Name, Number of units!
 	
 	The next thing we're going to do is create some waypoints. Again We refer to the group Zone1Group1 the next large number is a waypoint location that the units will move to. The number after the large number is 
 	the waypoint index this should increase with increments of 1 for each waypoint added. Next we have specified the waypoint type which in this case is MOVE, next is the formation that the units should use while 
-	moving STAG COLUMN. After this we specify a colour which is basispawny a mode for how the AI will react when they're engaged. Next We have specified SAFE this is how the AI will hold its weapon while moving and 
+	moving STAG COLUMN. After this we specify a colour which is basispawny a mode for how the AI will react when they're engaged. Next We have specified NORMAL this is how the AI will hold its weapon while moving and 
 	finally we specify the speed the unit should move at in this case LIMITED.
 	
 	For all of the possible waypoint options you can find them on the wiki page - https://community.bistudio.com/wiki/waypoints
