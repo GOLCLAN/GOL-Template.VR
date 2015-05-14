@@ -112,6 +112,10 @@ if (GOLCSAT) then {
 	EnemySide = EAST;
 };
 
+Fnc_Test = {
+	hint "hello";
+};
+
 Fnc_Populate = {
 	_marker = _this select 0; _markerPOS = (GetMarkerPos _marker);
 	_unitcount = _this select 1;

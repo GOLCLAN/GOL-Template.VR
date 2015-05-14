@@ -1,7 +1,7 @@
 sleep 0.5;
 if (ZONE1 == 1) then {
 	ZONE1 = 2;
-
+	[] call Fnc_Test;
 };
 
 if (ZONE2 == 1) then {
