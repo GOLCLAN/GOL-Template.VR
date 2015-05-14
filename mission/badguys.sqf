@@ -1,7 +1,8 @@
 sleep 0.5;
+
 if (ZONE1 == 1) then {
 	ZONE1 = 2;
-	[10, "zone1", 250] spawn Fnc_SpawnCivilians;
+	["zone1", [493.509,1297.22,0.00143909], "UP", 1] spawn Fnc_SpawnUnit;
 };
 
 if (ZONE2 == 1) then {
