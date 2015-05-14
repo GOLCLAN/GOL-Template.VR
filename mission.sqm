@@ -2405,7 +2405,7 @@ class Mission
 			special="NONE";
 			id=158;
 			side="EMPTY";
-			vehicle="arma2_crate_empty_medical";
+			vehicle="Box_NATO_AmmoOrd_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,""med_box"",[false,true]] call GVL_Fnc_GearHandler;";
@@ -2435,7 +2435,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=7;
+		items=10;
 		class Item0
 		{
 			position[]={448.59525,5,1273.0996};
@@ -2495,6 +2495,109 @@ class Mission
 			name="respawn_guerrila";
 			text=" Respawn Independent";
 			type="Empty";
+		};
+		class Item7
+		{
+			position[]={450.15979,5,1447.6372};
+			name="zone1";
+			text="zone1";
+			type="Empty";
+		};
+		class Item8
+		{
+			position[]={550.245,5,1447.8013};
+			name="zone2";
+			text="zone2";
+			type="Empty";
+		};
+		class Item9
+		{
+			position[]={650.49408,5,1447.9199};
+			name="zone3";
+			text="zone3";
+			type="Empty";
+		};
+	};
+	class Sensors
+	{
+		items=6;
+		class Item0
+		{
+			position[]={449.72583,5,1449.2114};
+			activationBy="WEST";
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonetrigger1";
+			expCond="(getPos ((list zonetrigger1) select 0) select 2) <= 1";
+			expActiv="ZONE1 = 1;";
+			class Effects
+			{
+			};
+		};
+		class Item1
+		{
+			position[]={450.97678,5,1381.7856};
+			a=0;
+			b=0;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="(ZONE1 == 1)";
+			expActiv="null = execVM ""mission\hc_check.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item2
+		{
+			position[]={549.81104,5,1449.3755};
+			activationBy="WEST";
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonetrigger2";
+			expCond="(getPos ((list zonetrigger2) select 0) select 2) <= 1";
+			expActiv="ZONE2 = 1;";
+			class Effects
+			{
+			};
+		};
+		class Item3
+		{
+			position[]={551.06201,5,1381.9497};
+			a=0;
+			b=0;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="(ZONE2 == 1)";
+			expActiv="null = execVM ""mission\hc_check.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item4
+		{
+			position[]={650.06012,5,1449.4941};
+			activationBy="WEST";
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonetrigger3";
+			expCond="(getPos ((list zonetrigger3) select 0) select 2) <= 1";
+			expActiv="ZONE3 = 1;";
+			class Effects
+			{
+			};
+		};
+		class Item5
+		{
+			position[]={651.31104,5,1382.0684};
+			a=0;
+			b=0;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="(ZONE3 == 1)";
+			expActiv="null = execVM ""mission\hc_check.sqf"";";
+			class Effects
+			{
+			};
 		};
 	};
 };
