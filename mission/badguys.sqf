@@ -2,6 +2,7 @@ if (isNil ("ZONE1")) then {
 	ZONE1 = 0; 
 	ZONE2 = 0; 
 	ZONE3 = 0;
+	execVM "EnemyFactions.sqf";
 };
 
 if (ZONE1 == 1) then {
@@ -35,7 +36,7 @@ if (ZONE3 == 1) then {
 			We have now made a trigger which will only activate when someone runs into it, it can't be activated by someone flying through it. Now that you have created a two triggers you will want 
 			something to actually happen when the trigger is activated. Using the the examples below you can spawn units.
 			
-	Step 4. You need to create an if statement in the badguys.sqf. Basispawny what is happening here is that when a player runs into your trigger ZONE1 changes from 0 to 1. When this happens
+	Step 4. You need to create an if statement in the badguys.sqf. Basically what is happening here is that when a player runs into your trigger ZONE1 changes from 0 to 1. When this happens
 			The first trigger that was created will run the spawning script. When the if statement is ran ZONE1 will equal 1 and the code will within the if statement will run. Take note just below the if statement
 			we set ZONE1 = 2; This is very important not doing this will mean that the same units will spawn every time the badguys.sqf runs.
 

@@ -1,5 +1,5 @@
-GOLUS = true; // US West
-GOLBAF = false; // BAF West R4IDER/Oksman
+GOLUS = false; // US West
+GOLBAF = true; // BAF West R4IDER/Oksman
 GOLFIA = false; // FIA West
 GOLRU = false; // Russians East
 GOLINS = false; // Insurgents East R4IDER

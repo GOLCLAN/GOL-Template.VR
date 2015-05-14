@@ -1,3 +1,3 @@
 if(HeadlessController) then {
-    execVM "mission\badguys.sqf";
+    execVM "mission\BadGuys.sqf";
 };
