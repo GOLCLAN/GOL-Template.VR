@@ -3,35 +3,9 @@ class Mission
 {
 	addOns[]=
 	{
-		"map_vr",
-		"A3_Characters_F",
-		"A3_Characters_F_BLUFOR",
-		"A3_Supplies_F_Heli_CargoNets",
-		"A3_Structures_F_Bootcamp_VR_Blocks",
-		"A3_Weapons_F_Ammoboxes",
-		"A3_Soft_F_MRAP_01",
-		"A3_Structures_F_Mil_Flags",
-		"arma2_crates_a3",
-		"A3_Characters_F_OPFOR",
-		"A3_Armor_F_EPB_MBT_03",
-		"A3_Characters_F_INDEP",
-		"Gunfighter",
-		"sp_craig_vehicals",
-		"A3_Air_F_Heli_Light_01"
 	};
 	addOnsAuto[]=
 	{
-		"A3_Characters_F_BLUFOR",
-		"a3_characters_f",
-		"A3_Characters_F_OPFOR",
-		"A3_Characters_F_INDEP",
-		"A3_Structures_F_Mil_Flags",
-		"A3_Structures_F_Bootcamp_VR_Blocks",
-		"A3_Supplies_F_Heli_CargoNets",
-		"A3_Weapons_F_Ammoboxes",
-		"arma2_crates_a3",
-		"A3_Soft_F_MRAP_01",
-		"map_vr"
 	};
 	randomSeed=11823142;
 	class Intel
