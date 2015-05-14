@@ -1,10 +1,3 @@
-if (isNil ("ZONE1")) then {
-	ZONE1 = 0; 
-	ZONE2 = 0; 
-	ZONE3 = 0;
-	execVM "EnemyFactions.sqf";
-};
-
 if (ZONE1 == 1) then {
 	ZONE1 = 2;
 	["zone1", [493.509,1297.22,0.00143909], "UP", 1] spawn Fnc_SpawnUnit;
