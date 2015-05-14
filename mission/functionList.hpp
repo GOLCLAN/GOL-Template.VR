@@ -1,4 +1,4 @@
 	class Mission_Functions {
-		file = "Missions";
-		class MissionFunctions{};
+		file = "Mission";
+		class MissionFunctions {};
 	};

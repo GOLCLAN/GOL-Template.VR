@@ -4,6 +4,7 @@
 		scriptName _DebugName;
 
 		["------ Framework PostInit ------",[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;
+
 		[] call GOL_Fnc_HeadlessClient;
 		[] call GOL_Fnc_radioSettings;
 		[] spawn GOL_Fnc_CoreLoop;

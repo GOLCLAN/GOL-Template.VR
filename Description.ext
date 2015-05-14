@@ -26,7 +26,7 @@
 // ==============================================================================
 
 // *	Includes the most nessasary configs for the framework to work
-//	#include "GOL_Core\Libraries\Cfg\Variables.cpp"
+	#include "Core\Cfg\Variables.cpp"
 
 // ==============================================================================
 
@@ -56,7 +56,7 @@
 
 // *	Includes framework params
 	class Params {
-//		#include "GOL_Core\Libraries\Cfg\Params.cpp"
+		#include "Core\Cfg\Params.cpp"
 	};
 
 // ==============================================================================
@@ -65,12 +65,6 @@
 	class CfgFunctions {
 
 		class GOL {
-
-		//	Loads all Functions
-//			#include "GOL_Core\Libraries\Functions\functionList.hpp"
-
-		//	Loads all Modules
-//			#include "GOL_Core\Modules\functionList.hpp"
 
 			#include "Core\functionList.hpp"
 			#include "Gear\functionList.hpp"
