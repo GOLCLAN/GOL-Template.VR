@@ -35,10 +35,10 @@
 	_compass = "ItemCompass";
 	_watch = "ItemWatch";
 	_gps = "ItemGPS";
-	_bino = "AGM_Vector";
-	_rangefinder = "AGM_Vector";
+	_bino = "ACE_Vector";
+	_rangefinder = "ACE_Vector";
 	_laser = "LaserDesignator";
-	_nvg = "AGM_NVG_Gen4";
+	_nvg = "ACE_NVG_Gen4";
 	_toolkit = "ToolKit";
 
 	_FAKBig = "MediKit";
@@ -59,27 +59,29 @@
 	_microDAGR = "ItemMicroDAGR";
 	_HelmetCam = "ItemcTabHCam";
 
-	// AGM
-	_mapTools = "AGM_MapTools";
-	_kestrel = "AGM_ItemKestrel";
-	_IRStrobe = "AGM_IR_Strobe_Item";
-	_barrel = "AGM_SpareBarrel";
-	_earplugs = "AGM_EarBuds";
-	_clacker = "AGM_Clacker";
-	_defusalKit = "AGM_DefusalKit";
-	_cables = "AGM_CableTie";
+	// ACE
+	_mapTools = "ACE_MapTools";
+	_kestrel = "ACE_ItemKestrel";
+	_IRStrobe = "ACE_IR_Strobe_Item";
+	_barrel = "ACE_SpareBarrel";
+	_earplugs = "ACE_EarBuds";
+	_clacker = "ACE_Clacker";
+	_defusalKit = "ACE_DefusalKit";
+	_cables = "ACE_CableTie";
 
-	_bandage = "AGM_Bandage";
-	_morph = "AGM_Morphine";
-	_epi = "AGM_Epipen";
-	_blood = "AGM_Bloodbag";
+	_bandage = "ACE_fieldDressing";
+	_bandagePacking = "ACE_packingBandage";
+	_bandageElastic = "ACE_elasticBandage";
+	_morph = "ACE_morphine";
+	_epi = "ACE_epinephrine";
+	_blood = "ACE_bloodIV";
 
 // ===========================
 
 	// EQUIPMENT
 	_grenade = "HandGrenade";
 	_grenademini = "MiniGrenade";
-	_flashBang = "AGM_M84";
+	_flashBang = "ACE_M84";
 	_smokegrenadeW = "SmokeShell";
 	_smokegrenadeG = "SmokeShellGreen";
 	_smokegrenadeR = "SmokeShellRed";
@@ -89,10 +91,10 @@
 	_chemR = "Chemlight_red";
 	_chemY =  "Chemlight_yellow";
 	_chemB = "Chemlight_blue";
-	_handFlareG = "AGM_HandFlare_Green";
-	_handFlareR = "AGM_HandFlare_Red";
-	_handFlareW = "AGM_HandFlare_White";
-	_handFlareY = "AGM_HandFlare_Yellow";
+	_handFlareG = "ACE_HandFlare_Green";
+	_handFlareR = "ACE_HandFlare_Red";
+	_handFlareW = "ACE_HandFlare_White";
+	_handFlareY = "ACE_HandFlare_Yellow";
 
 	// GRENADE LAUNCHER ITEMS
 	_glHE = "1Rnd_HE_Grenade_shell";
@@ -112,3 +114,23 @@
 	_glflareIR = "UGL_FlareCIR_F";
 
 // ===========================
+/*
+	ACE_fieldDressing
+	ACE_packingBandage
+	ACE_elasticBandage
+	ACE_tourniquet
+	ACE_morphine
+	ACE_epinephrine
+
+	ACE_atropine
+	ACE_quikclot
+	ACE_personalAidKit
+	ACE_surgicalKit
+	ACE_bodyBag
+
+	ACE_plasmaIV
+	ACE_bloodIV
+	ACE_bloodIV_500
+	ACE_bloodIV_250
+	ACE_salineIV
+*/

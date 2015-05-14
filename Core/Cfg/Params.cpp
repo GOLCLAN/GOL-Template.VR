@@ -6,18 +6,6 @@
 // *	Use this link to get a better understanding of what it does and what you can change
 // *	https://community.bistudio.com/wiki/Arma_3_Mission_Parameters
 // *
-/*
-//	Macros
-	#ifdef SelectFromParams
-		#define	SelectFromParams	__EXEC(SelectFromParams = 1);
-		SelectFromParams;
-	#endif
-	#ifndef SelectFromParams
-		#define	SelectFromParamsDiactive	__EXEC(SelectFromParams = 0);
-		SelectFromParamsDiactive;
-	#endif
-*/
-
 // ====================================================================================
 // *
 // *	Selects the faction for Blufor to use by players
@@ -70,18 +58,6 @@ class GOL_Params_Extra_Gear {
 
 // ====================================================================================
 // *
-// *	Disables firing by deleting all bullets fired in the beginning of the mission
-// *
-/*
-class GOL_Params_SafeStart {
-	title = "Safe Start";
-	values[] = {0,1,2,3,4,5,6,7,8,9,10,15};
-	texts[] = {"Disabled","1","2","3","4","5","6","7","8","9","10","15"};
-	default = 5;
-};
-*/
-// ====================================================================================
-// *
 // *	Enables the Teleportation to the Fire Team leader for every player by using the "GOL Menu"
 // *
 class GOL_Params_FTL_Teleport {
@@ -108,8 +84,17 @@ class GOL_Params_Teleport_Distance {
 
 
 
-
 /*
+// ====================================================================================
+// *
+// *	Disables firing by deleting all bullets fired in the beginning of the mission
+// *
+class GOL_Params_SafeStart {
+	title = "Safe Start";
+	values[] = {0,1,2,3,4,5,6,7,8,9,10,15};
+	texts[] = {"Disabled","1","2","3","4","5","6","7","8","9","10","15"};
+	default = 5;
+};
 
 // ====================================================================================
 // *

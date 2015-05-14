@@ -110,6 +110,8 @@
 			if (GOL_Gear_Extra) then {
 				[
 					[_bandage,30],
+//					[_bandagePacking,10],
+//					[_bandageElastic,10],
 					[_morph,8]
 				] call GOL_Fnc_AddObjectBackpack;
 

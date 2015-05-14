@@ -2,7 +2,6 @@
 		private ["_DebugName"];
 		_DebugName = "GOL-coreLoop";
 		scriptName _DebugName;
-
 		if (isServer) then {
 			[] spawn {
 				{ _x disableai "MOVE"; }ForEach (playableUnits + switchableUnits);

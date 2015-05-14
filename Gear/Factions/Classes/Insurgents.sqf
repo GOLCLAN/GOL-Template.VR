@@ -3,6 +3,16 @@
 
 _AllowNVG = true;
 
+_glHE = "rhs_VOG25";
+
+_glsmokeW = "rhs_GRD40_White";
+_glsmokeG = "rhs_GRD40_Green";
+_glsmokeR = "rhs_GRD40_Red";
+
+_glflareW = "rhs_VG40OP_white";
+_glflareG = "rhs_VG40OP_green";
+_glflareR = "rhs_VG40OP_red";
+
 // ===========================
 // WEAPON SELECTION
 

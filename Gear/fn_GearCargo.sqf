@@ -46,10 +46,9 @@
     _cargoArray = [_this, 2, [true,true], [[]]] call BIS_fnc_param;
     _isVehicle = _cargo isKindOf "AllVehicles";
     if !(_isVehicle) Then {
-        if ((_cargoArray select 0)) then {  // Enable Move Object
-//          [_cargo, true] call AGM_Drag_fnc_makeDraggable;
-        } else {    // Disable Move Object
-//            _cargo setVariable ["AGM_disableDrag", true, true];
+        if !(_cargoArray select 0) then {  // Enable Move Object
+            [_cargo, false] call ACE_Dragging_fnc_setCarryable;
+            [_cargo, false] call ACE_Dragging_fnc_setDraggable;
         };
     };
 
@@ -173,9 +172,9 @@
             [_cargo, "FHQ_acc_ANPEQ15", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "FHQ_acc_LLM01L", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "FHQ_acc_LLM01F", 50] call GOL_Fnc_AddItemCargo;
-//            [_cargo, "ACE_muzzle_mzls_H", 50] call GOL_Fnc_AddItemCargo
-//            [_cargo, "ACE_muzzle_mzls_B", 50] call GOL_Fnc_AddItemCargo;
-//            [_cargo, "ACE_muzzle_mzls_L", 50] call GOL_Fnc_AddItemCargo;
+            [_cargo, "ACE_muzzle_mzls_H", 50] call GOL_Fnc_AddItemCargo;
+            [_cargo, "ACE_muzzle_mzls_B", 50] call GOL_Fnc_AddItemCargo;
+            [_cargo, "ACE_muzzle_mzls_L", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "rhsusf_acc_anpeq15", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "rhsusf_acc_anpeq15a", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "rhsusf_acc_anpeq15_light", 50] call GOL_Fnc_AddItemCargo;

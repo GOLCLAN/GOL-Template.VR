@@ -41,6 +41,7 @@
 
 		if (isServer) then {
 			#include "Version.hpp";
+			#include "Modules.sqf";
 			[] call GOL_Fnc_Module_Init;
 			[] call GOL_Fnc_radioSettings;
 		};

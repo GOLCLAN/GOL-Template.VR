@@ -71,7 +71,7 @@
 			    case "pl": {
 					[[_rifle]] call GOL_Fnc_AddObject;
 					_primaryAttachments = _primaryRifle;
-					_unit setVariable ["AGM_IsMedic", true, true];
+					_unit setVariable ["ACE_Medical_MedicClass", 1, true];
 			    };
 
 			    case "fac": {
@@ -97,7 +97,7 @@
 			    case "ag": {
 					[[_rifle]] call GOL_Fnc_AddObject;
 					_primaryAttachments = _primaryRifle;
-					_unit setVariable ["AGM_IsMedic", true, true];
+					_unit setVariable ["ACE_Medical_MedicClass", 1, true];
 			    };
 
 			    case "ar": {
@@ -113,7 +113,7 @@
 			    case "p": {
 					[[_carbine]] call GOL_Fnc_AddObject;
 					_primaryAttachments = _primaryCarbine;
-					_unit setVariable ["AGM_IsMedic", true, true];
+					_unit setVariable ["ACE_Medical_MedicClass", 1, true];
 			    };
 			};
 	    	if (_typeofUnit in _binoArray) then {

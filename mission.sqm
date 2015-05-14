@@ -11,7 +11,8 @@ class Mission
 		"A3_Structures_F_Bootcamp_VR_Blocks",
 		"A3_Supplies_F_Heli_CargoNets",
 		"A3_Weapons_F_Ammoboxes",
-		"map_vr"
+		"map_vr",
+		"ace_medical"
 	};
 	addOnsAuto[]=
 	{
@@ -19,6 +20,7 @@ class Mission
 		"a3_characters_f",
 		"A3_Characters_F_OPFOR",
 		"A3_Characters_F_INDEP",
+		"ace_medical",
 		"A3_Structures_F_Mil_Flags",
 		"A3_Structures_F_Bootcamp_VR_Blocks",
 		"A3_Supplies_F_Heli_CargoNets",
@@ -41,14 +43,14 @@ class Mission
 		year=2035;
 		month=7;
 		day=6;
-		hour=12;
+		hour=14;
 		minute=0;
 		startFogDecay=0.0049333;
 		forecastFogDecay=0.0049333;
 	};
 	class Groups
 	{
-		items=25;
+		items=26;
 		class Item0
 		{
 			side="WEST";
@@ -2072,15 +2074,109 @@ class Mission
 				};
 			};
 		};
+		class Item25
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={384.6832,5,1278.7222};
+					class args
+					{
+						items=12;
+						class Item0
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="level";
+						};
+						class Item1
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="medicSetting";
+						};
+						class Item2
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="allowLitterCreation";
+						};
+						class Item3
+						{
+							value="1200";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="litterCleanUpDelay";
+						};
+						class Item4
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="enableScreams";
+						};
+						class Item5
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="playerDamageThreshold";
+						};
+						class Item6
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="AIDamageThreshold";
+						};
+						class Item7
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="enableUnconsciousnessAI";
+						};
+						class Item8
+						{
+							value="0";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="preventInstaDeath";
+						};
+						class Item9
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="bleedingCoefficient";
+						};
+						class Item10
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="painCoefficient";
+						};
+						class Item11
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="keepLocalSettingsSynced";
+						};
+					};
+					id=127;
+					side="LOGIC";
+					vehicle="ACE_moduleMedicalSettings";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
 		items=33;
 		class Item0
 		{
-			position[]={335.45456,5,1360.4182};
+			position[]={356.62592,5,1350.4363};
 			special="NONE";
-			id=127;
+			id=128;
 			side="EMPTY";
 			vehicle="Flag_Blue_F";
 			skill=1;
@@ -2090,7 +2186,7 @@ class Mission
 		{
 			position[]={499.93314,5,1295.106};
 			special="NONE";
-			id=128;
+			id=129;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2101,7 +2197,7 @@ class Mission
 		{
 			position[]={499.8681,5,1286.0684};
 			special="NONE";
-			id=129;
+			id=130;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2112,7 +2208,7 @@ class Mission
 		{
 			position[]={499.81467,5,1277.2051};
 			special="NONE";
-			id=130;
+			id=131;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2123,7 +2219,7 @@ class Mission
 		{
 			position[]={499.86816,5,1268.0488};
 			special="NONE";
-			id=131;
+			id=132;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2134,7 +2230,7 @@ class Mission
 		{
 			position[]={499.81238,5,1258.9585};
 			special="NONE";
-			id=132;
+			id=133;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2145,7 +2241,7 @@ class Mission
 		{
 			position[]={499.86588,5,1249.8022};
 			special="NONE";
-			id=133;
+			id=134;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2156,7 +2252,7 @@ class Mission
 		{
 			position[]={599.82245,5,1295.2764};
 			special="NONE";
-			id=134;
+			id=135;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2167,7 +2263,7 @@ class Mission
 		{
 			position[]={599.75745,5,1286.2388};
 			special="NONE";
-			id=135;
+			id=136;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2178,7 +2274,7 @@ class Mission
 		{
 			position[]={599.70404,5,1277.3755};
 			special="NONE";
-			id=136;
+			id=137;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2189,7 +2285,7 @@ class Mission
 		{
 			position[]={599.75751,5,1268.2192};
 			special="NONE";
-			id=137;
+			id=138;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2200,7 +2296,7 @@ class Mission
 		{
 			position[]={599.70172,5,1259.1289};
 			special="NONE";
-			id=138;
+			id=139;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2211,7 +2307,7 @@ class Mission
 		{
 			position[]={599.75519,5,1249.9727};
 			special="NONE";
-			id=139;
+			id=140;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2222,7 +2318,7 @@ class Mission
 		{
 			position[]={499.86676,5,1240.7485};
 			special="NONE";
-			id=140;
+			id=141;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2233,7 +2329,7 @@ class Mission
 		{
 			position[]={499.80173,5,1231.7109};
 			special="NONE";
-			id=141;
+			id=142;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2244,7 +2340,7 @@ class Mission
 		{
 			position[]={499.74829,5,1222.8477};
 			special="NONE";
-			id=142;
+			id=143;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2255,7 +2351,7 @@ class Mission
 		{
 			position[]={499.80179,5,1213.6914};
 			special="NONE";
-			id=143;
+			id=144;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2266,7 +2362,7 @@ class Mission
 		{
 			position[]={499.746,5,1204.6011};
 			special="NONE";
-			id=144;
+			id=145;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2277,7 +2373,7 @@ class Mission
 		{
 			position[]={599.75549,5,1240.9189};
 			special="NONE";
-			id=145;
+			id=146;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2288,7 +2384,7 @@ class Mission
 		{
 			position[]={599.69043,5,1231.8813};
 			special="NONE";
-			id=146;
+			id=147;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2299,7 +2395,7 @@ class Mission
 		{
 			position[]={599.63708,5,1223.0181};
 			special="NONE";
-			id=147;
+			id=148;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2310,7 +2406,7 @@ class Mission
 		{
 			position[]={599.69055,5,1213.8618};
 			special="NONE";
-			id=148;
+			id=149;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2321,7 +2417,7 @@ class Mission
 		{
 			position[]={599.63477,5,1204.7715};
 			special="NONE";
-			id=149;
+			id=150;
 			side="EMPTY";
 			vehicle="Land_VR_Block_05_F";
 			leader=1;
@@ -2332,7 +2428,7 @@ class Mission
 		{
 			position[]={537.52368,5,1283.051};
 			special="NONE";
-			id=150;
+			id=151;
 			side="EMPTY";
 			vehicle="O_CargoNet_01_ammo_F";
 			lock="UNLOCKED";
@@ -2343,7 +2439,7 @@ class Mission
 		{
 			position[]={537.52637,5,1280.7664};
 			special="NONE";
-			id=151;
+			id=152;
 			side="EMPTY";
 			vehicle="Box_East_Ammo_F";
 			lock="UNLOCKED";
@@ -2354,7 +2450,7 @@ class Mission
 		{
 			position[]={428.33661,5,1282.4319};
 			special="NONE";
-			id=152;
+			id=153;
 			side="EMPTY";
 			vehicle="B_CargoNet_01_ammo_F";
 			lock="UNLOCKED";
@@ -2365,7 +2461,7 @@ class Mission
 		{
 			position[]={428.35336,5,1280.2122};
 			special="NONE";
-			id=153;
+			id=154;
 			side="EMPTY";
 			vehicle="Box_NATO_Ammo_F";
 			lock="UNLOCKED";
@@ -2376,7 +2472,7 @@ class Mission
 		{
 			position[]={641.45142,5,1282.9153};
 			special="NONE";
-			id=154;
+			id=155;
 			side="EMPTY";
 			vehicle="I_CargoNet_01_ammo_F";
 			lock="UNLOCKED";
@@ -2387,7 +2483,7 @@ class Mission
 		{
 			position[]={641.46814,5,1280.6956};
 			special="NONE";
-			id=155;
+			id=156;
 			side="EMPTY";
 			vehicle="Box_IND_Ammo_F";
 			lock="UNLOCKED";
@@ -2396,9 +2492,9 @@ class Mission
 		};
 		class Item29
 		{
-			position[]={328.78809,5,1349.7747};
+			position[]={333.18332,5,1345.1208};
 			special="NONE";
-			id=156;
+			id=157;
 			side="EMPTY";
 			vehicle="Box_NATO_Support_F";
 			lock="UNLOCKED";
@@ -2407,9 +2503,9 @@ class Mission
 		};
 		class Item30
 		{
-			position[]={328.62463,5,1353.5251};
+			position[]={336.48944,5,1345.0583};
 			special="NONE";
-			id=157;
+			id=158;
 			side="EMPTY";
 			vehicle="Box_NATO_AmmoOrd_F";
 			lock="UNLOCKED";
@@ -2418,9 +2514,9 @@ class Mission
 		};
 		class Item31
 		{
-			position[]={338.99036,5,1337.3684};
+			position[]={336.63785,5,1341.1755};
 			special="NONE";
-			id=158;
+			id=159;
 			side="EMPTY";
 			vehicle="B_supplyCrate_F";
 			lock="UNLOCKED";
@@ -2429,9 +2525,9 @@ class Mission
 		};
 		class Item32
 		{
-			position[]={325.35297,5,1349.8538};
+			position[]={333.21777,5,1341.387};
 			special="NONE";
-			id=159;
+			id=160;
 			side="EMPTY";
 			vehicle="Box_NATO_WpsSpecial_F";
 			lock="UNLOCKED";

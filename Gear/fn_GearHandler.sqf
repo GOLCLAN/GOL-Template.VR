@@ -34,7 +34,7 @@ _this spawn {
 		"_cTab","_Android","_microDAGR","_HelmetCam",
 		"_mapTools","_kestrel","_barrel","_earplugs","_cables",
 		"_demoCharge","_satchelCharge","_clacker","_defusalKit",
-		"_FAKBig","_FAKSmall","_bandage","_morph","_epi","_blood",
+		"_FAKBig","_FAKSmall","_bandage","_bandagePacking","_bandageElastic","_morph","_epi","_blood",
 		"_grenade","_grenademini","_flashBang",
 		"_smokegrenadeW","_smokegrenadeG","_smokegrenadeR","_smokegrenadeY","_smokegrenadeP",
 		"_chemG","_chemR","_chemY","_chemB",
@@ -135,9 +135,9 @@ _this spawn {
 		if ((_this select 2) != "") Then {	_unit setVariable ["GVL_GroupID", (_this select 2), true];	};
 		_unit setVariable ["GVL_Loadout", _typeofUnit, true];
 		_unit setVariable ["GVL_Role_Done", false, true];
-//		_unit setVariable ["AGM_IsMedic", false, true];	// Is Not Medic
-//		_unit setVariable ["AGM_GForceCoef", 0.60, true];	// Is Pilot
-//		_unit setVariable ["AGM_hasEarPlugsIn", true, true];
+		_unit setVariable ["ACE_Medical_MedicClass", 0, true];	// Is Not Medic
+		_unit setVariable ["ACE_GForceCoef", 0.60, true];	// Is Pilot
+		_unit setVariable ["ACE_hasEarPlugsIn", true, true];
 
 		if (captive _unit) then { _captivity = captiveNum _unit; _unit setCaptive false; } else { _captivity = 0; };
 
@@ -153,7 +153,7 @@ _this spawn {
 		    };
 		};
 
-		#include "Factions\Default.sqf"
+		#include "Factions\Default.sqf";
 
 		if !(_captivity == 0) then { _unit setCaptive _captivity; };
 		[] call GOL_Fnc_Attachments;
@@ -166,15 +166,15 @@ _this spawn {
 				_unit switchMove "AmovPknlMstpSlowWrflDnon";
 				_unit setVariable ["GOL_Role_Done", true, true];
 				sleep 2;
-//				[_unit, (_this select 2)] call AGM_Interaction_fnc_joinTeam;
+				[_unit, (_this select 2)] call ACE_Interaction_fnc_joinTeam;
 				if (isPlayer _unit) then {
 					if !(isNil "GOL_Gear_Respawn") Then { player removeEventHandler ["respawn", GOL_Gear_Respawn]; };
 					GOL_Gear_Respawn = player addEventHandler ["respawn", { [player, player getVariable "GOL_Loadout"] call GOL_Fnc_GearHandler; } ];
-/*					[_unit, currentWeapon _unit, currentMuzzle _unit] call AGM_SafeMode_fnc_lockSafety;
-					waitUntil {sleep 5; player distance (markerPos ([_unit] call GOL_Fnc_GetSide)) > 100; !GOL_Spectator_Enabled};
-					if ((currentWeapon _unit) in (_unit getVariable ["AGM_SafeMode_safedWeapons", []])) then {
-						[_unit, currentWeapon _unit, currentMuzzle _unit] call AGM_SafeMode_fnc_unlockSafety;
-					};	*/
+					[_unit, currentWeapon _unit, currentMuzzle _unit] call ACE_SafeMode_fnc_lockSafety;
+					waitUntil {sleep 5; player distance (markerPos ([_unit] call GOL_Fnc_GetSide)) > 100};
+					if ((currentWeapon _unit) in (_unit getVariable ["ACE_SafeMode_safedWeapons", []])) then {
+						[_unit, currentWeapon _unit, currentMuzzle _unit] call ACE_SafeMode_fnc_unlockSafety;
+					};
 				};
 			};
 		};
@@ -188,6 +188,7 @@ _this spawn {
 			if (!_isMan && !_isCar && !_isTank) then {	// box
 				[_unit,_typeofUnit,_boxConfigs] call GOL_Fnc_GearCargo;
 			};
+
 /*
 	//		If object is a car or a tank
 			if (_isCar || _isTank) then {

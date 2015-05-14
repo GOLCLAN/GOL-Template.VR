@@ -7,7 +7,6 @@
 		class DebugLog {};
 		class GetConfig {};
 		class Hint {};
-		class Module_Init {};
 	};
 
 	#include "Functions\functionList.hpp"
