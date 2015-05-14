@@ -68,7 +68,5 @@
 
 			#include "Core\functionList.hpp"
 			#include "Gear\functionList.hpp"
-			#include "mission\functionList.hpp"
-
 		};
 	};

@@ -4,4 +4,5 @@
 		class HeadlessClient{};
 		class RadioSettings{};
 		class RemoteExecuterHC{};
+		class MissionFunctions{};
 	};

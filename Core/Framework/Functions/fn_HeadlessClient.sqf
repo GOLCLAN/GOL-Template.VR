@@ -12,7 +12,7 @@
 // *		None
 // *
 // *	Returning Value:
-// *		Returning if there is a headless client and its funitions
+// *		Returning if there is a headless client and its functions
 // *
 // ================================================================
 

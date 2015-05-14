@@ -9,7 +9,7 @@
 		[] call GOL_Fnc_radioSettings;
 		[] spawn GOL_Fnc_CoreLoop;
 //		[] spawn GOL_Fnc_AudioDetectorAI;
-
+		[] spawn GOL_Fnc_MissionFunctions;
 
 		if (hasInterface) then {
 // *		Loads Mandatory Player functions
