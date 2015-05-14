@@ -3,9 +3,27 @@ class Mission
 {
 	addOns[]=
 	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"A3_Characters_F_OPFOR",
+		"A3_Characters_F_INDEP",
+		"A3_Structures_F_Mil_Flags",
+		"A3_Structures_F_Bootcamp_VR_Blocks",
+		"A3_Supplies_F_Heli_CargoNets",
+		"A3_Weapons_F_Ammoboxes",
+		"map_vr"
 	};
 	addOnsAuto[]=
 	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"A3_Characters_F_OPFOR",
+		"A3_Characters_F_INDEP",
+		"A3_Structures_F_Mil_Flags",
+		"A3_Structures_F_Bootcamp_VR_Blocks",
+		"A3_Supplies_F_Heli_CargoNets",
+		"A3_Weapons_F_Ammoboxes",
+		"map_vr"
 	};
 	randomSeed=11823142;
 	class Intel
@@ -707,7 +725,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={470.11319,5,1341.4336};
+					position[]={365.61099,5,1352.751};
 					id=42;
 					side="LOGIC";
 					vehicle="HeadlessClient_F";
@@ -2057,10 +2075,10 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=34;
+		items=33;
 		class Item0
 		{
-			position[]={439.95676,5,1349.1008};
+			position[]={335.45456,5,1360.4182};
 			special="NONE";
 			id=127;
 			side="EMPTY";
@@ -2316,7 +2334,7 @@ class Mission
 			special="NONE";
 			id=150;
 			side="EMPTY";
-			vehicle="B_CargoNet_01_ammo_F";
+			vehicle="O_CargoNet_01_ammo_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,[""big_box"",""east""],[true,false]] call GVL_Fnc_GearHandler;";
@@ -2327,7 +2345,7 @@ class Mission
 			special="NONE";
 			id=151;
 			side="EMPTY";
-			vehicle="Box_NATO_Grenades_F";
+			vehicle="Box_East_Ammo_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,[""small_box"",""east""],[true,false]] call GVL_Fnc_GearHandler;";
@@ -2349,83 +2367,71 @@ class Mission
 			special="NONE";
 			id=153;
 			side="EMPTY";
-			vehicle="arma2_crate_empty";
+			vehicle="Box_NATO_Ammo_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,[""small_box"",""west""],[true,true]] call GVL_Fnc_GearHandler;";
 		};
 		class Item27
 		{
-			position[]={430.27533,5,1273.1931};
+			position[]={641.45142,5,1282.9153};
 			special="NONE";
 			id=154;
 			side="EMPTY";
-			vehicle="B_MRAP_01_F";
-			lock="UNLOCKED";
-			skill=0.2;
-			text="mhq";
-			init="null = [this] spawn GVL_Fnc_MHQ_Init;";
-		};
-		class Item28
-		{
-			position[]={641.45142,5,1282.9153};
-			special="NONE";
-			id=155;
-			side="EMPTY";
-			vehicle="B_CargoNet_01_ammo_F";
+			vehicle="I_CargoNet_01_ammo_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,[""big_box"",""indep""],[true,false]] call GVL_Fnc_GearHandler;";
 		};
-		class Item29
+		class Item28
 		{
 			position[]={641.46814,5,1280.6956};
 			special="NONE";
-			id=156;
+			id=155;
 			side="EMPTY";
-			vehicle="arma2_crate_empty";
+			vehicle="Box_IND_Ammo_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,[""small_box"",""indep""],[true,false]] call GVL_Fnc_GearHandler;";
 		};
-		class Item30
+		class Item29
 		{
-			position[]={433.29028,5,1338.4573};
+			position[]={328.78809,5,1349.7747};
 			special="NONE";
-			id=157;
+			id=156;
 			side="EMPTY";
 			vehicle="Box_NATO_Support_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,""misc_box"",[false,true]] call GVL_Fnc_GearHandler;";
 		};
-		class Item31
+		class Item30
 		{
-			position[]={433.12683,5,1342.2078};
+			position[]={328.62463,5,1353.5251};
 			special="NONE";
-			id=158;
+			id=157;
 			side="EMPTY";
 			vehicle="Box_NATO_AmmoOrd_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,""med_box"",[false,true]] call GVL_Fnc_GearHandler;";
 		};
-		class Item32
+		class Item31
 		{
-			position[]={443.49255,5,1326.051};
+			position[]={338.99036,5,1337.3684};
 			special="NONE";
-			id=159;
+			id=158;
 			side="EMPTY";
 			vehicle="B_supplyCrate_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,""gear_box"",[false,true]] call GVL_Fnc_GearHandler;";
 		};
-		class Item33
+		class Item32
 		{
-			position[]={429.85516,5,1338.5364};
+			position[]={325.35297,5,1349.8538};
 			special="NONE";
-			id=160;
+			id=159;
 			side="EMPTY";
 			vehicle="Box_NATO_WpsSpecial_F";
 			lock="UNLOCKED";
@@ -2457,8 +2463,8 @@ class Mission
 			markerType="RECTANGLE";
 			type="Empty";
 			colorName="ColorBlue";
-			a=50;
-			b=50;
+			a=45;
+			b=45;
 		};
 		class Item3
 		{
@@ -2467,8 +2473,8 @@ class Mission
 			markerType="RECTANGLE";
 			type="Empty";
 			colorName="ColorRed";
-			a=50;
-			b=50;
+			a=45;
+			b=45;
 		};
 		class Item4
 		{
@@ -2477,12 +2483,12 @@ class Mission
 			markerType="RECTANGLE";
 			type="Empty";
 			colorName="ColorGreen";
-			a=50;
-			b=50;
+			a=45;
+			b=45;
 		};
 		class Item5
 		{
-			position[]={455.6235,5,1337.3535};
+			position[]={351.12131,5,1348.6709};
 			name="side_neutral";
 			markerType="RECTANGLE";
 			type="Empty";
