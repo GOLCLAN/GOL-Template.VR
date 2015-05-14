@@ -329,6 +329,35 @@ Fnc_CreateSmoke = {
 	_smoke = "test_EmptyObjectForSmoke" createVehicle position _vehicle; _smoke SetPos (GetPos _vehicle);
 };
 
+Fnc_DefendArea = { // A function for a group to defend, run directly after spawning a group! [] spawn Fnc_DefendArea;
+	[NewGroup] spawn CBA_fnc_taskDefend;
+};
+
+Fnc_SearchBuildings = { // A function for a group to search a nearby building, run directly after spawning a group! [] spawn Fnc_SearchBuildings;
+	[NewGroup] spawn CBA_fnc_searchNearby;
+};
+
+Fnc_AttackGroup = { // Force group to Search and Destroy random players, run directly after spawning a group! *DOESN'T WORK IN THE EDITOR* [] spawn Fnc_AttackGroup;
+	{
+		if(isTouchingGround _x) then {
+			if (isNil ("PlayerArrayList")) then { 
+					PlayerArrayList = [_x];
+			} else { 
+				PlayerArrayList = PlayerArrayList + [_x];
+			};
+		};	
+	} forEach playableUnits;
+	
+	_inignore = ["wecho1","wecho2","wecho3","wecho4","eecho1","eecho2","eecho3","eecho4","iecho1","iecho2","iecho3","iecho4"];
+	{
+		PlayerArrayList = PlayerArrayList - [_x];	
+	} forEach _inignore;
+	
+	PlayerArrayList call BIS_fnc_arrayShuffle;
+	_RandomPlayer = PlayerArrayList call BIS_fnc_selectRandom;
+	[NewGroup, GetPos(_RandomPlayer), 100] call CBA_fnc_taskAttack;
+};
+
 Fnc_CreateExplosion = {
 	_location = _this select 0;
 	_bomb = createVehicle ["Bo_GBU12_LGB", _location, [], 0, "CAN_COLLIDE"];
