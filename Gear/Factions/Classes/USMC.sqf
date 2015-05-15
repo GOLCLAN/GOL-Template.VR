@@ -16,7 +16,7 @@ _weaponCamo = {
 			_rifle = "CUP_arifle_Mk16_CQC_FG";
 			_rifle_mag = "30Rnd_556x45_Stanag";
 			_rifle_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
-				_primaryRifle = ["CUP_optic_Eotech533","acc_pointer_IR","CUP_muzzle_mfsup_SCAR_L"];
+				_primaryRifle = ["CUP_optic_Eotech533","ACE_acc_pointer_green","CUP_muzzle_mfsup_SCAR_L"];
 
 			_rifleGL = "CUP_arifle_Mk16_CQC_EGLM";
 			_rifleGL_mag = "30Rnd_556x45_Stanag";

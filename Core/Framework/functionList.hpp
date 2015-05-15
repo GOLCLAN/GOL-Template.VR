@@ -6,7 +6,7 @@
 		class corePostInit { postInit = 1; };
 		class DebugLog {};
 		class GetConfig {};
-		class Hint {};
 	};
 
 	#include "Functions\functionList.hpp"
+	#include "Notes\functionList.hpp"

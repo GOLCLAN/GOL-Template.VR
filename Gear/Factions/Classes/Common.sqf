@@ -1,13 +1,5 @@
 // ===========================
 
-	_platoon = ["pl","fac","ftl","p"];
-	_squad = ["ftl","r","g","ag","ar","lr"];
-	_binoArray = ["pl","fac","ftl","ag"];
-	_pistolArray = ["pl","fac","ftl","r","g","ag","ar","lr","p"];
-//	_ctabArray = ["pl","fac","p"];
-	_rifleArray = ["pl","fac","r","ag"];
-	_rifleGLArray = ["ftl","g"];
-
 	// Adds NVG's when its getting dark or 3 hours until darkness
 	if(daytime > 17 || (daytime > 0 && daytime < 6)) Then {
 		_nightTime = true;

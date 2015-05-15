@@ -40,13 +40,24 @@
 									//			| 3: Advanced Debug - Only in the mission editor
 			ASR_Config = false;		// BOOL: True: Enable custom ASR AI configs || False: Uses the server configs
 			Lightning = false;		// BOOL: True: Enables deadly lightning around players, Default 500m in radius
-			Default_AI = "w_nato";	// STRING: Defines the default ai faction from the start of the mission
+			Default_AI = "GOLUS";	// STRING: Defines the default ai faction from the start of the mission
+			// ==============================================================================
+			// *			Side: West
+			// *			GOLUS: US	||	GOLINS_W: Insurgents	||	GOLDEN: Royal Danish Army
+			// *			GOLBAF: BAF	||	GOLGER: Germans			||	GOLTFSPARTAN: USMC TF Spartan
+			// *			GOLFIA: FIA	||	GOLUKR: Ukrainian Army	||	GOLIDF: Israeli Defence Forces
+			// ==============================================================================
+			// *			Side: East
+			// *			GOLINS: Insurgents	||	GOLRU: Russians	||	GOLCSAT: CSTAT 2015
+			// *			GOLTALI: Taliban	||	GOLGHA_REB: Ghalean Rebels
+			// ==============================================================================
 
 			class Gear {
 //				#define	SelectFromParams	true;	// Allow Admin to select faction from the lobby screen | Disable remove entire line
-				Camoflage = false;	// BOOL:	0: Woodland	| 1: Desert
-				Blufor = 5;			// NUMBER:	1: NATO	| 2: FIA		| 3: USMC		|	4: BAF			|	5: IDF			|
-				Opfor = 2;			// NUMBER:	1: CSAT	| 2: Russians	| 3: Guerilla	|	4: Insurgents	|
+				FullGear = false;	// BOOL:	True: Respawned player will respawn with original gear	| False: Player will respawn with what they had when they died
+				Camoflage = 0;		// BOOL:	0: Woodland	| 1: Desert
+				Blufor = 1;			// NUMBER:	1: NATO	| 2: FIA		| 3: USMC		|	4: BAF			|	5: IDF			|
+				Opfor = 1;			// NUMBER:	1: CSAT	| 2: Russians	| 3: Guerilla	|	4: Insurgents	|
 				Independent = 1;	// NUMBER:	1: AAF	|
 			};
 		};
@@ -65,7 +76,6 @@
 	class CfgFunctions {
 
 		class GOL {
-
 			#include "Core\functionList.hpp"
 			#include "Gear\functionList.hpp"
 		};

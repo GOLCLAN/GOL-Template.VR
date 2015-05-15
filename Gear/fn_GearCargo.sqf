@@ -128,6 +128,7 @@
             [[[_cargo], {
                 (_this select 0) addAction ["Platoon > Actual"," [player,'pl'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)"];
                 (_this select 0) addAction ["Platoon > Forward Air Controller"," [player,'fac'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)"];
+                (_this select 0) addAction ["Squad > Squad Leader"," [player,'sl'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)"];
                 (_this select 0) addAction ["Squad > Fire Team Leader"," [player,'ftl'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)"];
                 (_this select 0) addAction ["Squad > Rifleman"," [player,'r'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)"];
                 (_this select 0) addAction ["Squad > Grenadier"," [player,'g'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)"];

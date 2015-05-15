@@ -11,7 +11,7 @@
 				[_bandage,8],
 				[_morph,3],
 				[_epi,4]
-			] call GOL_Fnc_AddObjectBackpack;
+			] call GOL_Fnc_AddObjectsToBackpack;
 
 // *		Magazines
 			[
@@ -23,7 +23,8 @@
 				[_smokegrenadeY,3],
 				[_grenademini,3],
 				[_grenade,3]
-			] call GOL_Fnc_AddObject;
+			] call GOL_Fnc_AddObjects;
+			_unit setVariable ["ACE_Medical_MedicClass", 1, true];
 		};
 
 		case "fac": {
@@ -31,7 +32,7 @@
 				[_smokegrenadeG,5],
 				[_smokegrenadeY,5],
 				[_smokegrenadeW,5]
-			] call GOL_Fnc_AddObjectBackpack;
+			] call GOL_Fnc_AddObjectsToBackpack;
 
 			[
 				[_pistol_mag,2],
@@ -40,16 +41,16 @@
 				[_smokegrenadeG,3],
 				[_smokegrenadeY,2],
 				[_grenademini,1]
-			] call GOL_Fnc_AddObject;
+			] call GOL_Fnc_AddObjects;
 		};
 
-		case "ftl": {
+		case "sl": {
 			[
-				[_rifleGL_mag,10],
+				[_rifleGL_mag,8],
 				[_glHE,7],
 				[_glsmokeW,3],
 				[_glsmokeR,2]
-			] call GOL_Fnc_AddObjectBackpack;
+			] call GOL_Fnc_AddObjectsToBackpack;
 
 			[
 				[_pistol_mag,2],
@@ -59,11 +60,30 @@
 				[_smokegrenadeY,3],
 				[_grenademini,3],
 				[_grenade,3]
-			] call GOL_Fnc_AddObject;
+			] call GOL_Fnc_AddObjects;
+		};
+
+		case "ftl": {
+			[
+				[_rifleGL_mag,8],
+				[_glHE,7],
+				[_glsmokeW,3],
+				[_glsmokeR,2]
+			] call GOL_Fnc_AddObjectsToBackpack;
+
+			[
+				[_pistol_mag,2],
+				[_rifleGL_mag_tr,5],
+				[_smokegrenadeW,2],
+				[_smokegrenadeR,3],
+				[_smokegrenadeY,3],
+				[_grenademini,3],
+				[_grenade,3]
+			] call GOL_Fnc_AddObjects;
 		};
 
 		case "r": {
-			[[_LATmag,1]] call GOL_Fnc_AddObjectBackpack;
+			[[_LATmag,1]] call GOL_Fnc_AddObjectsToBackpack;
 
 // *		Magazines
 			[
@@ -74,7 +94,7 @@
 				[_grenademini,2],
 				[_grenade,1],
 				[_LAT]
-			] call GOL_Fnc_AddObject;
+			] call GOL_Fnc_AddObjects;
 
 // *		Weapons with attachements
 			removeBackpackGlobal _unit;
@@ -87,13 +107,13 @@
 					[_LATmag,2],
 					[_glHE,12],
 					[_glsmokeW,6]
-				] call GOL_Fnc_AddObjectBackpack;
+				] call GOL_Fnc_AddObjectsToBackpack;
 				} else {
 				[
 					[_LATmag,1],
 					[_glHE,6],
 					[_glsmokeW,6]
-				] call GOL_Fnc_AddObjectBackpack;
+				] call GOL_Fnc_AddObjectsToBackpack;
 			};
 
 			[
@@ -103,7 +123,7 @@
 				[_smokegrenadeR,2],
 				[_grenademini,3],
 				[_grenade,2]
-			] call GOL_Fnc_AddObject;
+			] call GOL_Fnc_AddObjects;
 		};
 
 		case "ag": {
@@ -113,24 +133,24 @@
 //					[_bandagePacking,10],
 //					[_bandageElastic,10],
 					[_morph,8]
-				] call GOL_Fnc_AddObjectBackpack;
+				] call GOL_Fnc_AddObjectsToBackpack;
 
 				if (GOL_Gear_Additional) then {
 					[
 						[_epi,5],
 						[_blood,2]
-					] call GOL_Fnc_AddObjectBackpack;
+					] call GOL_Fnc_AddObjectsToBackpack;
 				};
 			} else {
 				[
 					[_bandage,20],
 					[_morph,6]
-				] call GOL_Fnc_AddObjectBackpack;
+				] call GOL_Fnc_AddObjectsToBackpack;
 			};
 
 			[
 				[_LMG_mag_tr,Count_AG_Mags(_LMG_mag_tr)]
-			] call GOL_Fnc_AddObjectBackpack;
+			] call GOL_Fnc_AddObjectsToBackpack;
 
 			[
 				[_pistol_mag,2],
@@ -139,21 +159,22 @@
 				[_smokegrenadeW,3],
 				[_grenademini,2],
 				[_grenade,2]
-			] call GOL_Fnc_AddObject;
+			] call GOL_Fnc_AddObjects;
+			_unit setVariable ["ACE_Medical_MedicClass", 1, true];
 		};
 
 		case "ar": {
 			[
 				[_LMG_mag,Count_AR_Mags(_LMG_mag)],
 				[_LMG_mag_tr,Count_AR_Mags(_LMG_mag_tr)]
-			] call GOL_Fnc_AddObjectBackpack;
+			] call GOL_Fnc_AddObjectsToBackpack;
 
 			[
 				[_pistol_mag,2],
 				[_smokegrenadeW,2],
 				[_grenademini,2],
 				[_grenade,2]
-			] call GOL_Fnc_AddObject;
+			] call GOL_Fnc_AddObjects;
 		};
 
 		case "lr": {
@@ -164,7 +185,7 @@
 				[_smokegrenadeW,2],
 				[_grenademini,2],
 				[_grenade,1]
-			] call GOL_Fnc_AddObject;
+			] call GOL_Fnc_AddObjects;
 		};
 
 		case "p": {
@@ -173,7 +194,7 @@
 				[_morph,5],
 				[_epi,5],
 				[_blood,3]
-			] call GOL_Fnc_AddObjectBackpack;
+			] call GOL_Fnc_AddObjectsToBackpack;
 
 			[
 				[_pistol_mag,2],
@@ -182,10 +203,11 @@
 				[_smokegrenadeW,2],
 				[_smokegrenadeP,3],
 				[_grenademini,1]
-			] call GOL_Fnc_AddObject;
+			] call GOL_Fnc_AddObjects;
+			_unit setVariable ["ACE_Medical_MedicClass", 1, true];
 		};
-
 	};
+
 //	====================================================================================
 
-	#include "Common.sqf";
+	#include "Weapons.sqf";

@@ -27,7 +27,6 @@ _this spawn {
 	//	INTERPRET PASSED VARIABLES
 	private [
 		"_unit","_typeofUnit","_isMan","_isCar","_isTank","_camo","_captivity","_Color","_boxConfigs","_item","_DebugName",
-		"_platoon","_squad","_binoArray","_pistolArray","_ctabArray","_rifleArray","_rifleGLArray",
 		"_nightTime","_AllowNVG","_weaponCamo","_camoflage","_state",
 		"_map","_compass","_watch","_gps","_bino","_rangefinder","_laser",
 		"_nvg","_toolkit","_IRStrobe","_radio152","_radio1000a",
@@ -59,7 +58,9 @@ _this spawn {
 
 	//	The following interpret formats what has been passed to this script element
 	_unit = [_this, 0, player, [objNull]] call BIS_fnc_param;	// Defines the unit
-	_typeofUnit = [_this, 1, "r", ["",[]]] call BIS_fnc_param;	// What gear the unit should get
+//	_typeofUnit = [_this, 1, "r", ["",[]]] call BIS_fnc_param;
+	_typeofUnit = toLower ([_this, 1, "r", [""]] call bis_fnc_param);	// What gear the unit should get
+
 	if !(local _unit) exitWith {false};	// Exits if script is not local
 	_isMan = _unit isKindOf "CAManBase";	// We check if we're dealing with a soldier or a vehicle
 	_isCar = _unit isKindOf "Car";
@@ -160,6 +161,7 @@ _this spawn {
 
 		if !(_captivity == 0) then { _unit setCaptive _captivity; };
 		[] call GOL_Fnc_Attachments;
+
 		_unit selectWeapon primaryWeapon _unit;
 		[_unit, _typeofUnit, _Color, (_this select 2)] Spawn {
 		    waitUntil {sleep 0.1; !isNull player};

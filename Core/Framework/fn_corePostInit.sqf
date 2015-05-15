@@ -8,7 +8,9 @@
 		[] call GOL_Fnc_HeadlessClient;
 		[] call GOL_Fnc_radioSettings;
 		[] spawn GOL_Fnc_CoreLoop;
-//		[] spawn GOL_Fnc_AudioDetectorAI;
+		[] spawn GOL_Fnc_AudioDetectorAI;
+		[] call GOL_Fnc_NotesInit;
+		[(["Default_AI"] call GOL_Fnc_GetConfig)] call GOL_Fnc_EnemyFactions;
 		[] spawn GOL_Fnc_MissionFunctions;
 
 		if (hasInterface) then {

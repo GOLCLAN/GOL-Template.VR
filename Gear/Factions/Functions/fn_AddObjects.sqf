@@ -5,8 +5,8 @@
 // *	A simpler way of adding gear to a unit
 // *
 // *	Usage:
-// *	[_unit, _riflemag, 5] call GOL_Fnc_AddItem;
-// *	[player, "30Rnd_mas_556x45_Stanag", 5] call GOL_Fnc_AddItem;
+// *	[_unit, _riflemag, 5] call GOL_Fnc_AddObjects;
+// *	[player, "30Rnd_mas_556x45_Stanag", 5] call GOL_Fnc_AddObjects;
 // *
 // *	Parameters:
 // *	0:	String:		Classname of magazines to be added
