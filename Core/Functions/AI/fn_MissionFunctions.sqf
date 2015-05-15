@@ -54,6 +54,9 @@ Fnc_SpawnUnit = {
 		_soldier = StaticGroup createUnit [_unit, _spawn, [], 0, "FORM"];
 		_soldier setposATL _position;_soldier setUnitPos _stance;_soldier forceSpeed 0; [_soldier] call Fnc_RandomDirection; NewUnit = _soldier;
 	};
+	
+	[NewUnit, "SOL"] call Fnc_StoreUnit;
+	
 	// Check Surroundings
 	_unitobjectarray = GetPos NewUnit nearObjects 2; _baseside = side NewUnit;
 	{
@@ -63,8 +66,7 @@ Fnc_SpawnUnit = {
 			_newpos = [(_unitPOS select 0) - random(25), (_unitPOS select 1) + random(25), _unitPOS select 2]; _unitPOS = _newpos;
 			_x setposATL _unitPOS;
 		};
-	} forEach _unitobjectarray;
-	
+	} forEach _unitobjectarray;	
 };
 
 Fnc_SpawnGroup = {
@@ -76,6 +78,7 @@ Fnc_SpawnGroup = {
 	for "_i" from 1 to _number do {
 		_unit = EnemyUnits call BIS_fnc_selectRandom;
 		_soldier = _group createUnit [_unit,(GetMarkerPos _marker),[],0,"private"];
+		[_soldier, "SOL"] call Fnc_StoreUnit;
 	};
 	NewGroup = _group;
 };
@@ -92,11 +95,7 @@ Fnc_SpawnCivilians = {
 		_group = CreateGroup Civilian; NewGroup = _group;
 		_soldier = _group createUnit [_unit,(GetMarkerPos _marker),[],0,"private"];
 		
-		if (isNil ("CivilianArrayList")) then { 
-			CivilianArrayList = [_soldier];
-		} else { 
-			CivilianArrayList = CivilianArrayList + [_soldier];
-		};
+		[_soldier, "CIV"] call Fnc_StoreUnit;
 		
 		Obj1 = ObjectMarkerList call BIS_fnc_selectRandom; Loc1 = getPosASL Obj1;
 		Obj2 = ObjectMarkerList call BIS_fnc_selectRandom; Loc2 = getPosASL Obj2;
@@ -117,6 +116,27 @@ Fnc_SpawnCivilians = {
 	} ForEach AllUnits;
 		ObjectMarkerList = nil;
 };
+
+Fnc_StoreUnit = {
+	_unit = _this select 0;
+	_type = _this select 1;
+	if(_type == "SOL") then {	
+		//Store Unit in Array for deletion
+		if (isNil ("SoldierArrayList")) then { 
+			SoldierArrayList = [_unit];
+		} else { 
+			SoldierArrayList = SoldierArrayList + [_unit];
+		};
+	};
+	if(_type == "CIV") then {	
+		//Store Unit in Array for deletion
+		if (isNil ("CivilianArrayList")) then { 
+			CivilianArrayList = [_unit];
+		} else { 
+			CivilianArrayList = CivilianArrayList + [_unit];
+		};
+	};	
+};	
 
 Fnc_CleanUpCivilians = {
 	if (!isNil ("CivilianArrayList")) then { 
@@ -171,7 +191,8 @@ Fnc_SpawnBunker = {
 		_soldier forceSpeed 0;
 		_soldier setUnitPos "UP";
 		_soldier setPos (_bunker buildingPos _buildingPos);
-		[_soldier] call Fnc_RandomDirection;	
+		[_soldier] call Fnc_RandomDirection;
+		[_soldier, "SOL"] call Fnc_StoreUnit;
 	};
 	NewGroup = _group;
 };
@@ -193,6 +214,7 @@ Fnc_SpawnVehicle = {
 		_unit = EnemyUnits call BIS_fnc_selectRandom;
 		_soldier = _group createUnit [_unit,_location, [], 0, "FORM"];
 		_soldier moveInAny _vehicle;
+		[_soldier, "SOL"] call Fnc_StoreUnit;
 	};
 	NewGroup = _group;
 	NewVehicle = _vehicle;
@@ -211,6 +233,7 @@ Fnc_SpawnPlane = {
 	_unit = EnemyUnits call BIS_fnc_selectRandom;
 	_soldier = _group createUnit [_unit,_location, [], 0, "FORM"];
 	_soldier assignAsDriver _vehicle; _soldier moveInDriver _vehicle;
+	[_soldier, "SOL"] call Fnc_StoreUnit;
 	NewGroup = _group;
 	NewVehicle = _vehicle;
 };
@@ -227,30 +250,29 @@ Fnc_StaticWeapon = {
 	_soldier = _group createUnit [_unit,_location, [], 0, "FORM"];
 	_soldier assignAsGunner _vehicle; _soldier moveInGunner _vehicle;
 	[_soldier] call Fnc_RandomDirection;
+	[_soldier, "SOL"] call Fnc_StoreUnit;
 };
 
-Fnc_SpawnSniper = {
-	_unit = EnemySnipers call BIS_fnc_selectRandom;
+Fnc_SpecialUnit = {
 	_marker = _this select 0;
 	_spawn = (GetMarkerPos _marker);
 	_position = _this select 1;
 	_stance = _this select 2;
+	_type = _this select 3;
+	
+	if(_type == "SN") then {
+		_unit = EnemySnipers call BIS_fnc_selectRandom;
+	};
+	if(_type == "AA") then {
+		_unit = EnemyAntiAir call BIS_fnc_selectRandom;
+	} else {
+		_unit = EnemySnipers call BIS_fnc_selectRandom;
+	};	
 	_group = "StaticUnit";
 	_group = CreateGroup EnemySide;
 	_soldier = _unit createUnit [_spawn,_group,"this setDir _direction;this setposATL _position;this setUnitPos _stance;this forceSpeed 0;[this] call Fnc_RandomDirection;",0.5];
 	StaticGroup = _group;
-};
-
-Fnc_SpawnAntiAir = {
-	_unit = EnemyAntiAir call BIS_fnc_selectRandom;
-	_marker = _this select 0;
-	_spawn = (GetMarkerPos _marker);
-	_position = _this select 1;
-	_stance = _this select 2;
-	_group = "StaticUnit";
-	_group = CreateGroup EnemySide;
-	_soldier = _unit createUnit [_spawn,_group,"this setDir _direction;this setposATL _position;this setUnitPos _stance;this forceSpeed 0;[this] call Fnc_RandomDirection;",0.5];
-	StaticGroup = _group;
+	[_soldier, "SOL"] call Fnc_StoreUnit;
 };
 
 Fnc_RandomDirection = {
@@ -386,6 +408,7 @@ Fnc_Paradrop = {
 		_unit = EnemyUnits call BIS_fnc_selectRandom;
 		_soldier = _group createUnit [_unit,_vehlocation,[],0,"private"];
 		_soldier moveInAny _vehicle;
+		[_soldier, "SOL"] call Fnc_StoreUnit;
 	};
 	NewGroup = _group;
 	[_group, _markerPOS, 0, "MOVE", "WEDGE", "YELLOW", "AWARE", "FULL"] call Fnc_wayPoint;
@@ -420,256 +443,6 @@ Fnc_ParadropInitiate = {
 	} forEach _list;
 };
 
-Fnc_ServiceArea = {
-	if (GoLServiceEnabled) then { 
-		{
-			if (side _x == west) then {
-				ServiceSide = "WEST";
-				GoLServicePod = "Land_Pod_Heli_Transport_04_box_F";
-				GoLRearmPodColour = "russian_ammo";
-				GoLRefuelPodColour = "russian_fuel";
-				GoLRepairPodColour = "russian_mend";
-			};
-			
-			if (side _x == east) then {
-				ServiceSide = "EAST";
-				GoLServicePod = "Land_Pod_Heli_Transport_04_box_F";
-				GoLRearmPodColour = "russian_ammo";
-				GoLRefuelPodColour = "russian_fuel";
-				GoLRepairPodColour = "russian_mend";
-			};
-			
-			if (side _x == resistance) then {
-				ServiceSide = "GUER";
-				GoLServicePod = "Land_Pod_Heli_Transport_04_box_F";
-				GoLPodColour = "1";
-			};
-		} forEach playableUnits;
-		
-		if (isNil ("ServiceSide")) then {
-			switch (playerSide) do { 
-				case west: { 
-					ServiceSide = "WEST";
-					GoLServicePod = "Land_Pod_Heli_Transport_04_box_F";
-					GoLRearmPodColour = "russian_ammo";
-					GoLRefuelPodColour = "russian_fuel";
-					GoLRepairPodColour = "russian_mend";
-				};
-				case east: { 
-					ServiceSide = "EAST";
-					GoLServicePod = "Land_Pod_Heli_Transport_04_box_F";
-					GoLRearmPodColour = "russian_ammo";
-					GoLRefuelPodColour = "russian_fuel";
-					GoLRepairPodColour = "russian_mend";
-				}; 
-				case resistance: { 
-					ServiceSide = "GUER";
-					GoLServicePod = "Land_Pod_Heli_Transport_04_box_F";
-					GoLRearmPodColour = "russian_ammo";
-					GoLRefuelPodColour = "russian_fuel";
-					GoLRepairPodColour = "russian_mend";
-				}; 
-			};
-		};	
-		
-		// Refuel
-		_marker = getMarkerPos "service_refuel";
-		_mDir = markerDir "service_refuel";
-		
-		_trgRefuel = createTrigger["EmptyDetector",_marker]; _trgRefuel setTriggerArea[20,20,_mDir,false];
-		_trgRefuel setTriggerActivation[ServiceSide,"PRESENT",true];
-		_trgRefuel setTriggerStatements ["this and ((getpos (thisList select 0)) select 2 < 1) and (time % 5 > 4);", "null = [ (thisList select 0), 'refuel', '0'] spawn Fnc_ServiceGlobalExecute;", ""];
-		_trgRefuel AttachTo [_marker,[0,0,0]];
-		
-		_newpos = [(_marker select 0) - 6.5, (_marker select 1) - 1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle [GoLServicePod, _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle setFuel 0; NewVehicle = _vehicle; _vehicle SetDir (_mDir) - 60; [GoLRefuelPodColour] call Fnc_SetColor; clearWeaponCargoGlobal _vehicle;ClearMagazineCargoGlobal _vehicle;ClearItemCargoGlobal _vehicle;clearBackpackCargoGlobal _vehicle;
-				
-		_trgRefuel = createTrigger["EmptyDetector",_marker]; _trgRefuel setTriggerArea[20,20,_mDir,false];
-		_trgRefuel setTriggerActivation[ServiceSide,"PRESENT",true];
-		_trgRefuel setTriggerStatements ["this and ((getpos (thisList select 0)) select 2 < 1) and (time % 5 > 4);", "null = [ (thisList select 0), 'refuel', '1'] spawn Fnc_ServiceGlobalExecute;", ""];
-		_trgRefuel AttachTo [_vehicle,[0,0,0]]; [_vehicle, "RefuelPod"] call Fnc_setName;
-		
-		_newpos = [_marker select 0, (_marker select 1) + 15, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_HelipadCircle_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir _mDir;
-		
-		_newpos = [_marker select 0, (_marker select 1) - 15, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_HelipadCircle_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir _mDir;
-		
-		_newpos = [_marker select 0, _marker select 1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['WaterPump_01_forest_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) + 270;
-		
-		_newpos = [(_marker select 0) + 3, (_marker select 1) - 1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PortableLight_double_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) - 10;
-		
-		_newpos = [(_marker select 0) - 1.5, (_marker select 1) - 1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PortableLight_double_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) - 30;
-		
-		_newpos = [(_marker select 0) + 3, (_marker select 1) + 1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PortableLight_double_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) + 150;
-		
-		_newpos = [(_marker select 0) - 1.5, (_marker select 1) + 1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PortableLight_double_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) + 120;
-		
-		_newpos = [(_marker select 0) - 0.5, (_marker select 1) + 2.5, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_MetalBarrel_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir 180;
-		
-		_newpos = [(_marker select 0) + 0.5, (_marker select 1) + 2.5, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_MetalBarrel_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) + 180;
-		
-		_newpos = [(_marker select 0) + 1.5, (_marker select 1) + 2.5, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_MetalBarrel_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) + 270;
-		
-		_newpos = [(_marker select 0) + 4.5, _marker select 1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_WaterTank_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) + 330;
-		
-		_newpos = [(_marker select 0) - 3.3, _marker select 1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_WaterTank_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) + 30;
-		
-		_newpos = [(_marker select 0) + 3.4, (_marker select 1) + 2, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['CargoNet_01_barrels_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) + 330;
-		
-		_newpos = [(_marker select 0) - 2.2, (_marker select 1) + 2, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['CargoNet_01_barrels_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) + 30;
-		
-		// Rearm
-		_marker = getMarkerPos "service_rearm";
-		_mDir = markerDir "service_rearm";
-		
-		_trgRearm = createTrigger["EmptyDetector",_marker]; _trgRearm setTriggerArea[20,20,_mDir,false];
-		_trgRearm setTriggerActivation[ServiceSide,"PRESENT",true];
-		_trgRearm setTriggerStatements ["this and ((getpos (thisList select 0)) select 2 < 1);", "null = [ (thisList select 0), 'rearm', '0'] spawn Fnc_ServiceGlobalExecute;", ""];
-		_trgRearm AttachTo [_marker,[0,0,0]];
-		
-		_newpos = [(_marker select 0) - 6.5, (_marker select 1) - 1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle [GoLServicePod, _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle setVehicleAmmoDef 0; _vehicle setVehicleAmmo 0; NewVehicle = _vehicle; _vehicle SetDir (_mDir) - 60; [GoLRearmPodColour] call Fnc_SetColor; clearWeaponCargoGlobal _vehicle;ClearMagazineCargoGlobal _vehicle;ClearItemCargoGlobal _vehicle;clearBackpackCargoGlobal _vehicle;
-		
-		_trgRearm = createTrigger["EmptyDetector",_marker]; _trgRearm setTriggerArea[20,20,_mDir,false];
-		_trgRearm setTriggerActivation[ServiceSide,"PRESENT",true];
-		_trgRearm setTriggerStatements ["this and ((getpos (thisList select 0)) select 2 < 1);", "null = [ (thisList select 0), 'rearm', '1'] spawn Fnc_ServiceGlobalExecute;", ""];
-		_trgRearm AttachTo [_vehicle,[0,0,0]]; [_vehicle, "RearmPod"] call Fnc_setName;
-		
-		_newpos = [_marker select 0, (_marker select 1) + 15, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_HelipadCircle_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir _mDir;
-		
-		_newpos = [_marker select 0, (_marker select 1) - 15, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_HelipadCircle_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir _mDir;
-		
-		_newpos = [(_marker select 0) + 3, _marker select 1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PortableLight_double_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) + 180;
-		
-		_newpos = [(_marker select 0) - 1.5, _marker select 1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PortableLight_double_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir 180;
-		
-		_newpos = [(_marker select 0) - 3, _marker select 1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PortableLight_double_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) - 50;
-		
-		_newpos = [(_marker select 0) + 1.5, _marker select 1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PortableLight_double_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) - 50;
-		
-		_newpos = [(_marker select 0) - 0.5, (_marker select 1) + 2.5, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PaperBox_open_full_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir 35;
-		
-		_newpos = [(_marker select 0) - 3, (_marker select 1) + 2.5, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PaperBox_open_empty_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir 55;
-		
-		_newpos = [(_marker select 0) + 2.5, (_marker select 1) + 2.5, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PaperBox_closed_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir 180;
-		
-		_newpos = [(_marker select 0) + 4.5, (_marker select 1) + 2.5, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PaperBox_closed_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir 155;
-		
-		_newpos = [(_marker select 0) - 0.5, (_marker select 1) - 2.5, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PaperBox_open_full_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir 35;
-		
-		_newpos = [(_marker select 0) - 3, (_marker select 1) - 2.5, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PaperBox_open_empty_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir 55;
-		
-		_newpos = [(_marker select 0) + 2.5, (_marker select 1) - 2.5, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PaperBox_closed_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir 180;
-		
-		_newpos = [(_marker select 0) + 4.5, (_marker select 1) - 2.5, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PaperBox_closed_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir 155;
-		
-		_newpos = [(_marker select 0) + 5.5, _marker select 1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PalletTrolley_01_khaki_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir 155;
-		
-		_newpos = [(_marker select 0) - 4.5, _marker select 1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PalletTrolley_01_khaki_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir 55;
-		
-		// Repair
-		_marker = getMarkerPos "service_repair";
-		_mDir = markerDir "service_repair";
-		
-		_trgRepair = createTrigger["EmptyDetector",_marker]; _trgRepair setTriggerArea[20,20,_mDir,false];
-		_trgRepair setTriggerActivation[ServiceSide,"PRESENT",true];
-		_trgRepair setTriggerStatements ["this and ((getpos (thisList select 0)) select 2 < 1) and (time % 5 > 4);", "null = [ (thisList select 0), 'repair', '0'] spawn Fnc_ServiceGlobalExecute;", ""];
-		_trgRepair AttachTo [_marker,[0,0,0]];
-		
-		_newpos = [(_marker select 0) - 7.5, (_marker select 1) - 1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle [GoLServicePod, _objectpos, [], 0, 'CAN_COLLIDE']; NewVehicle = _vehicle; _vehicle SetDir (_mDir) - 60; [GoLRepairPodColour] call Fnc_SetColor; clearWeaponCargoGlobal _vehicle;ClearMagazineCargoGlobal _vehicle;ClearItemCargoGlobal _vehicle;clearBackpackCargoGlobal _vehicle;
-		
-		_trgRepair = createTrigger["EmptyDetector",_marker]; _trgRepair setTriggerArea[20,20,_mDir,false];
-		_trgRepair setTriggerActivation[ServiceSide,"PRESENT",true];
-		_trgRepair setTriggerStatements ["this and ((getpos (thisList select 0)) select 2 < 1) and (time % 5 > 4);", "null = [ (thisList select 0), 'repair', '1'] spawn Fnc_ServiceGlobalExecute;", ""];
-		_trgRepair AttachTo [_vehicle,[0,0,0]]; [_vehicle, "RepairPod"] call Fnc_setName;
-		
-		_newpos = [_marker select 0, (_marker select 1) + 15, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_HelipadCircle_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir _mDir;
-		
-		_newpos = [_marker select 0, (_marker select 1) - 15, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_HelipadCircle_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir _mDir;
-		
-		_newpos = [(_marker select 0) + 3, _marker select 1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PortableLight_double_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) + 180;
-		
-		_newpos = [(_marker select 0) - 1.5, _marker select 1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PortableLight_double_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir 180;
-		
-		_newpos = [(_marker select 0) - 3, _marker select 1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PortableLight_double_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) - 50;
-		
-		_newpos = [(_marker select 0) + 1.5, _marker select 1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_PortableLight_double_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) - 50;
-		
-		_newpos = [(_marker select 0) + 4.5, (_marker select 1) - 2.5, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_CargoBox_V1_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir 155;
-
-		_newpos = [(_marker select 0) + 3, (_marker select 1) - 3, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_ToolTrolley_02_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) + 250;
-		
-		_newpos = [(_marker select 0) + 1, (_marker select 1) - 2.5, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_Workbench_01_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) - 30;
-		
-		_newpos = [(_marker select 0) - 1, (_marker select 1) - 1.9, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_GasTank_02_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) - 30;
-		
-		_newpos = [(_marker select 0) - 1.7, (_marker select 1) - 1.9, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_GasTank_02_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir _mDir;
-		
-		_newpos = [(_marker select 0) - 1.3, (_marker select 1) - 2.5, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_GasTank_02_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) - 160;
-		
-		_newpos = [(_marker select 0) - 4.5, (_marker select 1) - 2.5, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_CargoBox_V1_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) + 250;
-		
-		_newpos = [(_marker select 0) - 2.65, (_marker select 1) - 2.1, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_MetalCase_01_large_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) + 25;
-		
-		_newpos = [(_marker select 0) + 4.5, (_marker select 1) + 2.5, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_CargoBox_V1_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir 155;
-		
-		_newpos = [(_marker select 0) + 1.5, (_marker select 1) + 2.5, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_CargoBox_V1_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir 50;
-		
-		_newpos = [(_marker select 0) - 1, (_marker select 1) + 2.5, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_CargoBox_V1_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir 100;
-
-		_newpos = [(_marker select 0) - 4.5, (_marker select 1) + 2.5, _marker select 2]; _objectpos = _newpos;
-		_vehicle = createVehicle ['Land_CargoBox_V1_F', _objectpos, [], 0, 'CAN_COLLIDE']; _vehicle SetDir (_mDir) + 250;
-
-	};
-};
-
 Fnc_LightsOut = {
 	_marker = _this select 0;
 	_types = ["Land_PortableLight_double_F","Land_PortableLight_single_F","Land_FloodLight_F","Land_NavigLight","Land_NavigLight_3_F","Land_Flush_Light_yellow_F","Land_Flush_Light_red_F","Land_Flush_Light_green_F","Land_runway_edgelight","Land_runway_edgelight_blue_F","Land_Runway_PAPI","Land_Runway_PAPI_2","Land_Runway_PAPI_3","Land_Runway_PAPI_4","Lamps_Base_F","PowerLines_base_F","Land_PowerPoleWooden_F","Land_LampHarbour_F","Land_LampShabby_F","Land_PowerPoleWooden_L_F","Land_PowerPoleWooden_small_F","Land_LampDecor_F","Land_LampHalogen_F","Land_LampSolar_F","Land_LampStreet_small_F","Land_LampStreet_F","Land_LampAirport_F","Land_PowerPoleWooden_L_F","Land_fs_roof_F","Land_fs_sign_F"];
@@ -686,5 +459,3 @@ Fnc_LightsOut = {
 		} forEach _lamps;
 	};
 };
-
-sleep 2;
