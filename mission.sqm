@@ -2504,21 +2504,21 @@ class Mission
 		};
 		class Item7
 		{
-			position[]={450.61292,5,1448.1011};
+			position[]={450.26843,5,1449.4126};
 			name="zone1";
 			text="zone1";
 			type="Empty";
 		};
 		class Item8
 		{
-			position[]={550.69812,5,1448.2651};
+			position[]={550.34436,5,1449.5776};
 			name="zone2";
 			text="zone2";
 			type="Empty";
 		};
 		class Item9
 		{
-			position[]={650.9472,5,1348.6846};
+			position[]={650.58893,5,1449.6938};
 			name="zone3";
 			text="zone3";
 			type="Empty";

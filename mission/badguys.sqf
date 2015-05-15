@@ -1,5 +1,5 @@
 
-if (StartUpBadguys) then {	// Runs at the mission startup
+if (StartUpBadguys) then {	// Runs at the mission start-up
 	ZONE1 = 0;
 	ZONE2 = 0;
 	ZONE3 = 0;
