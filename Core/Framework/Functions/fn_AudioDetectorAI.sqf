@@ -70,8 +70,8 @@
 							};
 						};
 //						[0, {(_this select 0) reveal (_this select 1);}, [_nearAISingle, [player, _revealAmount]]] call CBA_fnc_globalExecute;
-//						[{ _nearAISingle reveal [player, _revealAmount]; }, "code"] call GVL_fnc_RemoteExecuterHC;
-						[{ (_this select 0) reveal (_this select 1); }, "code", [_nearAISingle, [player, _revealAmount]]] call GVL_fnc_RemoteExecuterHC;
+//						[{ _nearAISingle reveal [player, _revealAmount]; }, "code"] call GOL_fnc_RemoteExecuterHC;
+						[{ (_this select 0) reveal (_this select 1); }, "code", [_nearAISingle, [player, _revealAmount]]] call GOL_fnc_RemoteExecuterHC;
 
 					};
 				} forEach _nearAI;

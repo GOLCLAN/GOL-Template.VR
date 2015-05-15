@@ -1,8 +1,8 @@
 
 // ================================================================
-	private ["_moduleGroup","_moduleGroup","_module"];
-	_moduleGroup = createCenter sideLogic;
-	_moduleGroup = createGroup _moduleGroup;
+	private ["_LogicCenter","_moduleGroup","_module"];
+	_LogicCenter = createCenter sideLogic;
+	_moduleGroup = createGroup _LogicCenter;
 
 // ================================================================
 

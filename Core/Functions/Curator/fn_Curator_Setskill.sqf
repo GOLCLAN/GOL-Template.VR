@@ -6,7 +6,7 @@
 // *		The ai gets a skill level of a random value between 0.2 and 0.4
 // *
 // *	Usage:
-// *		[] call GVL_Fnc_Curator_Setskill;
+// *		[] call GOL_Fnc_Curator_Setskill;
 // *
 // *	Parameters:
 // *
@@ -16,12 +16,12 @@
 // ================================================================
 
 	if (!isServer && isMultiplayer) exitWith {false};
-	if (isNil "GVL_CuratorUnitSkillList") then {	GVL_CuratorUnitSkillList = []; };
+	if (isNil "GOL_CuratorUnitSkillList") then {	GOL_CuratorUnitSkillList = []; };
 	{
 		{
-			if !(_x in GVL_CuratorUnitSkillList) then {
+			if !(_x in GOL_CuratorUnitSkillList) then {
 				_x setSkill ([0.2,0.3,0.4] call BIS_fnc_selectRandom);
-				GVL_CuratorUnitSkillList pushBack _x;
+				GOL_CuratorUnitSkillList pushBack _x;
 			};
 		} foreach (curatorEditableObjects _x);
 	} foreach (allCurators);

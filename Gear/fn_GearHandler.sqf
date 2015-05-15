@@ -58,8 +58,7 @@ _this spawn {
 
 	//	The following interpret formats what has been passed to this script element
 	_unit = [_this, 0, player, [objNull]] call BIS_fnc_param;	// Defines the unit
-//	_typeofUnit = [_this, 1, "r", ["",[]]] call BIS_fnc_param;
-	_typeofUnit = toLower ([_this, 1, "r", [""]] call bis_fnc_param);	// What gear the unit should get
+	_typeofUnit = [_this, 1, "r", ["",[]]] call BIS_fnc_param;
 
 	if !(local _unit) exitWith {false};	// Exits if script is not local
 	_isMan = _unit isKindOf "CAManBase";	// We check if we're dealing with a soldier or a vehicle
@@ -136,9 +135,11 @@ _this spawn {
 	//	====================================================================================
 
 	if (_isMan) then {
-		if ((_this select 2) != "") Then {	_unit setVariable ["GVL_GroupID", (_this select 2), true];	};
-		_unit setVariable ["GVL_Loadout", _typeofUnit, true];
-		_unit setVariable ["GVL_Role_Done", false, true];
+		_typeofUnit = toLower ([_typeofUnit, 0, "r", [""]] call bis_fnc_paramIn);
+
+		if ((_this select 2) != "") Then {	_unit setVariable ["GOL_GroupID", (_this select 2), true];	};
+		_unit setVariable ["GOL_Loadout", _typeofUnit, true];
+		_unit setVariable ["GOL_Role_Done", false, true];
 		_unit setVariable ["ACE_Medical_MedicClass", 0, true];	// Is Not Medic
 		_unit setVariable ["ACE_GForceCoef", 0.60, true];	// Is Pilot
 		_unit setVariable ["ACE_hasEarPlugsIn", true, true];

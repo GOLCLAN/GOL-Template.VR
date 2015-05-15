@@ -5,7 +5,7 @@
 // *		Adds all players every active Curator(Zeus module) in the mission
 // *
 // *	Usage:
-// *		[] call GVL_Fnc_Curator_AddPlayers;
+// *		[] call GOL_Fnc_Curator_AddPlayers;
 // *
 // *	Parameters:
 // *

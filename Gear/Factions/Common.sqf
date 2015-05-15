@@ -39,7 +39,7 @@
 			ADD_BACKPACK(_radioBackpack);
 	    };
 	    case "ftl": {
-			ADD_ITEM_LINKED(_radio152);
+			ADD_ITEM_PRIORITY(_radio152);
 			ADD_BACKPACK(_bagRifleman);
 	    };
 	    case "r": {

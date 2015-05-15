@@ -5,7 +5,7 @@
 // *		Dynamicly adds every unit & vehicle on the map to all curators
 // *
 // *	Usage:
-// *		[] call GVL_Fnc_Curator_Units;
+// *		[] call GOL_Fnc_Curator_Units;
 // *
 // *	Parameters:
 // *
