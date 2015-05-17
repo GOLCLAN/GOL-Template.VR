@@ -48,4 +48,3 @@
 				doStop _newGrpUnit;
 		} forEach _Group;
 	};
-

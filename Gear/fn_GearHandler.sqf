@@ -68,7 +68,7 @@ _this spawn {
 	// ================================================================
 	// *	Gear Configurations
 
-	switch ((["Gear", "Blufor"] call GOL_Fnc_GetConfig)) do {
+	switch (("GOL_Params_Faction_West" call BIS_fnc_getParamValue)) do {
 		case 2:	{
 			GOL_Faction_West = "FIA";
 		};
@@ -86,7 +86,7 @@ _this spawn {
 		};
 	};
 
-	switch ((["Gear", "Opfor"] call GOL_Fnc_GetConfig)) do {
+	switch (("GOL_Params_Faction_East" call BIS_fnc_getParamValue)) do {
 		case 2:	{
 			GOL_Faction_East = "Russians";
 		};
@@ -101,7 +101,7 @@ _this spawn {
 		};
 	};
 
-	switch ((["Gear", "Independent"] call GOL_Fnc_GetConfig)) do {
+	switch (("GOL_Params_Faction_Independent" call BIS_fnc_getParamValue)) do {
 		default	{
 			GOL_Faction_Indep = "AAF";
 		};
@@ -139,12 +139,10 @@ _this spawn {
 
 		if ((_this select 2) != "") Then {	_unit setVariable ["GOL_GroupID", (_this select 2), true];	};
 		_unit setVariable ["GOL_Loadout", _typeofUnit, true];
-		_unit setVariable ["GOL_Role_Done", false, true];
 		_unit setVariable ["ACE_Medical_MedicClass", 0, true];	// Is Not Medic
 		_unit setVariable ["ACE_GForceCoef", 0.60, true];	// Is Pilot
 		_unit setVariable ["ACE_hasEarPlugsIn", true, true];
 		_unit setVariable ["BIS_enableRandomization", false];
-
 
 		if (captive _unit) then { _captivity = captiveNum _unit; _unit setCaptive false; } else { _captivity = 0; };
 
@@ -166,15 +164,14 @@ _this spawn {
 		[] call GOL_Fnc_Attachments;
 
 		_unit selectWeapon primaryWeapon _unit;
-		[_unit, _typeofUnit, _Color, (_this select 2)] Spawn {
+		[_unit, _Color] Spawn {
 		    waitUntil {sleep 0.1; !isNull player};
 			_unit = _this select 0;
 			if (!local _unit || !alive _unit) exitWith {false};
 			if (!isMultiplayer || hasInterface) then {
 				_unit switchMove "AmovPknlMstpSlowWrflDnon";
-				_unit setVariable ["GOL_Role_Done", true, true];
 				sleep 2;
-				[_unit, (_this select 2)] call ACE_Interaction_fnc_joinTeam;
+				_unit setVariable ["GOL_UnitColor", (_this select 1)];
 				if (isPlayer _unit) then {
 					if !(isNil "GOL_Gear_Respawn") Then { player removeEventHandler ["respawn", GOL_Gear_Respawn]; };
 					GOL_Gear_Respawn = player addEventHandler ["respawn", { [player, player getVariable "GOL_Loadout"] call GOL_Fnc_GearHandler; } ];

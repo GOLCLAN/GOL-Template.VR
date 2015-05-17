@@ -25,7 +25,9 @@
 			};
 			[] spawn {
 				sleep 5;
-//			    [[[player], { (_this select 0) setGroupId [((_this select 0) getVariable "GOL_GroupID")]; }], "bis_fnc_call", true, true] call BIS_fnc_MP;
+			    [[[player], { (_this select 0) setGroupId [((_this select 0) getVariable "GOL_GroupID")]; }], "bis_fnc_call", true, true] call BIS_fnc_MP;
+				[player, (player getVariable "GOL_UnitColor")] call ACE_Interaction_fnc_joinTeam;
+
 				if ((player getVariable "GOL_Player") select 2) then {
 					{
 						if (_x getVariable "GOL_MHQ_Active") then {
@@ -33,11 +35,6 @@
 						};
 					} forEach MHQArray;
 				};
-
-				waitUntil {sleep 0.1; isnil "GOL_PlayerList"};
-				{
-			    	_x setGroupId [(_x getVariable "GOL_GroupID")];
-				} forEach GOL_PlayerList;
 			};
 		};
 

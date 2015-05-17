@@ -14,7 +14,7 @@
 	class GOL_Params_Faction_West {
 		title = "Selection of West Factions";
 		values[] = {1,2,3,4};
-		texts[] = {"NATO","FIA","USMC","BAF"};
+		texts[] = {"NATO","FIA","USMC","BAF","IDF"};
 		default = getNumber (missionconfigfile >> "GOL_FRAMEWORK" >> "Modules" >> "Gear" >> "Blufor");
 	};
 

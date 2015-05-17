@@ -22,6 +22,9 @@
 				    case "fac": {
 						_strRole = "Forward Air Controller: ";
 				    };
+				    case "sl": {
+						_strRole = "Squad Leader: ";
+				    };
 				    case "ftl": {
 						_strRole = "Fire Team Leader: ";
 				    };

@@ -25,8 +25,8 @@
 		_module setVariable ["AIDamageThreshold", 1, true];
 		_module setVariable ["enableUnconsciousnessAI", false, true]; // 0
 		_module setVariable ["preventInstaDeath", false, true];
-		_module setVariable ["bleedingCoefficient", 1, true];
-		_module setVariable ["painCoefficient", 1, true];
+		_module setVariable ["bleedingCoefficient", 1.5, true];
+		_module setVariable ["painCoefficient", 1.5, true];
 		_module setVariable ["keepLocalSettingsSynced", true, true];
 			GOL_Module_MedicalBasic = _module;
 
@@ -116,6 +116,9 @@
 
 	if (isClass(configFile>>"CfgPatches">>"ACE_Dragging")) then {
 		ACE_maxWeightDrag = 100000; // Removes weight limit
+		ACE_maxWeightCarry = ACE_maxWeightDrag; // Removes weight limit
+		publicVariable "ACE_maxWeightDrag";
+		publicVariable "ACE_maxWeightCarry";
 	};
 
 /*			Is it even working??
@@ -158,11 +161,11 @@
 
 	if (isClass(configFile>>"CfgPatches">>"ACE_Zeus")) then {
 		_module = _moduleGroup createUnit ["ACE_moduleZeusSettings", [0,0,0],[],0.5,"NONE"];
-		_module setVariable ["zeusAscension", false, true];
-		_module setVariable ["zeusBird", false, true];
-		_module setVariable ["remoteWind", false, true];
-		_module setVariable ["radioOrdnance", false, true];
-		_module setVariable ["revealMines", false, true];
+		_module setVariable ["zeusAscension", 0, true];
+		_module setVariable ["zeusBird", 0, true];
+		_module setVariable ["remoteWind", 0, true];
+		_module setVariable ["radioOrdnance", 0, true];
+		_module setVariable ["revealMines", 0, true];
 	};
 
 	if (isClass(configFile>>"CfgPatches">>"A3_Modules_F_Curator")) then {

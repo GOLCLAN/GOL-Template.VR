@@ -7,17 +7,22 @@
 		_nightTime = false;
 	};
 
-	switch (_typeofUnit) do {
-	    case "pl":	{	_Color = "GREEN";	};
-	    case "fac": {	_Color = "YELLOW";	};
-	    case "ftl": {	_Color = "GREEN";	};
-	    case "r":	{	_Color = "RED";		};
-	    case "g":	{	_Color = "RED";		};
-	    case "ag":	{	_Color = "BLUE";	};
-	    case "ar":	{	_Color = "BLUE";	};
-	    case "lr":	{	_Color = "BLUE";	};
-	    case "p":	{	_Color = "YELLOW";	};
-	    default		{	_Color = "WHITE";	};
+	switch (true) do {
+	    case (_typeofUnit in ["pl","sl","ftl"]): {
+			_Color = "GREEN";
+	    };
+	    case (_typeofUnit in ["r","g"]): {
+			_Color = "RED";
+	    };
+	    case (_typeofUnit in ["ag","ar","lr"]): {
+			_Color = "BLUE";
+	    };
+	    case (_typeofUnit in ["fac","p"]): {
+			_Color = "YELLOW";
+	    };
+	    default {
+			_Color = "WHITE";
+	    };
 	};
 
 // ===========================
