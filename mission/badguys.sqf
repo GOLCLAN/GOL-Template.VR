@@ -7,21 +7,15 @@ if (StartUpBadguys) then {	// Runs at the mission start-up
 if (ZONE1 == 1) then {
 	ZONE1 = 2;
 	
-	["zone1", 5, 20, "patrols", 3] spawn Fnc_Populate;
-	
 };
 
 if (ZONE2 == 1) then {
 	ZONE2 = 2;
 	
-	["zone2", 5, 20, "patrols", 3] spawn Fnc_Populate;
-
 };
 
 if (ZONE3 == 1) then {
 	ZONE3 = 2;
-	
-	["zone3", 5, 20, "patrols", 3] spawn Fnc_Populate;
 	
 };
 
@@ -66,11 +60,11 @@ if (ZONE3 == 1) then {
 			
 	---[POPULATE-FUNCTION]---15/05/2015
 	
-			Marker Name, Number of units, Maximum Spawn distance from Marker, Type of units "buildings" or "patrols", Number of Waypoints
+			Marker Name, Number of units, Maximum distance from Marker units can spawn or travel, Type of units "buildings" or "patrols", Number of Waypoints
 			
-			["zone1", 10, 125, "buildings", 3] spawn Fnc_Populate;
+			["zone1", 10, 150, "buildings", 3] spawn Fnc_Populate;
 						
-			["zone2", 5, 20, "patrols", 5] spawn Fnc_Populate;
+			["zone2", 5, 250, "patrols", 5] spawn Fnc_Populate;
 			
 	---[MOBILE-UNITS]---16/05/2015
 
@@ -174,5 +168,22 @@ if (ZONE3 == 1) then {
 		[] call Fnc_CleanUpCivilians;
 		
 		Same as above but this time for the Civilians.
+		
+	--[FACTIONS]--17/05/2015
+	
+		Friendly and enemy factions can be selected using the mission parameters however its possible to override the defaults by editing the description.ext. Like before it's possible to change
+		the enemy faction mid mission by including something like the following in your BadGuys.sqf
+		
+		if (ZONE2 == 1) then {
+			ZONE2 = 2;
+			EnemyUnits = ["GOL_PL_TALI","GOL_SL_TALI","GOL_RM_TALI","GOL_AG_TALI","GOL_AR_TALI"];
+			EnemySnipers = ["GOL_SN_TALI"];
+			EnemyAntiAir = ["GOL_AA_TALI"];
+			EnemySide = EAST;
+			
+			["zone2", 5, 250, "patrols", 5] spawn Fnc_Populate;
+		};
+		
+		A list of the enemy factions can be found here --> \Core\Functions\AI\fn_EnemyFactions.sqf
 
 */
