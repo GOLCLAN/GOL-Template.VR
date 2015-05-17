@@ -5,7 +5,7 @@
 // *	Settings for the mission
 	briefingName = "GOL@108 Template";
 	overviewText = "GOL Template";
-	
+
 	author = "GOL Editing Team";						// shown in loading screen and briefing
 	Mission_version = "1";
 	onLoadName = "";								// Loading screen name
