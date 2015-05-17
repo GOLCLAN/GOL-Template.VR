@@ -25,7 +25,7 @@
 	class GOL_Params_Faction_East {
 		title = "Selection of East Factions";
 		values[] = {1,2,3,4};
-		texts[] = {"CSAT","Russians","Guerilla (Not avilable atm)","Insurgents (Not avilable atm)"};
+		texts[] = {"CSAT","Russians","Guerilla","Insurgents"};
 		default = (getNumber (missionconfigfile >> "GOL_FRAMEWORK" >> "Modules" >> "Gear" >> "Opfor"));
 	};
 

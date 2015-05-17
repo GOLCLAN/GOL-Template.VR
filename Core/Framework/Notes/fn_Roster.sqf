@@ -12,7 +12,7 @@
 	_unitsArr = GOL_PlayerList;
 
 	{
-		if(side _x == side player) then {
+		if(side _x isEqualTo side player) then {
 			_newGrp = group _x;
 			if !(isNil {_x getVariable "GOL_Loadout"}) then {
 				switch (_x getVariable "GOL_Loadout") do {

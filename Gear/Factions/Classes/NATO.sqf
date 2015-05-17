@@ -16,27 +16,27 @@ _weaponCamo = {
 			_rifle = "arifle_MX_pointer_F";
 			_rifle_mag = "30Rnd_65x39_caseless_mag";
 			_rifle_mag_tr = "30Rnd_65x39_caseless_mag_Tracer";
-				_primaryRifle = ["FHQ_optic_HWS","acc_pointer_IR"];
+				_primaryRifle = ["FHQ_optic_HWS","GVL_X2000_point"];
 
 			_rifleGL = "arifle_MX_GL_F";
 			_rifleGL_mag = "30Rnd_65x39_caseless_mag";
 			_rifleGL_mag_tr = "30Rnd_65x39_caseless_mag_Tracer";
-				_primaryRifleGL = ["FHQ_optic_HWS","acc_pointer_IR"];
+				_primaryRifleGL = ["FHQ_optic_HWS","GVL_X2000_point"];
 
 			_rifleALT = "arifle_MXC_F";
 			_rifleALT_mag = "30Rnd_65x39_caseless_mag";
 			_rifleALT_mag_tr = "30Rnd_65x39_caseless_mag_Tracer";
-				_primaryRifleALT = ["FHQ_optic_HWS","acc_pointer_IR"];
+				_primaryRifleALT = ["FHQ_optic_HWS","GVL_X2000_point"];
 
 			_carbine = "hgun_PDW2000_F";
 			_carbine_mag = "30Rnd_9x21_Mag";
 			_carbine_mag_tr = "30Rnd_9x21_Mag";
-				_primaryCarbine = ["FHQ_optic_HWS","acc_pointer_IR"];
+				_primaryCarbine = ["FHQ_optic_HWS","GVL_X2000_point"];
 
 			_LMG = "asdg_LMG_Mk200_F";
 			_LMG_mag = "200Rnd_65x39_cased_Box";
 			_LMG_mag_tr = "200Rnd_65x39_cased_Box";
-				_primaryLMG = ["FHQ_optic_HWS","acc_pointer_IR","bipod_01_F_snd"];
+				_primaryLMG = ["FHQ_optic_HWS","GVL_X2000_point","bipod_01_F_snd"];
 
 			// Rifleman AT
 			_LAT = "launch_NLAW_F";
@@ -56,28 +56,28 @@ _weaponCamo = {
 			_rifle = "arifle_MX_Black_F";
 			_rifle_mag = "30Rnd_65x39_caseless_mag";
 			_rifle_mag_tr = "30Rnd_65x39_caseless_mag_Tracer";
-				_primaryRifle = ["FHQ_optic_HWS","acc_pointer_IR"];
+				_primaryRifle = ["FHQ_optic_HWS","GVL_X2000_point"];
 
 			_rifleGL = "arifle_MX_GL_Black_F";
 			_rifleGL_mag = "30Rnd_65x39_caseless_mag";
 			_rifleGL_mag_tr = "30Rnd_65x39_caseless_mag_Tracer";
 
-				_primaryRifleGL = ["FHQ_optic_HWS","acc_pointer_IR"];
+				_primaryRifleGL = ["FHQ_optic_HWS","GVL_X2000_point"];
 
 			_rifleALT = "arifle_MXC_Black_F";
 			_rifleALT_mag = "30Rnd_65x39_caseless_mag";
 			_rifleALT_mag_tr = "30Rnd_65x39_caseless_mag_Tracer";
-				_primaryRifleALT = ["FHQ_optic_HWS","acc_pointer_IR"];
+				_primaryRifleALT = ["FHQ_optic_HWS","GVL_X2000_point"];
 
 			_carbine = "hgun_PDW2000_F";
 			_carbine_mag = "30Rnd_9x21_Mag";
 			_carbine_mag_tr = "30Rnd_9x21_Mag";
-				_primaryCarbine = ["FHQ_optic_HWS","acc_pointer_IR"];
+				_primaryCarbine = ["FHQ_optic_HWS","GVL_X2000_point"];
 
 			_LMG = "asdg_LMG_Mk200_F";
 			_LMG_mag = "200Rnd_65x39_cased_Box";
 			_LMG_mag_tr = "200Rnd_65x39_cased_Box";
-				_primaryLMG = ["FHQ_optic_HWS","acc_pointer_IR","bipod_01_F_blk"];
+				_primaryLMG = ["FHQ_optic_HWS","GVL_X2000_point","bipod_01_F_blk"];
 
 			// Rifleman AT
 			_LAT = "launch_NLAW_F";

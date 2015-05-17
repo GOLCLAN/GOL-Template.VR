@@ -24,12 +24,6 @@
 
 // *	GOL Variables
 		startTime = time;
-		if (isServer) then {
-			StartUpBadguys = true;
-			[] call compile preprocessFileLineNumbers "mission\BadGuys.sqf";
-			StartUpBadguys = false;
-			publicVariable "StartUpBadguys";
-		};
 
 		if (hasInterface) then {	// * Client
 			setViewDistance 1500;	// * View distance
@@ -40,6 +34,12 @@
 			setViewDistance 2000;	// * View distance, affects AI and performance
 			setObjectViewDistance 1500;	// * Object distance, affects AI and performance
 			setTerrainGrid	3.125;	// * Terrain grid (grass)
+			if (isServer) then {
+				StartUpBadguys = true;
+				[] call compile preprocessFileLineNumbers "mission\BadGuys.sqf";
+				StartUpBadguys = false;
+				publicVariable "StartUpBadguys";
+			};
 		};
 
 // ================================================================

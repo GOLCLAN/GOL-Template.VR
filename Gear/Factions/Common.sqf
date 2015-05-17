@@ -7,7 +7,12 @@
 	    default {		ADD_Uniform(_baseHelmet,_baseUniform,_baseVest,_baseGlasses);		};
 	};
 
-	if(_nightTime && _AllowNVG) Then {	ADD_ITEM_LINKED(_nvg);	};
+	if(_nightTime && _AllowNVG) Then {
+		ADD_ITEM_LINKED(_nvg);
+		if (_typeofUnit in ["pl","fac","sl","ftl"]) then {
+			ADD_ITEM_PRIORITY(_IRStrobe);
+		};
+	};
 
 	ADD_ITEM_LINKED(_map);
 	ADD_ITEM_LINKED(_compass);

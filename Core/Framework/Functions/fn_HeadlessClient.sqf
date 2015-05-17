@@ -34,7 +34,7 @@
 		} else {
 			switch (HeadlessVariable) do {
 			    case true: {
-					(!isServer) && {player == HCSlot}
+					(!isServer) && {player isEqualTo HCSlot}
 			    };
 			    case false: {
 					isServer
@@ -52,7 +52,7 @@
 			} else {
 				switch (HeadlessVariable) do {
 				    case true: {
-						(!isServer) && {player == HCSlot2}
+						(!isServer) && {player isEqualTo HCSlot2}
 				    };
 				    case false: {
 						isServer

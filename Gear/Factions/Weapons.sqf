@@ -10,17 +10,17 @@
 			_primaryAttachments = _primaryRifleGL;
 	    };
 
-	    case (_typeofUnit == "ar"): {
+	    case (_typeofUnit isEqualTo "ar"): {
 			[[_LMG]] call GOL_Fnc_AddObjects;
 			_primaryAttachments = _primaryLMG;
 	    };
 
-	    case (_typeofUnit == "lr"): {
+	    case (_typeofUnit isEqualTo "lr"): {
 			[[_rifleALT]] call GOL_Fnc_AddObjects;
 			_primaryAttachments = _primaryRifle;
 	    };
 
-	    case (_typeofUnit == "p"): {
+	    case (_typeofUnit isEqualTo "p"): {
 			[[_carbine]] call GOL_Fnc_AddObjects;
 			_primaryAttachments = _primaryCarbine;
 	    };

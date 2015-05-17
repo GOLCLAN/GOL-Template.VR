@@ -16,27 +16,27 @@ _weaponCamo = {
 			_rifle = "arifle_Katiba_F";
 			_rifle_mag = "30Rnd_65x39_caseless_green";
 			_rifle_mag_tr = "30Rnd_65x39_caseless_green_mag_Tracer";
-				_primaryRifle = ["optic_ACO_grn","acc_pointer_IR"];
+				_primaryRifle = ["optic_ACO_grn","GVL_X2000_point"];
 
 			_rifleGL = "arifle_Katiba_GL_F";
 			_rifleGL_mag = "30Rnd_65x39_caseless_green";
 			_rifleGL_mag_tr = "30Rnd_65x39_caseless_green_mag_Tracer";
-				_primaryRifleGL = ["optic_ACO_grn","acc_pointer_IR"];
+				_primaryRifleGL = ["optic_ACO_grn","GVL_X2000_point"];
 
 			_rifleALT = "arifle_Katiba_C_F";
 			_rifleALT_mag = "30Rnd_65x39_caseless_green";
 			_rifleALT_mag_tr = "30Rnd_65x39_caseless_green_mag_Tracer";
-				_primaryRifleALT = ["optic_ACO_grn","acc_pointer_IR"];
+				_primaryRifleALT = ["optic_ACO_grn","GVL_X2000_point"];
 
 			_carbine = "SMG_02_F";
 			_carbine_mag = "30Rnd_9x21_Mag";
 			_carbine_mag_tr = "30Rnd_9x21_Mag";
-				_primaryCarbine = ["optic_ACO_grn","acc_pointer_IR"];
+				_primaryCarbine = ["optic_ACO_grn","GVL_X2000_point"];
 
 			_LMG = "asdg_LMG_Zafir_F";
 			_LMG_mag = "150Rnd_762x54_Box";
 			_LMG_mag_tr = "150Rnd_762x54_Box_Tracer";
-				_primaryLMG = ["optic_ACO_grn","acc_pointer_IR"];
+				_primaryLMG = ["optic_ACO_grn","GVL_X2000_point"];
 
 			// Rifleman AT
 			_LAT = "launch_RPG32_F";

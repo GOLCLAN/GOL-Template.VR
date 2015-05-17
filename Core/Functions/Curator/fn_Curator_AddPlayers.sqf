@@ -25,5 +25,5 @@
 					_curator addCuratorEditableObjects [[_x],true];
 				};
 			};
-		} foreach (call CBA_Fnc_Players + switchableUnits);
+		} foreach GOL_PlayerList;
 	} foreach (allCurators);

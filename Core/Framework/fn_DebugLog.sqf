@@ -25,29 +25,29 @@
 // *
 // ================================================================
 
-	if (!(count _this == 2) && !(count _this == 3)) exitWith { diag_log profilename + " / GOL_Fnc_DebugLog: Error Params"; false };
+	if (!(count _this isEqualTo 2) && !(count _this isEqualTo 3)) exitWith { diag_log profilename + " / GOL_Fnc_DebugLog: Error Params"; false };
 	private ["_message","_debugging","_file","_line","_scriptName","_text","_output"];
 	_message = [_this, 0, "Error Message", ["",[]]] call BIS_fnc_param;
 	_debugging = [_this, 1, ["Name Not Found","File Not Found","Line Not Found"], [[]]] call BIS_fnc_param;
 	_type = toLower ([_this, 2, "", [""]] call BIS_fnc_param);
 	_extreme = false;
-	if ((count _debugging) == 2) then {
+	if ((count _debugging) isEqualTo 2) then {
 		_file = [_debugging, 0] call BIS_fnc_paramIn;
 		_line = [_debugging, 1] call BIS_fnc_paramIn;
 		_scriptName = _file;
 	};
 
-	if ((count _debugging) == 3) then {
+	if ((count _debugging) isEqualTo 3) then {
 		_scriptName = [_debugging, 0] call BIS_fnc_paramIn;
 		_file = [_debugging, 1] call BIS_fnc_paramIn;
 		_line = [_debugging, 2] call BIS_fnc_paramIn;
 	};
 
-	if (typeName _message == "STRING") then {
+	if (typeName _message isEqualTo "STRING") then {
 		_text = ([_this, 0] call BIS_fnc_param);
 	};
 
-	if (typeName _message == "ARRAY") then {
+	if (typeName _message isEqualTo "ARRAY") then {
 		_text = format([_this, 0] call BIS_fnc_param);
 	};
 
@@ -93,18 +93,18 @@
 
 // ================================================================
 
-	if (count _this == 2) then {
+	if (count _this isEqualTo 2) then {
 
-		if (GOL_Debug == 1) then {	// Minimum
+		if (GOL_Debug isEqualTo 1) then {	// Minimum
 			_this call _log;
 		};
 
-		if (GOL_Debug == 2) then {	// Maximum
+		if (GOL_Debug isEqualTo 2) then {	// Maximum
 			_this call _log;
 			_this call _system;
 		};
 
-		if (GOL_Debug == 3) then {	// Maximum in editor, else nuting
+		if (GOL_Debug isEqualTo 3) then {	// Maximum in editor, else nuting
 
 			if !(isMultiplayer) then {
 				_this call _log;
@@ -115,13 +115,13 @@
 
 	} else {
 
-		if (_type == "log" || _type == "rtp") then {	_this call _log;	};
+		if (_type isEqualTo "log" || _type isEqualTo "rtp") then {	_this call _log;	};
 
-		if (_type == "hint") then {	_this call _hint;	};
+		if (_type isEqualTo "hint") then {	_this call _hint;	};
 
-		if (_type == "system" || _type == "chat" || _type == "side") then {	_this call _system;	};
+		if (_type isEqualTo "system" || _type isEqualTo "chat" || _type isEqualTo "side") then {	_this call _system;	};
 
-		if (_type == "both") then {	_this call _system;	_this call _log;	};
+		if (_type isEqualTo "both") then {	_this call _system;	_this call _log;	};
 
 	};
 	true

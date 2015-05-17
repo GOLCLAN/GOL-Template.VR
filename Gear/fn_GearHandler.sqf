@@ -143,6 +143,8 @@ _this spawn {
 		_unit setVariable ["ACE_Medical_MedicClass", 0, true];	// Is Not Medic
 		_unit setVariable ["ACE_GForceCoef", 0.60, true];	// Is Pilot
 		_unit setVariable ["ACE_hasEarPlugsIn", true, true];
+		_unit setVariable ["BIS_enableRandomization", false];
+
 
 		if (captive _unit) then { _captivity = captiveNum _unit; _unit setCaptive false; } else { _captivity = 0; };
 
@@ -237,7 +239,7 @@ _this spawn {
 		};
 	};
 
-	if (!isMultiplayer && !(_unit == player) && _isMan) exitWith {false};	// Prevents ai spaming the rpt
+	if (!isMultiplayer && !(_unit isEqualTo player) && _isMan) exitWith {false};	// Prevents ai spaming the rpt
 	_DebugName = "GOL_Fnc_GearHandler";
 	scriptName _DebugName;
 	[["Unit: %1 || Loadout: %2 ",_unit, _typeofUnit],[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;

@@ -16,27 +16,27 @@ _weaponCamo = {
 			_rifle = "CUP_arifle_L85A2";
 			_rifle_mag = "CUP_30Rnd_556x45_Stanag";
 			_rifle_mag_tr = "CUP_30Rnd_556x45_Stanag";
-				_primaryRifle = ["CUP_optic_Eotech533","acc_pointer_IR"];
+				_primaryRifle = ["CUP_optic_Eotech533","GVL_X2000_point"];
 
 			_rifleGL = "CUP_arifle_L85A2_GL";
 			_rifleGL_mag = "CUP_30Rnd_556x45_Stanag";
 			_rifleGL_mag_tr = "CUP_30Rnd_556x45_Stanag";
-				_primaryRifleGL = ["CUP_optic_Eotech533","acc_pointer_IR"];
+				_primaryRifleGL = ["CUP_optic_Eotech533","GVL_X2000_point"];
 
 			_rifleALT = "CUP_arifle_L86A2";
 			_rifleALT_mag = "CUP_30Rnd_556x45_Stanag";
 			_rifleALT_mag_tr = "CUP_30Rnd_556x45_Stanag";
-				_primaryRifleALT = ["CUP_optic_Eotech533","acc_pointer_IR"];
+				_primaryRifleALT = ["CUP_optic_Eotech533","GVL_X2000_point"];
 
 			_carbine = "CUP_arifle_L85A2";
 			_carbine_mag = "CUP_30Rnd_556x45_Stanag";
 			_carbine_mag_tr = "CUP_30Rnd_55645_Stanag";
-				_primaryCarbine = ["CUP_optic_Eotech533","acc_pointer_IR"];
+				_primaryCarbine = ["CUP_optic_Eotech533","GVL_X2000_point"];
 
 			_LMG = "CUP_lmg_M249_para";
 			_LMG_mag = "CUP_200Rnd_TE4_Red_Tracer_556x45_M249";
 			_LMG_mag_tr = "CUP_200Rnd_TE4_Red_Tracer_556x45_M249";
-				_primaryLMG = ["CUP_optic_Eotech533","acc_pointer_IR"];
+				_primaryLMG = ["CUP_optic_Eotech533","GVL_X2000_point"];
 
 			// Rifleman AT
 			_LAT = "CUP_launch_NLAW";

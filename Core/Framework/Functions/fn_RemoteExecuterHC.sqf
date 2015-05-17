@@ -40,20 +40,20 @@
 				_params = [_this, 2, 0] call BIS_fnc_param;	//	Spawns Script or Function with params
 
 				//	SCRIPTS
-				if (_type == "execVM" || _type == "exec") then {
+				if (_type isEqualTo "execVM" || _type isEqualTo "exec") then {
 					_Script call compile _function;
 					_execute = _params execVM _Script;
 				};
 				//	Functions - Call
-				if (_type == "call") then {
+				if (_type isEqualTo "call") then {
 					_execute = _params call _function;
 				};
 				//	Functions - Spawn
-				if (_type == "spawn") then {
+				if (_type isEqualTo "spawn") then {
 					_execute = _params spawn _function;
 				};
 				//	Functions - Code
-				if (_type == "code") then {
+				if (_type isEqualTo "code") then {
 					_execute = _function;
 				};
 			}], "BIS_fnc_call", HCSlot] call BIS_fnc_MP;
@@ -66,20 +66,20 @@
 			_params = [_this, 2, 0] call BIS_fnc_param;	//	Spawns Script or Function with params
 
 			//	SCRIPTS
-			if (_type == "execVM" || _type == "exec") then {
+			if (_type isEqualTo "execVM" || _type isEqualTo "exec") then {
 				_Script call compile _function;
 				_execute = _params execVM _Script;
 			};
 			//	Functions - Call
-			if (_type == "call") then {
+			if (_type isEqualTo "call") then {
 				_execute = _params call _function;
 			};
 			//	Functions - Spawn
-			if (_type == "spawn") then {
+			if (_type isEqualTo "spawn") then {
 				_execute = _params spawn _function;
 			};
 			//	Functions - Code
-			if (_type == "code") then {
+			if (_type isEqualTo "code") then {
 				_execute = _function;
 			};
 		};

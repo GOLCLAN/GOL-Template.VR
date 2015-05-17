@@ -186,12 +186,12 @@
 /*
 	[GOL_Gamelogic] call GOL_Fnc_CacheObjects;
 	[GOL_Gamelogic] call GOL_Fnc_CacheVehicles;
-	if (["Cache","Enabled"] call GOL_Fnc_GetConfig == 1) then {
+	if (["Cache","Enabled"] call GOL_Fnc_GetConfig isEqualTo 1) then {
 		[GOL_Gamelogic] call GOL_Fnc_FPS_Manager;
 	};
 */
 
-	if (["Lightning"] call GOL_Fnc_GetConfig == 1) then {
+	if (["Lightning"] call GOL_Fnc_GetConfig isEqualTo 1) then {
 		GOL_Lightning_Active = true;
 	};
 

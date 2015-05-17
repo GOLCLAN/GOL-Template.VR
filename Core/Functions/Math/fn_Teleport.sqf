@@ -23,11 +23,11 @@
 	_dest = [_this, 1, objNull, [objNull,""]] call BIS_fnc_param;
 
 	_Teleportar = {
-		if (typeName _dest == "STRING") Then {
+		if (typeName _dest isEqualTo "STRING") Then {
 			_unit setPos ([[getMarkerPos _dest select 0, getMarkerPos _dest select 1, (getMarkerPos _dest select 2) + 0.1], 5, markerDir _dest - 180] call BIS_fnc_relPos);
 		};
 
-		if (typeName _dest == "OBJECT") Then {
+		if (typeName _dest isEqualTo "OBJECT") Then {
 			_unit setPos ([[getPosATL _dest select 0, getPosATL _dest select 1, (getPosATL _dest select 2) + 0.1], 5, getDir _dest - 180] call BIS_fnc_relPos);
 			player setDir ([player, _dest] call BIS_fnc_dirTo);
 		};
@@ -40,7 +40,7 @@
 			["Teleported to MHQ's cargo", 5] call GOL_Fnc_Hint;
 			_unit moveInCargo _dest;
 		} else {
-			if (!isengineOn _dest || (speed _dest) == 0) Then {
+			if (!isengineOn _dest || (speed _dest) isEqualTo 0) Then {
 				["The MHQ is stationary", 5] call GOL_Fnc_Hint;
 				[] call _Teleportar;
 			} else {

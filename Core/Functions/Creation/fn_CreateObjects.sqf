@@ -29,7 +29,7 @@
 		_Array = [];
 		_Objects = [];
 		{
-			if !(typeName _x == "STRING") then {
+			if !(typeName _x isEqualTo "STRING") then {
 				_Objects pushBack _x;
 			};
 		} forEach _this;
@@ -52,7 +52,7 @@
 					_veh setVectorUp surfaceNormal position _veh;
 				};
 
-			if (typeName (_this select 0) == "STRING") then {
+			if (typeName (_this select 0) isEqualTo "STRING") then {
 				_name = format ["Object_Array_%1",Objectcounter];
 				_veh setVehicleVarName _name;
 				_Array pushBack _veh;
@@ -64,8 +64,8 @@
 			};
 		} forEach _Objects;
 
-		if (typeName (_this select 0) == "STRING") then {
-			waitUntil {(count _Objects) == (count _Array)};
+		if (typeName (_this select 0) isEqualTo "STRING") then {
+			waitUntil {(count _Objects) isEqualTo (count _Array)};
 			missionNamespace setVariable [(_this select 0), _Array];
 		};
 	};

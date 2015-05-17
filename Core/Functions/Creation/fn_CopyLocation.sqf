@@ -27,7 +27,7 @@
 
 	_switch = [_this, 0, "up", [true,""]] call BIS_fnc_param;
 
-	if (typeName _switch == "") Then {	tolower (_switch);	};
+	if (typeName _switch isEqualTo "") Then {	tolower (_switch);	};
 
 	_DebugName = "GOL_Fnc_CopyLocation";
 	scriptName _DebugName;

@@ -35,7 +35,7 @@
 	_count = 0;
 
 	_distance = [_this, 0, 100, ["",0]] call BIS_fnc_param;
-	if (typeName _distance == "STRING") then {
+	if (typeName _distance isEqualTo "STRING") then {
 		_CopyObjects pushBack _distance;
 		_distance = [_this, 1, 100, [0]] call BIS_fnc_param;
 	};

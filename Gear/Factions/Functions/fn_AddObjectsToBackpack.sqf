@@ -25,13 +25,13 @@
 		_item = (_x select 0);
 		_number = (_x select 1);
 
-		if (([_item] call BIS_fnc_itemType select 0) == "Item") then {
+		if (([_item] call BIS_fnc_itemType select 0) isEqualTo "Item") then {
 			(unitBackpack _unit) addItemCargoGlobal [_item, _number];
 		};
-		if (([_item] call BIS_fnc_itemType select 0) == "Magazine") then {
+		if (([_item] call BIS_fnc_itemType select 0) isEqualTo "Magazine") then {
 			(unitBackpack _unit) addMagazineCargoGlobal [_item,_number]
 		};
-		if (([_item] call BIS_fnc_itemType select 0) == "Weapon") then {
+		if (([_item] call BIS_fnc_itemType select 0) isEqualTo "Weapon") then {
 			(unitBackpack _unit) addWeaponCargoGlobal [_item, _number];
 		};
 	} forEach _Group;

@@ -43,7 +43,7 @@
 							_revealAmount = _revealAmount + 1.0;
 							//AI has a radio
 							{
-								if ((side _x == _sideAI) && !(isplayer _x)) then {
+								if ((side _x isEqualTo _sideAI) && !(isplayer _x)) then {
 									_sideUnits = _sideUnits + [_x];
 								};
 							} foreach allunits;

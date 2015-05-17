@@ -4,6 +4,7 @@
 		scriptName _DebugName;
 		if (isServer) then {
 			[] spawn {
+				GOL_PlayerList = [];
 				GOL_PersistentArray = [];
 				GOL_CacheObject_Rescan = false;
 				GOL_CacheVehicle_Rescan = false;
@@ -18,16 +19,18 @@
 						_players = switchableUnits;
 					};
 					if !(cameraOn in _players) then {	_players pushBack cameraOn;	};
-					GOL_PlayerList = _players;
-					publicVariable "GOL_PlayerList";
+					if !(_players isEqualTo GOL_PlayerList) then {
+						GOL_PlayerList = _players;
+						publicVariable "GOL_PlayerList";
+					};
 					sleep 5;
 				};
 			};
 			[] spawn {
-				{ _x disableai "MOVE"; }ForEach (playableUnits + switchableUnits);
 //				[500] spawn GOL_Fnc_LightningRandom;
-				while {true} do {
-//					sleep 10;
+				{ _x disableai "MOVE"; }ForEach (playableUnits + switchableUnits);
+				while {true} do {	// sleeps to prevent exectuted of everything at the sametime
+					sleep 10;
 					if (fog > 0.02) then {setviewDistance (viewDistance * (1 - fog))};
 					[] call GOL_fnc_Curator_Setskill;
 					sleep 10;

@@ -24,7 +24,7 @@
 	_DebugName = "GOL_Fnc_AddWeaponCargo";
 	scriptName _DebugName;
 
-	if !(typeName _unit == "OBJECT") exitWith {
+	if !(typeName _unit isEqualTo "OBJECT") exitWith {
 		["Error: Unit not Object: || %1 || %2  || %3 ||", _unit, _item, _number] call BIS_fnc_error;
 		false
 	};
@@ -34,7 +34,7 @@
 		false
 	};
 
-	if (_item == "") exitWith {
+	if (_item isEqualTo "") exitWith {
 		["Error: String Empty (Item): || %1 || %2 || %3 ||", _unit, _item, _number] call BIS_fnc_error;
 		false
 	};
