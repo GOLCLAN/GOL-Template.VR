@@ -1,12 +1,15 @@
-if (StartUpBadguys) then {	// Runs at the mission start-up
-	ZONE1 = 0;
-	ZONE2 = 0;
-	ZONE3 = 0;
-};
+// if (StartUpBadguys) then {	// Runs at the mission start-up
+	// ZONE1 = 0;
+	// ZONE2 = 0;
+	// ZONE3 = 0;
+	if (isNil ("ZONE1")) then { ZONE1 = 0; };
+	if (isNil ("ZONE2")) then { ZONE2 = 0; };
+	if (isNil ("ZONE3")) then { ZONE3 = 0; };
+// };
 
 if (ZONE1 == 1) then {
 	ZONE1 = 2;
-	
+
 };
 
 if (ZONE2 == 1) then {
@@ -60,7 +63,7 @@ if (ZONE3 == 1) then {
 			
 	---[POPULATE-FUNCTION]---15/05/2015
 	
-			Marker Name, Number of units, Maximum distance from Marker units can spawn or travel, Type of units "buildings" or "patrols", Number of Waypoints
+			Marker Name, Number of units, Maximum distance from Marker units can spawn or travel, Type of units "buildings" or "patrols", Number of units in each group
 			
 			["zone1", 10, 150, "buildings", 3] spawn Fnc_Populate;
 						

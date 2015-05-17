@@ -29,7 +29,7 @@ Fnc_Populate = {
 		};
 	
 		if (PopulateType == 1) then {
-			GoLUnitCount = GoLUnitCount + 4; sleep 2;
+			GoLUnitCount = GoLUnitCount + _groupsize; sleep 2; //hint format["%1", GoLUnitCount];
 			["DeathSquad", _marker, _groupsize] call Fnc_SpawnGroup;
 			[NewGroup, _marker, _radius, 7, "MOVE", "NORMAL", "RED", "LIMITED", "FILE", "", [3,6,9]] call CBA_fnc_taskPatrol;
 		};
