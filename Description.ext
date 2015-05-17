@@ -56,7 +56,7 @@
 				#define	SelectFromParams	true;	// Allow Admin to select faction from the lobby screen | Disable remove entire line
 //				FullGear = false;	// BOOL:	True: Respawned player will respawn with original gear	| False: Player will respawn with what they had when they died
 				Camoflage = 0;		// BOOL:	0: Woodland	| 1: Desert
-				Blufor = 5;			// NUMBER:	1: NATO	| 2: FIA		| 3: USMC		|	4: BAF			|	5: IDF			|
+				Blufor = 3;			// NUMBER:	1: NATO	| 2: FIA		| 3: USMC		|	4: BAF			|	5: IDF			|
 				Opfor = 1;			// NUMBER:	1: CSAT	| 2: Russians	| 3: Guerilla	|	4: Insurgents	|
 				Independent = 1;	// NUMBER:	1: AAF	|
 			};
