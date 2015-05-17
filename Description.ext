@@ -4,7 +4,7 @@
 
 // *	Settings for the mission
 	briefingName = "GOL@108 Template";
-	overviewText = "Testing Version of the Template and all its content";
+	overviewText = "GOL Template";
 
 	author = "GOL Editing Team";						// shown in loading screen and briefing
 	Mission_version = "1";
@@ -12,8 +12,8 @@
 	onLoadMission = "";								// Loading screen text
 	loadScreen = "gol_menu\Media\loading.jpg";
 
-	respawn = "BASE";			// Respawn type
-	respawndelay = 30;			// Respawn Time
+	respawn = "BASE";			// Re-spawn type
+	respawndelay = 30;			// Re-spawn Time
 	respawnOnStart = 0;
 
 	class Header {
