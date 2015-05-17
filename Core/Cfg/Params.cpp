@@ -6,6 +6,7 @@
 // *	Use this link to get a better understanding of what it does and what you can change
 // *	https://community.bistudio.com/wiki/Arma_3_Mission_Parameters
 // *
+
 // ====================================================================================
 // *
 // *	Selects the faction for Blufor to use by players
@@ -13,7 +14,7 @@
 #ifdef SelectFromParams
 	class GOL_Params_Faction_West {
 		title = "Selection of West Factions";
-		values[] = {1,2,3,4};
+		values[] = {1,2,3,4,5};
 		texts[] = {"NATO","FIA","USMC","BAF","IDF"};
 		default = getNumber (missionconfigfile >> "GOL_FRAMEWORK" >> "Modules" >> "Gear" >> "Blufor");
 	};
