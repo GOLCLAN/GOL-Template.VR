@@ -1,10 +1,11 @@
 // *	DO NOT CHANCE THE ORDER/STRUCTIOR OF THE FILE
-// https://community.bistudio.com/wiki/Description.ext
+// https://community.bistudio.com/wiki/description.ext
 // ==============================================================================
 
 // *	Settings for the mission
 	briefingName = "GOL@108 Template";
 	overviewText = "GOL Template";
+	loadScreen = "gol_menu\Media\loading.jpg";
 
 	author = "GOL Editing Team";						// shown in loading screen and briefing
 	Mission_version = "1";
