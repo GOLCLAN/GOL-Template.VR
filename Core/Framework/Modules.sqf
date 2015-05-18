@@ -168,6 +168,12 @@
 		_module setVariable ["revealMines", 0, true];
 	};
 
+	if (isClass(configFile>>"CfgPatches">>"DAC_Source")) then {
+		if (["DAC_Config"] call GOL_Fnc_GetConfig isEqualTo 1) then {
+			_module = _moduleGroup createUnit ["DAC_Source_Extern", [0,0,0],[],0.5,"NONE"];
+		};
+	};
+
 	if (isClass(configFile>>"CfgPatches">>"A3_Modules_F_Curator")) then {
 
 		_module = _moduleGroup createUnit["ModuleCurator_F",[0,0,0],[],0,"NONE"];

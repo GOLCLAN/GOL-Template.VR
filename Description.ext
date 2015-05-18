@@ -35,12 +35,13 @@
 	class GOL_FRAMEWORK {
 
 		class Modules {
-			Debug_Config = 2;		// NUMBER:	| 0: Disabled
+			Debug_Config = 3;		// NUMBER:	| 0: Disabled
 									//			| 1: Light Debug  -	Only show messages in rtp file
 									//			| 2: Advanced Debug - Shows information on screen as well as in rtp file
 									//			| 3: Advanced Debug - Only in the mission editor
-			ASR_Config = false;		// BOOL: True: Enable custom ASR AI configs || False: Uses the server configs
-			Lightning = false;		// BOOL: True: Enables deadly lightning around players, Default 500m in radius
+//			Lightning = false;		// BOOL: True: Enables deadly lightning around players, Default 500m in radius
+//			ASR_Config = false;		// BOOL: True: Enable custom ASR AI configs || False: Uses the server configs
+			DAC_Config = false;	// BOOL: True: Enables DAC and its content
 			Default_AI = "GOLUS";	// STRING: Defines the default ai faction from the start of the mission
 			// ==============================================================================
 			// *			Side: West
@@ -57,8 +58,8 @@
 				#define	SelectFromParams	true;	// Allow Admin to select faction from the lobby screen | Disable remove entire line
 //				FullGear = false;	// BOOL:	True: Respawned player will respawn with original gear	| False: Player will respawn with what they had when they died
 				Camoflage = 0;		// BOOL:	0: Woodland	| 1: Desert
-				Blufor = 5;			// NUMBER:	1: NATO	| 2: FIA		| 3: USMC		|	4: BAF			|	5: IDF			|
-				Opfor = 5;			// NUMBER:	1: CSAT	| 2: Russians	| 3: Guerilla	|	4: Insurgents	|
+				Blufor = 3;			// NUMBER:	1: NATO	| 2: FIA		| 3: USMC		|	4: BAF			|	5: IDF			|
+				Opfor = 1;			// NUMBER:	1: CSAT	| 2: Russians	| 3: Guerilla	|	4: Insurgents	|
 				Independent = 1;	// NUMBER:	1: AAF	|
 			};
 		};

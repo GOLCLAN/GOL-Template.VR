@@ -25,8 +25,8 @@
 			};
 			[] spawn {
 				sleep 5;
-			    [[[player], { (_this select 0) setGroupId [((_this select 0) getVariable "GOL_GroupID")]; }], "bis_fnc_call", true, true] call BIS_fnc_MP;
-				[player, (player getVariable "GOL_UnitColor")] call ACE_Interaction_fnc_joinTeam;
+			    [[[player], { (_this select 0) setGroupId [((_this select 0) getVariable "GOL_Loadout") select 2]; }], "bis_fnc_call", true, true] call BIS_fnc_MP;
+				[player, (player getVariable "GOL_Loadout") select 1] call ACE_Interaction_fnc_joinTeam;
 
 				if ((player getVariable "GOL_Player") select 2) then {
 					{

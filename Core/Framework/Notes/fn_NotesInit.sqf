@@ -1,7 +1,7 @@
 
 	if (isMultiplayer && !hasInterface) exitWith {false};
 
-	private ["_Credits","_loop","_GOL_AdminZeus","_Adminbriefing","_revive","_jip","_tickets","_modulesACE","_count","_string","_value","_modulesArray","_notesACE","_notesFramework","_asr","_aiFaction","_factionWest","_factionEast","_factionIndep","_wave","_updateRate","_minPlayers","_admin","_commandSignal"];
+	private ["_Credits","_loop","_GOL_AdminZeus","_Adminbriefing","_revive","_jip","_tickets","_modulesACE","_count","_string","_value","_modulesArray","_notesACE","_notesFramework","_dac","_aiFaction","_factionWest","_factionEast","_factionIndep","_wave","_updateRate","_minPlayers","_admin","_commandSignal"];
 
 	player createDiarySubject ["GOL_Notes","Notes"];
 	[] spawn GOL_Fnc_GearLoadout;

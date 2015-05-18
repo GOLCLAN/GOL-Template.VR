@@ -9,43 +9,43 @@ _AllowNVG = true;
 _weaponCamo = {
 	switch (_this select 0) do {
 	    default {
-			_pistol = "CUP_hgun_Glock17";
-			_pistol_mag = "CUP_17Rnd_9x19_glock17";
+			_pistol = "CUP_hgun_Colt1911";
+			_pistol_mag = "CUP_7Rnd_45ACP_1911";
 				_secondaryPistol = [];
 
-			_rifle = "arifle_TRG21_black_F";
-			_rifle_mag = "30Rnd_556x45_Stanag";
-			_rifle_mag_tr = "30Rnd_556x45_Stanag";
-				_primaryRifle = ["FHQ_optic_MARS","acc_pointer_IR"];
+			_rifle = "CUP_arifle_L85A2";
+			_rifle_mag = "CUP_30Rnd_556x45_Stanag";
+			_rifle_mag_tr = "CUP_30Rnd_556x45_Stanag";
+				_primaryRifle = ["CUP_optic_Eotech533","acc_pointer_IR"];
 
-			_rifleGL = "arifle_TRG21_black_GL_F";
-			_rifleGL_mag = "30Rnd_556x45_Stanag";
-			_rifleGL_mag_tr = "30Rnd_556x45_Stanag";
-				_primaryRifleGL = ["FHQ_optic_MARS","acc_pointer_IR"];
+			_rifleGL = "CUP_arifle_L85A2_GL";
+			_rifleGL_mag = "CUP_30Rnd_556x45_Stanag";
+			_rifleGL_mag_tr = "CUP_30Rnd_556x45_Stanag";
+				_primaryRifleGL = ["CUP_optic_Eotech533","acc_pointer_IR"];
 
-			_rifleALT = "arifle_TRG21_black_F";
-			_rifleALT_mag = "30Rnd_556x45_Stanag";
-			_rifleALT_mag_tr = "30Rnd_556x45_Stanag";
-				_primaryRifleALT = ["FHQ_optic_MARS","acc_pointer_IR"];
+			_rifleALT = "CUP_arifle_L86A2";
+			_rifleALT_mag = "CUP_30Rnd_556x45_Stanag";
+			_rifleALT_mag_tr = "CUP_30Rnd_556x45_Stanag";
+				_primaryRifleALT = ["CUP_optic_Eotech533","acc_pointer_IR"];
 
-			_carbine = "arifle_TRG20_black_F";
-			_carbine_mag = "30Rnd_556x45_Stanag";
-			_carbine_mag_tr = "30Rnd_556x45_Stanag";
-				_primaryCarbine = ["FHQ_optic_MARS","acc_pointer_IR"];
+			_carbine = "CUP_arifle_L85A2";
+			_carbine_mag = "CUP_30Rnd_556x45_Stanag";
+			_carbine_mag_tr = "CUP_30Rnd_55645_Stanag";
+				_primaryCarbine = ["CUP_optic_Eotech533","acc_pointer_IR"];
 
-			_LMG = "asdg_LMG_Zafir_F";
-			_LMG_mag = "150Rnd_762x51_Box_Tracer_Red";
-			_LMG_mag_tr = "150Rnd_762x51_Box_Tracer_Red";
-				_primaryLMG = ["FHQ_optic_MARS","acc_pointer_IR"];
-
-			// Rifleman AT
-			_LAT = "rhs_weap_M136";
-			_LATmag = "rhs_m136_mag";
+			_LMG = "CUP_lmg_M249_para";
+			_LMG_mag = "CUP_200Rnd_TE4_Red_Tracer_556x45_M249";
+			_LMG_mag_tr = "CUP_200Rnd_TE4_Red_Tracer_556x45_M249";
+				_primaryLMG = ["CUP_optic_Eotech533","acc_pointer_IR"];
 
 			// Rifleman AT
-			_MAT = "rhs_weap_M136";
-			_MATmag1 = "rhs_m136_mag";
-			_MATmag2 = "rhs_m136_mag";
+			_LAT = "CUP_launch_NLAW";
+			_LATmag = "CUP_NLAW_M";
+
+			// Rifleman AT
+			_MAT = "CUP_launch_NLAW";
+			_MATmag1 = "CUP_NLAW_M";
+			_MATmag2 = "CUP_NLAW_M";
 		};
 	};
 };
@@ -57,30 +57,25 @@ _camoflage = {
 	switch (_this select 0) do {
 	    default {
 			// Infantry
-			_baseHelmet = ["IDF_Helmet_CQB_1","IDF_Helmet_CQB_5"] call BIS_fnc_selectRandom;
-			_baseUniform = ["IDF_Uniform"] call BIS_fnc_selectRandom;
-			
-		if (332350 in (getDLCs 1)) then {
-				_baseVest = ["V_PlateCarrierIAGL_oli"] call BIS_fnc_selectRandom;
-				} else {
-			_baseVest = ["IDF_Vest"] call BIS_fnc_selectRandom;
-										};
-			_baseGlasses = ["SP_Goggles_Black"] call BIS_fnc_selectRandom;
+			_baseHelmet = ["H_HelmetB_snakeskin"] call BIS_fnc_selectRandom;
+			_baseUniform = ["U_B_CTRG_1","U_B_CTRG_2","U_B_CTRG_3"] call BIS_fnc_selectRandom;
+			_baseVest = ["V_PlateCarrierH_CTRG"] call BIS_fnc_selectRandom;
+			_baseGlasses = ["G_Combat","G_Shades_Black"] call BIS_fnc_selectRandom;
 
 			// Pilot
-			_pilotHelmet = "H_PilotHelmetHeli_O";
-			_pilotUniform = "SP_0000_Standard_Coverall_GreenOlive";
-			_pilotVest = "V_Chestrig_oli";
+			_pilotHelmet = "H_PilotHelmetHeli_B";
+			_pilotUniform = "U_B_HeliPilotCoveralls";
+			_pilotVest = "V_TacVest_camo";
 
 			// Vehicle Crewman
-			_crewHelmet = "H_HelmetCrew_I";
-			_crewVest = "SP_BluforMolle1_Green";
+			_crewHelmet = "rhsusf_ach_bare_wood_headset_ess";
+			_crewVest = "rhsusf_iotv_ocp_repair";
 
 			// Backpacks
-			_bagRifleman = "B_AssaultPack_khk";
-			_bagAG = "B_Carryall_oli";
-			_radioAirBackpack = "tf_rt1523g_big_bwmod";
-			_radioBackpack = "tf_rt1523g_big_bwmod";
+			_bagRifleman = "CUP_B_Bergen_BAF";
+			_bagAG = "B_Carryall_cbr";
+			_radioAirBackpack = "tf_rt1523g_big";
+			_radioBackpack = "tf_rt1523g_big";
 		};
 	};
 };

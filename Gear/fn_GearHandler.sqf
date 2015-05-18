@@ -137,8 +137,7 @@ _this spawn {
 	if (_isMan) then {
 		_typeofUnit = toLower ([_typeofUnit, 0, "r", [""]] call bis_fnc_paramIn);
 
-		if ((_this select 2) != "") Then {	_unit setVariable ["GOL_GroupID", (_this select 2), true];	};
-		_unit setVariable ["GOL_Loadout", _typeofUnit, true];
+		_unit setVariable ["GOL_Loadout", [_typeofUnit], true];
 		_unit setVariable ["ACE_Medical_MedicClass", 0, true];	// Is Not Medic
 		_unit setVariable ["ACE_GForceCoef", 0.60, true];	// Is Pilot
 		_unit setVariable ["ACE_hasEarPlugsIn", true, true];
@@ -164,17 +163,19 @@ _this spawn {
 		[] call GOL_Fnc_Attachments;
 
 		_unit selectWeapon primaryWeapon _unit;
-		[_unit, _Color] Spawn {
+		[_unit, _typeofUnit, _Color,(_this select 2)] Spawn {
 		    waitUntil {sleep 0.1; !isNull player};
 			_unit = _this select 0;
 			if (!local _unit || !alive _unit) exitWith {false};
 			if (!isMultiplayer || hasInterface) then {
 				_unit switchMove "AmovPknlMstpSlowWrflDnon";
 				sleep 2;
-				_unit setVariable ["GOL_UnitColor", (_this select 1)];
+				if ((_this select 3) != "") Then {
+					_unit setVariable ["GOL_Loadout", [(_this select 1), (_this select 2), (_this select 3)], true];
+				};
 				if (isPlayer _unit) then {
 					if !(isNil "GOL_Gear_Respawn") Then { player removeEventHandler ["respawn", GOL_Gear_Respawn]; };
-					GOL_Gear_Respawn = player addEventHandler ["respawn", { [player, player getVariable "GOL_Loadout"] call GOL_Fnc_GearHandler; } ];
+					GOL_Gear_Respawn = player addEventHandler ["respawn", { [player, (player getVariable "GOL_Loadout") select 0] call GOL_Fnc_GearHandler; } ];
 					[_unit, currentWeapon _unit, currentMuzzle _unit] call ACE_SafeMode_fnc_lockSafety;
 					waitUntil {sleep 5; player distance (markerPos ([_unit] call GOL_Fnc_GetSide)) > 100};
 					if ((currentWeapon _unit) in (_unit getVariable ["ACE_SafeMode_safedWeapons", []])) then {
