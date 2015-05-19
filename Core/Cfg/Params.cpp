@@ -54,7 +54,7 @@ class GOL_Params_Extra_Gear {
 //	0 = Standard Loadout
 //	1 = Adds Extra supplies - Adds more bandages, magazines, greandes and such
 //	2 = Adds Additional supplies - Same as above but also other equipment as epipen, blood
-	default = 1;
+	default = 0;
 };
 
 // ====================================================================================
