@@ -3,7 +3,7 @@
 // ==============================================================================
 
 // *	Settings for the mission
-	briefingName = "GOL@108 Template";
+	briefingName = "GOL@108 Template DAC";
 	overviewText = "GOL Template";
 
 	author = "GOL Editing Team";						// shown in loading screen and briefing

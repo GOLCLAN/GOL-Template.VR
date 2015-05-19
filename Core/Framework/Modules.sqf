@@ -17,7 +17,7 @@
 	if (isClass(configFile>>"CfgPatches">>"ACE_Medical")) then {
 		_module = _moduleGroup createUnit ["ACE_moduleMedicalSettings", [0,0,0],[],0.5,"NONE"];
 		_module setVariable ["level", 1, true];
-		_module setVariable ["medicSetting", 1, true];
+		_module setVariable ["medicSetting", 0, true];
 		_module setVariable ["allowLitterCreation", true, true];
 		_module setVariable ["litterCleanUpDelay", 1200, true];
 		_module setVariable ["enableScreams", true, true];
@@ -47,7 +47,9 @@
 		_module setVariable ["maxReviveTime", 120, true];
 		_module setVariable ["amountOfReviveLives", -1, true];
 			GOL_Module_MedicalRevive = _module;
+			ace_medical_setting_allowSharedEquipment = false;
 		[] spawn {
+			publicVariable "ace_medical_setting_allowSharedEquipment";
 			publicVariable "GOL_Module_MedicalBasic";
 			publicVariable "GOL_Module_MedicalAdv";
 			publicVariable "GOL_Module_MedicalRevive";

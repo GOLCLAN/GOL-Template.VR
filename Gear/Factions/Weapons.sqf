@@ -25,7 +25,7 @@
 			_primaryAttachments = _primaryCarbine;
 	    };
 	};
-	if (_typeofUnit in ["pl","fac","ftl","ag"]) then {
+	if (_typeofUnit in ["pl","fac","sl","ftl","ag"]) then {
 		[[_rangefinder]] call GOL_Fnc_AddObjects;
 	};
 	if (_typeofUnit in ["pl","fac","sl","ftl","r","g","ag","ar","lr"]) then {

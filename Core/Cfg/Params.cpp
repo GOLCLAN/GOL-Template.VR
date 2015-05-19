@@ -52,9 +52,9 @@ class GOL_Params_Extra_Gear {
 	values[] = {0,1,2};
 	texts[] = {"Standard Gear","Add Extra Supplies","Add Extra and Additional Supplies"};
 //	0 = Standard Loadout
-//	1 = Adds Extra supplies - Adds more bandages, magazines, greandes and such
-//	2 = Adds Additional supplies - Same as above but also other equipment as epipen, blood
-	default = 1;
+//	1 = Adds Extra supplies - Adds more bandages and such
+//	2 = Adds Additional supplies - Same as above but also bloodbags, epio & other equipment as magazines, greandes
+	default = 0;
 };
 
 // ====================================================================================

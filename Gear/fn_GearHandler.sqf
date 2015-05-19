@@ -122,8 +122,8 @@ _this spawn {
 	//	====================================================================================
 	//	SELECTING FROM PARAMETERS IF EXTRA GEAR IS ENABLED
 
-	GOL_Gear_Additional = false;
 	GOL_Gear_Extra = false;
+	GOL_Gear_Additional = false;
 	if (("GOL_Params_Extra_Gear" call BIS_fnc_getParamValue) >= 1) then {
 		if (("GOL_Params_Extra_Gear" call BIS_fnc_getParamValue) == 2) then {
 			GOL_Gear_Additional = true;

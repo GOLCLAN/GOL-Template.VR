@@ -100,7 +100,7 @@ _camoflage = {
 			_baseHelmet = ["rhsusf_ach_helmet_ucp","rhsusf_ach_helmet_ess_ucp"] call BIS_fnc_selectRandom;
 			_baseUniform = ["rhs_uniform_cu_ucp_patchless"] call BIS_fnc_selectRandom;
 			_baseVest = ["rhsusf_iotv_ucp_Rifleman","rhsusf_iotv_ucp_Squadleader","rhsusf_iotv_ucp_Teamleader"] call BIS_fnc_selectRandom;
-			_baseGlasses = ["G_Combat","G_Shades_Black"] call BIS_fnc_selectRandom;
+			_baseGlasses = ["G_Combat",nil] call BIS_fnc_selectRandom;
 
 			// Pilot
 			_pilotHelmet = "H_PilotHelmetHeli_B";
@@ -135,7 +135,7 @@ _camoflage = {
 
 			// Backpacks
 			_bagRifleman = "rhsusf_assault_eagleaiii_coy";
-			_bagAG = "rhsusf_assault_eagleaiii_coy";
+			_bagAG = "rhsusf_assault_eagleaiii_coy_medic";
 			_radioAirBackpack = "tf_rt1523g_big_bwmod";
 			_radioBackpack = "tf_rt1523g_big_bwmod";
 		};

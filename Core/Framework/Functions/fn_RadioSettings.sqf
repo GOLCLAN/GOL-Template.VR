@@ -30,13 +30,6 @@
 
 		// ===============================================
 
-		tf_defaultWestAirborneRadio = "tf_anarc164";
-		tf_defaultWestBackpack = "tf_rt1523g";
-		tf_defaultWestPersonalRadio = "tf_anprc152";
-		tf_defaultWestRiflemanRadio = "tf_pnr1000a";
-
-		// ===============================================
-
 		_DebugName = "GOL_Radios";
 		scriptName _DebugName;
 		["RADIOS INITIALIZED SUCCESSFULLY",[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;

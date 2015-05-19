@@ -94,13 +94,13 @@
     ];
 
     _standard = [
-        [_glHE, 250,50,20],
-        [_glsmokeW, 250,20,10],
-        [_glflareW, 250,10,5],
-        [_grenade, 250,30,20],
-        [_grenademini, 250,30,20],
-        [_smokegrenadeW, 250,30,20],
-        [_smokegrenadeG, 250,10,5]
+        [_glHE, 150,50,20],
+        [_glsmokeW, 150,20,10],
+        [_glflareW, 150,10,5],
+        [_grenade, 150,30,20],
+        [_grenademini, 150,30,20],
+        [_smokegrenadeW, 150,30,20],
+        [_smokegrenadeG, 150,10,5]
     ];
 
     _Supplies = {
@@ -146,9 +146,6 @@
             }], "bis_fnc_call", true, true] call BIS_fnc_MP;
 
             { [_cargo, (_x select 0), (_x select 1)] call GOL_Fnc_AddItemCargo; } forEach _standard;
-            { [_cargo, (_x select 0), (_x select 1)] call GOL_Fnc_AddItemCargo; } forEach _ACE_standard;
-            { [_cargo, (_x select 0), (_x select 1)] call GOL_Fnc_AddItemCargo; } forEach _ACE_Advanced;
-
         };
 
         case "a_box": { //  Attachment Box
@@ -167,18 +164,10 @@
             [_cargo, "rhsusf_acc_compm4", 50] call GOL_Fnc_AddItemCargo;
 
             // Items
-            [_cargo, "acc_pointer_IR", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "acc_flashlight", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "FHQ_acc_ANPEQ15_black", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "FHQ_acc_ANPEQ15", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "FHQ_acc_LLM01L", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "FHQ_acc_LLM01F", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "ACE_muzzle_mzls_H", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "ACE_muzzle_mzls_B", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "ACE_muzzle_mzls_L", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "rhsusf_acc_anpeq15", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "rhsusf_acc_anpeq15a", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "rhsusf_acc_anpeq15_light", 50] call GOL_Fnc_AddItemCargo;
+            [_cargo, "GVL_X2000_point", 50] call GOL_Fnc_AddItemCargo;
         };
 
         case "misc_box": {  //  Misc Box
@@ -218,7 +207,7 @@
             [_cargo, _LMG_mag_tr, 12] call GOL_Fnc_AddMagazineCargo;
 
             [_cargo, _LAT, 3] call GOL_Fnc_AddWeaponCargo;
-            [_cargo, _LATmag, 4] call GOL_Fnc_AddMagazineCargo;
+            [_cargo, _LATmag, 3] call GOL_Fnc_AddMagazineCargo;
 
             [] call _Supplies;
         };

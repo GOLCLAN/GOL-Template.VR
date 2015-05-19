@@ -89,7 +89,7 @@
 			[
 				[_pistol_mag,2],
 				[_rifle_mag,5],
-				[_rifle_mag_tr,5],
+				[_rifle_mag_tr,3],
 				[_smokegrenadeW,2],
 				[_grenademini,2],
 				[_grenade,1],
@@ -118,7 +118,8 @@
 
 			[
 				[_pistol_mag,2],
-				[_rifleGL_mag_tr,5],
+				[_rifleGL_mag,5],
+				[_rifleGL_mag_tr,3],
 				[_smokegrenadeW,2],
 				[_smokegrenadeR,2],
 				[_grenademini,3],
@@ -130,8 +131,6 @@
 			if (GOL_Gear_Extra) then {
 				[
 					[_bandage,30],
-//					[_bandagePacking,10],
-//					[_bandageElastic,10],
 					[_morph,8]
 				] call GOL_Fnc_AddObjectsToBackpack;
 
@@ -155,7 +154,7 @@
 			[
 				[_pistol_mag,2],
 				[_rifle_mag,5],
-				[_rifle_mag_tr,5],
+				[_rifle_mag_tr,3],
 				[_smokegrenadeW,3],
 				[_grenademini,2],
 				[_grenade,2]
@@ -180,8 +179,8 @@
 		case "lr": {
 			[
 				[_pistol_mag,2],
-				[_rifleALT_mag,5],
-				[_rifleALT_mag_tr,5],
+				[_rifleALT_mag,3],
+				[_rifleALT_mag_tr,3],
 				[_smokegrenadeW,2],
 				[_grenademini,2],
 				[_grenade,1]
