@@ -6,12 +6,11 @@
 	_strFinal 		= "";		//	will contain final string to be displayed
 	_oldGrp 		= grpNull;	//	group of last checked unit
 	_newGrp 		= grpNull;	//	group of current unit
-	_unitsArr 		= [];		//	will contain all units that have to be processed
-
-	waitUntil {!isNil "GOL_PlayerList"};
-	_unitsArr = GOL_PlayerList;
+//	_unitsArr 		= [];
+	_unitsArr = (call GOL_Fnc_Players);	//	will contain all units that have to be processed
 
 	{
+		waitUntil {!isNull _x};
 		if(side _x isEqualTo side player) then {
 			_newGrp = group _x;
 			if !(isNil {_x getVariable "GOL_Loadout"}) then {

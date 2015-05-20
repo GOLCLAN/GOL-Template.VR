@@ -1,9 +1,9 @@
 // *	DO NOT CHANCE THE ORDER/STRUCTIOR OF THE FILE
-// https://community.bistudio.com/wiki/description.ext
+//	https://community.bistudio.com/wiki/description.ext
 // ==============================================================================
 
 // *	Settings for the mission
-	briefingName = "GOL@108 Template DAC";
+	briefingName = "GOL@127 Template DAC";
 	overviewText = "GOL Template";
 
 	author = "GOL Editing Team";						// shown in loading screen and briefing
@@ -22,7 +22,7 @@
 
 			/* minPlayers < maxPlayers */
 			minPlayers = 1; //@Int # of players the mission supports
-			maxPlayers = 108; //@Int # of players the mission supports
+			maxPlayers = 127; //@Int # of players the mission supports
 	};
 // ==============================================================================
 
@@ -56,7 +56,7 @@
 
 			class Gear {
 				#define	SelectFromParams	true;	// Allow Admin to select faction from the lobby screen | Disable remove entire line
-//				FullGear = false;	// BOOL:	True: Respawned player will respawn with original gear	| False: Player will respawn with what they had when they died
+				FullGear = false;	// BOOL:	True: Respawned player will respawn with original gear	| False: Player will respawn with what they had when they died
 				Camoflage = 0;		// BOOL:	0: Woodland	| 1: Desert
 				Blufor = 3;			// NUMBER:	1: NATO	| 2: FIA		| 3: USMC		|	4: BAF			|	5: IDF			|
 				Opfor = 1;			// NUMBER:	1: CSAT	| 2: Russians	| 3: Guerilla	|	4: Insurgents	|

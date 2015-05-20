@@ -56,6 +56,10 @@ _this spawn {
 		"_secondaryAttachments","_primaryAttachments"
 	];
 
+	if ([] call BIS_fnc_didJIP) then {
+	    waitUntil {sleep 0.1; !isNull player};
+	};
+
 	//	The following interpret formats what has been passed to this script element
 	_unit = [_this, 0, player, [objNull]] call BIS_fnc_param;	// Defines the unit
 	_typeofUnit = [_this, 1, "r", ["",[]]] call BIS_fnc_param;
@@ -107,18 +111,6 @@ _this spawn {
 		};
 	};
 
-	// ================================================================
-	// *	Creates backup of the faction if it for some reason would need to reset to the originial
-
-	if (isNil "GOL_Faction_West_Orgi" || isNil "GOL_Faction_East_Orgi" || isNil "GOL_Faction_Indep_Orgi") Then {
-		GOL_Faction_West_Orgi = GOL_Faction_West;
-		compileFinal GOL_Faction_West_Orgi;
-		GOL_Faction_East_Orgi = GOL_Faction_East;
-		compileFinal GOL_Faction_East_Orgi;
-		GOL_Faction_Indep_Orgi = GOL_Faction_Indep;
-		compileFinal GOL_Faction_Indep_Orgi;
-	};
-
 	//	====================================================================================
 	//	SELECTING FROM PARAMETERS IF EXTRA GEAR IS ENABLED
 
@@ -136,8 +128,7 @@ _this spawn {
 
 	if (_isMan) then {
 		_typeofUnit = toLower ([_typeofUnit, 0, "r", [""]] call bis_fnc_paramIn);
-
-		_unit setVariable ["GOL_Loadout", [_typeofUnit], true];
+//		_unit setVariable ["GOL_Loadout", [(_this select 1)], true];
 		_unit setVariable ["ACE_Medical_MedicClass", 0, true];	// Is Not Medic
 		_unit setVariable ["ACE_GForceCoef", 0.60, true];	// Is Pilot
 		_unit setVariable ["ACE_hasEarPlugsIn", true, true];
@@ -161,26 +152,25 @@ _this spawn {
 
 		if !(_captivity == 0) then { _unit setCaptive _captivity; };
 		[] call GOL_Fnc_Attachments;
-
 		_unit selectWeapon primaryWeapon _unit;
+		_unit setVariable ["GOL_Loadout", [(_this select 1), (_this select 2)], true];
+
 		[_unit, _typeofUnit, _Color,(_this select 2)] Spawn {
 		    waitUntil {sleep 0.1; !isNull player};
 			_unit = _this select 0;
 			if (!local _unit || !alive _unit) exitWith {false};
-			if (!isMultiplayer || hasInterface) then {
-				_unit switchMove "AmovPknlMstpSlowWrflDnon";
-				sleep 2;
-				if ((_this select 3) != "") Then {
-					_unit setVariable ["GOL_Loadout", [(_this select 1), (_this select 2), (_this select 3)], true];
-				};
-				if (isPlayer _unit) then {
+			_unit switchMove "AmovPknlMstpSlowWrflDnon";
+			sleep 2;
+			if (isPlayer _unit) then {
+				if ((_this select 3) != "") Then { _unit setVariable ["GOL_GroupID", (_this select 3), true]; };
+				if ((["Gear", "FullGear"] call GOL_Fnc_GetConfig) == 1) Then {
 					if !(isNil "GOL_Gear_Respawn") Then { player removeEventHandler ["respawn", GOL_Gear_Respawn]; };
 					GOL_Gear_Respawn = player addEventHandler ["respawn", { [player, (player getVariable "GOL_Loadout") select 0] call GOL_Fnc_GearHandler; } ];
-					[_unit, currentWeapon _unit, currentMuzzle _unit] call ACE_SafeMode_fnc_lockSafety;
-					waitUntil {sleep 5; player distance (markerPos ([_unit] call GOL_Fnc_GetSide)) > 100};
-					if ((currentWeapon _unit) in (_unit getVariable ["ACE_SafeMode_safedWeapons", []])) then {
-						[_unit, currentWeapon _unit, currentMuzzle _unit] call ACE_SafeMode_fnc_unlockSafety;
-					};
+				};
+				[_unit, currentWeapon _unit, currentMuzzle _unit] call ACE_SafeMode_fnc_lockSafety;
+				waitUntil {sleep 5; player distance (markerPos ([_unit] call GOL_Fnc_GetSide)) > 100};
+				if ((currentWeapon _unit) in (_unit getVariable ["ACE_SafeMode_safedWeapons", []])) then {
+					[_unit, currentWeapon _unit, currentMuzzle _unit] call ACE_SafeMode_fnc_unlockSafety;
 				};
 			};
 		};
@@ -195,46 +185,19 @@ _this spawn {
 				[_unit,_typeofUnit,_boxConfigs] call GOL_Fnc_GearCargo;
 			};
 
-/*
-	//		If object is a car or a tank
-			if (_isCar || _isTank) then {
-				private ["_item", "_i"];
-				waitUntil {!isNil "AGM_Logistics_loadedItemsDummy"};
-
-				if ((_boxConfigs select 3)) Then {
-//						[_unit,["","west"],[_boxConfigs]] call GOL_Fnc_GearHandler;
-//						[_unit,["","east"],[_boxConfigs]] call GOL_Fnc_GearHandler;
-//						[_unit,["","indep"],[_boxConfigs]] call GOL_Fnc_GearHandler;
-
-				};
-
-				for "_i" from 0 to 1 do {
-					_item = ['AGM_JerryCan', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObject;
-					[_unit, _item] call AGM_Logistics_fnc_initLoadedObject;
-				};
-
-				if (_isCar) then {
-					for "_i" from 0 to 2 do {
-						_item = ['AGM_SpareWheel', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObject;
-						[_unit, _item] call AGM_Logistics_fnc_initLoadedObject;
-					};
-				};
-
-				if (_isTank) then {
-					for "_i" from 0 to 2 do {
-						_item = ['AGM_SpareTrack', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObject;
-						[_unit, _item] call AGM_Logistics_fnc_initLoadedObject;
-					};
-				};
-
-				for "_i" from 0 to 2 do {
-					_item = ['arma2_crate_empty', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObject;
-					[_item,["small_box","west"],[true,true]] call GOL_Fnc_GearHandler;
-					[_unit, _item] call AGM_Logistics_fnc_initLoadedObject;
-				};
-			};
-*/
 		};
+	};
+
+	// ================================================================
+	// *	Creates backup of the faction if it for some reason would need to reset to the originial
+
+	if (isNil "GOL_Faction_West_Orgi" || isNil "GOL_Faction_East_Orgi" || isNil "GOL_Faction_Indep_Orgi") Then {
+		GOL_Faction_West_Orgi = GOL_Faction_West;
+		compileFinal GOL_Faction_West_Orgi;
+		GOL_Faction_East_Orgi = GOL_Faction_East;
+		compileFinal GOL_Faction_East_Orgi;
+		GOL_Faction_Indep_Orgi = GOL_Faction_Indep;
+		compileFinal GOL_Faction_Indep_Orgi;
 	};
 
 	if (!isMultiplayer && !(_unit isEqualTo player) && _isMan) exitWith {false};	// Prevents ai spaming the rpt

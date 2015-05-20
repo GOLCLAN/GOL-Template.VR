@@ -1463,7 +1463,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="i1a1";
-					init="[this,""sll"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
+					init="[this,""sl"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
 					description="1-1 Alpha - Squad Leader";
 				};
 				class Item1
