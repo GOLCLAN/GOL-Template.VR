@@ -460,91 +460,70 @@ Fnc_LightsOut = {
 	};
 };
 
-Fnc_RandomIED = {
-	// ["zone0", 10, 100, "WEST"] spawn Fnc_RandomIED;
-	_marker = _this select 0; _markerPOS = (GetMarkerPos _marker);
-	_iedcount = _this select 1;
-	_radius = _this select 2;
-	_side = _this select 3;
-	
+Fnc_CreateIED = {
+	// [[14456.1,17609.8,0.00136185], "WEST"] spawn Fnc_CreateIED;
+	_location = _this select 0;
+	_side = _this select 1;
 	_ieds = ["RoadCone_F","Land_Pallets_F","Land_WheelCart_F","Land_Tyre_F","Land_ButaneCanister_F","Land_Bucket_F","Land_Pillow_F"];
 	_ieds_attachto = ["IEDLandBig_Remote_Ammo","IEDUrbanBig_Remote_Ammo","IEDUrbanBig_Remote_Ammo","IEDLandSmall_Remote_Ammo","IEDUrbanSmall_Remote_Ammo"];
-	
-	_list = (_markerPOS) nearRoads _radius; // This isn't random so we need to store the data in an array so that we can shuffle it.
-	/*{		
-		//Store Positions in Array for shuffle
-		if (isNil ("IEDLocationArray")) then { 
-			IEDLocationArray = [_x];
-		} else { 
-			IEDLocationArray = IEDLocationArray + [_x];
-		};		
-	} forEach _list;
-	IEDLocationArray call BIS_fnc_arrayShuffle; // Shuffle
-	*/
-	
-	for "_i" from 1 to _iedcount do {
-		_ied = _ieds call BIS_fnc_selectRandom; // Select a random IED
-		_ied2 = _ieds_attachto call BIS_fnc_selectRandom; // Select a random IED
-		_iedpos = _list call BIS_fnc_selectRandom; // Select Random location
-		_list = _list - [_iedpos];  // Remove Location so it can't be used again
-		_bomb1 = createVehicle [_ied, _iedpos, [], 0, "FORM"]; // Create Intractable Object
-		_bomb2 = createVehicle [_ied2, _iedpos, [], 0, "CAN_COLLIDE"]; // Create IED
-		[[_bomb1,'Disarm Bomb','[player] call Fnc_Disarm'], "Fnc_AddAction" , true, true] spawn BIS_fnc_MP;
 
-		_iedpos = (GetPos _bomb1);
-		_newpos = [(_iedpos select 0) + (random 5), (_iedpos select 1) + (random 5), _iedpos select 2];
-		_bomb1 setPos _newpos; _bomb2 setPos _newpos;
-		
-		_IEDTrigger = createTrigger["EmptyDetector",_newpos]; _IEDTrigger setTriggerArea[3,3,0,false];
-		_IEDTrigger setTriggerActivation[_side,"PRESENT",false];
-		_IEDTrigger setTriggerStatements ["((thislist select 0) selectionPosition 'launcher' select 2) > 1.2;", "[thisTrigger] spawn Fnc_IEDExplode;", ""];
-		_IEDTrigger AttachTo [_bomb1,[0,0,0]];
-		
-		
-	};	
+	_ied = _ieds call BIS_fnc_selectRandom; // Select a random IED
+	_ied2 = _ieds_attachto call BIS_fnc_selectRandom; // Select a random IED
+	_bomb1 = createVehicle [_ied, _location, [], 0, "CAN_COLLIDE"]; // Create Intractable Object
+	_bomb2 = createVehicle [_ied2, _location, [], 0, "CAN_COLLIDE"]; // Create IED
+	[[_bomb1,'Disarm Bomb','[player] call Fnc_Disarm'], "Fnc_AddAction" , true, false] spawn BIS_fnc_MP;
+	
+	_bomb1 addEventHandler ["HitPart", {_this call Fnc_IED_EH;}];
+	
+	_IEDTrigger = createTrigger["EmptyDetector",_location]; _IEDTrigger setTriggerArea[3,3,0,false];
+	_IEDTrigger setTriggerActivation[_side,"PRESENT",false];
+	_IEDTrigger setTriggerStatements ["((thislist select 0) selectionPosition 'launcher' select 2) > 1.2;", "[thisTrigger] spawn Fnc_IEDExplode;", ""];
+	_IEDTrigger AttachTo [_bomb1,[0,0,0]];
 };
 
 Fnc_IEDExplode = {
-	_object = _this select 0; hint format["%1", _object];
+	_object = _this select 0; //hint format["%1", _object];
 	_objectPos = GetPos _object;
+	
+	_object removeAllEventHandlers "HitPart";
 	
 	_list = GetPos _object nearObjects 2;
 	{
-		deletevehicle _x;
+		DeleteVehicle _x;
 	} forEach _list;
 	
 	_bomb = createVehicle ["M_Mo_120mm_AT_LG", _objectPos, [], 0, "CAN_COLLIDE"];
-	[_objectPos] call SHOCK_WAVE;
-	[_objectPos] call IED_ROCKS;
-	[_objectPos] call IED_SMOKE_LARGE;
+	[[_objectPos],"SHOCK_WAVE",true,false] spawn BIS_fnc_MP;
+	[[_objectPos],"IED_ROCKS",true,false] spawn BIS_fnc_MP;
+	[[_objectPos],"IED_SMOKE_LARGE",true,false] spawn BIS_fnc_MP;
 	_crater = createVehicle ["CraterLong_small", _objectPos, [], 0, "CAN_COLLIDE"];
+	_newpos = [_objectPos select 0, _objectPos select 1, (_objectPos select 2) - 0.8];
+	_crater setPos _newpos;
 };
 
 Fnc_Disarm = {
 	_object = _this select 0;
-	_object removeAction 0;
-	_tools = "ToolKit" in (items player);
+	_tools = "ACE_DefusalKit" in (items player);
 	
-	if (_tools) then {
-		Dchance = 2;
-		hint "Defusing...\nWith Tools";		
-	} else {
-		Dchance = 5;
-		hint "Defusing...\nWithout Tools";
-	};	
+	if !(_tools) exitWith { hint "You need a Defusal Kit"; }:
+
+	hint "Defusing...";
+	[[[player], {(_this select 0) playmovenow "AinvPknlMstpSnonWrflDr_medic4";}], "BIS_fnc_call", nil, false, false] call BIS_fnc_MP;
+	disableUserInput true;
+	sleep 4.545;
+	[[[player], {(_this select 0) playmove "AinvPknlMstpSnonWrflDr_medic3";}], "BIS_fnc_call", nil, false, false] call BIS_fnc_MP;
+	sleep 6.545;
+	disableUserInput false;
 	
-	player PlayMove "AinvPknlMstpSnonWnonDr_medic1";
-	Sleep (random (4) + 6);
-	if ((random 10) <= 10) then {
-		_iedpos = (GetPos _object);
-		[_iedpos] call Fnc_IEDExplode;
-	} else {
-		hint "Defused!!!"
-	};
+	_object removeAllEventHandlers "HitPart"; _object removeAction 0;
+	[-2, {_this removeAllEventHandlers "HitPart"; }, _object] call CBA_fnc_globalExecute;
+	[-2, {_this removeAction 0;}, _object] call CBA_fnc_globalExecute;
 	
+	hint "Defused!!!";
+	_iedpos = (GetPos _object);
 	_list = GetPos _object nearObjects 5;
 	{
-		deletevehicle _x;
+		DeleteVehicle _x;
 	} forEach _list;
 };
 
@@ -555,8 +534,20 @@ Fnc_AddAction = {
 	_object addAction [_text, _execute, trigger1, 0, true, true, "", "(_this distance (_target)) < 3 "];
 };
 
-SHOCK_WAVE = {
+Fnc_IED_EH = {
+	_hitEvent = _this select 0;
+	_ied = _hitEvent select 0;
+	_projectile = _hitEvent select 6 select 4;
+	
+	_explosiveValue = getNumber(configfile >> "CfgAmmo" >> format["%1", _projectile] >> "explosive");
+	if(_explosiveValue == 0) then {
+		if ((random 10) <= 1) then { [_ied] spawn Fnc_IEDExplode; };
+	} else {
+		[_ied] spawn Fnc_IEDExplode;
+	};
+};
 
+SHOCK_WAVE = {
 	_loc = _this select 0;
 	_aslLoc = [_loc select 0, _loc select 1, getTerrainHeightASL [_loc select 0, _loc select 1]];
 	
@@ -593,7 +584,7 @@ SHOCK_WAVE = {
 	
 	sleep .07;
 	{
-		deletevehicle _x;
+		DeleteVehicle _x;
 	} foreach _smokes;
 };
 
@@ -630,7 +621,7 @@ IED_ROCKS = {
 	_rocks = [_rocks1,_rocks2, _rocks3];
 	sleep .125;
 	{
-		deletevehicle _x;
+		DeleteVehicle _x;
 	} foreach _rocks;
 };
 
@@ -805,7 +796,7 @@ IED_SMOKE_LARGE = {
 		
 		sleep 2;
 		{
-			deletevehicle _x;
+			DeleteVehicle _x;
 		} foreach _smokes;
 		
 	};
@@ -845,8 +836,8 @@ SAND_TRAIL_SMOKE = {
 	};
 
 	_thingToFling setpos [0,0,0];
-	deletevehicle _smoke;
-	deletevehicle _thingToFling;
+	DeleteVehicle _smoke;
+	DeleteVehicle _thingToFling;
 };
 
 GRAY_TRAIL_SMOKE = {
@@ -883,8 +874,8 @@ GRAY_TRAIL_SMOKE = {
 	};
 
 	_thingToFling setpos [0,0,0];
-	deletevehicle _smoke;
-	deletevehicle _thingToFling;
+	DeleteVehicle _smoke;
+	DeleteVehicle _thingToFling;
 };
 
 BROWN_TRAIL_SMOKE = {
@@ -921,7 +912,30 @@ BROWN_TRAIL_SMOKE = {
 	};
 
 	_thingToFling setpos [0,0,0];
-	deletevehicle _smoke;
-	deletevehicle _thingToFling;
+	DeleteVehicle _smoke;
+	DeleteVehicle _thingToFling;
+};
+
+CreateFragmentation = {
+	_pos = _this select 0;
+	_numberOfFragments = _this select 1;
+	for "_i" from 0 to _numberOfFragments - 1 do{
+		_pos set[2,.1 + random 2]; 
+		_bullet = "B_408_Ball" createVehicle _pos;
+		_angle = random 360;
+		_speed = 450 + random 100;
+		_bullet setVelocity [_speed*cos(_angle), _speed*sin(_angle), -1*(random 4)];
+	};
+
+CreateRandomName = {
+	_letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+	_name = "";
+	_numberOfLettersToUse = 10;
+	
+	for "_i" from 0 to _numberOfLettersToUse-1 do
+	{
+		_name = _name + (_letters select floor random 26);
+	};
+	_name;
 };
 	
