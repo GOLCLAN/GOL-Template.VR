@@ -2,7 +2,7 @@
 // *	AUTHOR: GuzzenVonLidl
 // *
 // *	Description:
-// *		Copies position and direction in a array and should be used together with "GOL_Fnc_AI_Static_Group"
+// *		Copies position and direction in a array and should be used together with "GOL_Fnc_CreateAIStatic"
 // *		Function saves a maximum of 10 positions at once
 // *
 // *	Usage:
@@ -34,7 +34,7 @@
 
 	_positionsCopyed = {
 		[["%1 Positions Copied",(count GOL_Copy_Location_Array)],[_DebugName,__FILE__,__LINE__],"both"] call GOL_Fnc_DebugLog;
-		copyToClipboard (format ["%1 call GOL_Fnc_AI_Inf_Group_Static;", str(GOL_Copy_Location_Array)]);
+		copyToClipboard (format ["%1 call GOL_Fnc_CreateAIStatic;", str(GOL_Copy_Location_Array)]);
 	};
 
 	switch (_switch) do {
