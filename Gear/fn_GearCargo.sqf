@@ -77,7 +77,7 @@
         };
     };
 
-    [_camo] call _weaponCamo;
+    [GOL_Gear_Camo] call _weaponCamo;
 
 //  ====================================================================================
 
@@ -85,7 +85,6 @@
 //      [ClassName, Gearbox,Extra Supplies,Standard Supplies],
         [_bandage, 100,75,40],
         [_morph, 100,50,20],
-        [_barrel, 20,10,6]
     ];
 
     _ACE_Advanced = [
@@ -178,6 +177,7 @@
             [_cargo, _defusalKit, 50] call GOL_Fnc_AddItemCargo;
             [_cargo, _cables, 100] call GOL_Fnc_AddItemCargo;
             [_cargo, _flashBang, 50] call GOL_Fnc_AddItemCargo;
+            [_cargo, _barrel, 50] call GOL_Fnc_AddItemCargo;
         };
 
         case "med_box": {   //  Medical Box
@@ -185,7 +185,6 @@
             [_cargo, _morph, 50] call GOL_Fnc_AddItemCargo;
             [_cargo, _epi, 50] call GOL_Fnc_AddItemCargo;
             [_cargo, _blood, 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, _barrel, 20] call GOL_Fnc_AddItemCargo;
         };
 
         case "small_box":   {   //  Small Box

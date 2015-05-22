@@ -2075,7 +2075,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=16;
+		items=12;
 		class Item0
 		{
 			position[]={339.24902,5,1244.4539};
@@ -2154,96 +2154,52 @@ class Mission
 		};
 		class Item7
 		{
-			position[]={437.74396,5,1282.5437};
-			special="NONE";
-			id=134;
-			side="EMPTY";
-			vehicle="Box_NATO_Support_F";
-			lock="UNLOCKED";
-			skill=0.2;
-			init="[this,""misc_box"",[false,true]] call GOL_Fnc_GearHandler;";
-		};
-		class Item8
-		{
-			position[]={441.05008,5,1282.4812};
-			special="NONE";
-			id=135;
-			side="EMPTY";
-			vehicle="Box_NATO_AmmoOrd_F";
-			lock="UNLOCKED";
-			skill=0.2;
-			init="[this,""med_box"",[false,true]] call GOL_Fnc_GearHandler;";
-		};
-		class Item9
-		{
-			position[]={441.19849,5,1278.5984};
-			special="NONE";
-			id=136;
-			side="EMPTY";
-			vehicle="B_supplyCrate_F";
-			lock="UNLOCKED";
-			skill=0.2;
-			init="[this,""gear_box"",[false,true]] call GOL_Fnc_GearHandler;";
-		};
-		class Item10
-		{
-			position[]={437.77841,5,1278.8098};
-			special="NONE";
-			id=137;
-			side="EMPTY";
-			vehicle="Box_NATO_WpsSpecial_F";
-			lock="UNLOCKED";
-			skill=0.2;
-			init="[this,""a_box"",[false,true]] call GOL_Fnc_GearHandler;";
-		};
-		class Item11
-		{
 			position[]={332.04617,5,1245.0693};
-			id=138;
+			id=134;
 			side="EMPTY";
 			vehicle="RHS_Civ_Truck_02_transport_F";
 			skill=0.60000002;
 			text="mhq";
 			init="null = [this] spawn GOL_Fnc_MHQ;";
 		};
-		class Item12
+		class Item8
 		{
 			position[]={333.61005,5,1265.0608};
 			special="NONE";
-			id=139;
+			id=135;
 			side="EMPTY";
 			vehicle="Box_NATO_Support_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,""misc_box"",[false,true]] call GOL_Fnc_GearHandler;";
 		};
-		class Item13
+		class Item9
 		{
 			position[]={336.91617,5,1264.9983};
 			special="NONE";
-			id=140;
+			id=136;
 			side="EMPTY";
 			vehicle="Box_NATO_AmmoOrd_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,""med_box"",[false,true]] call GOL_Fnc_GearHandler;";
 		};
-		class Item14
+		class Item10
 		{
 			position[]={337.06458,5,1261.1155};
 			special="NONE";
-			id=141;
+			id=137;
 			side="EMPTY";
 			vehicle="B_supplyCrate_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,""gear_box"",[false,true]] call GOL_Fnc_GearHandler;";
 		};
-		class Item15
+		class Item11
 		{
 			position[]={333.6445,5,1261.3269};
 			special="NONE";
-			id=142;
+			id=138;
 			side="EMPTY";
 			vehicle="Box_NATO_WpsSpecial_F";
 			lock="UNLOCKED";

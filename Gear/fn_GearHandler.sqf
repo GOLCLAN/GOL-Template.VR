@@ -23,6 +23,7 @@
 // *
 // ====================================================================================
 
+_this spawn {
 	//	INTERPRET PASSED VARIABLES
 	private [
 		"_unit","_typeofUnit","_isMan","_isCar","_isTank","_camo","_captivity","_Color","_boxConfigs","_item","_DebugName",
@@ -62,67 +63,18 @@
 	_isCar = _unit isKindOf "Car";
 	_isTank = _unit isKindOf "Tank";
 
-	// ================================================================
-	// *	Gear Configurations
-
-	switch (("GOL_Params_Faction_West" call BIS_fnc_getParamValue)) do {
-		case 2:	{
-			GOL_Faction_West = "FIA";
-		};
-		case 3:	{
-			GOL_Faction_West = "USMC";
-		};
-		case 4:	{
-			GOL_Faction_West = "BAF";
-		};
-		case 5:	{
-			GOL_Faction_West = "IDF";
-		};
-		default	{
-			GOL_Faction_West = "NATO";
-		};
-	};
-
-	switch (("GOL_Params_Faction_East" call BIS_fnc_getParamValue)) do {
-		case 2:	{
-			GOL_Faction_East = "Russians";
-		};
-		case 3:	{
-			GOL_Faction_East = "Guerillas";
-		};
-		case 4:	{
-			GOL_Faction_East = "Insurgents";
-		};
-		default	{
-			GOL_Faction_East = "CSAT";
-		};
-	};
-
-	switch (("GOL_Params_Faction_Independent" call BIS_fnc_getParamValue)) do {
-		default	{
-			GOL_Faction_Indep = "AAF";
-		};
-	};
-
 	//	====================================================================================
-	//	SELECTING FROM PARAMETERS IF EXTRA GEAR IS ENABLED
-
-	GOL_Gear_Extra = false;
-	GOL_Gear_Additional = false;
-	if (("GOL_Params_Extra_Gear" call BIS_fnc_getParamValue) >= 1) then {
-		if (("GOL_Params_Extra_Gear" call BIS_fnc_getParamValue) == 2) then {
-			GOL_Gear_Additional = true;
-		};
-		GOL_Gear_Extra = true;
+//	if (GOL_Faction_West || GOL_Faction_East || GOL_Faction_Indep || GOL_Gear_Camo || GOL_Gear_Extra || GOL_Gear_Additional) then {
+	if (isNil "GOL_Faction_West_Orgi" || isNil "GOL_Faction_East_Orgi" || isNil "GOL_Faction_Indep_Orgi") then {
+		#include "Params.sqf"
 	};
-	_camo = (["Gear", "Camoflage"] call GOL_Fnc_GetConfig);
-
-	//	====================================================================================
 
 	if (_isMan) then {
-		_typeofUnit = toLower ([_this, 1, "r", [""]] call bis_fnc_param);
+		waitUntil {!isNull player};
 		if ((count _this == 1) && (!isNil {(_unit getVariable "GOL_Loadout")})) then {
 			_typeofUnit = ((_unit getVariable "GOL_Loadout") select 0);
+		} else {
+			_typeofUnit = toLower ([_this, 1, "r", [""]] call bis_fnc_param);
 		};
 
 		_unit setVariable ["ACE_Medical_MedicClass", 0, true];	// Is Not Medic
@@ -183,19 +135,8 @@
 		};
 	};
 
-	// ================================================================
-	// *	Creates backup of the faction if it for some reason would need to reset to the originial
-
-	if (isNil "GOL_Faction_West_Orgi" || isNil "GOL_Faction_East_Orgi" || isNil "GOL_Faction_Indep_Orgi") Then {
-		GOL_Faction_West_Orgi = GOL_Faction_West;
-		compileFinal GOL_Faction_West_Orgi;
-		GOL_Faction_East_Orgi = GOL_Faction_East;
-		compileFinal GOL_Faction_East_Orgi;
-		GOL_Faction_Indep_Orgi = GOL_Faction_Indep;
-		compileFinal GOL_Faction_Indep_Orgi;
-	};
-
 	if (!isMultiplayer && !(_unit isEqualTo player) && _isMan) exitWith {false};	// Prevents ai spaming the rpt
 	_DebugName = "GOL_Fnc_GearHandler";
 	scriptName _DebugName;
 	[["Unit: %1 || Loadout: %2 ",_unit, _typeofUnit],[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;
+};

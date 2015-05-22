@@ -128,28 +128,24 @@
 		};
 
 		case "ag": {
+			[
+				[_bandage,20],
+				[_morph,6],
+				[_LMG_mag_tr,Count_AG_Mags(_LMG_mag_tr)]
+			] call GOL_Fnc_AddObjectsToBackpack;
+
 			if (GOL_Gear_Extra) then {
 				[
 					[_bandage,30],
 					[_morph,8]
 				] call GOL_Fnc_AddObjectsToBackpack;
-
-				if (GOL_Gear_Additional) then {
-					[
-						[_epi,5],
-						[_blood,2]
-					] call GOL_Fnc_AddObjectsToBackpack;
-				};
-			} else {
+			};
+			if (GOL_Gear_Additional) then {
 				[
-					[_bandage,20],
-					[_morph,6]
+					[_epi,5],
+					[_blood,2]
 				] call GOL_Fnc_AddObjectsToBackpack;
 			};
-
-			[
-				[_LMG_mag_tr,Count_AG_Mags(_LMG_mag_tr)]
-			] call GOL_Fnc_AddObjectsToBackpack;
 
 			[
 				[_pistol_mag,2],

@@ -2,6 +2,9 @@
 	#define Is_NIL(Value,Code) \
 		if (!isNil {Value}) then { Code };
 
+	#define IsNIL_Cond(Value) \
+		!isNil {Value}
+
 	#define FOR_LOOP(Loops,code) \
 		for "_i" from 0 to (Loops-1) do { code };
 
@@ -30,6 +33,7 @@
 //	====================================================================================
 //	Backpack
 	#define ADD_BACKPACK(Class) \
+		removeBackpackGlobal _unit; \
 		_unit addBackpackGlobal Class; \
 		clearMagazineCargoGlobal (unitBackpack _unit); \
 		clearItemCargoGlobal (unitBackpack _unit);
