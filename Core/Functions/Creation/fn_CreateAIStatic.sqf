@@ -6,7 +6,7 @@
 // *		Function allows a maximum of 10 units and should be used together with "GOL_Fnc_Copy_Location"
 // *
 // *	Usage:
-// *		[[[461.042,1304.65,0.00143862],330,"UP"]] call GOL_Fnc_AI_Inf_Group_Static;
+// *		[[[461.042,1304.65,0.00143862],330,"UP"],[[461.042,1304.65,0.00143862],330,"Middle"]] call GOL_Fnc_AI_Inf_Group_Static;
 // *
 // *	Parameters:
 // *		0-9:	Array:	Position and direction
