@@ -9,8 +9,8 @@ _AllowNVG = true;
 _weaponCamo = {
 	switch (_this select 0) do {
 	    default {
-			_pistol = "CUP_hgun_Colt1911";
-			_pistol_mag = "CUP_7Rnd_45ACP_1911";
+			_pistol = "rhsusf_weap_m1911a1";
+			_pistol_mag = "rhsusf_mag_7x45acp_MHP";
 				_secondaryPistol = [];
 
 			_rifle = "CUP_arifle_L85A2";
@@ -60,7 +60,7 @@ _camoflage = {
 			_baseHelmet = ["H_HelmetB_snakeskin"] call BIS_fnc_selectRandom;
 			_baseUniform = ["U_B_CTRG_1","U_B_CTRG_2","U_B_CTRG_3"] call BIS_fnc_selectRandom;
 			_baseVest = ["V_PlateCarrierH_CTRG"] call BIS_fnc_selectRandom;
-			_baseGlasses = ["G_Combat","G_Shades_Black"] call BIS_fnc_selectRandom;
+			_baseGlasses = ["G_Combat","SP_Goggles_Black"] call BIS_fnc_selectRandom;
 
 			// Pilot
 			_pilotHelmet = "H_PilotHelmetHeli_B";

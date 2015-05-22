@@ -34,7 +34,7 @@
 		_module setVariable ["enableFor", 0, true];
 		_module setVariable ["enableAdvancedWounds", false, true];
 		_module setVariable ["enableVehicleCrashes", true, true];
-		_module setVariable ["medicSetting_PAK", 1, true];
+		_module setVariable ["medicSetting_PAK", 1, true];	// 0
 		_module setVariable ["consumeItem_PAK", 1, true];
 		_module setVariable ["useLocation_PAK", 0, true];
 		_module setVariable ["medicSetting_SurgicalKit", 1, true];

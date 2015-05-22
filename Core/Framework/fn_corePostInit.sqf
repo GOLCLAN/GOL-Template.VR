@@ -8,10 +8,10 @@
 		[] call GOL_Fnc_HeadlessClient;
 		[] call GOL_Fnc_radioSettings;
 		[] call GOL_Fnc_NotesInit;
-		[(["Default_AI"] call GOL_Fnc_GetConfig)] call GOL_Fnc_EnemyFactions;
+		[(["AI_Faction"] call GOL_Fnc_GetConfig)] call GOL_Fnc_EnemyFactions;
 		[] spawn GOL_Fnc_CoreLoop;
 		[] spawn GOL_Fnc_AudioDetectorAI;
-		[] spawn GOL_Fnc_MissionFunctions;
+//		[] spawn GOL_Fnc_MissionFunctions;
 
 		if (hasInterface) then {
 // *		Loads Mandatory Player functions
@@ -22,16 +22,6 @@
 
 			if (isNil {player getVariable "GOL_Player"}) then {
 				player setVariable ["GOL_Player", [player,(getPlayerUID player),([] call BIS_fnc_didJIP),time], true];
-			};
-			[] spawn {
-				sleep 5;
-			    [[[player], { (_this select 0) setGroupId [((_this select 0) getVariable "GOL_GroupID")]; }], "bis_fnc_call", true, true] call BIS_fnc_MP;
-				[player, (player getVariable "GOL_Loadout") select 1] call ACE_Interaction_fnc_joinTeam;
-				if ((player getVariable "GOL_Player") select 2) then {	// JIP
-					{
-						[_x] call GOL_Fnc_MHQActions;
-					} forEach MHQArray;
-				};
 			};
 		};
 

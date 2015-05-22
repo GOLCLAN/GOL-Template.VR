@@ -24,7 +24,8 @@
 	_return = if (isMultiplayer) then {
 		[playableUnits, { isPlayer _x }] call BIS_fnc_conditionalSelect;
 	} else {
-		[player];
+//		[player];
+		switchableUnits;
 	};
 	if !(_return isEqualTo GOL_PlayerList) then {
 		GOL_PlayerList = _return;

@@ -94,13 +94,13 @@
     ];
 
     _standard = [
-        [_glHE, 150,50,20],
-        [_glsmokeW, 150,20,10],
-        [_glflareW, 150,10,5],
-        [_grenade, 150,30,20],
-        [_grenademini, 150,30,20],
-        [_smokegrenadeW, 150,30,20],
-        [_smokegrenadeG, 150,10,5]
+        [_glHE, 50,50,20],
+        [_glsmokeW, 50,20,10],
+        [_glflareW, 50,10,5],
+        [_grenade, 50,30,20],
+        [_grenademini, 50,30,20],
+        [_smokegrenadeW, 50,30,20],
+        [_smokegrenadeG, 50,10,5]
     ];
 
     _Supplies = {
@@ -136,13 +136,6 @@
                 (_this select 0) addAction ["Squad > Automatic Rifleman"," [player,'ar'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)"];
                 (_this select 0) addAction ["Squad > Light Rifleman"," [player,'lr'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)"];
                 (_this select 0) addAction ["Echo > Pilot"," [player,'p'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)"];
-
-//              (_this select 0) addAction ["Echo > Commander"," [player,'vco'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)];
-//              (_this select 0) addAction ["Echo > Crew"," [player,'vcrew'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)];
-//              (_this select 0) addAction ["Echo > Sniper"," [player,'sniper'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)];
-//              (_this select 0) addAction ["Echo > Spotter"," [player,'spotter'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)];
-//              (_this select 0) addAction ["Echo > Diver"," [player,'diver'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)];
-
             }], "bis_fnc_call", true, true] call BIS_fnc_MP;
 
             { [_cargo, (_x select 0), (_x select 1)] call GOL_Fnc_AddItemCargo; } forEach _standard;
@@ -153,14 +146,11 @@
             // CCO
             [_cargo, "optic_Aco", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "optic_ACO_grn", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "optic_MRD", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "FHQ_optic_AC11704", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "FHQ_optic_MicroCCO", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "FHQ_optic_MicroCCO_low", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "FHQ_optic_AIM", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "FHQ_optic_HWS", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "FHQ_optic_AC12136", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "rhsusf_acc_EOTECH", 50] call GOL_Fnc_AddItemCargo;
+//            [_cargo, "rhsusf_acc_eotech_552", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "rhsusf_acc_compm4", 50] call GOL_Fnc_AddItemCargo;
 
             // Items

@@ -23,7 +23,6 @@
 // *
 // ====================================================================================
 
-_this spawn {
 	//	INTERPRET PASSED VARIABLES
 	private [
 		"_unit","_typeofUnit","_isMan","_isCar","_isTank","_camo","_captivity","_Color","_boxConfigs","_item","_DebugName",
@@ -56,14 +55,8 @@ _this spawn {
 		"_secondaryAttachments","_primaryAttachments"
 	];
 
-	if ([] call BIS_fnc_didJIP) then {
-	    waitUntil {sleep 0.1; !isNull player};
-	};
-
 	//	The following interpret formats what has been passed to this script element
 	_unit = [_this, 0, player, [objNull]] call BIS_fnc_param;	// Defines the unit
-	_typeofUnit = [_this, 1, "r", ["",[]]] call BIS_fnc_param;
-
 	if !(local _unit) exitWith {false};	// Exits if script is not local
 	_isMan = _unit isKindOf "CAManBase";	// We check if we're dealing with a soldier or a vehicle
 	_isCar = _unit isKindOf "Car";
@@ -127,12 +120,14 @@ _this spawn {
 	//	====================================================================================
 
 	if (_isMan) then {
-		_typeofUnit = toLower ([_typeofUnit, 0, "r", [""]] call bis_fnc_paramIn);
-//		_unit setVariable ["GOL_Loadout", [(_this select 1)], true];
+		_typeofUnit = toLower ([_this, 1, "r", [""]] call bis_fnc_param);
+		if ((count _this == 1) && (!isNil {(_unit getVariable "GOL_Loadout")})) then {
+			_typeofUnit = ((_unit getVariable "GOL_Loadout") select 0);
+		};
+
 		_unit setVariable ["ACE_Medical_MedicClass", 0, true];	// Is Not Medic
 		_unit setVariable ["ACE_GForceCoef", 0.60, true];	// Is Pilot
 		_unit setVariable ["ACE_hasEarPlugsIn", true, true];
-		_unit setVariable ["BIS_enableRandomization", false];
 
 		if (captive _unit) then { _captivity = captiveNum _unit; _unit setCaptive false; } else { _captivity = 0; };
 
@@ -153,16 +148,15 @@ _this spawn {
 		if !(_captivity == 0) then { _unit setCaptive _captivity; };
 		[] call GOL_Fnc_Attachments;
 		_unit selectWeapon primaryWeapon _unit;
-		_unit setVariable ["GOL_Loadout", [(_this select 1), (_this select 2)], true];
+		_unit setVariable ["GOL_GroupColor", _Color, true];
 
-		[_unit, _typeofUnit, _Color,(_this select 2)] Spawn {
+		[_unit, _typeofUnit, _Color] Spawn {
 		    waitUntil {sleep 0.1; !isNull player};
 			_unit = _this select 0;
 			if (!local _unit || !alive _unit) exitWith {false};
 			_unit switchMove "AmovPknlMstpSlowWrflDnon";
 			sleep 2;
 			if (isPlayer _unit) then {
-				if ((_this select 3) != "") Then { _unit setVariable ["GOL_GroupID", (_this select 3), true]; };
 				if ((["Gear", "FullGear"] call GOL_Fnc_GetConfig) == 1) Then {
 					if !(isNil "GOL_Gear_Respawn") Then { player removeEventHandler ["respawn", GOL_Gear_Respawn]; };
 					GOL_Gear_Respawn = player addEventHandler ["respawn", { [player, (player getVariable "GOL_Loadout") select 0] call GOL_Fnc_GearHandler; } ];
@@ -179,6 +173,7 @@ _this spawn {
 
 	//	====================================================================================
 		if (isServer) Then {
+			_typeofUnit = [_this, 1, "", ["",[]]] call BIS_fnc_param;
 			_boxConfigs = [_this, 2, [true,true,false], [[]]] call BIS_fnc_param;	// Defines the unit
 
 			if (!_isMan && !_isCar && !_isTank) then {	// box
@@ -204,4 +199,3 @@ _this spawn {
 	_DebugName = "GOL_Fnc_GearHandler";
 	scriptName _DebugName;
 	[["Unit: %1 || Loadout: %2 ",_unit, _typeofUnit],[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;
-};

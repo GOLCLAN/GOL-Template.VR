@@ -1,6 +1,6 @@
 
 	_dac = str(["DAC_Config"] call GOL_Fnc_GetConfig);
-	_aiFaction = str(["Default_AI"] call GOL_Fnc_GetConfig);
+	_aiFaction = str(["AI_Faction"] call GOL_Fnc_GetConfig);
 // ================================================================
 	_factionWest = str(["Gear", "Blufor"] call GOL_Fnc_GetConfig);
 	_factionEast = str(["Gear", "Opfor"] call GOL_Fnc_GetConfig);

@@ -9,8 +9,8 @@ _AllowNVG = true;
 _weaponCamo = {
 	switch (_this select 0) do {
 	    default {
-			_pistol = "CUP_hgun_Colt1911";
-			_pistol_mag = "CUP_7Rnd_45ACP_1911";
+			_pistol = "rhsusf_weap_m1911a1";
+			_pistol_mag = "rhsusf_mag_7x45acp_MHP";
 				_secondaryPistol = [];
 
 			_rifle = "CUP_arifle_L85A2";
