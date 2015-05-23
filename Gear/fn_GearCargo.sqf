@@ -84,7 +84,7 @@
     _ACE_standard = [
 //      [ClassName, Gearbox,Extra Supplies,Standard Supplies],
         [_bandage, 100,75,40],
-        [_morph, 100,50,20],
+        [_morph, 100,50,20]
     ];
 
     _ACE_Advanced = [

@@ -23,7 +23,6 @@
 // *
 // ====================================================================================
 
-_this spawn {
 	//	INTERPRET PASSED VARIABLES
 	private [
 		"_unit","_typeofUnit","_isMan","_isCar","_isTank","_camo","_captivity","_Color","_boxConfigs","_item","_DebugName",
@@ -70,7 +69,6 @@ _this spawn {
 	};
 
 	if (_isMan) then {
-		waitUntil {!isNull player};
 		if ((count _this == 1) && (!isNil {(_unit getVariable "GOL_Loadout")})) then {
 			_typeofUnit = ((_unit getVariable "GOL_Loadout") select 0);
 		} else {
@@ -139,4 +137,3 @@ _this spawn {
 	_DebugName = "GOL_Fnc_GearHandler";
 	scriptName _DebugName;
 	[["Unit: %1 || Loadout: %2 ",_unit, _typeofUnit],[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;
-};

@@ -7,11 +7,11 @@
 
 		[] call GOL_Fnc_HeadlessClient;
 		[] call GOL_Fnc_radioSettings;
-		[] call GOL_Fnc_NotesInit;
+		[] spawn GOL_Fnc_NotesInit;
 		[(["AI_Faction"] call GOL_Fnc_GetConfig)] call GOL_Fnc_EnemyFactions;
 		[] spawn GOL_Fnc_CoreLoop;
 		[] spawn GOL_Fnc_AudioDetectorAI;
-//		[] spawn GOL_Fnc_MissionFunctions;
+		[] spawn GOL_Fnc_MissionFunctions;
 
 		if (hasInterface) then {
 // *		Loads Mandatory Player functions
