@@ -16,27 +16,27 @@ _weaponCamo = {
 			_rifle = "arifle_TRG21_black_F";
 			_rifle_mag = "30Rnd_556x45_Stanag";
 			_rifle_mag_tr = "30Rnd_556x45_Stanag";
-				_primaryRifle = ["FHQ_optic_MARS","acc_pointer_IR"];
+				_primaryRifle = ["IDF_optic_Mars","acc_pointer_IR"];
 
 			_rifleGL = "arifle_TRG21_black_GL_F";
 			_rifleGL_mag = "30Rnd_556x45_Stanag";
 			_rifleGL_mag_tr = "30Rnd_556x45_Stanag";
-				_primaryRifleGL = ["FHQ_optic_MARS","acc_pointer_IR"];
+				_primaryRifleGL = ["IDF_optic_Mars","acc_pointer_IR"];
 
 			_rifleALT = "arifle_TRG21_black_F";
 			_rifleALT_mag = "30Rnd_556x45_Stanag";
 			_rifleALT_mag_tr = "30Rnd_556x45_Stanag";
-				_primaryRifleALT = ["FHQ_optic_MARS","acc_pointer_IR"];
+				_primaryRifleALT = ["IDF_optic_Mars","acc_pointer_IR"];
 
 			_carbine = "arifle_TRG20_black_F";
 			_carbine_mag = "30Rnd_556x45_Stanag";
 			_carbine_mag_tr = "30Rnd_556x45_Stanag";
-				_primaryCarbine = ["FHQ_optic_MARS","acc_pointer_IR"];
+				_primaryCarbine = ["IDF_optic_Mars","acc_pointer_IR"];
 
 			_LMG = "asdg_LMG_Zafir_F";
 			_LMG_mag = "150Rnd_762x51_Box_Tracer_Red";
 			_LMG_mag_tr = "150Rnd_762x51_Box_Tracer_Red";
-				_primaryLMG = ["FHQ_optic_MARS","acc_pointer_IR"];
+				_primaryLMG = ["IDF_optic_Mars","acc_pointer_IR"];
 
 			// Rifleman AT
 			_LAT = "rhs_weap_M136";

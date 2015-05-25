@@ -29,9 +29,9 @@
 
 		case "fac": {
 			[
-				[_smokegrenadeG,5],
-				[_smokegrenadeY,5],
-				[_smokegrenadeW,5]
+				[_smokegrenadeG,7],
+				[_smokegrenadeY,3],
+				[_smokegrenadeW,3]
 			] call GOL_Fnc_AddObjectsToBackpack;
 
 			[
@@ -55,11 +55,10 @@
 			[
 				[_pistol_mag,2],
 				[_rifleGL_mag_tr,5],
-				[_smokegrenadeW,2],
-				[_smokegrenadeR,3],
-				[_smokegrenadeY,3],
-				[_grenademini,3],
-				[_grenade,3]
+				[_smokegrenadeW,3],
+				[_smokegrenadeG,4],
+				[_grenademini,2],
+				[_grenade,2]
 			] call GOL_Fnc_AddObjects;
 		};
 
@@ -74,11 +73,10 @@
 			[
 				[_pistol_mag,2],
 				[_rifleGL_mag_tr,5],
-				[_smokegrenadeW,2],
-				[_smokegrenadeR,3],
-				[_smokegrenadeY,3],
-				[_grenademini,3],
-				[_grenade,3]
+				[_smokegrenadeW,4],
+				[_smokegrenadeG,2],
+				[_grenademini,2],
+				[_grenade,2]
 			] call GOL_Fnc_AddObjects;
 		};
 
@@ -95,9 +93,6 @@
 				[_grenade,1],
 				[_LAT]
 			] call GOL_Fnc_AddObjects;
-
-// *		Weapons with attachements
-			removeBackpackGlobal _unit;
 		};
 
 		case "g": {
@@ -136,7 +131,7 @@
 
 			if (GOL_Gear_Extra) then {
 				[
-					[_bandage,30],
+					[_bandage,20],
 					[_morph,8]
 				] call GOL_Fnc_AddObjectsToBackpack;
 			};

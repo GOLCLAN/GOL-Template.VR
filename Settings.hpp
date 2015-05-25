@@ -1,6 +1,6 @@
 
 // *	Settings for the mission
-	briefingName = "GOL@127 Template 0.68";
+	briefingName = "GOL@127 Template";
 	overviewText = "GOL Template";
 
 	author = "GOL Editing Team";						// shown in loading screen and briefing
@@ -57,10 +57,9 @@
 /*
 			class Cache {	// Coming soon...	Maybe 0.7
 				Enabled = false;	//	BOOL:	True: Enables caching of units & objects applied to the mission
-//				Selected = true;	//	BOOL:	True: Only caches the objects with the variable "GOL_Caching" set to true	| False: is vice versa but auto all objects
-//				AutoApply = false;	//	BOOL:	True: Caches all objects exept for the ones with the variable "GOL_Caching" set to false	| False: is vice versa (Only caches the one with the variable set to true)
+				AutoApply = false;	//	BOOL:	True: Caches all objects exept for the ones with the variable "GOL_Caching" set to false	| False: is vice versa (Only caches the one with the variable set to true)
 				Man = 900;			//	Number:	Caching distance from Player on foot
-				Land = 1600;			//	Number:	Caching distance from Player in vehicles
+				Land = 1600;		//	Number:	Caching distance from Player in vehicles
 				Air = 2000;			//	Number:	Caching distance from Player in the air
 			};
 */

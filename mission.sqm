@@ -11,7 +11,9 @@ class Mission
 		"A3_Supplies_F_Heli_CargoNets",
 		"A3_Weapons_F_Ammoboxes",
 		"rhs_c_a2port_car",
-		"map_vr"
+		"map_vr",
+		"CUP_Weapons_AmmoBoxes",
+		"ace_medical"
 	};
 	addOnsAuto[]=
 	{
@@ -23,6 +25,8 @@ class Mission
 		"A3_Supplies_F_Heli_CargoNets",
 		"A3_Weapons_F_Ammoboxes",
 		"rhs_c_a2port_car",
+		"CUP_Weapons_AmmoBoxes",
+		"ace_medical",
 		"map_vr"
 	};
 	randomSeed=11823142;
@@ -725,7 +729,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={365.60513,5,1263.771};
+					position[]={365.30927,5,1264.9556};
 					id=42;
 					side="LOGIC";
 					vehicle="HeadlessClient_F";
@@ -2078,7 +2082,7 @@ class Mission
 		items=12;
 		class Item0
 		{
-			position[]={339.24902,5,1244.4539};
+			position[]={334.49661,5,1260.1667};
 			special="NONE";
 			id=127;
 			side="EMPTY";
@@ -2103,7 +2107,7 @@ class Mission
 			special="NONE";
 			id=129;
 			side="EMPTY";
-			vehicle="Box_East_Ammo_F";
+			vehicle="Box_East_Support_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,[""small_box"",""east""],[true,false]] call GOL_Fnc_GearHandler;";
@@ -2125,7 +2129,7 @@ class Mission
 			special="NONE";
 			id=131;
 			side="EMPTY";
-			vehicle="Box_NATO_Ammo_F";
+			vehicle="B_supplyCrate_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,[""small_box"",""west""],[true,true]] call GOL_Fnc_GearHandler;";
@@ -2147,14 +2151,14 @@ class Mission
 			special="NONE";
 			id=133;
 			side="EMPTY";
-			vehicle="Box_IND_Ammo_F";
+			vehicle="Box_IND_Support_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,[""small_box"",""indep""],[true,false]] call GOL_Fnc_GearHandler;";
 		};
 		class Item7
 		{
-			position[]={332.04617,5,1245.0693};
+			position[]={335.0705,5,1247.3765};
 			id=134;
 			side="EMPTY";
 			vehicle="RHS_Civ_Truck_02_transport_F";
@@ -2164,44 +2168,44 @@ class Mission
 		};
 		class Item8
 		{
-			position[]={333.61005,5,1265.0608};
+			position[]={363.9968,5,1247.6184};
 			special="NONE";
 			id=135;
 			side="EMPTY";
-			vehicle="Box_NATO_Support_F";
+			vehicle="CUP_USBasicWeaponsBox";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,""misc_box"",[false,true]] call GOL_Fnc_GearHandler;";
 		};
 		class Item9
 		{
-			position[]={336.91617,5,1264.9983};
+			position[]={367.42398,5,1247.6169};
 			special="NONE";
 			id=136;
 			side="EMPTY";
-			vehicle="Box_NATO_AmmoOrd_F";
+			vehicle="ACE_medicalSupplyCrate";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,""med_box"",[false,true]] call GOL_Fnc_GearHandler;";
 		};
 		class Item10
 		{
-			position[]={337.06458,5,1261.1155};
+			position[]={367.45132,5,1243.6731};
 			special="NONE";
 			id=137;
 			side="EMPTY";
-			vehicle="B_supplyCrate_F";
+			vehicle="CUP_USVehicleBox";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,""gear_box"",[false,true]] call GOL_Fnc_GearHandler;";
 		};
 		class Item11
 		{
-			position[]={333.6445,5,1261.3269};
+			position[]={364.03125,5,1243.8845};
 			special="NONE";
 			id=138;
 			side="EMPTY";
-			vehicle="Box_NATO_WpsSpecial_F";
+			vehicle="CUP_USBasicAmmunitionBox";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,""a_box"",[false,true]] call GOL_Fnc_GearHandler;";
@@ -2302,7 +2306,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=6;
+		items=8;
 		class Item0
 		{
 			position[]={450.16705,5,1451.291};
@@ -2377,6 +2381,34 @@ class Mission
 			age="UNKNOWN";
 			expCond="(ZONE3 == 1) && HeadlessController";
 			expActiv="null = execVM ""mission\BadGuys.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item6
+		{
+			position[]={248.34232,5,1250.4546};
+			activationBy="LOGIC";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="z1";
+			expCond="time > 2";
+			expActiv="fun = [""z1"",[1,0,0],[1,1,5,5],[],[],[],[0,4,0,0]] spawn DAC_Zone;";
+			class Effects
+			{
+			};
+		};
+		class Item7
+		{
+			position[]={251.76897,5,1149.6099};
+			activationBy="LOGIC";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="z2";
+			expCond="time > 2";
+			expActiv="fun = [""z2"",[1,0,0],[1,1,5,5],[],[],[],[0,5,0,0]] spawn DAC_Zone;";
 			class Effects
 			{
 			};
