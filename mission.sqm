@@ -2306,7 +2306,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=8;
+		items=6;
 		class Item0
 		{
 			position[]={450.16705,5,1451.291};
@@ -2381,34 +2381,6 @@ class Mission
 			age="UNKNOWN";
 			expCond="(ZONE3 == 1) && HeadlessController";
 			expActiv="null = execVM ""mission\BadGuys.sqf"";";
-			class Effects
-			{
-			};
-		};
-		class Item6
-		{
-			position[]={248.34232,5,1250.4546};
-			activationBy="LOGIC";
-			repeating=1;
-			interruptable=1;
-			age="UNKNOWN";
-			name="z1";
-			expCond="time > 2";
-			expActiv="fun = [""z1"",[1,0,0],[1,1,5,5],[],[],[],[0,4,0,0]] spawn DAC_Zone;";
-			class Effects
-			{
-			};
-		};
-		class Item7
-		{
-			position[]={251.76897,5,1149.6099};
-			activationBy="LOGIC";
-			repeating=1;
-			interruptable=1;
-			age="UNKNOWN";
-			name="z2";
-			expCond="time > 2";
-			expActiv="fun = [""z2"",[1,0,0],[1,1,5,5],[],[],[],[0,5,0,0]] spawn DAC_Zone;";
 			class Effects
 			{
 			};
