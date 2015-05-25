@@ -15,7 +15,7 @@
 
 // Respawn Settings
 	aiKills = 0;
-	respawnDialog = 0;			// Show scoreboard when dead
+	respawnDialog = 0;
 
 // =====================================
 // CleanUp Settings for better performance

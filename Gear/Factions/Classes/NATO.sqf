@@ -1,5 +1,5 @@
 
-#include "Common.sqf";
+#include "Common.sqf"
 
 _AllowNVG = true;
 
@@ -101,7 +101,7 @@ _camoflage = {
 			_baseHelmet = ["H_HelmetB","H_HelmetB_plain_mcamo"] call BIS_fnc_selectRandom;
 			_baseUniform = ["U_B_CombatUniform_mcam","U_B_CombatUniform_mcam_tshirt","U_B_CombatUniform_mcam_vest"] call BIS_fnc_selectRandom;
 			_baseVest = ["V_PlateCarrier3_rgr"] call BIS_fnc_selectRandom;
-			_baseGlasses = ["G_Combat","G_Shades_Black"] call BIS_fnc_selectRandom;
+			_baseGlasses = ["G_Combat","SP_Goggles_Black"] call BIS_fnc_selectRandom;
 
 			// Pilot
 			_pilotHelmet = "H_PilotHelmetHeli_B";

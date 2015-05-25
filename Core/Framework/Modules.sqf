@@ -17,7 +17,7 @@
 	if (isClass(configFile>>"CfgPatches">>"ACE_Medical")) then {
 		_module = _moduleGroup createUnit ["ACE_moduleMedicalSettings", [0,0,0],[],0.5,"NONE"];
 		_module setVariable ["level", 1, true];
-		_module setVariable ["medicSetting", 1, true];
+		_module setVariable ["medicSetting", 0, true];
 		_module setVariable ["allowLitterCreation", true, true];
 		_module setVariable ["litterCleanUpDelay", 1200, true];
 		_module setVariable ["enableScreams", true, true];
@@ -34,7 +34,7 @@
 		_module setVariable ["enableFor", 0, true];
 		_module setVariable ["enableAdvancedWounds", false, true];
 		_module setVariable ["enableVehicleCrashes", true, true];
-		_module setVariable ["medicSetting_PAK", 1, true];
+		_module setVariable ["medicSetting_PAK", 1, true];	// 0
 		_module setVariable ["consumeItem_PAK", 1, true];
 		_module setVariable ["useLocation_PAK", 0, true];
 		_module setVariable ["medicSetting_SurgicalKit", 1, true];
@@ -47,7 +47,9 @@
 		_module setVariable ["maxReviveTime", 120, true];
 		_module setVariable ["amountOfReviveLives", -1, true];
 			GOL_Module_MedicalRevive = _module;
+			ace_medical_setting_allowSharedEquipment = false;
 		[] spawn {
+			publicVariable "ace_medical_setting_allowSharedEquipment";
 			publicVariable "GOL_Module_MedicalBasic";
 			publicVariable "GOL_Module_MedicalAdv";
 			publicVariable "GOL_Module_MedicalRevive";
@@ -168,6 +170,12 @@
 		_module setVariable ["revealMines", 0, true];
 	};
 
+	if (isClass(configFile>>"CfgPatches">>"DAC_Source")) then {
+		if (["DAC_Config"] call GOL_Fnc_GetConfig isEqualTo 1) then {
+			_module = _moduleGroup createUnit ["DAC_Source_Extern", [0,0,0],[],0.5,"NONE"];
+		};
+	};
+
 	if (isClass(configFile>>"CfgPatches">>"A3_Modules_F_Curator")) then {
 
 		_module = _moduleGroup createUnit["ModuleCurator_F",[0,0,0],[],0,"NONE"];
@@ -186,13 +194,9 @@
 		};
 	};
 
-/*
-	[GOL_Gamelogic] call GOL_Fnc_CacheObjects;
-	[GOL_Gamelogic] call GOL_Fnc_CacheVehicles;
 	if (["Cache","Enabled"] call GOL_Fnc_GetConfig isEqualTo 1) then {
 		[GOL_Gamelogic] call GOL_Fnc_FPS_Manager;
 	};
-*/
 
 	if (["Lightning"] call GOL_Fnc_GetConfig isEqualTo 1) then {
 		GOL_Lightning_Active = true;

@@ -3,33 +3,26 @@
 		_DebugName = "GOL-coreLoop";
 		scriptName _DebugName;
 		if (isServer) then {
+			{
+				if ((local _x) && (!isNil {(_x getVariable "GOL_Loadout")})) then {
+					[_x] call GOL_Fnc_GearHandler;
+				};
+			} forEach allUnits;
+			GOL_PersistentArray = [];
+			GOL_CacheObject_Rescan = false;
+			GOL_CacheVehicle_Rescan = false;
 			[] spawn {
-				GOL_PlayerList = [];
-				GOL_PersistentArray = [];
-				GOL_CacheObject_Rescan = false;
-				GOL_CacheVehicle_Rescan = false;
 				publicVariable "GOL_PersistentArray";
 				publicVariable "GOL_CacheObject_Rescan";
 				publicVariable "GOL_CacheVehicle_Rescan";
-				while {true} do {
-					_players = [];
-					if (isMultiplayer) then {
-						_players = (call CBA_fnc_players);
-					} else {
-						_players = switchableUnits;
-					};
-					if !(cameraOn in _players) then {	_players pushBack cameraOn;	};
+				{ _x disableai "MOVE"; }ForEach (playableUnits + switchableUnits);
+				while {true} do {	// sleeps to prevent exectuted of everything at the sametime
+					private ["_players"];
+					_players = (call GOL_Fnc_Players);
 					if !(_players isEqualTo GOL_PlayerList) then {
 						GOL_PlayerList = _players;
 						publicVariable "GOL_PlayerList";
 					};
-					sleep 5;
-				};
-			};
-			[] spawn {
-//				[500] spawn GOL_Fnc_LightningRandom;
-				{ _x disableai "MOVE"; }ForEach (playableUnits + switchableUnits);
-				while {true} do {	// sleeps to prevent exectuted of everything at the sametime
 					sleep 10;
 					if (fog > 0.02) then {setviewDistance (viewDistance * (1 - fog))};
 					[] call GOL_fnc_Curator_Setskill;
@@ -39,6 +32,23 @@
 					if (isMultiplayer) then {
 						[] call GOL_fnc_Curator_AddPlayers;
 					};
+				};
+			};
+
+		};
+		if (hasInterface) then {
+			[] spawn {
+				private ["_time"];
+				_time = time;
+				waitUntil {sleep 0.1; !isNull player; time > (_time + 5)};
+				if (!isNil {(player getVariable "GOL_Loadout")}) then {
+					[[[player], { (_this select 0) setGroupId [((_this select 0) getVariable "GOL_Loadout") select 1]; }], "bis_fnc_call", true, true] call BIS_fnc_MP;
+					[player, (player getVariable "GOL_GroupColor")] call ACE_Interaction_fnc_joinTeam;
+				};
+				if ((player getVariable "GOL_Player") select 2) then {	// JIP
+					{
+						[_x] call GOL_Fnc_MHQActions;
+					} forEach MHQArray;
 				};
 			};
 		};

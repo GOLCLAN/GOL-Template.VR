@@ -1,5 +1,5 @@
 
-#include "Common.sqf";
+#include "Common.sqf"
 
 _AllowNVG = true;
 

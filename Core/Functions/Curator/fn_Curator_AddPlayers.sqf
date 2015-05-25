@@ -25,5 +25,5 @@
 					_curator addCuratorEditableObjects [[_x],true];
 				};
 			};
-		} foreach GOL_PlayerList;
+		} foreach (call GOL_Fnc_Players);
 	} foreach (allCurators);

@@ -25,11 +25,11 @@
 // *		Nothing
 // *
 // ================================================================
+//	||	({isPlayer _x && ((getPos _x select 2) < 5)} count thislist > 0) && HeadlessController	|| 	Perfect for using in a trigger
 
 	if (isMultiplayer && !isServer) exitWith {false};		// Ensures only server runs
 
 	[[[(_this select 0),(_this select 1),(_this select 2)], {
-
 
 		if (HeadlessVariable) Then {
 			[[[(_this select 0),(_this select 1),(_this select 2)], {
@@ -37,7 +37,7 @@
 				private ["_function","_type","_params","_caller","_Script","_execute"];
 				_function = [_this, 0, "", ["",{}]] call BIS_fnc_param;	//	What to be executed
 				_type = toLower ([_this, 1, "spawn", [""]] call BIS_fnc_param);	//	Decides if it is a Script / Function
-				_params = [_this, 2, 0] call BIS_fnc_param;	//	Spawns Script or Function with params
+				_params = [_this, 2, []] call BIS_fnc_param;	//	Spawns Script or Function with params
 
 				//	SCRIPTS
 				if (_type isEqualTo "execVM" || _type isEqualTo "exec") then {
@@ -63,7 +63,7 @@
 			private ["_function","_type","_params","_caller","_Script","_execute"];
 			_function = [_this, 0, "", ["",{}]] call BIS_fnc_param;	//	What to be executed
 			_type = toLower ([_this, 1, "spawn", [""]] call BIS_fnc_param);	//	Decides if it is a Script / Function
-			_params = [_this, 2, 0] call BIS_fnc_param;	//	Spawns Script or Function with params
+			_params = [_this, 2, []] call BIS_fnc_param;	//	Spawns Script or Function with params
 
 			//	SCRIPTS
 			if (_type isEqualTo "execVM" || _type isEqualTo "exec") then {

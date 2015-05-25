@@ -5,7 +5,7 @@
 // *		TelePort player to a object
 // *
 // *	Usage:
-// *		[player, gol_flag] call GOL_fnc_Teleport;;
+// *		[player, gol_flag] call GOL_fnc_Teleport;
 // *		player addAction ["Teleport1",{[player,gol_flag] call GOL_Fnc_Teleport}];
 // *
 // *	Parameters:

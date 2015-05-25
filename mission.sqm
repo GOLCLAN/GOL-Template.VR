@@ -3,9 +3,27 @@ class Mission
 {
 	addOns[]=
 	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"A3_Characters_F_OPFOR",
+		"A3_Characters_F_INDEP",
+		"A3_Structures_F_Mil_Flags",
+		"A3_Supplies_F_Heli_CargoNets",
+		"A3_Weapons_F_Ammoboxes",
+		"rhs_c_a2port_car",
+		"map_vr"
 	};
 	addOnsAuto[]=
 	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"A3_Characters_F_OPFOR",
+		"A3_Characters_F_INDEP",
+		"A3_Structures_F_Mil_Flags",
+		"A3_Supplies_F_Heli_CargoNets",
+		"A3_Weapons_F_Ammoboxes",
+		"rhs_c_a2port_car",
+		"map_vr"
 	};
 	randomSeed=11823142;
 	class Intel
@@ -50,7 +68,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					text="wpl";
-					init="[this,""pl"",""1-Actual""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""pl"", ""1-Actual""], True];";
 					description="1-Actual - Platoon Leader";
 				};
 				class Item1
@@ -64,7 +82,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="wfac";
-					init="[this,""fac"",""1-Actual""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""fac"", ""Yellow"", ""1-Actual""], True];";
 					description="1-Actual - FAC";
 				};
 			};
@@ -88,7 +106,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="w1a1";
-					init="[this,""sl"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""sl"", ""1-1 Alpha""], True];";
 					description="1-1 Alpha - Squad Leader";
 				};
 				class Item1
@@ -102,7 +120,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1a2";
-					init="[this,""r"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""r"", ""1-1 Alpha""], True];";
 					description="1-1 Alpha - Rifleman";
 				};
 				class Item2
@@ -116,7 +134,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1a3";
-					init="[this,""g"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""g"", ""1-1 Alpha""], True];";
 					description="1-1 Alpha - Grenadier";
 				};
 				class Item3
@@ -130,7 +148,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1a4";
-					init="[this,""ag"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ag"", ""1-1 Alpha""], True];";
 					description="1-1 Alpha - Assist. Gunner";
 				};
 				class Item4
@@ -144,7 +162,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1a5";
-					init="[this,""ar"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ar"", ""1-1 Alpha""], True];";
 					description="1-1 Alpha - Automatic Rifleman";
 				};
 				class Item5
@@ -158,7 +176,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1a6";
-					init="[this,""lr"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""lr"", ""1-1 Alpha""], True];";
 					description="1-1 Alpha - Light Rifleman";
 				};
 			};
@@ -182,7 +200,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="w1b1";
-					init="[this,""ftl"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ftl"", ""1-1 Bravo""], True];";
 					description="1-1 Bravo - Fire Team Leader";
 				};
 				class Item1
@@ -196,7 +214,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1b2";
-					init="[this,""r"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""r"", ""1-1 Bravo""], True];";
 					description="1-1 Bravo - Rifleman";
 				};
 				class Item2
@@ -210,7 +228,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1b3";
-					init="[this,""g"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""g"", ""1-1 Bravo""], True];";
 					description="1-1 Bravo - Grenadier";
 				};
 				class Item3
@@ -224,7 +242,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1b4";
-					init="[this,""ag"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ag"", ""1-1 Bravo""], True];";
 					description="1-1 Bravo - Assist. Gunner";
 				};
 				class Item4
@@ -238,7 +256,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1b5";
-					init="[this,""ar"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ar"", ""1-1 Bravo""], True];";
 					description="1-1 Bravo - Automatic Rifleman";
 				};
 				class Item5
@@ -252,7 +270,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1b6";
-					init="[this,""lr"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""lr"", ""1-1 Bravo""], True];";
 					description="1-1 Bravo - Light Rifleman";
 				};
 			};
@@ -276,7 +294,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="w1c1";
-					init="[this,""ftl"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ftl"", ""1-1 Charlie""], True];";
 					description="1-1 Charlie - Fire Team Leader";
 				};
 				class Item1
@@ -290,7 +308,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1c2";
-					init="[this,""r"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""r"", ""1-1 Charlie""], True];";
 					description="1-1 Charlie - Rifleman";
 				};
 				class Item2
@@ -304,7 +322,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1c3";
-					init="[this,""g"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""g"", ""1-1 Charlie""], True];";
 					description="1-1 Charlie - Grenadier";
 				};
 				class Item3
@@ -318,7 +336,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1c4";
-					init="[this,""ag"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ag"", ""1-1 Charlie""], True];";
 					description="1-1 Charlie - Assist. Gunner";
 				};
 				class Item4
@@ -332,7 +350,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1c5";
-					init="[this,""ar"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ar"", ""1-1 Charlie""], True];";
 					description="1-1 Charlie - Automatic Rifleman";
 				};
 				class Item5
@@ -346,7 +364,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w1c6";
-					init="[this,""lr"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""lr"", ""1-1 Charlie""], True];";
 					description="1-1 Charlie - Light Rifleman";
 				};
 			};
@@ -370,7 +388,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="w2a1";
-					init="[this,""sl"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""sl"", ""1-2 Alpha""], True];";
 					description="1-2 Alpha - Squad Leader";
 				};
 				class Item1
@@ -384,7 +402,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2a2";
-					init="[this,""r"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""r"", ""1-2 Alpha""], True];";
 					description="1-2 Alpha - Rifleman";
 				};
 				class Item2
@@ -398,7 +416,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2a3";
-					init="[this,""g"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""g"", ""1-2 Alpha""], True];";
 					description="1-2 Alpha - Grenadier";
 				};
 				class Item3
@@ -412,7 +430,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2a4";
-					init="[this,""ag"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ag"", ""1-2 Alpha""], True];";
 					description="1-2 Alpha - Assist. Gunner";
 				};
 				class Item4
@@ -426,7 +444,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2a5";
-					init="[this,""ar"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ar"", ""1-2 Alpha""], True];";
 					description="1-2 Alpha - Automatic Rifleman";
 				};
 				class Item5
@@ -440,7 +458,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2a6";
-					init="[this,""lr"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""lr"", ""1-2 Alpha""], True];";
 					description="1-2 Alpha - Light Rifleman";
 				};
 			};
@@ -464,7 +482,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="w2b1";
-					init="[this,""ftl"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ftl"", ""1-2 Bravo""], True];";
 					description="1-2 Bravo - Fire Team Leader";
 				};
 				class Item1
@@ -478,7 +496,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2b2";
-					init="[this,""r"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""r"", ""1-2 Bravo""], True];";
 					description="1-2 Bravo - Rifleman";
 				};
 				class Item2
@@ -492,7 +510,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2b3";
-					init="[this,""g"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""g"", ""1-2 Bravo""], True];";
 					description="1-2 Bravo - Grenadier";
 				};
 				class Item3
@@ -506,7 +524,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2b4";
-					init="[this,""ag"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ag"", ""1-2 Bravo""], True];";
 					description="1-2 Bravo - Assist. Gunner";
 				};
 				class Item4
@@ -520,7 +538,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2b5";
-					init="[this,""ar"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ar"", ""1-2 Bravo""], True];";
 					description="1-2 Bravo - Automatic Rifleman";
 				};
 				class Item5
@@ -534,7 +552,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2b6";
-					init="[this,""lr"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""lr"", ""1-2 Bravo""], True];";
 					description="1-2 Bravo - Light Rifleman";
 				};
 			};
@@ -558,7 +576,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="w2c1";
-					init="[this,""ftl"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ftl"", ""1-2 Charlie""], True];";
 					description="1-2 Charlie - Fire Team Leader";
 				};
 				class Item1
@@ -572,7 +590,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2c2";
-					init="[this,""r"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""r"", ""1-2 Charlie""], True];";
 					description="1-2 Charlie - Rifleman";
 				};
 				class Item2
@@ -586,7 +604,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2c3";
-					init="[this,""g"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""g"", ""1-2 Charlie""], True];";
 					description="1-2 Charlie - Grenadier";
 				};
 				class Item3
@@ -600,7 +618,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2c4";
-					init="[this,""ag"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ag"", ""1-2 Charlie""], True];";
 					description="1-2 Charlie - Assist. Gunner";
 				};
 				class Item4
@@ -614,7 +632,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2c5";
-					init="[this,""ar"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ar"", ""1-2 Charlie""], True];";
 					description="1-2 Charlie - Automatic Rifleman";
 				};
 				class Item5
@@ -628,7 +646,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="w2c6";
-					init="[this,""lr"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""lr"", ""1-2 Charlie""], True];";
 					description="1-2 Charlie - Light Rifleman";
 				};
 			};
@@ -652,7 +670,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="wecho1";
-					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""p"", ""AAC""], True];";
 					description="Echo 1";
 				};
 				class Item1
@@ -666,7 +684,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="wecho2";
-					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""p"", ""AAC""], True];";
 					description="Echo 2";
 				};
 				class Item2
@@ -680,7 +698,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="wecho3";
-					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""p"", ""AAC""], True];";
 					description="Echo 3";
 				};
 				class Item3
@@ -694,7 +712,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="wecho4";
-					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""p"", ""AAC""], True];";
 					description="Echo 4";
 				};
 			};
@@ -707,7 +725,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={366.63284,5,1358.1201};
+					position[]={365.60513,5,1263.771};
 					id=42;
 					side="LOGIC";
 					vehicle="HeadlessClient_F";
@@ -737,7 +755,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					text="epl";
-					init="[this,""pl"",""1-Actual""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""pl"", ""1-Actual""], True];";
 					description="1-Actual - Platoon Leader";
 				};
 				class Item1
@@ -751,7 +769,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="efac";
-					init="[this,""fac"",""1-Actual""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""fac"", ""1-Actual""], True];";
 					description="1-Actual - FAC";
 				};
 			};
@@ -775,7 +793,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="e1a1";
-					init="[this,""sl"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""sl"", ""1-1 Alpha""], True];";
 					description="1-1 Alpha - Squad Leader";
 				};
 				class Item1
@@ -789,7 +807,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1a2";
-					init="[this,""r"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""r"", ""1-1 Alpha""], True];";
 					description="1-1 Alpha - Rifleman";
 				};
 				class Item2
@@ -803,7 +821,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1a3";
-					init="[this,""g"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""g"", ""1-1 Alpha""], True];";
 					description="1-1 Alpha - Grenadier";
 				};
 				class Item3
@@ -817,7 +835,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1a4";
-					init="[this,""ag"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ag"", ""1-1 Alpha""], True];";
 					description="1-1 Alpha - Assist. Gunner";
 				};
 				class Item4
@@ -831,7 +849,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1a5";
-					init="[this,""ar"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ar"", ""1-1 Alpha""], True];";
 					description="1-1 Alpha - Automatic Rifleman";
 				};
 				class Item5
@@ -845,7 +863,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1a6";
-					init="[this,""lr"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""lr"", ""1-1 Alpha""], True];";
 					description="1-1 Alpha - Light Rifleman";
 				};
 			};
@@ -869,7 +887,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="e1b1";
-					init="[this,""ftl"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ftl"", ""1-1 Bravo""], True];";
 					description="1-1 Bravo - Squad Leader";
 				};
 				class Item1
@@ -883,7 +901,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1b2";
-					init="[this,""r"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""r"", ""1-1 Bravo""], True];";
 					description="1-1 Bravo - Rifleman";
 				};
 				class Item2
@@ -897,7 +915,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1b3";
-					init="[this,""g"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""g"", ""1-1 Bravo""], True];";
 					description="1-1 Bravo - Grenadier";
 				};
 				class Item3
@@ -911,7 +929,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1b4";
-					init="[this,""ag"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ag"", ""1-1 Bravo""], True];";
 					description="1-1 Bravo - Assist. Gunner";
 				};
 				class Item4
@@ -925,7 +943,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1b5";
-					init="[this,""ar"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ar"", ""1-1 Bravo""], True];";
 					description="1-1 Bravo - Automatic Rifleman";
 				};
 				class Item5
@@ -939,7 +957,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1b6";
-					init="[this,""lr"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""lr"", ""1-1 Bravo""], True];";
 					description="1-1 Bravo - Light Rifleman";
 				};
 			};
@@ -963,7 +981,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="e1c1";
-					init="[this,""ftl"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ftl"", ""1-1 Charlie""], True];";
 					description="1-1 Charlie - Squad Leader";
 				};
 				class Item1
@@ -977,7 +995,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1c2";
-					init="[this,""r"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""r"", ""1-1 Charlie""], True];";
 					description="1-1 Charlie - Rifleman";
 				};
 				class Item2
@@ -991,7 +1009,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1c3";
-					init="[this,""g"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""g"", ""1-1 Charlie""], True];";
 					description="1-1 Charlie - Grenadier";
 				};
 				class Item3
@@ -1005,7 +1023,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1c4";
-					init="[this,""ag"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ag"", ""1-1 Charlie""], True];";
 					description="1-1 Charlie - Assist. Gunner";
 				};
 				class Item4
@@ -1019,7 +1037,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1c5";
-					init="[this,""ar"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ar"", ""1-1 Charlie""], True];";
 					description="1-1 Charlie - Automatic Rifleman";
 				};
 				class Item5
@@ -1033,7 +1051,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e1c6";
-					init="[this,""lr"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""lr"", ""1-1 Charlie""], True];";
 					description="1-1 Charlie - Light Rifleman";
 				};
 			};
@@ -1057,7 +1075,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="e2a1";
-					init="[this,""sl"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""sl"", ""1-2 Alpha""], True];";
 					description="1-2 Alpha - Squad Leader";
 				};
 				class Item1
@@ -1071,7 +1089,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2a2";
-					init="[this,""r"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""r"", ""1-2 Alpha""], True];";
 					description="1-2 Alpha - Rifleman";
 				};
 				class Item2
@@ -1085,7 +1103,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2a3";
-					init="[this,""g"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""g"", ""1-2 Alpha""], True];";
 					description="1-2 Alpha - Grenadier";
 				};
 				class Item3
@@ -1099,7 +1117,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2a4";
-					init="[this,""ag"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ag"", ""1-2 Alpha""], True];";
 					description="1-2 Alpha - Assist. Gunner";
 				};
 				class Item4
@@ -1113,7 +1131,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2a5";
-					init="[this,""ar"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ar"", ""1-2 Alpha""], True];";
 					description="1-2 Alpha - Automatic Rifleman";
 				};
 				class Item5
@@ -1127,7 +1145,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2a6";
-					init="[this,""lr"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""lr"", ""1-2 Alpha""], True];";
 					description="1-2 Alpha - Light Rifleman";
 				};
 			};
@@ -1151,7 +1169,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="e2b1";
-					init="[this,""ftl"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ftl"", ""1-2 Bravo""], True];";
 					description="1-2 Bravo - Squad Leader";
 				};
 				class Item1
@@ -1165,7 +1183,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2b2";
-					init="[this,""r"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""r"", ""1-2 Bravo""], True];";
 					description="1-2 Bravo - Rifleman";
 				};
 				class Item2
@@ -1179,7 +1197,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2b3";
-					init="[this,""g"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""g"", ""1-2 Bravo""], True];";
 					description="1-2 Bravo - Grenadier";
 				};
 				class Item3
@@ -1193,7 +1211,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2b4";
-					init="[this,""ag"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ag"", ""1-2 Bravo""], True];";
 					description="1-2 Bravo - Assist. Gunner";
 				};
 				class Item4
@@ -1207,7 +1225,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2b5";
-					init="[this,""ar"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ar"", ""1-2 Bravo""], True];";
 					description="1-2 Bravo - Automatic Rifleman";
 				};
 				class Item5
@@ -1221,7 +1239,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2b6";
-					init="[this,""lr"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""lr"", ""1-2 Bravo""], True];";
 					description="1-2 Bravo - Light Rifleman";
 				};
 			};
@@ -1245,7 +1263,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="e2c1";
-					init="[this,""ftl"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ftl"", ""1-2 Charlie""], True];";
 					description="1-2 Charlie - Squad Leader";
 				};
 				class Item1
@@ -1259,7 +1277,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2c2";
-					init="[this,""r"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""r"", ""1-2 Charlie""], True];";
 					description="1-2 Charlie - Rifleman";
 				};
 				class Item2
@@ -1273,7 +1291,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2c3";
-					init="[this,""g"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""g"", ""1-2 Charlie""], True];";
 					description="1-2 Charlie - Grenadier";
 				};
 				class Item3
@@ -1287,7 +1305,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2c4";
-					init="[this,""ag"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ag"", ""1-2 Charlie""], True];";
 					description="1-2 Charlie - Assist. Gunner";
 				};
 				class Item4
@@ -1301,7 +1319,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2c5";
-					init="[this,""ar"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ar"", ""1-2 Charlie""], True];";
 					description="1-2 Charlie - Automatic Rifleman";
 				};
 				class Item5
@@ -1315,7 +1333,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="e2c6";
-					init="[this,""lr"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""lr"", ""1-2 Charlie""], True];";
 					description="1-2 Charlie - Light Rifleman";
 				};
 			};
@@ -1339,7 +1357,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="eecho1";
-					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""p"", ""AAC""], True];";
 					description="Echo 1";
 				};
 				class Item1
@@ -1353,7 +1371,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="eecho2";
-					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""p"", ""AAC""], True];";
 					description="Echo 2";
 				};
 				class Item2
@@ -1367,7 +1385,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="eecho3";
-					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""p"", ""AAC""], True];";
 					description="Echo 3";
 				};
 				class Item3
@@ -1381,7 +1399,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="eecho4";
-					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""p"", ""AAC""], True];";
 					description="Echo 4";
 				};
 			};
@@ -1394,7 +1412,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={641.70416,5,1273.8345};
+					position[]={639.90363,5,1274.2402};
 					azimut=0.0099999998;
 					special="NONE";
 					id=85;
@@ -1405,12 +1423,12 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					text="ipl";
-					init="[this,""pl"",""1-Actual""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""pl"", ""1-Actual""], True];";
 					description="1-Actual - Platoon Leader";
 				};
 				class Item1
 				{
-					position[]={643.05542,5,1273.8594};
+					position[]={641.25488,5,1274.2651};
 					azimut=0.0099999998;
 					special="NONE";
 					id=86;
@@ -1419,7 +1437,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="ifac";
-					init="[this,""fac"",""1-Actual""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""fac"", ""1-Actual""], True];";
 					description="1-Actual - FAC";
 				};
 			};
@@ -1432,7 +1450,7 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={641.64703,5,1271.2646};
+					position[]={639.8465,5,1271.6704};
 					azimut=0.0099999998;
 					special="NONE";
 					id=87;
@@ -1443,12 +1461,12 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="i1a1";
-					init="[this,""sll"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""sl"", ""1-1 Alpha""], True];";
 					description="1-1 Alpha - Squad Leader";
 				};
 				class Item1
 				{
-					position[]={642.99622,5,1271.2666};
+					position[]={641.19568,5,1271.6724};
 					azimut=0.0099999998;
 					special="NONE";
 					id=88;
@@ -1457,12 +1475,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1a2";
-					init="[this,""r"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""r"", ""1-1 Alpha""], True];";
 					description="1-1 Alpha - Rifleman";
 				};
 				class Item2
 				{
-					position[]={644.35431,5,1271.2568};
+					position[]={642.55377,5,1271.6626};
 					azimut=0.0099999998;
 					special="NONE";
 					id=89;
@@ -1471,12 +1489,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1a3";
-					init="[this,""g"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""g"", ""1-1 Alpha""], True];";
 					description="1-1 Alpha - Grenadier";
 				};
 				class Item3
 				{
-					position[]={645.86957,5,1271.2705};
+					position[]={644.06903,5,1271.6763};
 					azimut=0.0099999998;
 					special="NONE";
 					id=90;
@@ -1485,12 +1503,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1a4";
-					init="[this,""ag"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ag"", ""1-1 Alpha""], True];";
 					description="1-1 Alpha - Assist. Gunner";
 				};
 				class Item4
 				{
-					position[]={647.44806,5,1271.2563};
+					position[]={645.64752,5,1271.6621};
 					azimut=0.0099999998;
 					special="NONE";
 					id=91;
@@ -1499,12 +1517,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1a5";
-					init="[this,""ar"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ar"", ""1-1 Alpha""], True];";
 					description="1-1 Alpha - Automatic Rifleman";
 				};
 				class Item5
 				{
-					position[]={649.08649,5,1271.291};
+					position[]={647.28595,5,1271.6968};
 					azimut=0.0099999998;
 					special="NONE";
 					id=92;
@@ -1513,7 +1531,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1a6";
-					init="[this,""lr"",""1-1 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""lr"", ""1-1 Alpha""], True];";
 					description="1-1 Alpha - Light Rifleman";
 				};
 			};
@@ -1526,7 +1544,7 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={641.65216,5,1268.1201};
+					position[]={639.85162,5,1268.5259};
 					azimut=0.0099999998;
 					special="NONE";
 					id=93;
@@ -1537,12 +1555,12 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="i1b1";
-					init="[this,""ftl"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ftl"", ""1-1 Bravo""], True];";
 					description="1-1 Bravo - Squad Leader";
 				};
 				class Item1
 				{
-					position[]={643.00134,5,1268.1221};
+					position[]={641.20081,5,1268.5278};
 					azimut=0.0099999998;
 					special="NONE";
 					id=94;
@@ -1551,12 +1569,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1b2";
-					init="[this,""r"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""r"", ""1-1 Bravo""], True];";
 					description="1-1 Bravo - Rifleman";
 				};
 				class Item2
 				{
-					position[]={644.35944,5,1268.1123};
+					position[]={642.5589,5,1268.5181};
 					azimut=0.0099999998;
 					special="NONE";
 					id=95;
@@ -1565,12 +1583,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1b3";
-					init="[this,""g"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""g"", ""1-1 Bravo""], True];";
 					description="1-1 Bravo - Grenadier";
 				};
 				class Item3
 				{
-					position[]={645.87469,5,1268.126};
+					position[]={644.07416,5,1268.5317};
 					azimut=0.0099999998;
 					special="NONE";
 					id=96;
@@ -1579,12 +1597,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1b4";
-					init="[this,""ag"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ag"", ""1-1 Bravo""], True];";
 					description="1-1 Bravo - Assist. Gunner";
 				};
 				class Item4
 				{
-					position[]={647.45319,5,1268.1118};
+					position[]={645.65265,5,1268.5176};
 					azimut=0.0099999998;
 					special="NONE";
 					id=97;
@@ -1593,12 +1611,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1b5";
-					init="[this,""ar"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ar"", ""1-1 Bravo""], True];";
 					description="1-1 Bravo - Automatic Rifleman";
 				};
 				class Item5
 				{
-					position[]={649.09161,5,1268.1123};
+					position[]={647.29108,5,1268.5181};
 					azimut=0.0099999998;
 					special="NONE";
 					id=98;
@@ -1607,7 +1625,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1b6";
-					init="[this,""lr"",""1-1 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""lr"", ""1-1 Bravo""], True];";
 					description="1-1 Bravo - Light Rifleman";
 				};
 			};
@@ -1620,7 +1638,7 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={641.72406,5,1265.1646};
+					position[]={639.92352,5,1265.5703};
 					azimut=0.0099999998;
 					special="NONE";
 					id=99;
@@ -1631,12 +1649,12 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="i1c1";
-					init="[this,""ftl"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ftl"", ""1-1 Charlie""], True];";
 					description="1-1 Charlie - Squad Leader";
 				};
 				class Item1
 				{
-					position[]={643.07324,5,1265.1665};
+					position[]={641.27271,5,1265.5723};
 					azimut=0.0099999998;
 					special="NONE";
 					id=100;
@@ -1645,12 +1663,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1c2";
-					init="[this,""r"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""r"", ""1-1 Charlie""], True];";
 					description="1-1 Charlie - Rifleman";
 				};
 				class Item2
 				{
-					position[]={644.43127,5,1265.1567};
+					position[]={642.63074,5,1265.5625};
 					azimut=0.0099999998;
 					special="NONE";
 					id=101;
@@ -1659,12 +1677,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1c3";
-					init="[this,""g"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""g"", ""1-1 Charlie""], True];";
 					description="1-1 Charlie - Grenadier";
 				};
 				class Item3
 				{
-					position[]={645.94659,5,1265.1704};
+					position[]={644.14606,5,1265.5762};
 					azimut=0.0099999998;
 					special="NONE";
 					id=102;
@@ -1673,12 +1691,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1c4";
-					init="[this,""ag"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ag"", ""1-1 Charlie""], True];";
 					description="1-1 Charlie - Assist. Gunner";
 				};
 				class Item4
 				{
-					position[]={647.52502,5,1265.1563};
+					position[]={645.72449,5,1265.562};
 					azimut=0.0099999998;
 					special="NONE";
 					id=103;
@@ -1687,12 +1705,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1c5";
-					init="[this,""ar"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ar"", ""1-1 Charlie""], True];";
 					description="1-1 Charlie - Automatic Rifleman";
 				};
 				class Item5
 				{
-					position[]={649.16351,5,1265.1567};
+					position[]={647.36298,5,1265.5625};
 					azimut=0.0099999998;
 					special="NONE";
 					id=104;
@@ -1701,7 +1719,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i1c6";
-					init="[this,""lr"",""1-1 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""lr"", ""1-1 Charlie""], True];";
 					description="1-1 Charlie - Light Rifleman";
 				};
 			};
@@ -1714,7 +1732,7 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={653.18951,5,1271.3521};
+					position[]={651.64178,5,1271.3916};
 					azimut=0.0099999998;
 					special="NONE";
 					id=105;
@@ -1725,12 +1743,12 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="i2a1";
-					init="[this,""ftl"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""sl"", ""1-2 Alpha""], True];";
 					description="1-2 Alpha - Squad Leader";
 				};
 				class Item1
 				{
-					position[]={654.5387,5,1271.354};
+					position[]={652.99097,5,1271.3936};
 					azimut=0.0099999998;
 					special="NONE";
 					id=106;
@@ -1739,12 +1757,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2a2";
-					init="[this,""r"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""r"", ""1-2 Alpha""], True];";
 					description="1-2 Alpha - Rifleman";
 				};
 				class Item2
 				{
-					position[]={655.89679,5,1271.3442};
+					position[]={654.34906,5,1271.3838};
 					azimut=0.0099999998;
 					special="NONE";
 					id=107;
@@ -1753,12 +1771,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2a3";
-					init="[this,""g"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""g"", ""1-2 Alpha""], True];";
 					description="1-2 Alpha - Grenadier";
 				};
 				class Item3
 				{
-					position[]={657.41211,5,1271.3579};
+					position[]={655.86438,5,1271.3975};
 					azimut=0.0099999998;
 					special="NONE";
 					id=108;
@@ -1767,12 +1785,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2a4";
-					init="[this,""ag"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ag"", ""1-2 Alpha""], True];";
 					description="1-2 Alpha - Assist. Gunner";
 				};
 				class Item4
 				{
-					position[]={658.99054,5,1271.3438};
+					position[]={657.44281,5,1271.3833};
 					azimut=0.0099999998;
 					special="NONE";
 					id=109;
@@ -1781,12 +1799,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2a5";
-					init="[this,""ar"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ar"", ""1-2 Alpha""], True];";
 					description="1-2 Alpha - Automatic Rifleman";
 				};
 				class Item5
 				{
-					position[]={660.62897,5,1271.3442};
+					position[]={659.08124,5,1271.3838};
 					azimut=0.0099999998;
 					special="NONE";
 					id=110;
@@ -1795,7 +1813,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2a6";
-					init="[this,""lr"",""1-2 Alpha""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""lr"", ""1-2 Alpha""], True];";
 					description="1-2 Alpha - Light Rifleman";
 				};
 			};
@@ -1808,7 +1826,7 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={653.19464,5,1268.2075};
+					position[]={651.64691,5,1268.2471};
 					azimut=0.0099999998;
 					special="NONE";
 					id=111;
@@ -1819,12 +1837,12 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="i2b1";
-					init="[this,""ftl"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ftl"", ""1-2 Bravo""], True];";
 					description="1-2 Bravo - Squad Leader";
 				};
 				class Item1
 				{
-					position[]={654.54382,5,1268.2095};
+					position[]={652.99609,5,1268.249};
 					azimut=0.0099999998;
 					special="NONE";
 					id=112;
@@ -1833,12 +1851,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2b2";
-					init="[this,""r"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""r"", ""1-2 Bravo""], True];";
 					description="1-2 Bravo - Rifleman";
 				};
 				class Item2
 				{
-					position[]={655.90192,5,1268.1997};
+					position[]={654.35419,5,1268.2393};
 					azimut=0.0099999998;
 					special="NONE";
 					id=113;
@@ -1847,12 +1865,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2b3";
-					init="[this,""g"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""g"", ""1-2 Bravo""], True];";
 					description="1-2 Bravo - Grenadier";
 				};
 				class Item3
 				{
-					position[]={657.41724,5,1268.2134};
+					position[]={655.86951,5,1268.2529};
 					azimut=0.0099999998;
 					special="NONE";
 					id=114;
@@ -1861,12 +1879,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2b4";
-					init="[this,""ag"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ag"", ""1-2 Bravo""], True];";
 					description="1-2 Bravo - Assist. Gunner";
 				};
 				class Item4
 				{
-					position[]={658.99567,5,1268.1992};
+					position[]={657.44794,5,1268.2388};
 					azimut=0.0099999998;
 					special="NONE";
 					id=115;
@@ -1875,12 +1893,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2b5";
-					init="[this,""ar"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ar"", ""1-2 Bravo""], True];";
 					description="1-2 Bravo - Automatic Rifleman";
 				};
 				class Item5
 				{
-					position[]={660.63409,5,1268.1997};
+					position[]={659.08636,5,1268.2393};
 					azimut=0.0099999998;
 					special="NONE";
 					id=116;
@@ -1889,7 +1907,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2b6";
-					init="[this,""lr"",""1-2 Bravo""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""lr"", ""1-2 Bravo""], True];";
 					description="1-2 Bravo - Light Rifleman";
 				};
 			};
@@ -1902,7 +1920,7 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={653.26648,5,1265.252};
+					position[]={651.71875,5,1265.2915};
 					azimut=0.0099999998;
 					special="NONE";
 					id=117;
@@ -1913,12 +1931,12 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="i2c1";
-					init="[this,""ftl"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ftl"", ""1-2 Charlie""], True];";
 					description="1-2 Charlie - Squad Leader";
 				};
 				class Item1
 				{
-					position[]={654.61572,5,1265.2539};
+					position[]={653.06799,5,1265.2935};
 					azimut=0.0099999998;
 					special="NONE";
 					id=118;
@@ -1927,12 +1945,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2c2";
-					init="[this,""r"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""r"", ""1-2 Charlie""], True];";
 					description="1-2 Charlie - Rifleman";
 				};
 				class Item2
 				{
-					position[]={655.97382,5,1265.2441};
+					position[]={654.42609,5,1265.2837};
 					azimut=0.0099999998;
 					special="NONE";
 					id=119;
@@ -1941,12 +1959,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2c3";
-					init="[this,""g"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""g"", ""1-2 Charlie""], True];";
 					description="1-2 Charlie - Grenadier";
 				};
 				class Item3
 				{
-					position[]={657.48907,5,1265.2578};
+					position[]={655.94135,5,1265.2974};
 					azimut=0.0099999998;
 					special="NONE";
 					id=120;
@@ -1955,12 +1973,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2c4";
-					init="[this,""ag"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ag"", ""1-2 Charlie""], True];";
 					description="1-2 Charlie - Assist. Gunner";
 				};
 				class Item4
 				{
-					position[]={659.0675,5,1265.2437};
+					position[]={657.51978,5,1265.2832};
 					azimut=0.0099999998;
 					special="NONE";
 					id=121;
@@ -1969,12 +1987,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2c5";
-					init="[this,""ar"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""ar"", ""1-2 Charlie""], True];";
 					description="1-2 Charlie - Automatic Rifleman";
 				};
 				class Item5
 				{
-					position[]={660.70593,5,1265.2441};
+					position[]={659.1582,5,1265.2837};
 					azimut=0.0099999998;
 					special="NONE";
 					id=122;
@@ -1983,7 +2001,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="i2c6";
-					init="[this,""lr"",""1-2 Charlie""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""lr"", ""1-2 Charlie""], True];";
 					description="1-2 Charlie - Light Rifleman";
 				};
 			};
@@ -1996,7 +2014,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={648.31,5,1260.8979};
+					position[]={647.297,5,1261.4883};
 					azimut=0.0099999998;
 					special="NONE";
 					id=123;
@@ -2007,12 +2025,12 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="iecho1";
-					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""p"", ""AAC""], True];";
 					description="Echo 1";
 				};
 				class Item1
 				{
-					position[]={649.79633,5,1260.9048};
+					position[]={648.78333,5,1261.4951};
 					azimut=0.0099999998;
 					special="NONE";
 					id=124;
@@ -2021,12 +2039,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="iecho2";
-					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""p"", ""AAC""], True];";
 					description="Echo 2";
 				};
 				class Item2
 				{
-					position[]={651.41803,5,1260.8765};
+					position[]={650.40503,5,1261.4668};
 					azimut=0.0099999998;
 					special="NONE";
 					id=125;
@@ -2035,12 +2053,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="iecho3";
-					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""p"", ""AAC""], True];";
 					description="Echo 3";
 				};
 				class Item3
 				{
-					position[]={652.99823,5,1260.9014};
+					position[]={651.98523,5,1261.4917};
 					azimut=0.0099999998;
 					special="NONE";
 					id=126;
@@ -2049,7 +2067,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="iecho4";
-					init="[this,""p"",""AAC""] call GOL_Fnc_GearHandler;";
+					init="this setVariable [""GOL_LoadOut"", [""p"", ""AAC""], True];";
 					description="Echo 4";
 				};
 			};
@@ -2057,10 +2075,10 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=34;
+		items=12;
 		class Item0
 		{
-			position[]={340.27673,5,1338.803};
+			position[]={339.24902,5,1244.4539};
 			special="NONE";
 			id=127;
 			side="EMPTY";
@@ -2070,365 +2088,123 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={499.93314,5,1295.106};
+			position[]={533.5506,5,1281.0061};
 			special="NONE";
 			id=128;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item2
-		{
-			position[]={499.8681,5,1286.0684};
-			special="NONE";
-			id=129;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item3
-		{
-			position[]={499.81467,5,1277.2051};
-			special="NONE";
-			id=130;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item4
-		{
-			position[]={499.86816,5,1268.0488};
-			special="NONE";
-			id=131;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item5
-		{
-			position[]={499.81238,5,1258.9585};
-			special="NONE";
-			id=132;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item6
-		{
-			position[]={499.86588,5,1249.8022};
-			special="NONE";
-			id=133;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item7
-		{
-			position[]={599.82245,5,1295.2764};
-			special="NONE";
-			id=134;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item8
-		{
-			position[]={599.75745,5,1286.2388};
-			special="NONE";
-			id=135;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item9
-		{
-			position[]={599.70404,5,1277.3755};
-			special="NONE";
-			id=136;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item10
-		{
-			position[]={599.75751,5,1268.2192};
-			special="NONE";
-			id=137;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item11
-		{
-			position[]={599.70172,5,1259.1289};
-			special="NONE";
-			id=138;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item12
-		{
-			position[]={599.75519,5,1249.9727};
-			special="NONE";
-			id=139;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item13
-		{
-			position[]={499.86676,5,1240.7485};
-			special="NONE";
-			id=140;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item14
-		{
-			position[]={499.80173,5,1231.7109};
-			special="NONE";
-			id=141;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item15
-		{
-			position[]={499.74829,5,1222.8477};
-			special="NONE";
-			id=142;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item16
-		{
-			position[]={499.80179,5,1213.6914};
-			special="NONE";
-			id=143;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item17
-		{
-			position[]={499.746,5,1204.6011};
-			special="NONE";
-			id=144;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item18
-		{
-			position[]={599.75549,5,1240.9189};
-			special="NONE";
-			id=145;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item19
-		{
-			position[]={599.69043,5,1231.8813};
-			special="NONE";
-			id=146;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item20
-		{
-			position[]={599.63708,5,1223.0181};
-			special="NONE";
-			id=147;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item21
-		{
-			position[]={599.69055,5,1213.8618};
-			special="NONE";
-			id=148;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item22
-		{
-			position[]={599.63477,5,1204.7715};
-			special="NONE";
-			id=149;
-			side="EMPTY";
-			vehicle="Land_VR_Block_05_F";
-			leader=1;
-			skill=0.60000002;
-			description="ar";
-		};
-		class Item23
-		{
-			position[]={531.94653,5,1274.2336};
-			special="NONE";
-			id=150;
 			side="EMPTY";
 			vehicle="O_CargoNet_01_ammo_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,[""big_box"",""east""],[true,false]] call GOL_Fnc_GearHandler;";
 		};
-		class Item24
+		class Item2
 		{
-			position[]={531.94922,5,1271.949};
+			position[]={533.55328,5,1278.7214};
 			special="NONE";
-			id=151;
+			id=129;
 			side="EMPTY";
 			vehicle="Box_East_Ammo_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,[""small_box"",""east""],[true,false]] call GOL_Fnc_GearHandler;";
 		};
-		class Item25
+		class Item3
 		{
-			position[]={426.9108,5,1272.2639};
+			position[]={428.51486,5,1279.0364};
 			special="NONE";
-			id=152;
+			id=130;
 			side="EMPTY";
 			vehicle="B_CargoNet_01_ammo_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,[""big_box"",""west""],[true,true]] call GOL_Fnc_GearHandler;";
 		};
-		class Item26
+		class Item4
 		{
-			position[]={426.92755,5,1270.0442};
+			position[]={428.53162,5,1276.8167};
 			special="NONE";
-			id=153;
+			id=131;
 			side="EMPTY";
 			vehicle="Box_NATO_Ammo_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,[""small_box"",""west""],[true,true]] call GOL_Fnc_GearHandler;";
 		};
-		class Item27
+		class Item5
 		{
-			position[]={635.62274,5,1273.74};
+			position[]={636.49445,5,1280.3293};
 			special="NONE";
-			id=154;
+			id=132;
 			side="EMPTY";
 			vehicle="I_CargoNet_01_ammo_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,[""big_box"",""indep""],[true,false]] call GOL_Fnc_GearHandler;";
 		};
-		class Item28
+		class Item6
 		{
-			position[]={635.63947,5,1271.5203};
+			position[]={636.51117,5,1278.1096};
 			special="NONE";
-			id=155;
+			id=133;
 			side="EMPTY";
 			vehicle="Box_IND_Ammo_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,[""small_box"",""indep""],[true,false]] call GOL_Fnc_GearHandler;";
 		};
-		class Item29
+		class Item7
 		{
-			position[]={334.39728,5,1357.3464};
+			position[]={332.04617,5,1245.0693};
+			id=134;
+			side="EMPTY";
+			vehicle="RHS_Civ_Truck_02_transport_F";
+			skill=0.60000002;
+			text="mhq";
+			init="null = [this] spawn GOL_Fnc_MHQ;";
+		};
+		class Item8
+		{
+			position[]={333.61005,5,1265.0608};
 			special="NONE";
-			id=156;
+			id=135;
 			side="EMPTY";
 			vehicle="Box_NATO_Support_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,""misc_box"",[false,true]] call GOL_Fnc_GearHandler;";
 		};
-		class Item30
+		class Item9
 		{
-			position[]={337.7034,5,1357.2839};
+			position[]={336.91617,5,1264.9983};
 			special="NONE";
-			id=157;
+			id=136;
 			side="EMPTY";
 			vehicle="Box_NATO_AmmoOrd_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,""med_box"",[false,true]] call GOL_Fnc_GearHandler;";
 		};
-		class Item31
+		class Item10
 		{
-			position[]={337.85181,5,1353.4011};
+			position[]={337.06458,5,1261.1155};
 			special="NONE";
-			id=158;
+			id=137;
 			side="EMPTY";
 			vehicle="B_supplyCrate_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,""gear_box"",[false,true]] call GOL_Fnc_GearHandler;";
 		};
-		class Item32
+		class Item11
 		{
-			position[]={334.43173,5,1353.6125};
+			position[]={333.6445,5,1261.3269};
 			special="NONE";
-			id=159;
+			id=138;
 			side="EMPTY";
 			vehicle="Box_NATO_WpsSpecial_F";
 			lock="UNLOCKED";
 			skill=0.2;
 			init="[this,""a_box"",[false,true]] call GOL_Fnc_GearHandler;";
-		};
-		class Item33
-		{
-			position[]={333.07388,5,1339.4185};
-			id=160;
-			side="EMPTY";
-			vehicle="RHS_Civ_Truck_02_transport_F";
-			skill=0.60000002;
-			text="mhq";
-			init="null = [this] spawn GOL_Fnc_MHQ;";
 		};
 	};
 	class Markers
@@ -2452,7 +2228,7 @@ class Mission
 		{
 			position[]={449.927,5,1250.1782};
 			name="side_blufor";
-			markerType="RECTANGLE";
+			markerType="ELLIPSE";
 			type="Empty";
 			colorName="ColorBlue";
 			fillName="Border";
@@ -2462,9 +2238,9 @@ class Mission
 		};
 		class Item3
 		{
-			position[]={550.08789,5,1249.9766};
+			position[]={549.79175,5,1249.96};
 			name="side_opfor";
-			markerType="RECTANGLE";
+			markerType="ELLIPSE";
 			type="Empty";
 			colorName="ColorRed";
 			fillName="Border";
@@ -2476,7 +2252,7 @@ class Mission
 		{
 			position[]={650.16382,5,1250.2202};
 			name="side_independent";
-			markerType="RECTANGLE";
+			markerType="ELLIPSE";
 			type="Empty";
 			colorName="ColorGreen";
 			fillName="Border";
@@ -2486,7 +2262,7 @@ class Mission
 		};
 		class Item5
 		{
-			position[]={351.12131,5,1348.6709};
+			position[]={350.0936,5,1254.3218};
 			name="side_neutral";
 			markerType="RECTANGLE";
 			type="Empty";
@@ -2497,28 +2273,28 @@ class Mission
 		};
 		class Item6
 		{
-			position[]={651.06573,5,1274.7456};
+			position[]={649.57574,5,1274.6543};
 			name="respawn_guerrila";
 			text=" Respawn Independent";
 			type="Empty";
 		};
 		class Item7
 		{
-			position[]={450.26843,5,1449.4126};
+			position[]={450.25653,5,1451.0283};
 			name="zone1";
 			text="zone1";
 			type="Empty";
 		};
 		class Item8
 		{
-			position[]={550.34436,5,1449.5776};
+			position[]={550.3324,5,1451.1934};
 			name="zone2";
 			text="zone2";
 			type="Empty";
 		};
 		class Item9
 		{
-			position[]={650.58893,5,1449.6938};
+			position[]={650.57715,5,1451.3096};
 			name="zone3";
 			text="zone3";
 			type="Empty";
@@ -2529,7 +2305,7 @@ class Mission
 		items=6;
 		class Item0
 		{
-			position[]={450.17896,5,1449.6753};
+			position[]={450.16705,5,1451.291};
 			activationBy="WEST";
 			interruptable=1;
 			age="UNKNOWN";
@@ -2542,7 +2318,7 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={450.84308,5,1397.1167};
+			position[]={450.22339,5,1418.7896};
 			a=0;
 			b=0;
 			interruptable=1;
@@ -2555,7 +2331,7 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={550.26416,5,1449.8394};
+			position[]={550.2522,5,1451.4551};
 			activationBy="WEST";
 			interruptable=1;
 			age="UNKNOWN";
@@ -2568,7 +2344,7 @@ class Mission
 		};
 		class Item3
 		{
-			position[]={550.92834,5,1397.2808};
+			position[]={550.30859,5,1418.9536};
 			a=0;
 			b=0;
 			interruptable=1;
@@ -2581,7 +2357,7 @@ class Mission
 		};
 		class Item4
 		{
-			position[]={650.51324,5,1449.958};
+			position[]={650.50146,5,1451.5737};
 			activationBy="WEST";
 			interruptable=1;
 			age="UNKNOWN";
@@ -2594,7 +2370,7 @@ class Mission
 		};
 		class Item5
 		{
-			position[]={651.17737,5,1397.3994};
+			position[]={650.55786,5,1419.0723};
 			a=0;
 			b=0;
 			interruptable=1;

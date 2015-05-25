@@ -26,7 +26,7 @@
 	_Objects = curatorEditableObjects GOL_ZeuzModuleAdminLogged;
 	_positionsCopyed = {
 		[["%1 Buildings Copied",(count _CopyObjects)],[_DebugName,__FILE__,__LINE__],"both"] call GOL_Fnc_DebugLog;
-		copyToClipboard (str(_CopyObjects));
+		copyToClipboard (format ["%1 call GOL_Fnc_CreateObjects;", str(GOL_Copy_Location_Array)]);
 	};
 
 	_ObjectsClass = [];

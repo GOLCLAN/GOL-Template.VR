@@ -21,15 +21,23 @@
 	_DebugName = "GOL_Fnc_GetConfig";
 	scriptName _DebugName;
 
-	_module = _this select 0;
-	_config = _this select 1;
+	_module = (_this select 0);
+	_config = (_this select 1);
 
-	if (["GOL_FRAMEWORK", "Modules"] call Bis_fnc_getCfgIsClass) then {
-		if (["GOL_FRAMEWORK", "Modules", _module] call Bis_fnc_getCfgIsClass) then {
-			["GOL_FRAMEWORK", "Modules", _module, _config] call BIS_fnc_getCfgData;
-		} else {
+	switch (count _this) do {
+
+		case 1: {
 			["GOL_FRAMEWORK", "Modules", _module] call BIS_fnc_getCfgData;
 		};
-	} else {
-		[["Error config: %1 does not exist", _module],[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;
+
+		case 2: {
+			["GOL_FRAMEWORK", "Modules", _module, _config] call BIS_fnc_getCfgData;
+		};
+
+		default {
+			if !(isClass (missionConfigFile >> "GOL_FRAMEWORK" >> "Modules" >> _module)) exitWith {
+				[["Error config: %1 does not exist", _module],[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;
+				false
+			};
+		};
 	};

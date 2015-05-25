@@ -77,15 +77,14 @@
         };
     };
 
-    [_camo] call _weaponCamo;
+    [GOL_Gear_Camo] call _weaponCamo;
 
 //  ====================================================================================
 
     _ACE_standard = [
 //      [ClassName, Gearbox,Extra Supplies,Standard Supplies],
         [_bandage, 100,75,40],
-        [_morph, 100,50,20],
-        [_barrel, 20,10,6]
+        [_morph, 100,50,20]
     ];
 
     _ACE_Advanced = [
@@ -94,13 +93,13 @@
     ];
 
     _standard = [
-        [_glHE, 250,50,20],
-        [_glsmokeW, 250,20,10],
-        [_glflareW, 250,10,5],
-        [_grenade, 250,30,20],
-        [_grenademini, 250,30,20],
-        [_smokegrenadeW, 250,30,20],
-        [_smokegrenadeG, 250,10,5]
+        [_glHE, 50,50,20],
+        [_glsmokeW, 50,20,10],
+        [_glflareW, 50,10,5],
+        [_grenade, 50,30,20],
+        [_grenademini, 50,30,20],
+        [_smokegrenadeW, 50,30,20],
+        [_smokegrenadeG, 50,10,5]
     ];
 
     _Supplies = {
@@ -136,19 +135,9 @@
                 (_this select 0) addAction ["Squad > Automatic Rifleman"," [player,'ar'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)"];
                 (_this select 0) addAction ["Squad > Light Rifleman"," [player,'lr'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)"];
                 (_this select 0) addAction ["Echo > Pilot"," [player,'p'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)"];
-
-//              (_this select 0) addAction ["Echo > Commander"," [player,'vco'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)];
-//              (_this select 0) addAction ["Echo > Crew"," [player,'vcrew'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)];
-//              (_this select 0) addAction ["Echo > Sniper"," [player,'sniper'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)];
-//              (_this select 0) addAction ["Echo > Spotter"," [player,'spotter'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)];
-//              (_this select 0) addAction ["Echo > Diver"," [player,'diver'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)];
-
             }], "bis_fnc_call", true, true] call BIS_fnc_MP;
 
             { [_cargo, (_x select 0), (_x select 1)] call GOL_Fnc_AddItemCargo; } forEach _standard;
-            { [_cargo, (_x select 0), (_x select 1)] call GOL_Fnc_AddItemCargo; } forEach _ACE_standard;
-            { [_cargo, (_x select 0), (_x select 1)] call GOL_Fnc_AddItemCargo; } forEach _ACE_Advanced;
-
         };
 
         case "a_box": { //  Attachment Box
@@ -156,29 +145,18 @@
             // CCO
             [_cargo, "optic_Aco", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "optic_ACO_grn", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "optic_MRD", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "FHQ_optic_AC11704", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "FHQ_optic_MicroCCO", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "FHQ_optic_MicroCCO_low", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "FHQ_optic_AIM", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "FHQ_optic_HWS", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "FHQ_optic_AC12136", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "rhsusf_acc_EOTECH", 50] call GOL_Fnc_AddItemCargo;
+//            [_cargo, "rhsusf_acc_eotech_552", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "rhsusf_acc_compm4", 50] call GOL_Fnc_AddItemCargo;
 
             // Items
-            [_cargo, "acc_pointer_IR", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "acc_flashlight", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "FHQ_acc_ANPEQ15_black", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "FHQ_acc_ANPEQ15", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "FHQ_acc_LLM01L", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "FHQ_acc_LLM01F", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "ACE_muzzle_mzls_H", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "ACE_muzzle_mzls_B", 50] call GOL_Fnc_AddItemCargo;
             [_cargo, "ACE_muzzle_mzls_L", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "rhsusf_acc_anpeq15", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "rhsusf_acc_anpeq15a", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "rhsusf_acc_anpeq15_light", 50] call GOL_Fnc_AddItemCargo;
+            [_cargo, "GVL_X2000_point", 50] call GOL_Fnc_AddItemCargo;
         };
 
         case "misc_box": {  //  Misc Box
@@ -199,6 +177,7 @@
             [_cargo, _defusalKit, 50] call GOL_Fnc_AddItemCargo;
             [_cargo, _cables, 100] call GOL_Fnc_AddItemCargo;
             [_cargo, _flashBang, 50] call GOL_Fnc_AddItemCargo;
+            [_cargo, _barrel, 50] call GOL_Fnc_AddItemCargo;
         };
 
         case "med_box": {   //  Medical Box
@@ -206,7 +185,6 @@
             [_cargo, _morph, 50] call GOL_Fnc_AddItemCargo;
             [_cargo, _epi, 50] call GOL_Fnc_AddItemCargo;
             [_cargo, _blood, 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, _barrel, 20] call GOL_Fnc_AddItemCargo;
         };
 
         case "small_box":   {   //  Small Box
@@ -218,7 +196,7 @@
             [_cargo, _LMG_mag_tr, 12] call GOL_Fnc_AddMagazineCargo;
 
             [_cargo, _LAT, 3] call GOL_Fnc_AddWeaponCargo;
-            [_cargo, _LATmag, 4] call GOL_Fnc_AddMagazineCargo;
+            [_cargo, _LATmag, 3] call GOL_Fnc_AddMagazineCargo;
 
             [] call _Supplies;
         };

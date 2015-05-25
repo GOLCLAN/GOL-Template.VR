@@ -35,7 +35,7 @@
 	_bino = "ACE_Vector";
 	_rangefinder = "ACE_Vector";
 	_laser = "LaserDesignator";
-	_nvg = "ACE_NVG_Gen4";
+	_nvg = "NVGoggles_Opfor";
 	_toolkit = "ToolKit";
 
 	_FAKBig = "MediKit";

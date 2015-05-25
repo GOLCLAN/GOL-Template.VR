@@ -1,6 +1,6 @@
 
-	[_camo] call _camoflage;
-	[_camo] call _weaponCamo;
+	[GOL_Gear_Camo] call _camoflage;
+	[GOL_Gear_Camo] call _weaponCamo;
 
 	switch (_typeofUnit) do {
 	    case "p": {		ADD_Uniform(_pilotHelmet,_pilotUniform,_pilotVest,_baseGlasses);	};

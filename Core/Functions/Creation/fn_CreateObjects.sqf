@@ -41,6 +41,8 @@
 			_location = (_x select 2);
 				_veh = _Object createVehicle [0,0,0];
 				_veh setDir _direction;
+				_veh setVariable ["GOL_Caching", true, true];
+
 				if (_veh isKindOf "AllVehicles") then {
 					_veh setPosATL [(_location select 0), (_location select 1), (_location select 2) + 1];
 				} else {

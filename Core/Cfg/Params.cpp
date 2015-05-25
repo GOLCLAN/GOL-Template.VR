@@ -7,11 +7,12 @@
 // *	https://community.bistudio.com/wiki/Arma_3_Mission_Parameters
 // *
 
+#ifdef SelectFromGearParams
+
 // ====================================================================================
 // *
 // *	Selects the faction for Blufor to use by players
 // *
-#ifdef SelectFromParams
 	class GOL_Params_Faction_West {
 		title = "Selection of West Factions";
 		values[] = {1,2,3,4,5};
@@ -40,6 +41,7 @@
 		texts[] = {"AAF"};
 		default = (getNumber (missionconfigfile >> "GOL_FRAMEWORK" >> "Modules" >> "Gear" >> "Independent"));
 	};
+
 #endif
 
 // ====================================================================================
@@ -52,8 +54,8 @@ class GOL_Params_Extra_Gear {
 	values[] = {0,1,2};
 	texts[] = {"Standard Gear","Add Extra Supplies","Add Extra and Additional Supplies"};
 //	0 = Standard Loadout
-//	1 = Adds Extra supplies - Adds more bandages, magazines, greandes and such
-//	2 = Adds Additional supplies - Same as above but also other equipment as epipen, blood
+//	1 = Adds Extra supplies - Adds more bandages and such
+//	2 = Adds Additional supplies - Same as above but also bloodbags, epio & other equipment as magazines, greandes
 	default = 0;
 };
 
@@ -86,6 +88,7 @@ class GOL_Params_Teleport_Distance {
 
 
 /*
+
 // ====================================================================================
 // *
 // *	Disables firing by deleting all bullets fired in the beginning of the mission
@@ -97,38 +100,30 @@ class GOL_Params_SafeStart {
 	default = 5;
 };
 
-// ====================================================================================
-// *
-// *	Should the players be able to select the time of day in the mission?
-// *	To enable this option remove the 	/*	infront of the class Daytime and remove the *\ after the }; to fully enable it
-// *
-class Daytime
-{
-	title = $STR_a3_cfgvehicles_moduledate_f_arguments_hour_0;
-	values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23};
-	texts[] = {"00:00","01:00","02:00","03:00","04:00","05:00","06:00","07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00"};
-	default = 12;
-	function = "BIS_fnc_paramDaytime";
-};
-
-// ====================================================================================
-// *
-// *	Should the players be able to select the weather in the mission?
-// *	To enable this option remove the 	/*	infront of the class Weather and remove the *\ after the }; to fully enable it
-// *
-class Weather
-{
-	title = $STR_A3_rscattributeovercast_title;
-	values[] = {0,25,50,75,100};
-	texts[] = {
-		$STR_A3_rscattributeovercast_value000_tooltip,
-		$STR_A3_rscattributeovercast_value025_tooltip,
-		$STR_A3_rscattributeovercast_value050_tooltip,
-		$STR_A3_rscattributeovercast_value075_tooltip,
-		$STR_A3_rscattributeovercast_value100_tooltip
-	};
-	default = 25;
-	function = "BIS_fnc_paramWeather";
-};
-
 */
+
+#ifdef SelectFromWeatherParams
+
+	class Daytime {
+		title = $STR_a3_cfgvehicles_moduledate_f_arguments_hour_0;
+		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23};
+		texts[] = {"00:00","01:00","02:00","03:00","04:00","05:00","06:00","07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00"};
+		default = (getNumber(missionconfigfile >> "Mission" >> "Intel" >> "hour"));
+		function = "BIS_fnc_paramDaytime";
+	};
+/*
+	class Weather {
+		title = $STR_A3_rscattributeovercast_title;
+		values[] = {0,25,50,75,100};
+		texts[] = {
+			$STR_A3_rscattributeovercast_value000_tooltip,
+			$STR_A3_rscattributeovercast_value025_tooltip,
+			$STR_A3_rscattributeovercast_value050_tooltip,
+			$STR_A3_rscattributeovercast_value075_tooltip,
+			$STR_A3_rscattributeovercast_value100_tooltip
+		};
+		default = (getNumber(missionconfigfile >> "Mission" >> "Intel" >> "startWeather"));
+		function = "BIS_fnc_paramWeather";
+	};
+*/
+#endif

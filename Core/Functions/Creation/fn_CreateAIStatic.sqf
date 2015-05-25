@@ -3,10 +3,10 @@
 // *
 // *	Description:
 // *		Spawns units in positions from one big array.
-// *		Function allows a maximum of 10 units and should be used together with "GOL_Fnc_Copy_Location"
+// *		Function allows a maximum of 10 units and should be used together with "GOL_Fnc_CopyLocation"
 // *
 // *	Usage:
-// *		[[[461.042,1304.65,0.00143862],330,"UP"]] call GOL_Fnc_AI_Inf_Group_Static;
+// *		[[[461.042,1304.65,0.00143862],330,"UP"],[[461.042,1304.65,0.00143862],330,"Middle"]] call GOL_Fnc_CreateAIStatic;
 // *
 // *	Parameters:
 // *		0-9:	Array:	Position and direction
@@ -33,7 +33,7 @@
 			_direction = (_x select 1);
 			_stance = (_x select 2);
 			if (isNil "_stance") then { _stance = "Auto"; };
-			_randomSelection = EnemyUnits call BIS_fnc_selectRandom;
+			_randomSelection = (EnemyUnits call BIS_fnc_selectRandom);
 			_newGrpUnit = _newGrp createUnit [_randomSelection, _spawnLocation, [], 0, "NONE"];
 				_newGrpUnit setPosATL _spawnLocation;
 				_newGrpUnit setFormDir _direction;
@@ -45,6 +45,7 @@
 				_newGrpUnit setSkill 0.4;
 				_newGrpUnit setUnitPos _stance;
 				_newGrpUnit forceSpeed ([0,0,-1] call BIS_fnc_selectRandom); // 2 out of 3 time unit will be static
+				_newGrpUnit setVariable ["GOL_Caching", true, true];
 				doStop _newGrpUnit;
 		} forEach _Group;
 	};

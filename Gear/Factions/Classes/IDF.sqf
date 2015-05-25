@@ -1,5 +1,5 @@
 
-#include "Common.sqf";
+#include "Common.sqf"
 
 _AllowNVG = true;
 
@@ -59,12 +59,12 @@ _camoflage = {
 			// Infantry
 			_baseHelmet = ["IDF_Helmet_CQB_1","IDF_Helmet_CQB_5"] call BIS_fnc_selectRandom;
 			_baseUniform = ["IDF_Uniform"] call BIS_fnc_selectRandom;
-			
-		if (332350 in (getDLCs 1)) then {
+
+			if (332350 in (getDLCs 1)) then {
 				_baseVest = ["V_PlateCarrierIAGL_oli"] call BIS_fnc_selectRandom;
-				} else {
-			_baseVest = ["IDF_Vest"] call BIS_fnc_selectRandom;
-										};
+			} else {
+				_baseVest = ["IDF_Vest"] call BIS_fnc_selectRandom;
+			};
 			_baseGlasses = ["SP_Goggles_Black"] call BIS_fnc_selectRandom;
 
 			// Pilot

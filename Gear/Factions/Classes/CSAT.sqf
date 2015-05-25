@@ -1,5 +1,5 @@
 
-#include "Common.sqf";
+#include "Common.sqf"
 
 _AllowNVG = true;
 
@@ -55,35 +55,12 @@ _weaponCamo = {
 // CLOTHES AND UNIFORMS
 _camoflage = {
 	switch (_this select 0) do {
-		case "desert": {
-			// Infantry
-			_baseHelmet = ["H_HelmetLeaderO_oucamo"] call BIS_fnc_selectRandom;
-			_baseUniform = ["U_O_CombatUniform_oucamo"] call BIS_fnc_selectRandom;
-			_baseVest = ["V_HarnessOSpec_gry"] call BIS_fnc_selectRandom;
-			_baseGlasses = ["G_Combat","G_Shades_Black"] call BIS_fnc_selectRandom;
-
-			// Pilot
-			_pilotHelmet = "H_PilotHelmetHeli_B";
-			_pilotUniform = "SP_0000_Standard_Coverall_Green";
-			_pilotVest = "SP_Modular1_Green";
-
-			// Vehicle Crewman
-			_crewHelmet = ["SP_PASGTHelmet_Green1"] call BIS_fnc_selectRandom;
-			_crewVest = "SP_PlateCarrier1_Green";
-
-			// Backpacks
-			_bagRifleman = "B_FieldPack_oucamo";
-			_bagAG = "B_Carryall_oucamo";
-			_radioAirBackpack = "tf_rt1523g_big";
-			_radioBackpack = "tf_rt1523g_big";
-		};
-
 	    default {
 			// Infantry
 			_baseHelmet = ["H_HelmetLeaderO_ocamo"] call BIS_fnc_selectRandom;
 			_baseUniform = ["U_O_CombatUniform_ocamo"] call BIS_fnc_selectRandom;
 			_baseVest = ["V_HarnessOSpec_brn"] call BIS_fnc_selectRandom;
-			_baseGlasses = ["G_Combat","G_Shades_Black"] call BIS_fnc_selectRandom;
+			_baseGlasses = ["G_Combat",nil] call BIS_fnc_selectRandom;
 
 			// Pilot
 			_pilotHelmet = "H_PilotHelmetHeli_B";

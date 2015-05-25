@@ -23,7 +23,6 @@
 // *
 // ====================================================================================
 
-_this spawn {
 	//	INTERPRET PASSED VARIABLES
 	private [
 		"_unit","_typeofUnit","_isMan","_isCar","_isTank","_camo","_captivity","_Color","_boxConfigs","_item","_DebugName",
@@ -58,91 +57,27 @@ _this spawn {
 
 	//	The following interpret formats what has been passed to this script element
 	_unit = [_this, 0, player, [objNull]] call BIS_fnc_param;	// Defines the unit
-	_typeofUnit = [_this, 1, "r", ["",[]]] call BIS_fnc_param;
-
 	if !(local _unit) exitWith {false};	// Exits if script is not local
 	_isMan = _unit isKindOf "CAManBase";	// We check if we're dealing with a soldier or a vehicle
 	_isCar = _unit isKindOf "Car";
 	_isTank = _unit isKindOf "Tank";
 
-	// ================================================================
-	// *	Gear Configurations
-
-	switch (("GOL_Params_Faction_West" call BIS_fnc_getParamValue)) do {
-		case 2:	{
-			GOL_Faction_West = "FIA";
-		};
-		case 3:	{
-			GOL_Faction_West = "USMC";
-		};
-		case 4:	{
-			GOL_Faction_West = "BAF";
-		};
-		case 5:	{
-			GOL_Faction_West = "IDF";
-		};
-		default	{
-			GOL_Faction_West = "NATO";
-		};
-	};
-
-	switch (("GOL_Params_Faction_East" call BIS_fnc_getParamValue)) do {
-		case 2:	{
-			GOL_Faction_East = "Russians";
-		};
-		case 3:	{
-			GOL_Faction_East = "Guerillas";
-		};
-		case 4:	{
-			GOL_Faction_East = "Insurgents";
-		};
-		default	{
-			GOL_Faction_East = "CSAT";
-		};
-	};
-
-	switch (("GOL_Params_Faction_Independent" call BIS_fnc_getParamValue)) do {
-		default	{
-			GOL_Faction_Indep = "AAF";
-		};
-	};
-
-	// ================================================================
-	// *	Creates backup of the faction if it for some reason would need to reset to the originial
-
-	if (isNil "GOL_Faction_West_Orgi" || isNil "GOL_Faction_East_Orgi" || isNil "GOL_Faction_Indep_Orgi") Then {
-		GOL_Faction_West_Orgi = GOL_Faction_West;
-		compileFinal GOL_Faction_West_Orgi;
-		GOL_Faction_East_Orgi = GOL_Faction_East;
-		compileFinal GOL_Faction_East_Orgi;
-		GOL_Faction_Indep_Orgi = GOL_Faction_Indep;
-		compileFinal GOL_Faction_Indep_Orgi;
-	};
-
 	//	====================================================================================
-	//	SELECTING FROM PARAMETERS IF EXTRA GEAR IS ENABLED
-
-	GOL_Gear_Additional = false;
-	GOL_Gear_Extra = false;
-	if (("GOL_Params_Extra_Gear" call BIS_fnc_getParamValue) >= 1) then {
-		if (("GOL_Params_Extra_Gear" call BIS_fnc_getParamValue) == 2) then {
-			GOL_Gear_Additional = true;
-		};
-		GOL_Gear_Extra = true;
+//	if (GOL_Faction_West || GOL_Faction_East || GOL_Faction_Indep || GOL_Gear_Camo || GOL_Gear_Extra || GOL_Gear_Additional) then {
+	if (isNil "GOL_Faction_West_Orgi" || isNil "GOL_Faction_East_Orgi" || isNil "GOL_Faction_Indep_Orgi") then {
+		#include "Params.sqf"
 	};
-	_camo = (["Gear", "Camoflage"] call GOL_Fnc_GetConfig);
-
-	//	====================================================================================
 
 	if (_isMan) then {
-		_typeofUnit = toLower ([_typeofUnit, 0, "r", [""]] call bis_fnc_paramIn);
+		if ((count _this == 1) && (!isNil {(_unit getVariable "GOL_Loadout")})) then {
+			_typeofUnit = ((_unit getVariable "GOL_Loadout") select 0);
+		} else {
+			_typeofUnit = toLower ([_this, 1, "r", [""]] call bis_fnc_param);
+		};
 
-		if ((_this select 2) != "") Then {	_unit setVariable ["GOL_GroupID", (_this select 2), true];	};
-		_unit setVariable ["GOL_Loadout", _typeofUnit, true];
 		_unit setVariable ["ACE_Medical_MedicClass", 0, true];	// Is Not Medic
 		_unit setVariable ["ACE_GForceCoef", 0.60, true];	// Is Pilot
 		_unit setVariable ["ACE_hasEarPlugsIn", true, true];
-		_unit setVariable ["BIS_enableRandomization", false];
 
 		if (captive _unit) then { _captivity = captiveNum _unit; _unit setCaptive false; } else { _captivity = 0; };
 
@@ -158,28 +93,28 @@ _this spawn {
 		    };
 		};
 
-		#include "Factions\Default.sqf";
+		#include "Factions\Default.sqf"
 
 		if !(_captivity == 0) then { _unit setCaptive _captivity; };
 		[] call GOL_Fnc_Attachments;
-
 		_unit selectWeapon primaryWeapon _unit;
-		[_unit, _Color] Spawn {
+		_unit setVariable ["GOL_GroupColor", _Color, true];
+
+		[_unit, _typeofUnit, _Color] Spawn {
 		    waitUntil {sleep 0.1; !isNull player};
 			_unit = _this select 0;
 			if (!local _unit || !alive _unit) exitWith {false};
-			if (!isMultiplayer || hasInterface) then {
-				_unit switchMove "AmovPknlMstpSlowWrflDnon";
-				sleep 2;
-				_unit setVariable ["GOL_UnitColor", (_this select 1)];
-				if (isPlayer _unit) then {
+			_unit switchMove "AmovPknlMstpSlowWrflDnon";
+			sleep 2;
+			if (isPlayer _unit) then {
+				if ((["Gear", "FullGear"] call GOL_Fnc_GetConfig) == 1) Then {
 					if !(isNil "GOL_Gear_Respawn") Then { player removeEventHandler ["respawn", GOL_Gear_Respawn]; };
-					GOL_Gear_Respawn = player addEventHandler ["respawn", { [player, player getVariable "GOL_Loadout"] call GOL_Fnc_GearHandler; } ];
-					[_unit, currentWeapon _unit, currentMuzzle _unit] call ACE_SafeMode_fnc_lockSafety;
-					waitUntil {sleep 5; player distance (markerPos ([_unit] call GOL_Fnc_GetSide)) > 100};
-					if ((currentWeapon _unit) in (_unit getVariable ["ACE_SafeMode_safedWeapons", []])) then {
-						[_unit, currentWeapon _unit, currentMuzzle _unit] call ACE_SafeMode_fnc_unlockSafety;
-					};
+					GOL_Gear_Respawn = player addEventHandler ["respawn", { [player, (player getVariable "GOL_Loadout") select 0] call GOL_Fnc_GearHandler; } ];
+				};
+				[_unit, currentWeapon _unit, currentMuzzle _unit] call ACE_SafeMode_fnc_lockSafety;
+				waitUntil {sleep 5; player distance (markerPos ([_unit] call GOL_Fnc_GetSide)) > 100};
+				if ((currentWeapon _unit) in (_unit getVariable ["ACE_SafeMode_safedWeapons", []])) then {
+					[_unit, currentWeapon _unit, currentMuzzle _unit] call ACE_SafeMode_fnc_unlockSafety;
 				};
 			};
 		};
@@ -188,51 +123,13 @@ _this spawn {
 
 	//	====================================================================================
 		if (isServer) Then {
+			_typeofUnit = [_this, 1, "", ["",[]]] call BIS_fnc_param;
 			_boxConfigs = [_this, 2, [true,true,false], [[]]] call BIS_fnc_param;	// Defines the unit
 
 			if (!_isMan && !_isCar && !_isTank) then {	// box
 				[_unit,_typeofUnit,_boxConfigs] call GOL_Fnc_GearCargo;
 			};
 
-/*
-	//		If object is a car or a tank
-			if (_isCar || _isTank) then {
-				private ["_item", "_i"];
-				waitUntil {!isNil "AGM_Logistics_loadedItemsDummy"};
-
-				if ((_boxConfigs select 3)) Then {
-//						[_unit,["","west"],[_boxConfigs]] call GOL_Fnc_GearHandler;
-//						[_unit,["","east"],[_boxConfigs]] call GOL_Fnc_GearHandler;
-//						[_unit,["","indep"],[_boxConfigs]] call GOL_Fnc_GearHandler;
-
-				};
-
-				for "_i" from 0 to 1 do {
-					_item = ['AGM_JerryCan', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObject;
-					[_unit, _item] call AGM_Logistics_fnc_initLoadedObject;
-				};
-
-				if (_isCar) then {
-					for "_i" from 0 to 2 do {
-						_item = ['AGM_SpareWheel', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObject;
-						[_unit, _item] call AGM_Logistics_fnc_initLoadedObject;
-					};
-				};
-
-				if (_isTank) then {
-					for "_i" from 0 to 2 do {
-						_item = ['AGM_SpareTrack', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObject;
-						[_unit, _item] call AGM_Logistics_fnc_initLoadedObject;
-					};
-				};
-
-				for "_i" from 0 to 2 do {
-					_item = ['arma2_crate_empty', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObject;
-					[_item,["small_box","west"],[true,true]] call GOL_Fnc_GearHandler;
-					[_unit, _item] call AGM_Logistics_fnc_initLoadedObject;
-				};
-			};
-*/
 		};
 	};
 
@@ -240,4 +137,3 @@ _this spawn {
 	_DebugName = "GOL_Fnc_GearHandler";
 	scriptName _DebugName;
 	[["Unit: %1 || Loadout: %2 ",_unit, _typeofUnit],[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;
-};

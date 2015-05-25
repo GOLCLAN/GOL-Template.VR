@@ -4,8 +4,6 @@
 		class coreLoop {};
 		class corePreInit { preInit = 1; };
 		class corePostInit { postInit = 1; };
-		class DebugLog {};
-		class GetConfig {};
 	};
 
 	#include "Functions\functionList.hpp"
