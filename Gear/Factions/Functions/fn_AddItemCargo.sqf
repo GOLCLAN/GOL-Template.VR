@@ -9,8 +9,8 @@
 // *	[player, "30Rnd_mas_556x45_Stanag", 5] call GOL_Fnc_AddItemCargo;
 // *
 // *	Parameters:
-// *	0:	String:		Classname of magazines to be added
-// *	1:	Unit:		Target that should get the magazines
+// *	0:	Unit:		Target that should get the magazines
+// *	1:	String:		Classname of magazines to be added
 // *	2:	Number:		Amount of magazines
 // *
 // ================================================================

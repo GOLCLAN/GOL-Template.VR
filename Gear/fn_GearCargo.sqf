@@ -37,6 +37,8 @@
 // *
 // ====================================================================================
 
+    private ["_cargo","_param1","_gearbox","_side","_cargoArray","_isVehicle","_weaponCamo","_ACE_standard","_bandage","_morph","_ACE_Advanced","_epi","_blood","_standard","_glHE","_glsmokeW","_glflareW","_grenade","_grenademini","_smokegrenadeW","_smokegrenadeG","_Supplies","_bino","_toolkit","_demoCharge","_satchelCharge","_radio152","_radio1000a","_Android","_mapTools","_kestrel","_IRStrobe","_earplugs","_clacker","_defusalKit","_cables","_flashBang","_barrel","_pistol_mag","_rifle_mag","_rifleGL_mag","_carbine_mag","_LMG_mag_tr","_LAT","_LATmag","_AllowNVG","_pistol","_secondaryPistol","_rifle","_rifle_mag_tr","_primaryRifle","_rifleGL","_rifleGL_mag_tr","_primaryRifleGL","_rifleALT","_rifleALT_mag","_rifleALT_mag_tr","_primaryRifleALT","_carbine","_carbine_mag_tr","_primaryCarbine","_LMG","_LMG_mag","_primaryLMG","_MAT","_MATmag1","_MATmag2","_nightTime","_typeofUnit","_Color","_map","_compass","_watch","_gps","_rangefinder","_laser","_nvg","_FAKBig","_FAKSmall","_cTab","_microDAGR","_HelmetCam","_bandagePacking","_bandageElastic","_smokegrenadeR","_smokegrenadeY","_smokegrenadeP","_chemG","_chemR","_chemY","_chemB","_handFlareG","_handFlareR","_handFlareW","_handFlareY","_glsmokeG","_glsmokeR","_glsmokeY","_glsmokeP","_glsmokeB","_glsmokeO","_glflareG","_glflareR","_glflareY","_glflareIR"];
+
     if !(isServer) exitWith {false};
 
     _cargo = [_this, 0, objNull, [objNull]] call BIS_fnc_param;
@@ -60,7 +62,7 @@
 
 //  ====================================================================================
 
-    #include "Factions\Classes\Common.sqf"
+    #include "Params.sqf"
 
     switch (_side) do {
         case "west": {

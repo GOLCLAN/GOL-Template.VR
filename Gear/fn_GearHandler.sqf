@@ -100,7 +100,7 @@
 		_unit selectWeapon primaryWeapon _unit;
 		_unit setVariable ["GOL_GroupColor", _Color, true];
 
-		[_unit, _typeofUnit, _Color] Spawn {
+		[_unit] Spawn {
 		    waitUntil {sleep 0.1; !isNull player};
 			_unit = _this select 0;
 			if (!local _unit || !alive _unit) exitWith {false};
@@ -127,7 +127,7 @@
 			_boxConfigs = [_this, 2, [true,true,false], [[]]] call BIS_fnc_param;	// Defines the unit
 
 			if (!_isMan && !_isCar && !_isTank) then {	// box
-				[_unit,_typeofUnit,_boxConfigs] call GOL_Fnc_GearCargo;
+				[_unit,_typeofUnit,_boxConfigs] spawn GOL_Fnc_GearCargo;
 			};
 
 		};
