@@ -15,17 +15,17 @@
 // *
 // ================================================================
 
-	private ["_Group","_item","_number"];
+	private ["_item","_number"];
 	if (isNil "_unit") then { _unit = player; };
-	_Group = [];
-	{
-		_Group pushBack _x;
-	} forEach _this;
+
 	{
 		_item = (_x select 0);
 		_number = (_x select 1);
 
 		if (([_item] call BIS_fnc_itemType select 0) isEqualTo "Item") then {
+			(unitBackpack _unit) addItemCargoGlobal [_item, _number];
+		};
+		if (([_item] call BIS_fnc_itemType select 0) isEqualTo "Mine") then {
 			(unitBackpack _unit) addItemCargoGlobal [_item, _number];
 		};
 		if (([_item] call BIS_fnc_itemType select 0) isEqualTo "Magazine") then {
@@ -34,4 +34,4 @@
 		if (([_item] call BIS_fnc_itemType select 0) isEqualTo "Weapon") then {
 			(unitBackpack _unit) addWeaponCargoGlobal [_item, _number];
 		};
-	} forEach _Group;
+	} forEach _this;

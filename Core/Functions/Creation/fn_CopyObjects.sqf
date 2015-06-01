@@ -1,4 +1,5 @@
 // ================================================================
+// *	AUTHOR: GuzzenVonLidl
 // *
 // *	Description:
 // *		All objects placed in zeus module in the area around player and is stored in your clipboard
@@ -26,7 +27,7 @@
 	_Objects = curatorEditableObjects GOL_ZeuzModuleAdminLogged;
 	_positionsCopyed = {
 		[["%1 Buildings Copied",(count _CopyObjects)],[_DebugName,__FILE__,__LINE__],"both"] call GOL_Fnc_DebugLog;
-		copyToClipboard (format ["%1 call GOL_Fnc_CreateObjects;", str(GOL_Copy_Location_Array)]);
+		copyToClipboard (format ["%1 call GOL_Fnc_CreateObjects;", str(_CopyObjects)]);
 	};
 
 	_ObjectsClass = [];

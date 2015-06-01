@@ -13,7 +13,8 @@ class Mission
 		"rhs_c_a2port_car",
 		"map_vr",
 		"CUP_Weapons_AmmoBoxes",
-		"ace_medical"
+		"ace_medical",
+		"A3_Structures_F_Mil_Helipads"
 	};
 	addOnsAuto[]=
 	{
@@ -27,6 +28,7 @@ class Mission
 		"rhs_c_a2port_car",
 		"CUP_Weapons_AmmoBoxes",
 		"ace_medical",
+		"A3_Structures_F_Mil_Helipads",
 		"map_vr"
 	};
 	randomSeed=11823142;
@@ -729,7 +731,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={365.30927,5,1264.9556};
+					position[]={369.89066,5,1264.6865};
 					id=42;
 					side="LOGIC";
 					vehicle="HeadlessClient_F";
@@ -2079,10 +2081,10 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=12;
+		items=14;
 		class Item0
 		{
-			position[]={334.49661,5,1260.1667};
+			position[]={357.96686,5,1263.0969};
 			special="NONE";
 			id=127;
 			side="EMPTY";
@@ -2158,7 +2160,7 @@ class Mission
 		};
 		class Item7
 		{
-			position[]={335.0705,5,1247.3765};
+			position[]={357.73279,5,1248.4668};
 			id=134;
 			side="EMPTY";
 			vehicle="RHS_Civ_Truck_02_transport_F";
@@ -2168,7 +2170,7 @@ class Mission
 		};
 		class Item8
 		{
-			position[]={363.9968,5,1247.6184};
+			position[]={368.57819,5,1247.3494};
 			special="NONE";
 			id=135;
 			side="EMPTY";
@@ -2179,7 +2181,7 @@ class Mission
 		};
 		class Item9
 		{
-			position[]={367.42398,5,1247.6169};
+			position[]={372.00537,5,1247.3479};
 			special="NONE";
 			id=136;
 			side="EMPTY";
@@ -2190,7 +2192,7 @@ class Mission
 		};
 		class Item10
 		{
-			position[]={367.45132,5,1243.6731};
+			position[]={372.03271,5,1243.4041};
 			special="NONE";
 			id=137;
 			side="EMPTY";
@@ -2201,7 +2203,7 @@ class Mission
 		};
 		class Item11
 		{
-			position[]={364.03125,5,1243.8845};
+			position[]={368.61264,5,1243.6155};
 			special="NONE";
 			id=138;
 			side="EMPTY";
@@ -2210,10 +2212,30 @@ class Mission
 			skill=0.2;
 			init="[this,""a_box"",[false,true]] call GOL_Fnc_GearHandler;";
 		};
+		class Item12
+		{
+			position[]={333.55353,5,1265.4426};
+			special="NONE";
+			id=139;
+			side="EMPTY";
+			vehicle="Land_HelipadCircle_F";
+			skill=1;
+		};
+		class Item13
+		{
+			position[]={333.8732,5,1244.259};
+			special="NONE";
+			id=140;
+			side="EMPTY";
+			vehicle="Box_NATO_AmmoVeh_F";
+			lock="UNLOCKED";
+			skill=0.2;
+			init="null = [this] spawn GOL_Fnc_ServiceStation_OTM;";
+		};
 	};
 	class Markers
 	{
-		items=10;
+		items=11;
 		class Item0
 		{
 			position[]={448.90714,5,1273.6577};
@@ -2303,10 +2325,21 @@ class Mission
 			text="zone3";
 			type="Empty";
 		};
+		class Item10
+		{
+			position[]={333.80078,5,1244.0435};
+			name="OTM";
+			markerType="ELLIPSE";
+			type="Empty";
+			fillName="Border";
+			a=7;
+			b=7;
+			drawBorder=1;
+		};
 	};
 	class Sensors
 	{
-		items=6;
+		items=7;
 		class Item0
 		{
 			position[]={450.16705,5,1451.291};
@@ -2381,6 +2414,25 @@ class Mission
 			age="UNKNOWN";
 			expCond="(ZONE3 == 1) && HeadlessController";
 			expActiv="null = execVM ""mission\BadGuys.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item6
+		{
+			position[]={333.57916,5,1265.4551};
+			a=5;
+			b=5;
+			activationBy="ANY";
+			repeating=1;
+			timeoutMin=4;
+			timeoutMid=4;
+			timeoutMax=4;
+			interruptable=1;
+			type="SWITCH";
+			age="UNKNOWN";
+			expCond="{ (_x isKindOf ""Air"" || _x isKindOf ""LandVehicle"") && (isTouchingGround _x) } count thisList == 1;";
+			expActiv="null = [(list thisTrigger), ThisTrigger] spawn GOL_Fnc_ServiceStation;";
 			class Effects
 			{
 			};

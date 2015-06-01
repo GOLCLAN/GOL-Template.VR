@@ -1,4 +1,5 @@
 // ================================================================
+// *	AUTHOR: GuzzenVonLidl
 // *
 // *	Description:
 // *		All objects from a array will placed on the map
@@ -22,7 +23,7 @@
 	if (!isServer) exitWith {false};
 
 	_this spawn {
-		private ["_Array","_Objects","_Object","_direction","_location","_veh","_setpos"];
+		private ["_Array","_Objects","_Object","_direction","_location","_veh","_type","_pos"];
 		if (isNil "Objectcounter") then {
 			Objectcounter = 0;
 		};
@@ -34,6 +35,7 @@
 			};
 		} forEach _this;
 
+		#define	isWater(Object,Pos) if (surfaceIsWater ([_location] call GOL_Fnc_GetPos)) then {  Object setPosASL Pos; } else { Object setPosATL Pos; };
 		{
 			sleep 0.1;
 			_Object = (_x select 0);
@@ -44,9 +46,10 @@
 				_veh setVariable ["GOL_Caching", true, true];
 
 				if (_veh isKindOf "AllVehicles") then {
-					_veh setPosATL [(_location select 0), (_location select 1), (_location select 2) + 1];
+			        _pos = [(_location select 0), (_location select 1), (_location select 2) + 1];
+					isWater(_veh, _pos);
 				} else {
-					_veh setPosATL _location;
+					isWater(_veh, _location);
 				};
 				if (_veh isKindOf "StaticWeapon" || _veh isKindOf "House" || _veh isKindOf "HouseBase") then {
 					_veh setVectorUp [0,0,1];

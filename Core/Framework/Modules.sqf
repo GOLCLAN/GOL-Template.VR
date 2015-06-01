@@ -23,9 +23,9 @@
 		_module setVariable ["enableScreams", true, true];
 		_module setVariable ["playerDamageThreshold", 1, true];
 		_module setVariable ["AIDamageThreshold", 1, true];
-		_module setVariable ["enableUnconsciousnessAI", false, true]; // 0
+		_module setVariable ["enableUnconsciousnessAI", 0, true]; // 0
 		_module setVariable ["preventInstaDeath", false, true];
-		_module setVariable ["bleedingCoefficient", 1.5, true];
+		_module setVariable ["bleedingCoefficient", 2.0, true];
 		_module setVariable ["painCoefficient", 1.5, true];
 		_module setVariable ["keepLocalSettingsSynced", true, true];
 			GOL_Module_MedicalBasic = _module;
@@ -34,11 +34,11 @@
 		_module setVariable ["enableFor", 0, true];
 		_module setVariable ["enableAdvancedWounds", false, true];
 		_module setVariable ["enableVehicleCrashes", true, true];
-		_module setVariable ["medicSetting_PAK", 1, true];	// 0
+		_module setVariable ["medicSetting_PAK", 0, true];	// 0
+		_module setVariable ["medicSetting_SurgicalKit", 0, true];
 		_module setVariable ["consumeItem_PAK", 1, true];
+		_module setVariable ["consumeItem_SurgicalKit", 0, true];
 		_module setVariable ["useLocation_PAK", 0, true];
-		_module setVariable ["medicSetting_SurgicalKit", 1, true];
-		_module setVariable ["consumeItem_SurgicalKit", 1, true];
 		_module setVariable ["useLocation_SurgicalKit", 0, true];
 			GOL_Module_MedicalAdv = _module;
 

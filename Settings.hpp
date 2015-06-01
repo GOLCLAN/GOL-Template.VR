@@ -3,7 +3,7 @@
 	briefingName = "GOL@127 Template";
 	overviewText = "GOL Template";
 
-	author = "GOL Editing Team";						// shown in loading screen and briefing
+	author = "GOL Editing Team";					// shown in loading screen and briefing
 	Mission_version = "1";
 	onLoadName = "";								// Loading screen name
 	onLoadMission = "";								// Loading screen text
@@ -15,11 +15,10 @@
 
 	class Header {
 			//	Game type, see 'link' for more options	||	https://community.bistudio.com/wiki/Multiplayer_Game_Types
-			gameType = Coop; //@Const: Unknown || Coop || DM || Team || CTF || SCont || CTI || FF || Hold
+			gameType = Coop; //	Unknown || Coop || DM || Team || CTF || SCont || CTI || FF || Hold
 
-			/* minPlayers < maxPlayers */
-			minPlayers = 1; //@Int # of players the mission supports
-			maxPlayers = 127; //@Int # of players the mission supports
+			minPlayers = 1;		//	minPlayers # of players the mission supports
+			maxPlayers = 127;	//	maxPlayers # of players the mission supports
 	};
 
 // ==============================================================================
@@ -55,10 +54,10 @@
 				Independent = 1;	//	NUMBER:	1: AAF	|
 			};
 /*
-			class Cache {	// Coming soon...	Maybe 0.7
+			class Cache {	// Coming soon...	Maybe 0.8
 				Enabled = false;	//	BOOL:	True: Enables caching of units & objects applied to the mission
 				AutoApply = false;	//	BOOL:	True: Caches all objects exept for the ones with the variable "GOL_Caching" set to false	| False: is vice versa (Only caches the one with the variable set to true)
-				Man = 900;			//	Number:	Caching distance from Player on foot
+				Man = 800;			//	Number:	Caching distance from Player on foot
 				Land = 1600;		//	Number:	Caching distance from Player in vehicles
 				Air = 2000;			//	Number:	Caching distance from Player in the air
 			};

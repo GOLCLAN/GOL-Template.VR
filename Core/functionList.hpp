@@ -6,3 +6,4 @@
 		#include "Functions\Curator\functionList.hpp"
 		#include "Functions\Math\functionList.hpp"
 		#include "Functions\Misc\functionList.hpp"
+		#include "Functions\ServiceStation\functionList.hpp"

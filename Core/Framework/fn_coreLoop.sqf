@@ -36,6 +36,7 @@
 			};
 
 		};
+
 		if (hasInterface) then {
 			[] spawn {
 				private ["_time"];
@@ -45,6 +46,7 @@
 					[[[player], { (_this select 0) setGroupId [((_this select 0) getVariable "GOL_Loadout") select 1]; }], "bis_fnc_call", true, true] call BIS_fnc_MP;
 					[player, (player getVariable "GOL_GroupColor")] call ACE_Interaction_fnc_joinTeam;
 				};
+
 				if ((player getVariable "GOL_Player") select 2) then {	// JIP
 					{
 						[_x] call GOL_Fnc_MHQActions;

@@ -19,12 +19,7 @@
 	if (isMultiplayer && hasInterface) exitWith {false};		// Ensures only server or HC runs after and not players
 
 	_this spawn {
-		private ["_spawnLocation","_newGrp","_newGrpUnit","_randomSelection","_direction","_stance","_leader","_disable","_enable","_Group"];
-
-		_Group	=	[];
-		{
-			_Group pushBack _x;
-		} forEach _this;
+		private ["_newGrp","_spawnLocation","_direction","_stance","_randomSelection","_newGrpUnit"];
 
 		_newGrp = CreateGroup EnemySide;
 		{
@@ -47,5 +42,5 @@
 				_newGrpUnit forceSpeed ([0,0,-1] call BIS_fnc_selectRandom); // 2 out of 3 time unit will be static
 				_newGrpUnit setVariable ["GOL_Caching", true, true];
 				doStop _newGrpUnit;
-		} forEach _Group;
+		} forEach _this;
 	};

@@ -24,12 +24,14 @@
 
 // *	GOL Variables
 		startTime = time;
+		GOL_Copy_Location_Array = [];
 		if (isServer) then {
 			StartUpBadguys = true;
 			GOL_Enemies = compile preprocessFileLineNumbers "mission\BadGuys.sqf";
 			[] call GOL_Enemies;
 			StartUpBadguys = false;
 			publicVariable "StartUpBadguys";
+
 		};
 
 		if (hasInterface) then {	// * Client

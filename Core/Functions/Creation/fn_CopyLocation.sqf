@@ -19,10 +19,6 @@
 
 	if (isMultiplayer) exitWith {false};
 
-	if (isNil "GOL_Copy_Location_Array") Then {
-		GOL_Copy_Location_Array = [];
-	};
-
 	private ["_switch","_DebugName","_positionsCopyed"];
 
 	_switch = [_this, 0, "up", [true,""]] call BIS_fnc_param;
