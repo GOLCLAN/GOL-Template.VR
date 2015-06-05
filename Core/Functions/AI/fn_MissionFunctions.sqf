@@ -108,7 +108,7 @@ Fnc_SpawnCivilians = {
 	};
 	{
 	if (side _x == Civilian) then {
-		_x disableAI "FSM";
+		// _x disableAI "FSM";
 		_x setOwner 0; //_clientID = owner _x; hint format["%1", _x];
 		//_x addRating -10000;
 		//hint format["%1", _x];
@@ -473,12 +473,18 @@ Fnc_CreateIED = {
 	_bomb2 = createVehicle [_ied2, _location, [], 0, "CAN_COLLIDE"]; // Create IED
 	[[_bomb1,'Disarm Bomb','[player] call Fnc_Disarm'], "Fnc_AddAction" , true, false] spawn BIS_fnc_MP;
 	
-	_bomb1 addEventHandler ["HitPart", {_this call Fnc_IED_EH;}];
+	[[_bomb1],"Fnc_AddIEDEH",true,false] spawn BIS_fnc_MP;
+	[[_bomb2],"Fnc_AddIEDEH",true,false] spawn BIS_fnc_MP;
 	
 	_IEDTrigger = createTrigger["EmptyDetector",_location]; _IEDTrigger setTriggerArea[3,3,0,false];
 	_IEDTrigger setTriggerActivation[_side,"PRESENT",false];
 	_IEDTrigger setTriggerStatements ["((thislist select 0) selectionPosition 'launcher' select 2) > 1.2;", "[thisTrigger] spawn Fnc_IEDExplode;", ""];
 	_IEDTrigger AttachTo [_bomb1,[0,0,0]];
+};
+
+Fnc_AddIEDEH = {
+	_object = _this select 0;
+	_object addEventHandler ["HitPart", {_this call Fnc_IED_EH;}];
 };
 
 Fnc_IEDExplode = {
@@ -626,7 +632,6 @@ IED_ROCKS = {
 };
 
 IED_SCREEN_EFFECTS = {
-	//http://forums.bistudio.com/showthread.php?172864-Any-idea-how-this-was-done
 	_iedPos = _this select 0;
 	sleep 0.25;
 	if(alive player) then {
