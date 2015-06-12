@@ -73,14 +73,13 @@ Fnc_SpawnGroup = {
 	_group = _this select 0;
 	_marker = _this select 1;
 	_number = _this select 2;
-	_group = CreateGroup EnemySide; 
+	_group = CreateGroup EnemySide; NewGroup = _group;
 	
 	for "_i" from 1 to _number do {
 		_unit = EnemyUnits call BIS_fnc_selectRandom;
 		_soldier = _group createUnit [_unit,(GetMarkerPos _marker),[],0,"private"];
-		[_soldier, "SOL"] call Fnc_StoreUnit;
+		//[_soldier, "SOL"] call Fnc_StoreUnit;
 	};
-	NewGroup = _group;
 };
 
 Fnc_SpawnCivilians = {
@@ -94,17 +93,10 @@ Fnc_SpawnCivilians = {
 		_unit = CivilianUnits call BIS_fnc_selectRandom;
 		_group = CreateGroup Civilian; NewGroup = _group;
 		_soldier = _group createUnit [_unit,(GetMarkerPos _marker),[],0,"private"];
-		
 		[_soldier, "CIV"] call Fnc_StoreUnit;
-		
-		Obj1 = ObjectMarkerList call BIS_fnc_selectRandom; Loc1 = GetPosASL Obj1;
-		Obj2 = ObjectMarkerList call BIS_fnc_selectRandom; Loc2 = GetPosASL Obj2;
-		
 		_speed = _speeds call BIS_fnc_selectRandom;
+		[NewGroup, _marker, _range, 3, "MOVE", "NORMAL", "RED", _speed, "FILE", "", [3,6,9]] call CBA_fnc_taskPatrol;
 		
-		["CiVGroup", Loc1, 1, "MOVE", "COLUMN", "BLUE", "CARELESS", _speed] call Fnc_wayPoint;
-		["CiVGroup", Loc2, 2, "MOVE", "COLUMN", "BLUE", "CARELESS", _speed] call Fnc_wayPoint;
-		["CiVGroup", Loc1, 3, "CYCLE", "COLUMN", "BLUE", "CARELESS", _speed] call Fnc_wayPoint;
 	};
 	{
 	if (side _x == Civilian) then {
@@ -173,6 +165,27 @@ Fnc_wayPoint = {
 	_wp = [NewGroup, _index] SetWaypointSpeed _speed;
 };
 
+Fnc_wayPointRandom = {
+	_group = _this select 0;
+	_moveto = _this select 1;
+	_index = _this select 2;
+	_type = _this select 3;
+	_formation = _this select 4;
+	_mode = _this select 5;
+	_behaviour = _this select 6;
+	_speed = _this select 7;
+	_X = _moveto select 0;
+	_Y = _moveTo select 1;
+	_X = _X + ((Random 200)-50);
+	_Y = _Y + ((Random 200)-50);
+	_wp = NewGroup addWaypoint [[_X,_Y,0], _index];
+	_wp = [NewGroup, _index] setWaypointType _type;
+	_wp = [NewGroup, _index] setWaypointFormation _formation;
+	_wp = [NewGroup, _index] setWaypointCombatMode _mode;
+	_wp = [NewGroup, _index] setWaypointBehaviour _behaviour;
+	_wp = [NewGroup, _index] SetWaypointSpeed _speed;
+};
+
 Fnc_SpawnBunker = {
 	_fortification = _this select 0;
 	_location = _this select 1;
@@ -192,7 +205,7 @@ Fnc_SpawnBunker = {
 		_soldier setUnitPos "UP";
 		_soldier setPos (_bunker buildingPos _buildingPos);
 		[_soldier] call Fnc_RandomDirection;
-		[_soldier, "SOL"] call Fnc_StoreUnit;
+		//[_soldier, "SOL"] call Fnc_StoreUnit;
 	};
 	NewGroup = _group;
 };
@@ -208,15 +221,14 @@ Fnc_SpawnVehicle = {
 	if (_static == 1) then {
 		_vehicle setFuel 0;
 	};	
-	sleep 2;
-	_group = CreateGroup EnemySide; 
+	
+	_group = CreateGroup EnemySide; NewGroup = _group;
 	for "_i" from 1 to _number do {
 		_unit = EnemyUnits call BIS_fnc_selectRandom;
 		_soldier = _group createUnit [_unit,_location, [], 0, "FORM"];
 		_soldier moveInAny _vehicle;
-		[_soldier, "SOL"] call Fnc_StoreUnit;
+		//[_soldier, "SOL"] call Fnc_StoreUnit;
 	};
-	NewGroup = _group;
 	NewVehicle = _vehicle;
 	clearWeaponCargoGlobal _vehicle;ClearMagazineCargoGlobal _vehicle;ClearItemCargoGlobal _vehicle;clearBackpackCargoGlobal _vehicle;
 };
@@ -233,7 +245,7 @@ Fnc_SpawnPlane = {
 	_unit = EnemyUnits call BIS_fnc_selectRandom;
 	_soldier = _group createUnit [_unit,_location, [], 0, "FORM"];
 	_soldier assignAsDriver _vehicle; _soldier moveInDriver _vehicle;
-	[_soldier, "SOL"] call Fnc_StoreUnit;
+	//[_soldier, "SOL"] call Fnc_StoreUnit;
 	NewGroup = _group;
 	NewVehicle = _vehicle;
 };
@@ -250,10 +262,10 @@ Fnc_StaticWeapon = {
 	_soldier = _group createUnit [_unit,_location, [], 0, "FORM"];
 	_soldier assignAsGunner _vehicle; _soldier moveInGunner _vehicle;
 	[_soldier] call Fnc_RandomDirection;
-	[_soldier, "SOL"] call Fnc_StoreUnit;
+	//[_soldier, "SOL"] call Fnc_StoreUnit;
 };
 
-Fnc_SpecialUnit = {
+/*Fnc_SpecialUnit = {
 	_marker = _this select 0;
 	_spawn = (GetMarkerPos _marker);
 	_position = _this select 1;
@@ -268,11 +280,27 @@ Fnc_SpecialUnit = {
 	} else {
 		_unit = EnemySnipers call BIS_fnc_selectRandom;
 	};	
+	
+	hint format["%1 HI", _unit];
+	
 	_group = "StaticUnit";
 	_group = CreateGroup EnemySide;
 	_soldier = _unit createUnit [_spawn,_group,"this setDir _direction;this setposATL _position;this setUnitPos _stance;this forceSpeed 0;[this] call Fnc_RandomDirection;",0.5];
 	StaticGroup = _group;
-	[_soldier, "SOL"] call Fnc_StoreUnit;
+	//[_soldier, "SOL"] call Fnc_StoreUnit;
+};*/
+
+Fnc_SpecialUnit = {
+	_marker = _this select 0;
+	_spawn = (GetMarkerPos _marker);
+	_position = _this select 1;
+	_stance = _this select 2;
+	_type = _this select 3;
+	_unit = EnemySnipers call BIS_fnc_selectRandom;
+	_group = "StaticUnit";
+	_group = CreateGroup EnemySide;
+	_soldier = _unit createUnit [_spawn,_group,"this setDir _direction;this setposATL _position;this setUnitPos _stance;this forceSpeed 0;[this] call Fnc_RandomDirection;",0.5];
+	StaticGroup = _group;
 };
 
 Fnc_RandomDirection = {
@@ -408,7 +436,7 @@ Fnc_Paradrop = {
 		_unit = EnemyUnits call BIS_fnc_selectRandom;
 		_soldier = _group createUnit [_unit,_vehlocation,[],0,"private"];
 		_soldier moveInAny _vehicle;
-		[_soldier, "SOL"] call Fnc_StoreUnit;
+		//[_soldier, "SOL"] call Fnc_StoreUnit;
 	};
 	NewGroup = _group;
 	[_group, _markerPOS, 0, "MOVE", "WEDGE", "YELLOW", "AWARE", "FULL"] call Fnc_wayPoint;
