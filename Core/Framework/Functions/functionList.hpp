@@ -6,6 +6,6 @@
 		class GetConfig {};
 		class HeadlessClient{};
 		class Players {};
-		class RadioSettings{};
 		class RemoteExecuterHC{};
+		class Roster{};
 	};

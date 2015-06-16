@@ -2,10 +2,6 @@
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
-if ([] call BIS_fnc_didJIP) then {
-    waitUntil {sleep 0.1; !isNull player};
-};
-
 private ["_text","_stuff","_weps","_items","_fnc_wepMags","_wepMags","_magArr","_s","_mags","_bp","_maxload"];
 
 _fnc_wepMags = {

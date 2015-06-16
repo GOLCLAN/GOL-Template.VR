@@ -2,14 +2,12 @@
 // ================================================
 //      Defined LoadOuts:
 // ================================================
-// *    GEAR_cargo - Role Selection Box
-// *    A_cargo - Attachment Box
-// *    Misc_cargo - Misc Box
-// *    Med_cargo - Medical Box
-// *    BAF_cargo - BAF ammo Box
-// *    FIA_cargo - FIA ammo Box
-// *    NATO_cargo - NATO ammo Box
-// *    USMC_cargo - USMC ammo Box
+// *    gear_box - Role Selection Box
+// *    a_box - Attachment Box
+// *    misc_box - Misc Box
+// *    med_box - Medical Box
+// *    small_box - Small ammo box (Squad)
+// *    big_box - Big ammo box (Platoon)
 // *
 // ================================================
 // *
@@ -19,12 +17,12 @@
 // *        Handles all the items in the boxes
 // *
 // *    Usage:
-// *        [_cargo,["GEAR_cargo","west"],[false,true]] call GOL_Fnc_GearCargo;
-// *        [this,["big_box","west"],[true]] call GOL_Fnc_GearHandler;
+// *        [_cargo,["gear_box","west"],[false,true]] call GOL_Fnc_GearCargo;
+// *        [this,["small_box","west"],[true]] call GOL_Fnc_GearHandler;
 // *
 // *    Parameters:
 // *    0: ObjNull: -   Object
-// *    1: String:  -   LoadOut
+// *    1: Array:  -   LoadOut
 // *        0: String:  -   LoadOut
 // *        1: String:  -   Side, Only accepts west,east & independent and its is not case sensitive
 // *    2: Array:   -   Moveable (Optinal)
@@ -37,9 +35,10 @@
 // *
 // ====================================================================================
 
-    private ["_cargo","_param1","_gearbox","_side","_cargoArray","_isVehicle","_weaponCamo","_ACE_standard","_bandage","_morph","_ACE_Advanced","_epi","_blood","_standard","_glHE","_glsmokeW","_glflareW","_grenade","_grenademini","_smokegrenadeW","_smokegrenadeG","_Supplies","_bino","_toolkit","_demoCharge","_satchelCharge","_radio152","_radio1000a","_Android","_mapTools","_kestrel","_IRStrobe","_earplugs","_clacker","_defusalKit","_cables","_flashBang","_barrel","_pistol_mag","_rifle_mag","_rifleGL_mag","_carbine_mag","_LMG_mag_tr","_LAT","_LATmag","_AllowNVG","_pistol","_secondaryPistol","_rifle","_rifle_mag_tr","_primaryRifle","_rifleGL","_rifleGL_mag_tr","_primaryRifleGL","_rifleALT","_rifleALT_mag","_rifleALT_mag_tr","_primaryRifleALT","_carbine","_carbine_mag_tr","_primaryCarbine","_LMG","_LMG_mag","_primaryLMG","_MAT","_MATmag1","_MATmag2","_nightTime","_typeofUnit","_Color","_map","_compass","_watch","_gps","_rangefinder","_laser","_nvg","_FAKBig","_FAKSmall","_cTab","_microDAGR","_HelmetCam","_bandagePacking","_bandageElastic","_smokegrenadeR","_smokegrenadeY","_smokegrenadeP","_chemG","_chemR","_chemY","_chemB","_handFlareG","_handFlareR","_handFlareW","_handFlareY","_glsmokeG","_glsmokeR","_glsmokeY","_glsmokeP","_glsmokeB","_glsmokeO","_glflareG","_glflareR","_glflareY","_glflareIR"];
+    private ["_unit","_typeofUnit","_isMan","_isCar","_isTank","_camo","_captivity","_Color","_boxConfigs","_item","_DebugName","_nightTime","_AllowNVG","_weaponCamo","_camoflage","_state","_factionValue","_factionScript","_map","_compass","_watch","_gps","_bino","_rangefinder","_laser","_nvg","_toolkit","_IRStrobe","_radio152","_radio1000a","_cTab","_Android","_microDAGR","_HelmetCam","_mapTools","_kestrel","_barrel","_earplugs","_cables","_demoCharge","_satchelCharge","_clacker","_defusalKit","_FAKBig","_FAKSmall","_bandage","_bandagePacking","_bandageElastic","_morph","_epi","_blood","_grenade","_grenademini","_flashBang","_smokegrenadeW","_smokegrenadeG","_smokegrenadeR","_smokegrenadeY","_smokegrenadeP","_chemG","_chemR","_chemY","_chemB","_handFlareG","_handFlareR","_handFlareW","_handFlareY","_glHE","_glsmokeW","_glsmokeG","_glsmokeR","_glsmokeY","_glsmokeP","_glsmokeB","_glsmokeO","_glflareW","_glflareG","_glflareR","_glflareY","_glflareIR","_pistol","_pistol_mag","_secondaryPistol","_rifle","_rifle_mag","_rifle_mag_tr","_primaryRifle","_rifleGL","_rifleGL_mag","_rifleGL_mag_tr","_primaryRifleGL","_rifleALT","_rifleALT_mag","_rifleALT_mag_tr","_primaryRifleALT","_carbine","_carbine_mag","_carbine_mag_tr","_primaryCarbine","_LMG","_LMG_mag","_LMG_mag_tr","_primaryLMG","_LAT","_LATmag","_MAT","_MATmag1","_MATmag2","_baseHelmet","_baseUniform","_baseVest","_baseGlasses","_pilotHelmet","_pilotUniform","_pilotVest","_crewHelmet","_crewVest","_bagRifleman","_bagAG","_radioAirBackpack","_radioBackpack","_secondaryAttachments","_primaryAttachments","_cargo","_param1","_gearbox","_side","_cargoArray","_isVehicle","_ACE_standard","_ACE_Advanced","_standard","_Supplies"];
 
     if !(isServer) exitWith {false};
+    waitUntil {sleep 0.1; time > 1};
 
     _cargo = [_this, 0, objNull, [objNull]] call BIS_fnc_param;
     _param1 = [_this, 1] call BIS_fnc_param;
@@ -51,6 +50,7 @@
         if !(_cargoArray select 0) then {  // Enable Move Object
             [_cargo, false] call ACE_Dragging_fnc_setCarryable;
             [_cargo, false] call ACE_Dragging_fnc_setDraggable;
+            _cargo enableRopeAttach false;
         };
     };
 
@@ -61,8 +61,6 @@
     };
 
 //  ====================================================================================
-
-    #include "Params.sqf"
 
     switch (_side) do {
         case "west": {
@@ -78,8 +76,6 @@
             diag_log "Error in GearCargo faction";
         };
     };
-
-    [GOL_Gear_Camo] call _weaponCamo;
 
 //  ====================================================================================
 
@@ -106,12 +102,12 @@
 
     _Supplies = {
         if (GOL_Gear_Extra) Then {
-                { [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddItemCargo; } forEach _standard;
-                { [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddItemCargo; } forEach _ACE_standard;
-                { [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddItemCargo; } forEach _ACE_Advanced;
+            { [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddItemCargo; } forEach _standard;
+            { [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddItemCargo; } forEach _ACE_standard;
+            { [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddItemCargo; } forEach _ACE_Advanced;
         } else {
-                { [_cargo, (_x select 0), (_x select 3)] call GOL_Fnc_AddItemCargo; } forEach _standard;
-                { [_cargo, (_x select 0), (_x select 3)] call GOL_Fnc_AddItemCargo; } forEach _ACE_standard;
+            { [_cargo, (_x select 0), (_x select 3)] call GOL_Fnc_AddItemCargo; } forEach _standard;
+            { [_cargo, (_x select 0), (_x select 3)] call GOL_Fnc_AddItemCargo; } forEach _ACE_standard;
         };
     };
 
@@ -135,7 +131,6 @@
                 (_this select 0) addAction ["Squad > Grenadier"," [player,'g'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)"];
                 (_this select 0) addAction ["Squad > Asst. Gunner"," [player,'ag'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)"];
                 (_this select 0) addAction ["Squad > Automatic Rifleman"," [player,'ar'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)"];
-                (_this select 0) addAction ["Squad > Light Rifleman"," [player,'lr'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)"];
                 (_this select 0) addAction ["Echo > Pilot"," [player,'p'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)"];
             }], "bis_fnc_call", true, true] call BIS_fnc_MP;
 
@@ -190,7 +185,6 @@
         };
 
         case "small_box":   {   //  Small Box
-            // Weapon & Equipment
             [_cargo, _pistol_mag, 10] call GOL_Fnc_AddMagazineCargo;
             [_cargo, _rifle_mag, 32] call GOL_Fnc_AddMagazineCargo;
             [_cargo, _rifleGL_mag, 30] call GOL_Fnc_AddMagazineCargo;
@@ -200,11 +194,13 @@
             [_cargo, _LAT, 3] call GOL_Fnc_AddWeaponCargo;
             [_cargo, _LATmag, 3] call GOL_Fnc_AddMagazineCargo;
 
+            [_cargo, _demoCharge, 4] call GOL_Fnc_AddItemCargo;
+            [_cargo, _satchelCharge, 2] call GOL_Fnc_AddItemCargo;
+
             [] call _Supplies;
         };
 
         case "big_box": {   //  Big Box
-            // Weapon & Equipment
             [_cargo, _pistol_mag, 20] call GOL_Fnc_AddMagazineCargo;
             [_cargo, _rifle_mag, 60] call GOL_Fnc_AddMagazineCargo;
             [_cargo, _rifleGL_mag, 50] call GOL_Fnc_AddMagazineCargo;
@@ -213,6 +209,9 @@
 
             [_cargo, _LAT, 6] call GOL_Fnc_AddWeaponCargo;
             [_cargo, _LATmag, 8] call GOL_Fnc_AddMagazineCargo;
+
+            [_cargo, _demoCharge, 8] call GOL_Fnc_AddItemCargo;
+            [_cargo, _satchelCharge, 4] call GOL_Fnc_AddItemCargo;
 
             [] call _Supplies;
         };

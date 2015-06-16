@@ -5,9 +5,15 @@
 
 	if ((isClass(configFile>>"CfgPatches">>"task_force_radio")) && (isClass(configFile>>"CfgPatches">>"task_force_radio_items"))) then {
 
-		#include "\task_force_radio\functions\common.sqf";
-
+		#include "\task_force_radio\functions\common.sqf"
 		// ===============================================
+
+		tf_freq_west	= [0 ,5, ["10","20","30","40","50.1","50.2","50.3","50.5"],0, nil, -1, 0];
+		tf_freq_west_lr = [4 ,5, ["10","20","30","40","50.1","50.2","50.3","50.4","50.5"],0, nil, -1, 0];
+		tf_freq_east	= [0 ,5, ["10","20","30","40","50.1","50.2","50.3","50.5"],0, nil, -1, 0];
+		tf_freq_east_lr = [4 ,5, ["10","20","30","40","50.1","50.2","50.3","50.4","50.5"],0, nil, -1, 0];
+		tf_freq_guer	= [0 ,5, ["10","20","30","40","50.1","50.2","50.3","50.5"],0, nil, -1, 0];
+		tf_freq_guer_lr = [4 ,5, ["10","20","30","40","50.1","50.2","50.3","50.4","50.5"],0, nil, -1, 0];
 
 		tf_west_radio_code = "_golclan";
 		tf_east_radio_code = "_golclan";
@@ -18,15 +24,6 @@
 		tf_same_sw_frequencies_for_side = true;
 		tf_same_lr_frequencies_for_side = true;
 		tf_same_dd_frequencies_for_side = true;
-
-		// ===============================================
-
-		tf_freq_west	= [0 ,5, ["10","20","30","40","50.1","50.2","50.3","50.5"],0, nil, -1, 0];
-		tf_freq_west_lr = [4 ,5, ["10","20","30","40","50.1","50.2","50.3","50.4","50.5"],0, nil, -1, 0];
-		tf_freq_east	= [0 ,5, ["10","20","30","40","50.1","50.2","50.3","50.5"],0, nil, -1, 0];
-		tf_freq_east_lr = [4 ,5, ["10","20","30","40","50.1","50.2","50.3","50.4","50.5"],0, nil, -1, 0];
-		tf_freq_guer	= [0 ,5, ["10","20","30","40","50.1","50.2","50.3","50.5"],0, nil, -1, 0];
-		tf_freq_guer_lr = [4 ,5, ["10","20","30","40","50.1","50.2","50.3","50.4","50.5"],0, nil, -1, 0];
 
 		// ===============================================
 
@@ -47,9 +44,21 @@
 
 		// ===============================================
 
+		[] spawn {
+			if (hasInterface) then {
+				waitUntil {sleep 0.1; !isNull player};
+				sleep 5;
+				if (isMultiplayer && ("radio_settings" in (player call TFAR_fnc_backpackLR))) then {
+					for "_i" from 1 to 9 step 1 do {
+						[(call TFAR_fnc_activeLrRadio), _i, (["10","20","30","40","50.1","50.2","50.3","50.4","50.5"] select (_i - 1))] call TFAR_fnc_SetChannelFrequency;
+					};
+					[(call TFAR_fnc_activeLrRadio) select 0, (call TFAR_fnc_activeLrRadio) select 1, 5] call TFAR_fnc_setLrChannel;
+				};
+			};
+		};
+
 		_DebugName = "GOL_Radios";
 		scriptName _DebugName;
 		["RADIOS INITIALIZED SUCCESSFULLY",[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;
-
 		// ===============================================
 	};

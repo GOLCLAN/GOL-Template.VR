@@ -24,7 +24,6 @@
 
 // *	GOL Variables
 		startTime = time;
-		GOL_Copy_Location_Array = [];
 		if (isServer) then {
 			StartUpBadguys = true;
 			GOL_Enemies = compile preprocessFileLineNumbers "mission\BadGuys.sqf";
@@ -48,10 +47,9 @@
 // ================================================================
 
 		if (isServer) then {
-			#include "Version.hpp";
-			#include "Modules.sqf";
-			[] call GOL_Fnc_Module_Init;
-			[] call GOL_Fnc_radioSettings;
+			#include "Includes\Version.hpp";
+			#include "Includes\Modules.sqf";
+			#include "Includes\Params.sqf";
 		};
 
 		private ["_DebugName"];

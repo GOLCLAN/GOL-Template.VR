@@ -69,3 +69,58 @@
 	#define Count_AG_Mags(classMagazine) (300 / (getNumber (configfile >> "CfgMagazines" >> classMagazine >> "count")))
 
 	#define Count_AR_Mags(classMagazine) ((600 / (getNumber (configfile >> "CfgMagazines" >> classMagazine >> "count"))) / 2)
+
+//	====================================================================================
+//	====================================================================================
+
+	#define ADD_ITEM(Class) _unit addItem Class;
+
+	#define ADD_ITEM_LINKED(Class) _unit linkItem Class;
+
+	#define ADD_MAGAZINE(Class,Amount) _unit addMagazines [Class, Amount];
+
+	#define ADD_WEAPON(Class) _unit addWeapon Class;
+
+//	====================================================================================
+
+	#define ADD_Item_BP(Class,Amount) (unitBackpack _unit) addItemCargoGlobal [Class, Amount];
+
+	#define ADD_MAGAZINE_BP(Class,Amount) (unitBackpack _unit) addMagazineCargoGlobal [Class, Amount]
+
+	#define ADD_WEAPON_BP(Class, Amount) (unitBackpack _unit) addWeaponCargoGlobal [Class, Amount];
+
+//	====================================================================================
+
+	#define DEFAULT_UNIFORM \
+		ADD_ITEM_LINKED(_map); \
+		ADD_ITEM_LINKED(_compass); \
+		ADD_ITEM_LINKED(_watch); \
+		for "_i" from 1 to 3 step 1 do { \
+			ADD_ITEM(_bandage); \
+		};
+
+	#define	NightTime(Class) \
+		if(_nightTime && _AllowNVG) Then { \
+			ADD_Type(Class,1); \
+		};
+
+	#define ADD_Type(Class,Amount) \
+		if (([Class] call BIS_fnc_itemType select 0) isEqualTo "Item") then { \
+			if (([Class] call BIS_fnc_itemType select 1) isEqualTo "Binocular") then { \
+				ADD_WEAPON(Class); \
+			} else { \
+				if (([Class] call BIS_fnc_itemType select 1) isEqualTo "NVGoggles") then { \
+					ADD_ITEM_LINKED(Class); \
+				} else { \
+					for "_x" from 1 to Amount do { \
+						ADD_ITEM(Class); \
+					}; \
+				}; \
+			}; \
+		}; \
+		if (([Class] call BIS_fnc_itemType select 0) isEqualTo "Magazine") then { \
+			ADD_MAGAZINE(Class,Amount); \
+		}; \
+		if (([Class] call BIS_fnc_itemType select 0) isEqualTo "Weapon") then { \
+			ADD_WEAPON(Class); \
+		};

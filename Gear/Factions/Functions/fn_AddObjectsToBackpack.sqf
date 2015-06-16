@@ -15,23 +15,24 @@
 // *
 // ================================================================
 
+	#include "macros.sqf";
+
 	private ["_item","_number"];
 	if (isNil "_unit") then { _unit = player; };
-
 	{
 		_item = (_x select 0);
 		_number = (_x select 1);
 
 		if (([_item] call BIS_fnc_itemType select 0) isEqualTo "Item") then {
-			(unitBackpack _unit) addItemCargoGlobal [_item, _number];
+			ADD_Item_BP(_item, _number);
 		};
 		if (([_item] call BIS_fnc_itemType select 0) isEqualTo "Mine") then {
-			(unitBackpack _unit) addItemCargoGlobal [_item, _number];
+			ADD_Item_BP(_item, _number);
 		};
 		if (([_item] call BIS_fnc_itemType select 0) isEqualTo "Magazine") then {
-			(unitBackpack _unit) addMagazineCargoGlobal [_item,_number]
+			ADD_MAGAZINE_BP(_item, _number);
 		};
 		if (([_item] call BIS_fnc_itemType select 0) isEqualTo "Weapon") then {
-			(unitBackpack _unit) addWeaponCargoGlobal [_item, _number];
+			ADD_WEAPON_BP(_item, _number);
 		};
 	} forEach _this;

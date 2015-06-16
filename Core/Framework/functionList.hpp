@@ -7,4 +7,3 @@
 	};
 
 	#include "Functions\functionList.hpp"
-	#include "Notes\functionList.hpp"

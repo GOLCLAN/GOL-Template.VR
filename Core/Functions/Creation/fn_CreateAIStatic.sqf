@@ -23,7 +23,7 @@
 
 		_newGrp = CreateGroup EnemySide;
 		{
-			sleep 0.5;
+			sleep 0.9;
 			_spawnLocation = (_x select 0);
 			_direction = (_x select 1);
 			_stance = (_x select 2);
