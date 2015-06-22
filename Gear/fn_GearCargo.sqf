@@ -102,12 +102,12 @@
 
     _Supplies = {
         if (GOL_Gear_Extra) Then {
-            { [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddItemCargo; } forEach _standard;
-            { [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddItemCargo; } forEach _ACE_standard;
-            { [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddItemCargo; } forEach _ACE_Advanced;
+            { [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddObjectsCargo; } forEach _standard;
+            { [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddObjectsCargo; } forEach _ACE_standard;
+            { [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddObjectsCargo; } forEach _ACE_Advanced;
         } else {
-            { [_cargo, (_x select 0), (_x select 3)] call GOL_Fnc_AddItemCargo; } forEach _standard;
-            { [_cargo, (_x select 0), (_x select 3)] call GOL_Fnc_AddItemCargo; } forEach _ACE_standard;
+            { [_cargo, (_x select 0), (_x select 3)] call GOL_Fnc_AddObjectsCargo; } forEach _standard;
+            { [_cargo, (_x select 0), (_x select 3)] call GOL_Fnc_AddObjectsCargo; } forEach _ACE_standard;
         };
     };
 
@@ -134,84 +134,84 @@
                 (_this select 0) addAction ["Echo > Pilot"," [player,'p'] call GOL_Fnc_GearHandler; ",nil,1,false,false,"","((_target distance _this) < 5)"];
             }], "bis_fnc_call", true, true] call BIS_fnc_MP;
 
-            { [_cargo, (_x select 0), (_x select 1)] call GOL_Fnc_AddItemCargo; } forEach _standard;
+            { [_cargo, (_x select 0), (_x select 1)] call GOL_Fnc_AddObjectsCargo; } forEach _standard;
         };
 
         case "a_box": { //  Attachment Box
 
             // CCO
-            [_cargo, "optic_Aco", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "optic_ACO_grn", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "FHQ_optic_AC11704", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "FHQ_optic_MicroCCO", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "FHQ_optic_AIM", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "FHQ_optic_HWS", 50] call GOL_Fnc_AddItemCargo;
-//            [_cargo, "rhsusf_acc_eotech_552", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "rhsusf_acc_compm4", 50] call GOL_Fnc_AddItemCargo;
+            [_cargo, "optic_Aco", 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, "optic_ACO_grn", 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, "FHQ_optic_AC11704", 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, "FHQ_optic_MicroCCO", 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, "FHQ_optic_AIM", 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, "FHQ_optic_HWS", 50] call GOL_Fnc_AddObjectsCargo;
+//            [_cargo, "rhsusf_acc_eotech_552", 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, "rhsusf_acc_compm4", 50] call GOL_Fnc_AddObjectsCargo;
 
             // Items
-            [_cargo, "ACE_muzzle_mzls_H", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "ACE_muzzle_mzls_B", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "ACE_muzzle_mzls_L", 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, "GVL_X2000_point", 50] call GOL_Fnc_AddItemCargo;
+            [_cargo, "ACE_muzzle_mzls_H", 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, "ACE_muzzle_mzls_B", 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, "ACE_muzzle_mzls_L", 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, "GVL_X2000_point", 50] call GOL_Fnc_AddObjectsCargo;
         };
 
         case "misc_box": {  //  Misc Box
-            [_cargo, _bino, 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, _toolkit, 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, _demoCharge, 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, _satchelCharge, 50] call GOL_Fnc_AddItemCargo;
+            [_cargo, _bino, 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _toolkit, 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _demoCharge, 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _satchelCharge, 50] call GOL_Fnc_AddObjectsCargo;
 
-            [_cargo, _radio152, 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, _radio1000a, 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, _Android, 50] call GOL_Fnc_AddItemCargo;
+            [_cargo, _radio152, 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _radio1000a, 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _Android, 50] call GOL_Fnc_AddObjectsCargo;
 
-            [_cargo, _mapTools, 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, _kestrel, 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, _IRStrobe, 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, _earplugs, 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, _clacker, 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, _defusalKit, 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, _cables, 100] call GOL_Fnc_AddItemCargo;
-            [_cargo, _flashBang, 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, _barrel, 50] call GOL_Fnc_AddItemCargo;
+            [_cargo, _mapTools, 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _kestrel, 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _IRStrobe, 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _earplugs, 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _clacker, 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _defusalKit, 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _cables, 100] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _flashBang, 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _barrel, 50] call GOL_Fnc_AddObjectsCargo;
         };
 
         case "med_box": {   //  Medical Box
-            [_cargo, _bandage, 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, _morph, 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, _epi, 50] call GOL_Fnc_AddItemCargo;
-            [_cargo, _blood, 50] call GOL_Fnc_AddItemCargo;
+            [_cargo, _bandage, 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _morph, 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _epi, 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _blood, 50] call GOL_Fnc_AddObjectsCargo;
         };
 
         case "small_box":   {   //  Small Box
-            [_cargo, _pistol_mag, 10] call GOL_Fnc_AddMagazineCargo;
-            [_cargo, _rifle_mag, 32] call GOL_Fnc_AddMagazineCargo;
-            [_cargo, _rifleGL_mag, 30] call GOL_Fnc_AddMagazineCargo;
-            [_cargo, _carbine_mag, 5] call GOL_Fnc_AddMagazineCargo;
-            [_cargo, _LMG_mag_tr, 12] call GOL_Fnc_AddMagazineCargo;
+            [_cargo, _pistol_mag, 10] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _rifle_mag, 32] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _rifleGL_mag, 30] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _carbine_mag, 5] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _LMG_mag_tr, 12] call GOL_Fnc_AddObjectsCargo;
 
-            [_cargo, _LAT, 3] call GOL_Fnc_AddWeaponCargo;
-            [_cargo, _LATmag, 3] call GOL_Fnc_AddMagazineCargo;
+            [_cargo, _LAT, 3] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _LATmag, 3] call GOL_Fnc_AddObjectsCargo;
 
-            [_cargo, _demoCharge, 4] call GOL_Fnc_AddItemCargo;
-            [_cargo, _satchelCharge, 2] call GOL_Fnc_AddItemCargo;
+            [_cargo, _demoCharge, 4] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _satchelCharge, 2] call GOL_Fnc_AddObjectsCargo;
 
             [] call _Supplies;
         };
 
         case "big_box": {   //  Big Box
-            [_cargo, _pistol_mag, 20] call GOL_Fnc_AddMagazineCargo;
-            [_cargo, _rifle_mag, 60] call GOL_Fnc_AddMagazineCargo;
-            [_cargo, _rifleGL_mag, 50] call GOL_Fnc_AddMagazineCargo;
-            [_cargo, _carbine_mag, 10] call GOL_Fnc_AddMagazineCargo;
-            [_cargo, _LMG_mag_tr, 24] call GOL_Fnc_AddMagazineCargo;
+            [_cargo, _pistol_mag, 20] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _rifle_mag, 60] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _rifleGL_mag, 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _carbine_mag, 10] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _LMG_mag_tr, 24] call GOL_Fnc_AddObjectsCargo;
 
-            [_cargo, _LAT, 6] call GOL_Fnc_AddWeaponCargo;
-            [_cargo, _LATmag, 8] call GOL_Fnc_AddMagazineCargo;
+            [_cargo, _LAT, 6] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _LATmag, 8] call GOL_Fnc_AddObjectsCargo;
 
-            [_cargo, _demoCharge, 8] call GOL_Fnc_AddItemCargo;
-            [_cargo, _satchelCharge, 4] call GOL_Fnc_AddItemCargo;
+            [_cargo, _demoCharge, 8] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _satchelCharge, 4] call GOL_Fnc_AddObjectsCargo;
 
             [] call _Supplies;
         };

@@ -35,8 +35,8 @@ switch (GOL_Gear_Camo) do {
 			_primaryCarbine = ["optic_ACO_grn","GVL_X2000_point"];
 
 		_LMG = "asdg_LMG_Zafir_F";
-		_LMG_mag = "150Rnd_762x54_Box";
-		_LMG_mag_tr = "150Rnd_762x54_Box_Tracer";
+		_LMG_mag = "150Rnd_762x51_Box";
+		_LMG_mag_tr = "150Rnd_762x51_Box_Tracer";
 			_primaryLMG = ["optic_ACO_grn","GVL_X2000_point"];
 
 		// Rifleman AT

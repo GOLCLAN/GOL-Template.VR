@@ -25,12 +25,9 @@
 // *	GOL Variables
 		startTime = time;
 		if (isServer) then {
-			StartUpBadguys = true;
 			GOL_Enemies = compile preprocessFileLineNumbers "mission\BadGuys.sqf";
 			[] call GOL_Enemies;
-			StartUpBadguys = false;
-			publicVariable "StartUpBadguys";
-
+			publicVariable "GOL_Enemies";
 		};
 
 		if (hasInterface) then {	// * Client
@@ -47,9 +44,9 @@
 // ================================================================
 
 		if (isServer) then {
-			#include "Includes\Version.hpp";
-			#include "Includes\Modules.sqf";
-			#include "Includes\Params.sqf";
+			#include "Includes\Version.hpp"
+			#include "Includes\Modules.sqf"
+			#include "Includes\Params.sqf"
 		};
 
 		private ["_DebugName"];

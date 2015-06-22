@@ -44,7 +44,7 @@ _kestrel = "ACE_ItemKestrel";
 _IRStrobe = "ACE_IR_Strobe_Item";
 _barrel = "ACE_SpareBarrel";
 _earplugs = "ACE_EarBuds";
-_clacker = "ACE_Clacker";
+_clacker = "ACE_M26_Clacker";
 _defusalKit = "ACE_DefusalKit";
 _cables = "ACE_CableTie";
 

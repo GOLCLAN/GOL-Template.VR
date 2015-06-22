@@ -195,8 +195,7 @@
 				[_LMG_mag_tr,Count_AG_Mags(_LMG_mag_tr), true],
 				[_rangefinder],
 				[_pistol],
-				[_rifle],
-				[_LAT]
+				[_rifle]
 			] call GOL_Fnc_AddObjects;
 			_primaryAttachments = _primaryRifle;
 			_secondaryAttachments = _secondaryPistol;

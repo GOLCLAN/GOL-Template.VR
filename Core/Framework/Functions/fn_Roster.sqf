@@ -43,9 +43,6 @@
 			    case "ar": {
 					_strRole = "Automatic Rifleman: ";
 			    };
-			    case "lr": {
-					_strRole = "Light Rifleman: ";
-			    };
 			    case "p": {
 					_strRole = "Pilot: ";
 			    };
@@ -79,5 +76,5 @@
 		};
 	}forEach _unitsArr;
 
-	player createDiarySubject ["roster","Team Roster"];
-	player createDiaryRecord ["roster",[format ["Roster - %1", time],_strFinal]];
+	player createDiarySubject ["roster","Platoon Roster"];
+	player createDiaryRecord ["roster",[format ["Platoon Roster - %1", time],_strFinal]];

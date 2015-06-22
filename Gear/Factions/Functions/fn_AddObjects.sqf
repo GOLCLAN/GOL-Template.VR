@@ -27,6 +27,9 @@
 			if (([_item] call BIS_fnc_itemType select 0) isEqualTo "Item") then {
 				(unitBackpack _unit) addItemCargoGlobal [_item, _number];
 			};
+			if (([_item] call BIS_fnc_itemType select 0) isEqualTo "Mine") then {
+				(unitBackpack _unit) addItemCargoGlobal [_item, _number];
+			};
 			if (([_item] call BIS_fnc_itemType select 0) isEqualTo "Magazine") then {
 				(unitBackpack _unit) addMagazineCargoGlobal [_item,_number]
 			};

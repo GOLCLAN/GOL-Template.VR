@@ -16,72 +16,55 @@
 // *
 // ================================================================
 
-		if (isServer) Then {
-			if (!isMultiplayer || isNil "HCSlot") then {
-				if (isNil "HeadlessVariable") then {
-					HeadlessVariable = false;
-				};
-			} else {
-				HeadlessVariable = true;
-			};
-			publicVariable "HeadlessVariable";
+	if (!isMultiplayer || isNil "HCSlot") then {
+		if (isNil "HeadlessVariable") then {
+			HeadlessVariable = false;
 		};
+	} else {
+		HeadlessVariable = true;
+	};
 
 	// ===============================================
 
-		HeadlessController = if (!isMultiplayer || isNil "HCSlot")  Then {
-			isServer;
-		} else {
-			switch (HeadlessVariable) do {
-			    case true: {
-					(!isServer) && {player isEqualTo HCSlot}
-			    };
-			    case false: {
-					isServer
-			    };
+	HeadlessController = if (!isMultiplayer || isNil "HCSlot")  Then {
+		isServer;
+	} else {
+		switch (HeadlessVariable) do {
+			case true: {
+				(!isServer) && {player isEqualTo HCSlot}
+			};
+			case false: {
+				isServer
 			};
 		};
+	};
 
 	// ===============================================
 
-		if (isNil "HCSlot2") then {
-			HeadlessController2 = HeadlessController;
-		} else {
-			HeadlessController2 = if (!isMultiplayer)  Then {
-				isServer;
-			} else {
-				switch (HeadlessVariable) do {
-				    case true: {
-						(!isServer) && {player isEqualTo HCSlot2}
-				    };
-				    case false: {
-						isServer
-				    };
-				};
-			};
-	    };
-
-	    if (isServer) Then {
-			publicVariable "HeadlessController";
-			publicVariable "HeadlessController2";
-	    };
+	[] spawn {
+		publicVariable "HeadlessVariable";
+		publicVariable "HeadlessController";
+	};
 
 	// ===============================================
 
-		_DebugName = "Headless Check";
-		scriptName _DebugName;
-		if ((!isNil "HeadlessController") && (HeadlessVariable)) Then {
-			["Headless Checking INITIALIZED SUCCESSFULLY",[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;
+	_DebugName = "Headless Check";
+	scriptName _DebugName;
+	if ((!isNil "HeadlessController") && (HeadlessVariable)) Then {
+		["Headless Checking INITIALIZED SUCCESSFULLY",[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;
+		[[[],{
 			if (serverCommandAvailable "#logout") then {
 				systemChat "Loading Headless Client - SUCCESSFULLY";
 			};
-		} else {
-			["Headless Checking initialize failed",[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;
+		}],"BIS_fnc_call",true] call BIS_fnc_MP;
+	} else {
+		["Headless Checking initialize failed",[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;
+		[[[],{
 			if (serverCommandAvailable "#logout") then {
 				systemChat "Loading Headless Client - FAILED";
 				systemChat "Loading AI on to Server Instead";
 			};
-
-		};
+		}],"BIS_fnc_call",true] call BIS_fnc_MP;
+	};
 
 	// ===============================================
