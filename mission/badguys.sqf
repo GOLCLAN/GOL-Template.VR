@@ -1,22 +1,22 @@
 
-if (StartUpBadguys) then {	// Runs at the mission start-up
-	{ Call Compile format ["%1 = 0; PublicVariable '%1';", _x]; } forEach ["ZONE1","ZONE2","ZONE3"];
+if (isMultiplayer && hasInterface) exitWith {false};		// Ensures only server or HC runs this script
+
+switch (_this select 0) do {
+	case 1: {	// Zone 1
+
+	};
+
+	case 2: {	// Zone 2
+
+	};
+
+	case 3: {	// Zone 3
+
+	};
 };
 
-if (ZONE1 == 1) then {
-	ZONE1 = 2;
 
-};
 
-if (ZONE2 == 1) then {
-	ZONE2 = 2;
-
-};
-
-if (ZONE3 == 1) then {
-	ZONE3 = 2;
-
-};
 
 /*
 	---[TIPS]---16/05/2015
