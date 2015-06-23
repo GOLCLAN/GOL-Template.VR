@@ -41,9 +41,11 @@
 
 	// ===============================================
 
-	[] spawn {
-		publicVariable "HeadlessVariable";
-		publicVariable "HeadlessController";
+	if (isServer) then {
+		[] spawn {
+			publicVariable "HeadlessVariable";
+			publicVariable "HeadlessController";
+		};
 	};
 
 	// ===============================================
@@ -52,19 +54,15 @@
 	scriptName _DebugName;
 	if ((!isNil "HeadlessController") && (HeadlessVariable)) Then {
 		["Headless Checking INITIALIZED SUCCESSFULLY",[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;
-		[[[],{
-			if (serverCommandAvailable "#logout") then {
-				systemChat "Loading Headless Client - SUCCESSFULLY";
-			};
-		}],"BIS_fnc_call",true] call BIS_fnc_MP;
+		if (serverCommandAvailable "#logout") then {
+			systemChat "Loading Headless Client - SUCCESSFULLY";
+		};
 	} else {
 		["Headless Checking initialize failed",[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;
-		[[[],{
-			if (serverCommandAvailable "#logout") then {
-				systemChat "Loading Headless Client - FAILED";
-				systemChat "Loading AI on to Server Instead";
-			};
-		}],"BIS_fnc_call",true] call BIS_fnc_MP;
+		if (serverCommandAvailable "#logout") then {
+			systemChat "Loading Headless Client - FAILED";
+			systemChat "Loading AI on to Server Instead";
+		};
 	};
 
 	// ===============================================

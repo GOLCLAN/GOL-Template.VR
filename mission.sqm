@@ -1987,7 +1987,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=11;
+		items=13;
 		class Item0
 		{
 			position[]={448.90714,5,1273.6577};
@@ -2079,7 +2079,7 @@ class Mission
 		};
 		class Item10
 		{
-			position[]={333.80078,5,1244.0435};
+			position[]={333.91196,5,1243.9878};
 			name="OTM";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -2088,10 +2088,24 @@ class Mission
 			b=7;
 			drawBorder=1;
 		};
+		class Item11
+		{
+			position[]={50.94685,5,1358.4551};
+			name="DAC";
+			text=" DAC";
+			type="Empty";
+		};
+		class Item12
+		{
+			position[]={51.326511,5,1458.3574};
+			name="DAC_1";
+			text=" DAC Activation";
+			type="Empty";
+		};
 	};
 	class Sensors
 	{
-		items=4;
+		items=6;
 		class Item0
 		{
 			position[]={450.16705,5,1451.291};
@@ -2144,6 +2158,32 @@ class Mission
 			age="UNKNOWN";
 			expCond="{isPlayer _x && ((getPosATL _x) select 2) < 5} count thislist > 0 && isServer";
 			expActiv="[[3],GOL_Enemies,""spawn""] call GOL_fnc_RemoteExecuterHC;";
+			class Effects
+			{
+			};
+		};
+		class Item4
+		{
+			position[]={50.670792,5,1350.8281};
+			activationBy="LOGIC";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="z1";
+			expCond="time > 2 && HeadlessController";
+			expActiv="dac = [""z1"",[1,1,0],[5,2,10,5],[ ],[ ],[ ],[0,0,0,0,0]] spawn DAC_Zone;";
+			class Effects
+			{
+			};
+		};
+		class Item5
+		{
+			position[]={50.803471,5,1450.8379};
+			activationBy="ANY";
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="{isPlayer _x && ((getPosATL _x) select 2) < 5} count thislist > 0";
+			expActiv="[z1] call DAC_Activate;";
 			class Effects
 			{
 			};
