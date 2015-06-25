@@ -3,13 +3,19 @@
 // *
 // *	Description:
 // *		Copies position and direction in a array and should be used together with "GOL_Fnc_CreateAIStatic"
-// *		Function saves a maximum of 10 positions at once
+// *		Function can saves unlimited amount of units without clearing the array however recommended that you keep it less then 10 / group
 // *
 // *	Usage:
-// *		["up"] call GOL_Fnc_CopyLocation;
+// *		[] call GOL_Fnc_CopyLocation;		// Copy players stance, if crouched ai will be 2
+// *		["m2"] call GOL_Fnc_CopyLocation;	// Place static m2
+// *		[true] call GOL_Fnc_CopyLocation;	// Clear array
 // *
 // *	Parameters:
-// *		0: String-Boolean: Position
+// *		#0: String-Boolean: Position
+// *			Available static commands:
+// *				USMC:		m2,m2tri,mk19,tow
+// *				Russians:	kord,kordtri,ags,metis,igla
+// *				Guerrillas:	dshkm,dshkmtri,spg9,zu23
 // *
 // *	Returning Value:
 // *		Position is stored in your clipboard
@@ -19,12 +25,12 @@
 
 	if (isMultiplayer) exitWith {false};
 
-	private ["_switch","_DebugName","_positionsCopyed"];
+	private ["_switch","_DebugName","_positionsCopyed","_type"];
 	if (isNil "GOL_Copy_Location_Array") then {
 		GOL_Copy_Location_Array = [];
 	};
 
-	_switch = [_this, 0, "up", [true,""]] call BIS_fnc_param;
+	_switch = [_this, 0, "", [true,""]] call BIS_fnc_param;
 
 	if (typeName _switch isEqualTo "") Then {	tolower (_switch);	};
 
@@ -33,38 +39,107 @@
 
 	_positionsCopyed = {
 		[["%1 Positions Copied",(count GOL_Copy_Location_Array)],[_DebugName,__FILE__,__LINE__],"both"] call GOL_Fnc_DebugLog;
-		copyToClipboard (format ["%1 call GOL_Fnc_CreateAIStatic;", str(GOL_Copy_Location_Array)]);
+		copyToClipboard (format ["%1 spawn GOL_Fnc_CreateAIStatic;", str(GOL_Copy_Location_Array)]);
 	};
 
 	switch (_switch) do {
 
-	    case true: {
+		case true: {
 			GOL_Copy_Location_Array = [];
 			[["Positions Cleared",(count GOL_Copy_Location_Array)],[_DebugName,__FILE__,__LINE__],"both"] call GOL_Fnc_DebugLog;
-	    };
+		};
 
-	    case "auto": {
-			GOL_Copy_Location_Array pushBack [getPosATL player, getDir player, "Auto"];
-			[] call _positionsCopyed;
-	    };
+// ================================================================
 
-	    case "up": {
-			GOL_Copy_Location_Array pushBack [getPosATL player, getDir player, "UP"];
-			[] call _positionsCopyed;
-	    };
+		case "mortar": {
+			_type = "B_Mortar_01_F";
+		};
 
-	    case "mid": {
-			GOL_Copy_Location_Array pushBack [getPosATL player, getDir player, "Middle"];
-			[] call _positionsCopyed;
-	    };
+// ================================================================
+//		USMC
+		case "m2": {
+			_type = "RHS_M2StaticMG_WD";
+		};
+		case "m2tri": {
+			_type = "RHS_M2StaticMG_MiniTripod_WD";
+		};
+		case "mk19": {
+			_type = "RHS_MK19_TriPod_WD";
+		};
+		case "tow": {
+			_type = "RDS_TOW_TriPod_FIA";
+		};
 
-	    case "low": {
-			GOL_Copy_Location_Array pushBack [getPosATL player, getDir player, "Down"];
-			[] call _positionsCopyed;
-	    };
+// ================================================================
+//		Russian
+		case "kord": {
+			_type = "RDS_KORD_high_FIA";
+		};
+		case "kordtri": {
+			_type = "RDS_KORD_FIA";
+		};
+		case "ags": {
+			_type = "RDS_AGS_FIA";
+		};
+		case "metis": {
+			_type = "RDS_Metis_FIA";
+		};
+		case "igla": {
+			_type = "RDS_Igla_AA_pod_FIA";
+		};
 
-	    default {
-			GOL_Copy_Location_Array pushBack [getPosATL player, getDir player, (["UP","UP","Middle","Auto"] call BIS_fnc_selectRandom)];
-			[] call _positionsCopyed;
-	    };
+// ================================================================
+//		Insurgents
+		case "dshkm": {
+			_type = "RDS_DSHKM_FIA";
+		};
+		case "dshkmtri": {
+			_type = "RDS_DSHkM_Mini_TriPod_FIA";
+		};
+		case "spg9": {
+			_type = "RDS_SPG9_FIA";
+		};
+		case "zu23": {
+			_type = "RDS_ZU23_FIA";
+		};
+
+// ================================================================
+
+		case "auto": {
+			_type = "Auto";
+		};
+
+		case "up": {
+			_type = "UP";
+		};
+
+		case "mid": {
+			_type = "Middle";
+		};
+
+		case "low": {
+			_type = "Down";
+		};
+
+		default {
+			switch (true) do {
+				case ((animationState player) == "amovpercmstpsraswrfldnon"): {
+					_type = "UP";
+				};
+				case ((animationState player) == "amovpknlmstpsraswrfldnon"): {
+					_type = "Middle";
+				};
+				case ((animationState player) == "amovppnemstpsraswrfldnon"): {
+					_type = "Down";
+				};
+				default {
+					_type = "Auto";
+				};
+			};
+		};
+	};
+
+	if (count GOL_Copy_Location_Array >= 1) then {
+		GOL_Copy_Location_Array pushBack [getPosATL player, getDir player, _type];
+		[] call _positionsCopyed;
 	};

@@ -168,7 +168,9 @@ switch (_this select 0) do {
 
 		Same as above but this time for the Civilians.
 
-	--[FACTIONS]--17/05/2015		// OUT OF DATE	- LOOK IN TO GOL_Fnc_EnemyFactions INSTEAD!
+	--[FACTIONS]--17/05/2015/
+
+		// OUT OF DATE	- LOOK IN TO GOL_Fnc_EnemyFactions INSTEAD!
 
 		Friendly and enemy factions can be selected using the mission parameters however its possible to override the defaults by editing the description.ext. Like before it's possible to change
 		the enemy faction mid mission by including something like the following in your BadGuys.sqf
