@@ -25,8 +25,9 @@
 // *	GOL Variables
 		startTime = time;
 		if (isServer) then {
+			GOL_Buildings = compile preprocessFileLineNumbers "mission\Buildings.sqf";
 			GOL_Enemies = compile preprocessFileLineNumbers "mission\BadGuys.sqf";
-			[] call GOL_Enemies;
+			publicVariable "GOL_Buildings";
 			publicVariable "GOL_Enemies";
 		};
 

@@ -3,14 +3,17 @@ if (isMultiplayer && hasInterface) exitWith {false};		// Ensures only server or 
 
 switch (_this select 0) do {
 	case 1: {	// Zone 1
+		[[1], "GOL_Buildings", false] call BIS_fnc_MP;
 
 	};
 
 	case 2: {	// Zone 2
+		[[2], "GOL_Buildings", false] call BIS_fnc_MP;
 
 	};
 
 	case 3: {	// Zone 3
+		[[3], "GOL_Buildings", false] call BIS_fnc_MP;
 
 	};
 };
