@@ -40,8 +40,8 @@
 			// *			GOLFIA: FIA	||	GOLUKR: Ukrainian Army	||	GOLIDF: Israeli Defence Forces
 			// ==============================================================================
 			// *			Side: East
-			// *			GOLINS: Insurgents	||	GOLRU: Russians	||	GOLCSAT: CSTAT 2015
-			// *			GOLTALI: Taliban	||	GOLGHA_REB: Ghalean Rebels
+			// *			GOLINS: Insurgents	||	GOLRU: Russians
+			// *			GOLTALI: Taliban
 			// ==============================================================================
 			#define	SelectFromWeatherParams	true;	// Allow Admin to select Time of day & weather from the lobby screen | Disable remove entire line
 			#define	SelectFromGearParams	true;	// Allow Admin to select Faction for all sides from the lobby screen | Disable remove entire line

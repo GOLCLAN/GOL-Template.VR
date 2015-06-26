@@ -87,23 +87,11 @@ switch (_faction) do {
 		EnemyAntiAir = ["GOL_AA_UKR"];
 		EnemySide = WEST;
     };
-    case "GOLGHA_REB": {	// Ghalean Rebels East Chris/Baron
-		EnemyUnits = ["GOL_PL_GHA_REB","GOL_SL_GHA_REB","GOL_RM_GHA_REB","GOL_AG_GHA_REB","GOL_AR_GHA_REB"];
-		EnemySnipers = ["GOL_SN_GHA_REB"];
-		EnemyAntiAir = ["GOL_AA_GHA_REB"];
-		EnemySide = EAST;
-    };
     case "GOLTFSPARTAN": {	// USMC TF Spartan West Jason
 		EnemyUnits = ["GOL_PL_TFSPARTAN","GOL_SL_TFSPARTAN","GOL_RM_TFSPARTAN","GOL_AG_TFSPARTAN","GOL_AR_TFSPARTAN"];
 		EnemySnipers = ["GOL_SN_TFSPARTAN"];
 		EnemyAntiAir = ["GOL_AA_TFSPARTAN"];
 		EnemySide = WEST;
-    };
-    case "GOLCSAT": {		// CSTAT 2015 Jason
-		EnemyUnits = ["GOL_PL_CSAT","GOL_SL_CSAT","GOL_RM_CSAT","GOL_AG_CSAT","GOL_AR_CSAT"];
-		EnemySnipers = ["GOL_SN_CSAT"];
-		EnemyAntiAir = ["GOL_AA_CSAT"];
-		EnemySide = EAST;
     };
 
 	// *	If there is any error with it then GOLFIA will be loaded as a default
