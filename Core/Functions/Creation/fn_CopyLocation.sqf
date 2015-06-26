@@ -46,7 +46,8 @@
 
 		case true: {
 			GOL_Copy_Location_Array = [];
-			[["Positions Cleared",(count GOL_Copy_Location_Array)],[_DebugName,__FILE__,__LINE__],"both"] call GOL_Fnc_DebugLog;
+			["Positions Cleared",[_DebugName,__FILE__,__LINE__],"both"] call GOL_Fnc_DebugLog;
+			_type = true;
 		};
 
 // ================================================================
@@ -139,7 +140,7 @@
 		};
 	};
 
-	if (count GOL_Copy_Location_Array >= 1) then {
+	if !(typeName _type == "BOOL") then {
 		GOL_Copy_Location_Array pushBack [getPosATL player, getDir player, _type];
 		[] call _positionsCopyed;
 	};
