@@ -10,9 +10,9 @@
 			[] call GOL_Fnc_EnemyFactions;
 		};
 
+		#include "Includes\RadioSettings.sqf"
 		if (hasInterface) then {
 // *		Loads Mandatory Player functions
-			#include "Includes\RadioSettings.sqf"
 			#include "Includes\Init.sqf"
 			player addRating 100000;
 			player setVariable ["BIS_noCoreConversations", true, true];
