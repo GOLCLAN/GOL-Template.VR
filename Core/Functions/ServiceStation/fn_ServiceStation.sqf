@@ -29,7 +29,7 @@ _Refueling = 0.03;							// Percent of maximum fuel refueled per second (over 3 
 _RemoveWheelSpeed = 5;						// Time in seconds it takes to remove a damaged wheel.
 _MountWheelSpeed = 5;						// Time in seconds it takes to mount a new wheel.
 
-_RearmSleep = 3;							// Time in seconds (multiplied by 5) it takes to rearm vehicles (save planes).
+_RearmSleep = 5;							// Time in seconds (multiplied by 5) it takes to rearm vehicles (save planes).
 _RearmSleepPlane = 10;						// Time in seconds (multiplied by 5) it takes to rearm a plane.
 
 _Lights = True;								// Blinking lights on/off. True = on.

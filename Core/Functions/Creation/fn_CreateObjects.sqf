@@ -10,10 +10,13 @@
 // *		{	deleteVehicle _x;	} forEach (missionNamespace getVariable "TESTARRAY");
 // *
 // *	Usage:
+// *		[["O_MBT_02_arty_F",4.87696e-005,[447.058,1296.36,-0.00276756]]] call GOL_Fnc_CreateObjects;
 // *		["TESTARRAY",["O_MBT_02_arty_F",4.87696e-005,[447.058,1296.36,-0.00276756]]] call GOL_Fnc_CreateObjects;
+// *		["TESTARRAY",player,["O_MBT_02_arty_F",4.87696e-005,[2.48328,5.96948,-0.00143909]]] call GOL_Fnc_CreateObjects;
 // *
 // *	Parameters:
-// *		0: String: Name of variable to be used (Optional)
+// *		#0: String: Name of variable to be used (Optional (NOTE: Requires a new name for each time its executed))
+// *		#1: Object: Name of variable to be used (Optional (Only Valid if #0 exists))
 // *
 // *	Returning Value:
 // *		Adds each object to a array
@@ -30,7 +33,7 @@
 		_Array = [];
 		_Objects = [];
 		{
-			if !(typeName _x isEqualTo "STRING") then {
+			if (!(typeName _x isEqualTo "STRING") && !(typeName _x isEqualTo "OBJECT")) then {
 				_Objects pushBack _x;
 			};
 		} forEach _this;
@@ -45,12 +48,17 @@
 				_veh setDir _direction;
 				_veh setVariable ["GOL_Caching", true, true];
 
-				if (_veh isKindOf "AllVehicles") then {
-			        _pos = [(_location select 0), (_location select 1), (_location select 2) + 1];
-					isWater(_veh, _pos);
+				if (typeName (_this select 1) isEqualTo "OBJECT") then {
+					_veh setPosATL ((_this select 1) modelToWorld _location);
 				} else {
-					isWater(_veh, _location);
+					if (_veh isKindOf "AllVehicles") then {
+				        _pos = [(_location select 0), (_location select 1), (_location select 2) + 1];
+						isWater(_veh, _pos);
+					} else {
+						isWater(_veh, _location);
+					};
 				};
+
 				if (_veh isKindOf "StaticWeapon" || _veh isKindOf "House" || _veh isKindOf "HouseBase") then {
 					_veh setVectorUp [0,0,1];
 				} else {
@@ -70,7 +78,7 @@
 		} forEach _Objects;
 
 		if (typeName (_this select 0) isEqualTo "STRING") then {
-			waitUntil {(count _Objects) isEqualTo (count _Array)};
+			waitUntil {sleep 1; (count _Objects) isEqualTo (count _Array)};
 			missionNamespace setVariable [(_this select 0), _Array];
 		};
 	};

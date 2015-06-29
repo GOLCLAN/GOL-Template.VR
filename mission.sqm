@@ -1911,7 +1911,7 @@ class Mission
 		};
 		class Item7
 		{
-			position[]={357.73279,5,1248.4668};
+			position[]={355.00906,5,1248.9116};
 			id=116;
 			side="EMPTY";
 			vehicle="RHS_Civ_Truck_02_transport_F";
@@ -2132,7 +2132,7 @@ class Mission
 			type="SWITCH";
 			age="UNKNOWN";
 			text="Service Station";
-			expCond="{ (_x isKindOf ""Air"" || _x isKindOf ""LandVehicle"") && (isTouchingGround _x) } count thisList == 1;";
+			expCond="{((_x isKindOf ""Air"" || _x isKindOf ""LandVehicle"") and ((getPosATL _x) select 2) < 1)} count thisList == 1;";
 			expActiv="null = [(list thisTrigger), ThisTrigger] spawn GOL_Fnc_ServiceStation;";
 			class Effects
 			{

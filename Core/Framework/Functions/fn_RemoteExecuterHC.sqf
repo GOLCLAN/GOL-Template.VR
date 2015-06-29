@@ -27,9 +27,9 @@
 // *
 // ================================================================
 
-	if (isMultiplayer && !isServer) exitWith {false};		// Ensures only server runs
+	if (!isServer) exitWith {false};		// Ensures only server runs
 
-	if (HeadlessVariable) Then {
+	if (HeadlessVariable && isMultiplayer) Then {
 		[[[(_this select 0),(_this select 1),(_this select 2)], {
 
 			private ["_function","_type","_params","_caller","_Script","_execute"];
