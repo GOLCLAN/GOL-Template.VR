@@ -1,4 +1,4 @@
-// ================================================================
+/*	================================================================
 // *	AUTHOR: GuzzenVonLidl
 // *
 // *	Description:
@@ -9,13 +9,13 @@
 // *		[Vehicle, Diraction to face] call GOL_Fnc_setDirFly;
 // *
 // *	Parameters:
-// *		0:	OBJECT - Vehicle to apply settings to
-// *		1:	NUMBER -
+// *		#0:	OBJECT - Vehicle to apply settings to
+// *		#1:	NUMBER -
 // *
 // *	Returning Value:
 // *		None
 // *
-// ================================================================
+// ================================================================ */
 
 	 private ["_veh","_dir","_speed"];
 

@@ -1,22 +1,24 @@
-// ====================================================================================
-// *
-// *	Author: GuzzenVonLidl
-// *
-// *	Description:
-// *		Collects all positions and selects a random one to place a unit in
-// *
-// *	Usage:
-// *		["marker1", 17, 75] spawn GOL_Fnc_BuildingPop;
-// *
-// *	Parameter(s):
-// *		#0	OBJECT || STRING || ARRAY:	Center Location of buildings/positions
-// *		#1	NUMBER:	Amount of ai spawn
-// *		#2	NUMBER:	Radius of area	(Optional: Default: 50)
-// *		#3	BOOL:	Exact positions only and not just building in area (Optional: Default: false)
-// *
-// *	Returning Value:
-// *		Nothing
-// ====================================================================================
+/*	====================================================================================
+
+	Author: GuzzenVonLidl
+
+	Description:
+		Collects all positions and selects a random one to place a unit in
+
+	Usage:
+		["marker1", 17, 75] spawn GOL_Fnc_BuildingPop;
+
+	Parameter(s):
+		#0	OBJECT || STRING || ARRAY:	Center Location of buildings/positions
+		#1	NUMBER:	Amount of ai spawn
+		#2	NUMBER:	Radius of area	(Optional: Default: 50)
+		#3	BOOL:	Exact positions only and not just building in area (Optional: Default: false)
+
+	Returning Value:
+		Nothing
+// ==================================================================================== */
+
+	if (isMultiplayer && hasInterface) exitWith {false};		// Ensures only server or HC runs after and not players
 
 	private ["_DebugName","_marker","_number","_radius","_distance","_markerLocation","_buildingArray","_newGrp","_spawnLocation","_newGrpUnit","_dir"];
 
@@ -56,6 +58,8 @@
 		_newGrpUnit SetDir _dir;
 		_newGrpUnit setRank "PRIVATE";
 		_newGrpUnit setSkill 0.3;
+		_newGrpUnit forceSpeed ([0,0,-1] call BIS_fnc_selectRandom);
+		_newGrpUnit setVariable ["GOL_Caching", true, true];
 		doStop _newGrpUnit;
 		_buildingArray = _buildingArray - [_spawnLocation];
 	};

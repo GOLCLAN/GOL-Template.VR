@@ -1,18 +1,18 @@
-// ================================================================
-// *	AUTHOR: GuzzenVonLidl
-// *
-// *	Description:
-// *		Adds all players every active Curator(Zeus module) in the mission
-// *
-// *	Usage:
-// *		[] call GOL_Fnc_Curator_AddPlayers;
-// *
-// *	Parameters:
-// *
-// *	Returning Value:
-// *		None
-// *
-// ================================================================
+/*	================================================================
+	AUTHOR: GuzzenVonLidl
+
+	Description:
+		Adds all players every active Curator(Zeus module) in the mission
+
+	Usage:
+		[] call GOL_Fnc_Curator_AddPlayers;
+
+	Parameters:
+
+	Returning Value:
+		None
+
+// ================================================================ */
 
 	if (!isServer && isMultiplayer) exitWith {false};
 

@@ -1,21 +1,21 @@
-// ================================================================
-// *	AUTHOR: GuzzenVonLidl
-// *
-// *	Description:
-// *		Selects a new faction to spawn
-// *
-// *	Usage:
-// *		["GOLFIA"] call GOL_Fnc_EnemyFactions;
-// *
-// *	Parameters:
-// *		0:	STRING - Name of the faction to select
-// *
-// *	Returning Value:
-// *		Nothing
-// *
-// ================================================================
+/*	================================================================
+	AUTHOR: GuzzenVonLidl
 
-if (isMultiplayer && !isServer) exitWith {false};		// Ensures only server runs
+	Description:
+		Selects a new faction to spawn
+
+	Usage:
+		["GOLFIA"] call GOL_Fnc_EnemyFactions;
+
+	Parameters:
+		#0:	STRING - Name of the faction to select
+
+	Returning Value:
+		Nothing
+
+// ================================================================ */
+
+if (isMultiplayer && hasInterface) exitWith {false};		// Ensures only server or HC runs after and not players
 
 _faction = toUpper ([_this, 0, (["AI_Faction"] call GOL_Fnc_GetConfig), [""]] call bis_fnc_param);
 

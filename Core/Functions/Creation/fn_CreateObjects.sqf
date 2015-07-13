@@ -1,27 +1,27 @@
-// ================================================================
-// *	AUTHOR: GuzzenVonLidl
-// *
-// *	Description:
-// *		All objects from a array will placed on the map
-// *		Will add all objects if to a optinal array to be called later if wanted
-// *		Only in the editor it adds all objects to the zeus so you can easily chance it if needed
-// *
-// *		If first param is a string then it will be a variable, set it to a unique so you can call it later in the mission to delete all objects by using:
-// *		{	deleteVehicle _x;	} forEach (missionNamespace getVariable "TESTARRAY");
-// *
-// *	Usage:
-// *		[["O_MBT_02_arty_F",4.87696e-005,[447.058,1296.36,-0.00276756]]] call GOL_Fnc_CreateObjects;
-// *		["TESTARRAY",["O_MBT_02_arty_F",4.87696e-005,[447.058,1296.36,-0.00276756]]] call GOL_Fnc_CreateObjects;
-// *		["TESTARRAY",player,["O_MBT_02_arty_F",4.87696e-005,[2.48328,5.96948,-0.00143909]]] call GOL_Fnc_CreateObjects;
-// *
-// *	Parameters:
-// *		#0: String: Name of variable to be used (Optional (NOTE: Requires a new name for each time its executed))
-// *		#1: Object: Name of variable to be used (Optional (Only Valid if #0 exists))
-// *
-// *	Returning Value:
-// *		Adds each object to a array
-// *
-// ================================================================
+/*	================================================================
+	AUTHOR: GuzzenVonLidl
+
+	Description:
+		All objects from a array will placed on the map
+		Will add all objects if to a optinal array to be called later if wanted
+		Only in the editor it adds all objects to the zeus so you can easily chance it if needed
+
+		If first param is a string then it will be a variable, set it to a unique so you can call it later in the mission to delete all objects by using:
+		{	deleteVehicle _x;	} forEach (missionNamespace getVariable "TESTARRAY");
+
+	Usage:
+		[["O_MBT_02_arty_F",4.87696e-005,[447.058,1296.36,-0.00276756]]] call GOL_Fnc_CreateObjects;
+		["TESTARRAY",["O_MBT_02_arty_F",4.87696e-005,[447.058,1296.36,-0.00276756]]] call GOL_Fnc_CreateObjects;
+		["TESTARRAY",player,["O_MBT_02_arty_F",4.87696e-005,[2.48328,5.96948,-0.00143909]]] call GOL_Fnc_CreateObjects;
+
+	Parameters:
+		#0: String: Name of variable to be used (Optional (NOTE: Requires a new name for each time its executed))
+		#1: Object: Name of variable to be used (Optional (Only Valid if #0 exists))
+
+	Returning Value:
+		Adds each object to a array
+
+// ================================================================ */
 
 	if (!isServer) exitWith {false};
 

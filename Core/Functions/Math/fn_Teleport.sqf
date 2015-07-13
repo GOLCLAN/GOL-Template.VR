@@ -1,21 +1,21 @@
-// ================================================================
-// *	AUTHOR: GuzzenVonLidl
-// *
-// *	Description:
-// *		TelePort player to a object
-// *
-// *	Usage:
-// *		[player, gol_flag] call GOL_fnc_Teleport;
-// *		player addAction ["Teleport1",{[player,gol_flag] call GOL_Fnc_Teleport}];
-// *
-// *	Parameters:
-// *		0:	String:		Unit
-// *		1:	String:		Target
-// *
-// *	Returning Value:
-// *		None
-// *
-// ================================================================
+/*	================================================================
+	AUTHOR: GuzzenVonLidl
+
+	Description:
+		TelePort player to a object
+
+	Usage:
+		[player, gol_flag] call GOL_fnc_Teleport;
+		player addAction ["Teleport1",{[player,gol_flag] call GOL_Fnc_Teleport}];
+
+	Parameters:
+		#0:	String:		Unit
+		#1:	String:		Target
+
+	Returning Value:
+		None
+
+// ================================================================ */
 
 	private ["_unit","_dest","_Teleportar","_freeCargoPositions"];
 

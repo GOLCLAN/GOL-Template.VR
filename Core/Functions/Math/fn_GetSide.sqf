@@ -1,19 +1,19 @@
-// ================================================================
-// *	AUTHOR: GuzzenVonLidl
-// *
-// *	Description:
-// *		Gets the correct respawn marker for the side the player is on
-// *
-// *	Usage:
-// *		[_unit] call GOL_Fnc_GetSide;
-// *
-// *	Parameters:
-// *		0:	OBJECT - Gets side of player
-// *
-// *	Returning Value:
-// *		Respawn marker name
-// *
-// ================================================================
+/*	================================================================
+	AUTHOR: GuzzenVonLidl
+
+	Description:
+		Gets the correct respawn marker for the side the player is on
+
+	Usage:
+		[_unit] call GOL_Fnc_GetSide;
+
+	Parameters:
+		#0:	OBJECT - Gets side of player
+
+	Returning Value:
+		Respawn marker name
+
+// ================================================================ */
 
 	private ["_unit","_returnValue","_DebugName"];
 

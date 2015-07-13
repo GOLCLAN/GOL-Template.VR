@@ -18,7 +18,7 @@
 			gameType = Coop; //	Unknown || Coop || DM || Team || CTF || SCont || CTI || FF || Hold
 
 			minPlayers = 1;		//	minPlayers # of players the mission supports
-			maxPlayers = 127;	//	maxPlayers # of players the mission supports
+			maxPlayers = 108;	//	maxPlayers # of players the mission supports
 	};
 
 // ==============================================================================
@@ -40,8 +40,8 @@
 			// *			GOLFIA: FIA	||	GOLUKR: Ukrainian Army	||	GOLIDF: Israeli Defence Forces
 			// ==============================================================================
 			// *			Side: East
-			// *			GOLINS: Insurgents	||	GOLRU: Russians
-			// *			GOLTALI: Taliban
+			// *			: Insurgents	||	GOLRU: Russians
+			// *			GOLINSGOLTALI: Taliban
 			// ==============================================================================
 			#define	SelectFromWeatherParams	true;	// Allow Admin to select Time of day & weather from the lobby screen | Disable remove entire line
 			#define	SelectFromGearParams	true;	// Allow Admin to select Faction for all sides from the lobby screen | Disable remove entire line
@@ -49,7 +49,7 @@
 			class Gear {
 				FullGear = false;	//	BOOL:	True: Respawned player will respawn with original gear	| False: Player will respawn with what they had when they died
 				Camoflage = 0;		//	BOOL:	0: Woodland	| 1: Desert
-				Blufor = 5;			//	NUMBER	1: NATO	| 2: FIA		| 3: USMC		|	4: BAF			|	5: IDF			|
+				Blufor = 1;			//	NUMBER	1: NATO	| 2: FIA		| 3: USMC		|	4: BAF			|	5: IDF			|
 				Opfor = 1;			//	NUMBER:	1: CSAT	| 2: Russians	| 3: Guerilla	|	4: Insurgents	|
 				Independent = 1;	//	NUMBER:	1: AAF	|
 			};

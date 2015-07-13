@@ -1,20 +1,21 @@
-// ================================================================
-// *	AUTHOR: GuzzenVonLidl
-// *
-// *	Description:
-// *		Spawns units in positions from one big array.
-// *		Function allows a maximum of 10 units and should be used together with "GOL_Fnc_CopyLocation"
-// *
-// *	Usage:
-// *		[[[461.042,1304.65,0.00143862],330,"UP"],[[461.042,1304.65,0.00143862],330,"Middle"]] call GOL_Fnc_CreateAIStatic;
-// *
-// *	Parameters:
-// *		#0	Array:	Position, direction and stance
-// *
-// *	Returning Value:
-// *		None
-// *
-// ================================================================
+/*	================================================================
+	AUTHOR: GuzzenVonLidl
+
+	Description:
+		Spawns units in positions from one big array.
+		Function allows a maximum of 10 units and should be used together with "GOL_Fnc_CopyLocation"
+
+	Usage:
+		[[[461.042,1304.65,0.00143862],330,"UP"],[[461.042,1304.65,0.00143862],330,"Middle"]] call GOL_Fnc_CreateAIStatic;
+		[[[438.991,1276.77,0.00143909],358.391,"B_G_Offroad_01_armed_F"]] spawn GOL_Fnc_CreateAIStatic;
+
+	Parameters:
+		#0:	Array:	Position, direction and stance
+
+	Returning Value:
+		None
+
+// ================================================================ */
 
 	if (isMultiplayer && hasInterface) exitWith {false};		// Ensures only server or HC runs after and not players
 
@@ -50,10 +51,9 @@
 		if (!isNil "_vehClass") then {
 			_veh = _vehClass createVehicle _spawnLocation;
 			_veh setPosATL _spawnLocation;
-			_veh SetDir _dir;
-			_newGrpUnit assignAsGunner _veh;
+			_veh SetDir (_dir + ([floor(random 90),floor(-random 90)] call BIS_fnc_selectRandom));
 			_newGrpUnit moveInGunner _veh;
-
+			_newGrpUnit assignAsGunner _veh;
 		};
 		_stance = nil;
 		_vehClass = nil;

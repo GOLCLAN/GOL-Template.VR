@@ -1,18 +1,18 @@
-// ================================================================
-// *	AUTHOR: GuzzenVonLidl
-// *
-// *	Description:
-// *		Dynamicly adds every unit & vehicle on the map to all curators
-// *
-// *	Usage:
-// *		[] call GOL_Fnc_Curator_Units;
-// *
-// *	Parameters:
-// *
-// *	Returning Value:
-// *		None
-// *
-// ================================================================
+/*	================================================================
+	AUTHOR: GuzzenVonLidl
+
+	Description:
+		Dynamicly adds every unit & vehicle on the map to all curators
+
+	Usage:
+		[] call GOL_Fnc_Curator_Units;
+
+	Parameters:
+
+	Returning Value:
+		None
+
+// ================================================================ */
 
 	if (!isServer && isMultiplayer) exitWith {false};
 	{

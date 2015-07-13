@@ -1,20 +1,20 @@
-// ================================================================
-// *	AUTHOR: GuzzenVonLidl
-// *
-// *	Description:
-// *		Gets location of a marker, object or array ([0,0,0])
-// *
-// *	Usage:
-// *		[MHQ] call GOL_Fnc_GetPos;	// Object
-// *		["Hello"] call GOL_Fnc_GetPos;	// Marker
-// *
-// *	Parameters:
-// *		0:	OBJECT || STRING || ARRAY - Gets location from a place
-// *
-// *	Returning Value:
-// *		Position
-// *
-// ================================================================
+/* ================================================================
+	AUTHOR: GuzzenVonLidl
+
+	Description:
+		Gets location of a marker, object or array ([0,0,0])
+
+	Usage:
+		[MHQ] call GOL_Fnc_GetPos;	// Object
+		["Hello"] call GOL_Fnc_GetPos;	// Marker
+
+	Parameters:
+		#0:	OBJECT || STRING || ARRAY - Gets location from a place
+
+	Returning Value:
+		Position
+
+// ================================================================ */
 
 	private ["_type","_returnValue","_DebugName"];
 

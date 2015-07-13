@@ -25,7 +25,7 @@
 		};
 
 		[] spawn GOL_Fnc_CoreLoop;
-		[] spawn GOL_Fnc_MissionFunctions;
+		[] execVM "Core\Functions\AI\MissionFunctions.sqf";
 
 		private ["_DebugName"];
 		_DebugName = "GOL-corePostInit";
