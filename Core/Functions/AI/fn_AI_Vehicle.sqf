@@ -5,7 +5,7 @@
 		Spawning in a vehicle and then patrols or attacks a location
 
 	Usage:
-		["B_G_Offroad_01_armed_F","zone1", "attack", ["zone2","zone3","zone1"], true] spawn GOL_Fnc_AI_Vehicle;
+		["B_G_Offroad_01_armed_F","zone1", "attack", ["zone2","zone3","zone1"], true, 90] spawn GOL_Fnc_AI_Vehicle;
 		["B_G_Offroad_01_armed_F","zone1", "attackadv", [["zone2","zone3","zone1"],100], true] spawn GOL_Fnc_AI_Vehicle;
 		["B_G_Offroad_01_armed_F","zone1", "patrol", ["zone2",50,10], true] spawn GOL_Fnc_AI_Vehicle;
 		["B_G_Offroad_01_armed_F","zone1", "patroladv", [[400.816,1364.48,0],"zone2","zone3","zone1"], true] spawn GOL_Fnc_AI_Vehicle;
@@ -32,6 +32,7 @@
 			Array:	-	If "patroladv" is selected above then
 				#0: Array - this is a array of waypoints to patrol
 		4:	Boolean:	Fill all available cargo space Default: False (Optional)
+		5:	Number:	Sets the direction of the vehicle: Default Random 360 (Optional)
 
 	Returning Value:
 		None
@@ -46,10 +47,12 @@
 	_typeOfObjective = [_this, 2, "patrol", [""]] call BIS_fnc_param;
 	_objectParams = [_this, 3] call BIS_fnc_param;
 	_enableCargo = [_this, 4, false, [true]] call BIS_fnc_param;
+	_direction = [_this, 5, (floor(random 360)), [0]] call BIS_fnc_param;
 
 	_spawn = [_spawnLocation] call GOL_Fnc_GetPos;
 
 	_veh = createVehicle [_vehicle, _spawn, [], 0, "None"];
+	_veh setDir _direction;
 		_freeCommanderPositions = _veh emptyPositions "Commander";
 		_freeGunnerPositions = _veh emptyPositions "Gunner";
 		_freeCargoPositions = _veh emptyPositions "Cargo";
