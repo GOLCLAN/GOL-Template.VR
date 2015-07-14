@@ -138,7 +138,7 @@
 				_mrk setMarkerShapeLocal "ICON";
 				_mrk setMarkerTypeLocal "hd_dot";
 				_mrk setMarkerColor "ColorOrange";
-				GOL_Copy_Location_Array_Markers pushBack [_mrk];
+				GOL_Copy_Location_Array_Markers pushBack _mrk;
 			}] call BIS_fnc_addStackedEventHandler;
 
 			[] spawn {
@@ -178,5 +178,5 @@
 		_mrk setMarkerShapeLocal "ICON";
 		_mrk setMarkerTypeLocal "hd_dot";
 		_mrk setMarkerColor "ColorOrange";
-		GOL_Copy_Location_Array_Markers pushBack [_mrk];
+		GOL_Copy_Location_Array_Markers pushBack _mrk;
 	};
