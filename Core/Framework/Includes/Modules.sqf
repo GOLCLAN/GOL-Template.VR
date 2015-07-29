@@ -128,14 +128,6 @@
 		_module setVariable ["allowCompass", true, true];
 	};
 
-	if (isClass(configFile>>"CfgPatches">>"ACE_NameTags")) then {
-		_module = _moduleGroup createUnit ["ACE_ModuleNameTags", [0,0,0],[],0.5,"NONE"];
-		_module setVariable ["PlayerNamesViewDistance", 15, true];	// GOL Default distance
-		_module setVariable ["showNamesForAI", false, true];
-		_module setVariable ["showVehicleCrewInfo", false, true];
-		_module setVariable ["showCursorTagForVehicles", true, true];
-	};
-
 	if (isClass(configFile>>"CfgPatches">>"ACE_Dragging")) then {
 		ACE_maxWeightDrag = 100000; // Removes weight limit
 		ACE_maxWeightCarry = ACE_maxWeightDrag; // Removes weight limit

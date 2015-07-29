@@ -191,7 +191,6 @@
 				[_grenade,2],
 				[_bandage,20, true],
 				[_morph,6, true],
-				[_epi,4, true],
 				[_LMG_mag_tr,Count_AG_Mags(_LMG_mag_tr), true],
 				[_rangefinder],
 				[_pistol],
@@ -203,12 +202,12 @@
 			if (GOL_Gear_Extra) then {
 				[
 					[_bandage,20, true],
-					[_morph,8, true],
-					[_epi,8, true]
+					[_morph,8, true]
 				] call GOL_Fnc_AddObjects;
 			};
 			if (GOL_Gear_Additional) then {
 				[
+					[_epi,8, true],
 					[_blood,2, true]
 				] call GOL_Fnc_AddObjects;
 			};

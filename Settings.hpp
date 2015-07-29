@@ -1,13 +1,13 @@
 
 // *	Settings for the mission
-	briefingName = "GOL@127 Template";
+	briefingName = "GOL@108 Template";
 	overviewText = "GOL Template";
 
 	author = "GOL Editing Team";					// shown in loading screen and briefing
 	Mission_version = "1";
 	onLoadName = "";								// Loading screen name
 	onLoadMission = "";								// Loading screen text
-	loadScreen = "gol_menu\Media\loading.jpg";
+	loadScreen = "gol_menu\Media\loading.jpg";		// Loading screen picture
 
 	respawn = "BASE";			// Re-spawn type
 	respawndelay = 30;			// Re-spawn Time
@@ -31,7 +31,7 @@
 									//			| 1: Light Debug  -	Only show messages in rtp file
 									//			| 2: Advanced Debug - Shows information on screen as well as in rtp file
 									//			| 3: Advanced Debug - Only in the mission editor
-			DAC_Config = false;		//	BOOL: True: Enables DAC and its content
+			DAC_Config = true;		//	BOOL: True: Enables DAC and its content
 			AI_Faction = "GOLUS";	//	STRING: Defines the default ai faction from the start of the mission
 			// ==============================================================================
 			// *			Side: West
@@ -53,14 +53,6 @@
 				Opfor = 1;			//	NUMBER:	1: CSAT	| 2: Russians	| 3: Guerilla	|	4: Insurgents	|
 				Independent = 1;	//	NUMBER:	1: AAF	|
 			};
-/*
-			class Cache {	// Coming soon...	Maybe 0.8
-				Enabled = false;	//	BOOL:	True: Enables caching of units & objects applied to the mission
-				AutoApply = false;	//	BOOL:	True: Caches all objects exept for the ones with the variable "GOL_Caching" set to false	| False: is vice versa (Only caches the one with the variable set to true)
-				Man = 800;			//	Number:	Caching distance from Player on foot
-				Land = 1600;		//	Number:	Caching distance from Player in vehicles
-				Air = 2000;			//	Number:	Caching distance from Player in the air
-			};
-*/
+//			class Cache {	// Coming in 0.8
 		};
 	};
