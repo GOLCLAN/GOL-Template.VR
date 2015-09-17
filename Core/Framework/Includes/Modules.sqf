@@ -140,7 +140,7 @@
 		_module setVariable ["EnableCombatDeafness", true, true];
 		_module setVariable ["EarplugsVolume", 0.7, true];
 		_module setVariable ["UnconsciousnessVolume", 0.5, true];
-		_module setVariable ["DisableEarRinging", false, true];
+		_module setVariable ["DisableEarRinging", -1, true];
 	};
 
 	if (isClass(configFile>>"CfgPatches">>"ACE_Weather")) then {
