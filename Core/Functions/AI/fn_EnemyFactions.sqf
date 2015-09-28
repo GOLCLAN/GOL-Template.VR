@@ -94,9 +94,10 @@ switch (_faction) do {
 		EnemySide = WEST;
     };
     case "GOLLOYALISTS": {	// "Loyalists";
-		EnemyUnits = ["GOL_PL_LOYA","GOL_SL_LOYA","GOL_RM_LOYA","GOL_AG_LOYA","GOL_AR_LOYA","GOL_SN_LOYA","GOL_PI_LOYA","GOL_AA_LOYA"];
-		EnemySnipers = [""];
-		EnemyAntiAir = [""];
+		EnemyUnits = ["GOL_PL_LOYA","GOL_SL_LOYA","GOL_RM_LOYA","GOL_AG_LOYA","GOL_AR_LOYA"];
+		EnemySnipers = ["GOL_SN_LOYA"];
+		EnemyAntiAir = ["GOL_AA_LOYA"];
+		EnemyPilot = ["GOL_PI_LOYA"];
 		EnemySide = East;
     };
 
