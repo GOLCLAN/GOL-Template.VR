@@ -94,7 +94,7 @@ switch (_faction) do {
 		EnemySide = WEST;
     };
     case "GOLLoyalists": {	// "Loyalists";
-		EnemyUnits = ["GOL_PL_LOYA","GOL_SL_LOYA","GOL_RM_LOYA","GOL_AG_LOYA","GOL_AR_LOYA","GOL_SN_LOYA","GOL_PI_LOYA","GOL_AA_LOYA"];
+		EnemyUnits = ["GOL_PL_LAAF","GOL_SL_LAAF","GOL_RM_LAAF","GOL_AG_LAAF","GOL_AR_LAAF","GOL_SN_LAAF","GOL_PI_LAAF","GOL_AA_LAAF"];
 		EnemySnipers = [""];
 		EnemyAntiAir = [""];
 		EnemySide = East;
