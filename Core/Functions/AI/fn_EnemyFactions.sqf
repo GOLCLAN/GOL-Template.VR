@@ -93,7 +93,7 @@ switch (_faction) do {
 		EnemyAntiAir = ["GOL_AA_TFSPARTAN"];
 		EnemySide = WEST;
     };
-    case "GOLLoyalists": {	// "Loyalists";
+    case "GOLLOYALISTS": {	// "Loyalists";
 		EnemyUnits = ["GOL_PL_LOYA","GOL_SL_LOYA","GOL_RM_LOYA","GOL_AG_LOYA","GOL_AR_LOYA","GOL_SN_LOYA","GOL_PI_LOYA","GOL_AA_LOYA"];
 		EnemySnipers = [""];
 		EnemyAntiAir = [""];
