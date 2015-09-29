@@ -40,9 +40,9 @@ switch (_TypNumber) do {
 	};
 	case 9: {	//	Loyalists
 		_Unit_Pool_S = ["GOL_RM_LOYA","GOL_PI_LOYA","GOL_PL_LOYA","GOL_SL_LOYA","GOL_RM_LOYA","GOL_AG_LOYA","GOL_AR_LOYA","GOL_AR_LOYA"];
-		_Unit_Pool_V = [""];
-		_Unit_Pool_T = [""];
-		_Unit_Pool_A = [""];
+		_Unit_Pool_V = [];
+		_Unit_Pool_T = [];
+		_Unit_Pool_A = [];
 	};
 
 	//-------------------------------------------------------------------------------------------------
