@@ -12,7 +12,7 @@
 	NEKY_BUSY = True;
 	if (!NEKY_LightsOn) then {[_Lights,_Trigger] spawn GOL_Fnc_ServiceStation_Lights};
 
-	if ((count magazinesDetail _veh) > 0) then {
+	if (((count magazinesDetail _veh) > 0) || ((typeOf _veh == "I_Heli_light_03_F") || (typeOf _Veh == "I_Heli_light_03_unarmed_F"))) then {
 		_Armed = True
 	} else {
 		_Veh setVehicleAmmo 0.51;
