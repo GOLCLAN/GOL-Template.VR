@@ -13,8 +13,8 @@ Private ["_this","_Object","_x","_Params","_Trg","_xRadius","_yRadius","_Conditi
 //   can modify	  //
 ////////////////////
 
-_xRadius = 7;
-_yRadius = 7;
+_xRadius = 12;
+_yRadius = 12;
 
 ////////////////////////////
 // Don't Touch code below //
