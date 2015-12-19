@@ -22,6 +22,13 @@ _faction = toUpper ([_this, 0, (["AI_Faction"] call GOL_Fnc_GetConfig), [""]] ca
 CivilianUnits = ["GOL_CHRIS_CIV","GOL_BARON_CIV","GOL_GUZZENVONLIDL_CIV","GOL_HOOFED_CIV","GOL_MACGREGOR_CIV","GOL_OKSMAN_CIV","GOL_PIRATE_CIV","GOL_R4IDER_CIV","GOL_YORKIEKEV_CIV","GOL_PILGRIM_CIV","GOL_BOG_CIV","GOL_THECMASTER_CIV","GOL_PRESS_CIV","CAF_AG_ME_CIV","CAF_AG_ME_CIV_02","CAF_AG_ME_CIV_03","CAF_AG_ME_CIV_04","C_man_p_beggar_F","C_man_1","C_man_polo_1_F","C_man_shorts_1_F","C_man_1_1_F","C_man_1_2_F","C_man_1_3_F"];
 
 switch (_faction) do {
+    case "GOLLOYALISTS": {	// "Loyalists";
+		EnemyUnits = ["GOL_PL_LOYA","GOL_SL_LOYA","GOL_RM_LOYA","GOL_AG_LOYA","GOL_AR_LOYA"];
+		EnemySnipers = ["GOL_SN_LOYA"];
+		EnemyAntiAir = ["GOL_AA_LOYA"];
+		EnemyPilot = ["GOL_PI_LOYA"];
+		EnemySide = East;
+    };
     case "GOLUS": {			// US West
 		EnemyUnits = ["rhsusf_army_ocp_squadleader","rhsusf_army_ocp_riflemanat","rhsusf_army_ocp_machinegunnera","rhsusf_army_ocp_machinegunner"];
 		EnemySnipers = ["rhsusf_army_ocp_marksman"];
@@ -75,12 +82,6 @@ switch (_faction) do {
 		EnemyAntiAir = ["GOL_AA_DEN"];
 		EnemySide = WEST;
     };
-    case "GOLIDF": {		// Israeli Defence Forces West R4IDER/Oksman
-		EnemyUnits = ["GOL_PL_IDF","GOL_SL_IDF","GOL_RM_IDF","GOL_AG_IDF","GOL_AR_IDF"];
-		EnemySnipers = ["GOL_SN_IDF"];
-		EnemyAntiAir = ["GOL_AA_IDF"];
-		EnemySide = WEST;
-    };
     case "GOLUKR": {		// Ukrainian Army West R4IDER/Oksman
 		EnemyUnits = ["GOL_PL_UKR","GOL_SL_UKR","GOL_RM_UKR","GOL_AG_UKR","GOL_AR_UKR"];
 		EnemySnipers = ["GOL_SN_UKR"];
@@ -92,13 +93,6 @@ switch (_faction) do {
 		EnemySnipers = ["GOL_SN_TFSPARTAN"];
 		EnemyAntiAir = ["GOL_AA_TFSPARTAN"];
 		EnemySide = WEST;
-    };
-    case "GOLLOYALISTS": {	// "Loyalists";
-		EnemyUnits = ["GOL_PL_LOYA","GOL_SL_LOYA","GOL_RM_LOYA","GOL_AG_LOYA","GOL_AR_LOYA"];
-		EnemySnipers = ["GOL_SN_LOYA"];
-		EnemyAntiAir = ["GOL_AA_LOYA"];
-		EnemyPilot = ["GOL_PI_LOYA"];
-		EnemySide = East;
     };
 
 	// *	If there is any error with it then GOLFIA will be loaded as a default

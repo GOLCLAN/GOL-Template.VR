@@ -47,7 +47,6 @@ switch (_TypNumber) do {
 
 	//-------------------------------------------------------------------------------------------------
 	//	BLUFOR Faction
-	//-------------------------------------------------------------------------------------------------
 	case 3: {	//	NATO
 		_Unit_Pool_S = ["B_crew_F","B_Helipilot_F","B_Soldier_SL_F","B_soldier_AR_F","B_soldier_AR_F","B_soldier_exp_F","B_soldier_GL_F","B_soldier_GL_F","B_soldier_AA_F","B_soldier_M_F","B_medic_F","B_soldier_repair_F","B_Soldier_F","B_Soldier_F","B_soldier_LAT_F","B_soldier_LAT_F","B_soldier_lite_F","B_soldier_TL_F","B_soldier_TL_F"];
 		_Unit_Pool_V = ["B_Truck_01_covered_F","B_MRAP_01_F","B_MRAP_01_F","B_MRAP_01_hmg_F"];
@@ -70,7 +69,11 @@ switch (_TypNumber) do {
 	};
 
 	//-------------------------------------------------------------------------------------------------
-	case 6: {	//	Independent
+	//	Independent Faction
+	//-------------------------------------------------------------------------------------------------
+
+	//-------------------------------------------------------------------------------------------------
+	case 6: {	//	AAF
 		_Unit_Pool_S = ["I_crew_F","I_helipilot_F","I_officer_F","I_Soldier_AT_F","I_Soldier_AA_F","I_Soldier_M_F","I_Soldier_GL_F","I_Soldier_exp_F","I_engineer_F","I_medic_F","I_Soldier_AR_F","I_Soldier_A_F"];
 		_Unit_Pool_V = ["I_Truck_02_covered_F","I_Truck_02_transport_F","I_MRAP_03_hmg_F","I_MRAP_03_F","I_MRAP_03_F"];
 		_Unit_Pool_T = ["I_MBT_03_cannon_F","I_APC_tracked_03_cannon_F","I_APC_Wheeled_03_cannon_F"];

@@ -8,52 +8,43 @@
 		#include "\task_force_radio\functions\common.sqf"
 		// ===============================================
 
-		tf_freq_west	= [0 ,5, ["10","20","30","40","50.1","50.2","50.3","50.5"],0, nil, -1, 0];
-		tf_freq_west_lr = [4 ,5, ["10","20","30","40","50.1","50.2","50.3","50.4","50.5"],0, nil, -1, 0];
-		tf_freq_east	= [0 ,5, ["10","20","30","40","50.1","50.2","50.3","50.5"],0, nil, -1, 0];
-		tf_freq_east_lr = [4 ,5, ["10","20","30","40","50.1","50.2","50.3","50.4","50.5"],0, nil, -1, 0];
-		tf_freq_guer	= [0 ,5, ["10","20","30","40","50.1","50.2","50.3","50.5"],0, nil, -1, 0];
-		tf_freq_guer_lr = [4 ,5, ["10","20","30","40","50.1","50.2","50.3","50.4","50.5"],0, nil, -1, 0];
-
-		tf_west_radio_code = "_golclan";
-		tf_east_radio_code = "_golclan";
-		tf_guer_radio_code = "_golclan";
-		TF_give_personal_radio_to_regular_soldier = false;
-		TF_give_microdagr_to_soldier = false;
-		tf_no_auto_long_range_radio = true;
-		tf_same_sw_frequencies_for_side = true;
-		tf_same_lr_frequencies_for_side = true;
-		tf_same_dd_frequencies_for_side = true;
+		MakePublic(TF_give_personal_radio_to_regular_soldier, false);
+		MakePublic(TF_give_microdagr_to_soldier, false);
+		MakePublic(TF_no_auto_long_range_radio, true);
+		MakePublic(TF_same_sw_frequencies_for_side, true);
+		MakePublic(TF_same_lr_frequencies_for_side, true);
+		MakePublic(TF_same_dd_frequencies_for_side, true);
+		MakePublic(tf_west_radio_code, "_golclan");
+		MakePublic(tf_east_radio_code, "_golclan");
+		MakePublic(tf_guer_radio_code, "_golclan");
 
 		// ===============================================
-
-		tf_defaultWestAirborneRadio = "tf_anarc164";
-		tf_defaultWestBackpack = "tf_rt1523g";
-		tf_defaultWestPersonalRadio = "tf_anprc152";
-		tf_defaultWestRiflemanRadio = "tf_pnr1000a";
-
-		tf_defaultEastAirborneRadio = "tf_anarc164";
-		tf_defaultEastBackpack = "tf_rt1523g";
-		tf_defaultEastPersonalRadio = "tf_anprc152";
-		tf_defaultEastRiflemanRadio = "tf_pnr1000a";
-
-		tf_defaultGuerAirborneRadio = "tf_anarc164";
-		tf_defaultGuerBackpack = "tf_rt1523g";
-		tf_defaultGuerPersonalRadio = "tf_anprc152";
-		tf_defaultGuerRiflemanRadio = "tf_pnr1000a";
+		MakePublic(tf_defaultWestAirborneRadio, "tf_anarc164");
+		MakePublic(tf_defaultWestBackpack, "tf_rt1523g");
+		MakePublic(tf_defaultWestPersonalRadio, "tf_anprc152");
+		MakePublic(tf_defaultWestRiflemanRadio, "tf_pnr1000a");
+		MakePublic(tf_defaultEastAirborneRadio, "tf_anarc164");
+		MakePublic(tf_defaultEastBackpack, "tf_rt1523g");
+		MakePublic(tf_defaultEastPersonalRadio, "tf_anprc152");
+		MakePublic(tf_defaultEastRiflemanRadio, "tf_pnr1000a");
+		MakePublic(tf_defaultGuerAirborneRadio, "tf_anarc164");
+		MakePublic(tf_defaultGuerBackpack, "tf_rt1523g");
+		MakePublic(tf_defaultGuerPersonalRadio, "tf_anprc152");
+		MakePublic(tf_defaultGuerRiflemanRadio, "tf_pnr1000a");
 
 		// ===============================================
+		if (hasInterface) then {
+			#define	TFAR_setFreq	[0 ,7, ["10","20","30","40","50.1","50.2","50.3","50.5"], 0, nil, -1, 0]
+			#define	isLeader	(leader player == player)
 
-		[] spawn {
-			if (hasInterface) then {
-				waitUntil {sleep 0.1; !isNull player};
-				sleep 5;
-				if (isMultiplayer && ("radio_settings" in (player call TFAR_fnc_backpackLR))) then {
-					for "_i" from 1 to 9 step 1 do {
-						[(call TFAR_fnc_activeLrRadio), _i, (["10","20","30","40","50.1","50.2","50.3","50.4","50.5"] select (_i - 1))] call TFAR_fnc_SetChannelFrequency;
-					};
-					[(call TFAR_fnc_activeLrRadio) select 0, (call TFAR_fnc_activeLrRadio) select 1, 5] call TFAR_fnc_setLrChannel;
-				};
+			if (isNil {(group player) getVariable "tf_sw_frequency"}) then {
+				(group player) setVariable ["tf_sw_frequency", TFAR_setFreq, isLeader];
+			};
+			if (isNil {(group player) getVariable "tf_lr_frequency"}) then {
+				(group player) setVariable ["tf_lr_frequency", TFAR_setFreq, isLeader];
+			};
+			if (isNil {(group player) getVariable "tf_dd_frequency"}) then {
+				(group player) setVariable ["tf_dd_frequency", TFAR_setFreq, isLeader];
 			};
 		};
 

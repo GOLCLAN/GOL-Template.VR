@@ -11,8 +11,9 @@
 			DEFAULT_UNIFORM;
 			ADD_ITEM_LINKED(_radio152);
 			ADD_ITEM_LINKED(_cTab);
-			NightTime(_nvg);
-			NightTime(_IRStrobe);
+			NightTimeOnce(_nvg);
+			NightTimeOnce(_IRStrobe);
+			NightTimeOnce("ACE_Flashlight_XL50");
 			[
 				[_mapTools],		// Items
 				[_pistol_mag,2],	// Magazines
@@ -41,8 +42,9 @@
 			DEFAULT_UNIFORM;
 			ADD_ITEM_LINKED(_radio152);
 			ADD_ITEM_LINKED(_cTab);
-			NightTime(_nvg);
-			NightTime(_IRStrobe);
+			NightTimeOnce(_nvg);
+			NightTimeOnce(_IRStrobe);
+			NightTimeOnce("ACE_Flashlight_XL50");
 			[
 				[_mapTools],
 				[_pistol_mag,2],
@@ -67,8 +69,9 @@
 			DEFAULT_UNIFORM;
 			ADD_ITEM_LINKED(_radio1000a);
 			ADD_ITEM_LINKED(_Android);
-			NightTime(_nvg);
-			NightTime(_IRStrobe);
+			NightTimeOnce(_nvg);
+			NightTimeOnce(_IRStrobe);
+			NightTimeOnce("ACE_Flashlight_XL50");
 			[
 				[_mapTools],
 				[_HelmetCam],
@@ -95,8 +98,9 @@
 			DEFAULT_UNIFORM;
 			ADD_ITEM_LINKED(_radio1000a);
 			ADD_ITEM_LINKED(_Android);
-			NightTime(_nvg);
-			NightTime(_IRStrobe);
+			NightTimeOnce(_nvg);
+			NightTimeOnce(_IRStrobe);
+			NightTimeOnce("ACE_Flashlight_XL50");
 			[
 				[_mapTools],
 				[_HelmetCam],
@@ -123,7 +127,8 @@
 			ADD_BACKPACK(_bagRifleman);
 			DEFAULT_UNIFORM;
 			ADD_ITEM_LINKED(_radio1000a);
-			NightTime(_nvg);
+			NightTimeOnce(_nvg);
+			NightTimeOnce("ACE_Flashlight_XL50");
 			[
 				[_pistol_mag,2],
 				[_rifle_mag,5],
@@ -150,7 +155,8 @@
 			ADD_BACKPACK(_bagRifleman);
 			DEFAULT_UNIFORM;
 			ADD_ITEM_LINKED(_radio1000a);
-			NightTime(_nvg);
+			NightTimeOnce(_nvg);
+			NightTimeOnce("ACE_Flashlight_XL50");
 			[
 				[_pistol_mag,2],
 				[_rifleGL_mag,5],
@@ -181,7 +187,8 @@
 			ADD_BACKPACK(_bagAG);
 			DEFAULT_UNIFORM;
 			ADD_ITEM_LINKED(_radio1000a);
-			NightTime(_nvg);
+			NightTimeOnce(_nvg);
+			NightTimeOnce("ACE_Flashlight_XL50");
 			[
 				[_pistol_mag,2],
 				[_rifle_mag,5],
@@ -218,7 +225,8 @@
 			ADD_BACKPACK(_bagRifleman);
 			DEFAULT_UNIFORM;
 			ADD_ITEM_LINKED(_radio1000a);
-			NightTime(_nvg);
+			NightTimeOnce(_nvg);
+			NightTimeOnce("ACE_Flashlight_XL50");
 			[
 				[_pistol_mag,2],
 				[_smokegrenadeY,2],
@@ -239,7 +247,8 @@
 			DEFAULT_UNIFORM;
 			ADD_ITEM_LINKED(_radio152);
 			ADD_ITEM_LINKED(_cTab);
-			NightTime(_nvg);
+			NightTimeOnce(_nvg);
+			NightTimeOnce("ACE_Flashlight_XL50");
 			[
 				[_mapTools],
 				[_carbine_mag,5],

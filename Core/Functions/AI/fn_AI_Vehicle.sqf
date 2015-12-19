@@ -71,6 +71,7 @@
 	if (_enableCargo) then {
 		for "_i" from 1 to ( _freeCargoPositions)do {
 			sleep 1;
+			_randomSelection = EnemyUnits call BIS_fnc_selectRandom;
 			_newGrpUnit = _newGrp createUnit [_randomSelection, _spawn, [], 10, "FORM"];
 			_newGrpUnit setRank "PRIVATE";
 			_newGrpUnit setSkill 0.2;

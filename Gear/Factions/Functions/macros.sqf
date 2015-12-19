@@ -99,9 +99,14 @@
 			ADD_ITEM(_bandage); \
 		};
 
-	#define	NightTime(Class) \
+	#define	NightTimeOnce(Class) \
 		if(_nightTime && _AllowNVG) Then { \
 			ADD_Type(Class,1); \
+		};
+
+	#define	NightTime(Class, Amount) \
+		if(_nightTime && _AllowNVG) Then { \
+			ADD_Type(Class,Amount); \
 		};
 
 	#define ADD_Type(Class,Amount) \

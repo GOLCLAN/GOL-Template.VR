@@ -51,9 +51,6 @@
 		case 4:	{
 			GOL_Faction_West = "BAF";
 		};
-		case 5:	{
-			GOL_Faction_West = "IDF";
-		};
 		default	{
 			GOL_Faction_West = "NATO";
 		};

@@ -23,7 +23,12 @@
 	switch (typeName _type) do {
 
 		case "STRING": {
-			_returnValue = getMarkerPos _type;
+			if ((getMarkerPos _type) isEqualTo [0,0,0]) then {
+				systemChat format ["Marker %1 does not exist, Returning [0,0,0] Instead", _type];
+				_returnValue = getMarkerPos _type;
+			} else {
+				_returnValue = getMarkerPos _type;
+			};
 		};
 
 		case "OBJECT": {

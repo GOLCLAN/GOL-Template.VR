@@ -59,7 +59,8 @@
 					};
 				};
 
-				if (_veh isKindOf "StaticWeapon" || _veh isKindOf "House" || _veh isKindOf "HouseBase") then {
+//				if (_veh isKindOf "StaticWeapon" || _veh isKindOf "House" || _veh isKindOf "HouseBase") then {
+				if !(GOL_ObjectSurfaceNormal) then {
 					_veh setVectorUp [0,0,1];
 				} else {
 					_veh setVectorUp surfaceNormal position _veh;

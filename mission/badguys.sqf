@@ -1,5 +1,8 @@
 
 if (isMultiplayer && hasInterface) exitWith {false};		// Ensures only server or HC runs this script
+//	GOL_UnitVarMove = ([0,0,-1] call BIS_fnc_selectRandom)
+//	(Default: 0,0,-1), makes units have 1 out of 3 change to be able to move when under fire
+//	0 disables movement while -1 resets it
 
 switch (_this select 0) do {
 	case 1: {	// Zone 1

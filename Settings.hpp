@@ -31,7 +31,7 @@
 									//			| 1: Light Debug  -	Only show messages in rtp file
 									//			| 2: Advanced Debug - Shows information on screen as well as in rtp file
 									//			| 3: Advanced Debug - Only in the mission editor
-			DAC_Config = true;		//	BOOL: True: Enables DAC and its content
+			DAC_Config = false;		//	BOOL: True: Enables DAC and its content
 			AI_Faction = "GOLUS";	//	STRING: Defines the default ai faction from the start of the mission
 			// ==============================================================================
 			// *			Side: West

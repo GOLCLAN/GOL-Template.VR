@@ -25,29 +25,64 @@
 // *	GOL Variables
 		startTime = time;
 		if (isServer) then {
-			GOL_Buildings = compile preprocessFileLineNumbers "mission\Buildings.sqf";
-			GOL_Enemies = compile preprocessFileLineNumbers "mission\BadGuys.sqf";
+			GOL_Buildings = (compile preprocessFileLineNumbers "mission\Buildings.sqf");
+			GOL_Enemies = (compile preprocessFileLineNumbers "mission\BadGuys.sqf");
+			GOL_ObjectSurfaceNormal = true;
+			GOL_UnitVarMove = ([0,0,-1] call BIS_fnc_selectRandom);
 			publicVariable "GOL_Buildings";
 			publicVariable "GOL_Enemies";
+			publicVariable "GOL_ObjectSurfaceNormal";
+			publicVariable "GOL_UnitVarMove";
 		};
 
 		if (hasInterface) then {	// * Client
-			setViewDistance 1500;	// * View distance
-			setObjectViewDistance 1200;	// * Object distance
-			setTerrainGrid	25;		// * Terrain grid (grass)
 			0 fadeRadio 0;
 		} else {					// * Server & Headless
 			setViewDistance 2000;	// * View distance, affects AI and performance
 			setObjectViewDistance 1500;	// * Object distance, affects AI and performance
-			setTerrainGrid	3.125;	// * Terrain grid (grass)
+			setTerrainGrid	25;	// * Terrain grid (grass)
 		};
 
 // ================================================================
 
 		if (isServer) then {
+
 			#include "Includes\Version.hpp"
-			#include "Includes\Modules.sqf"
 			#include "Includes\Params.sqf"
+//			#include "Includes\Modules.sqf"
+
+			private ["_LogicCenter","_moduleGroup","_module"];
+			_LogicCenter = createCenter sideLogic;
+			_moduleGroup = createGroup _LogicCenter;
+		// ================================================================
+			if (isClass(configFile>>"CfgPatches">>"ACE_OptionsMenu")) then {
+				_module = _moduleGroup createUnit ["ACE_moduleAllowConfigExport", [0,0,0],[],0.5,"NONE"];
+				_module setVariable ["allowconfigurationExport", true];
+			};
+
+			if (isClass(configFile>>"CfgPatches">>"A3_Modules_F_Curator")) then {
+				GOL_ZeuzModuleAdminLogged = _moduleGroup createUnit["ModuleCurator_F",[0,0,0],[],0,"NONE"];
+				GOL_ZeuzModuleAdminLogged setVariable ["Owner", "#adminLogged", true];
+				GOL_ZeuzModuleAdminLogged setVariable ["Name", "AdminZeus", true];
+				GOL_ZeuzModuleAdminLogged setVariable ["Addons", 3, true];
+				GOL_ZeuzModuleAdminLogged setVariable ["Forced", 0, true];
+				GOL_ZeuzModuleAdminLogged setVariable ["birdType", "", true];
+				GOL_ZeuzModuleAdminLogged setVariable ["showNotification", false, true];
+				GOL_Gamelogic = _moduleGroup createUnit["Logic",[0,0,0],[],0,"NONE"];
+			};
+			if (["Cache","Enabled"] call GOL_Fnc_GetConfig isEqualTo 1) then {
+				[GOL_Gamelogic] call GOL_Fnc_FPS_Manager;
+			};
+			if (["Lightning"] call GOL_Fnc_GetConfig isEqualTo 1) then {
+				GOL_Lightning_Active = true;
+			};
+
+			if (isClass(configFile>>"CfgPatches">>"DAC_Source")) then {
+				if (["DAC_Config"] call GOL_Fnc_GetConfig isEqualTo 1) then {
+					_module = _moduleGroup createUnit ["DAC_Source_Extern", [0,0,0],[],0.5,"NONE"];
+				};
+			};
+
 		};
 
 		private ["_DebugName"];

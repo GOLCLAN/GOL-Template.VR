@@ -15,8 +15,16 @@
 				publicVariable "GOL_PersistentArray";
 				publicVariable "GOL_CacheObject_Rescan";
 				publicVariable "GOL_CacheVehicle_Rescan";
-				{ _x disableai "MOVE"; }ForEach (playableUnits + switchableUnits);
-				while {true} do {	// sleeps to prevent exectuted of everything at the sametime
+				{
+					_x disableai "MOVE";
+					if ({isPlayer _x} count units group _x == 0) then {
+//						deleteVehicle _x;
+					};
+					if !(side _x == side player) then {
+						deleteVehicle _x;
+					};
+				}ForEach (playableUnits + switchableUnits);
+				while {true} do {
 					private ["_players"];
 					_players = (call GOL_Fnc_Players);
 					if !(_players isEqualTo GOL_PlayerList) then {
@@ -34,7 +42,6 @@
 					};
 				};
 			};
-
 		};
 
 		if (hasInterface) then {
@@ -43,8 +50,10 @@
 				_time = time;
 				waitUntil {sleep 0.1; !isNull player; time > (_time + 5)};
 				if (!isNil {(player getVariable "GOL_Loadout")}) then {
-					[[[player], { (_this select 0) setGroupId [((_this select 0) getVariable "GOL_Loadout") select 1]; }], "bis_fnc_call", true, true] call BIS_fnc_MP;
-					[player, (player getVariable "GOL_GroupColor")] call ACE_Interaction_fnc_joinTeam;
+					if (leader player == player) then {
+						player setGroupIdGlobal [((player getVariable "GOL_Loadout") select 1)];
+					};
+					["CBA_teamColorChanged", [player, (player getVariable "GOL_GroupColor")]] call CBA_fnc_globalEvent;
 				};
 
 				if ((player getVariable "GOL_Player") select 2) then {	// JIP
@@ -52,6 +61,7 @@
 						[_x] call GOL_Fnc_MHQActions;
 					} forEach MHQArray;
 				};
+
 			};
 		};
 

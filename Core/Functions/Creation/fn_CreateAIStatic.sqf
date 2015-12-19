@@ -44,7 +44,7 @@
 			_newGrpUnit setRank "PRIVATE";
 			_newGrpUnit setSkill 0.4;
 			_newGrpUnit setUnitPos _stance;
-			_newGrpUnit forceSpeed ([0,0,-1] call BIS_fnc_selectRandom); // 2 out of 3 time unit will be static
+			_newGrpUnit forceSpeed GOL_UnitVarMove; // 2 out of 3 time unit will be static
 			_newGrpUnit setVariable ["GOL_Caching", true, true];
 			doStop _newGrpUnit;
 

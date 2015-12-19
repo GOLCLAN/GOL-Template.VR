@@ -6,8 +6,14 @@
 		["------ Framework PostInit ------",[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;
 
 		[] call GOL_Fnc_HeadlessClient;
+
+		#define QUOTE(var1) #var1
+		#define DOUBLES(var1,var2) ##var1##_##var2
+		#define MakePublic(Variable, Value) Variable = Value; publicVariable "Variable";
+
 		if (isServer) then {
 			[] call GOL_Fnc_EnemyFactions;
+			#include "Includes\Modules.sqf"
 		};
 
 		#include "Includes\RadioSettings.sqf"

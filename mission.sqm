@@ -93,7 +93,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="wfac";
-					init="this setVariable [""GOL_LoadOut"", [""fac"", ""Yellow"", ""1-Actual""], True];";
+					init="this setVariable [""GOL_LoadOut"", [""fac"", ""1-Actual""], True];";
 					description="1-Actual - FAC";
 				};
 			};

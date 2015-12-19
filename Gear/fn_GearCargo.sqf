@@ -96,7 +96,7 @@
         [_glflareW, 50,10,5],
         [_grenade, 50,30,20],
         [_grenademini, 50,30,20],
-        [_smokegrenadeW, 50,30,20],
+        [_smokegrenadeY, 50,30,20],
         [_smokegrenadeG, 50,10,5]
     ];
 
@@ -135,6 +135,8 @@
             }], "bis_fnc_call", true, true] call BIS_fnc_MP;
 
             { [_cargo, (_x select 0), (_x select 1)] call GOL_Fnc_AddObjectsCargo; } forEach _standard;
+            [_cargo, _radio152, 50] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _radio1000a, 50] call GOL_Fnc_AddObjectsCargo;
         };
 
         case "a_box": { //  Attachment Box
