@@ -133,7 +133,7 @@
 	if (isClass(configFile>>"CfgPatches">>"ACE_Map_Gestures")) then {
 		#define COMPONENT Map_Gestures
 		Add(enabled, true);
-		Add(maxRange, true);
+		Add(maxRange, 10);
 		Add(interval, 0.03);
 	};
 
