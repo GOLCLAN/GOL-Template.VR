@@ -92,7 +92,7 @@
 
     _standard = [
         [_glHE, 50,50,20],
-        [_glsmokeW, 50,20,10],
+        [_glsmokeY, 50,20,10],
         [_glflareW, 50,10,5],
         [_grenade, 50,30,20],
         [_grenademini, 50,30,20],
