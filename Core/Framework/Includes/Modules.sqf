@@ -94,7 +94,7 @@
 	if (isClass(configFile>>"CfgPatches">>"ACE_Finger")) then {
 		#define COMPONENT Finger
 		Add(enabled,true);
-		Add(maxRange,10);
+		Add(maxRange,5);
 		Add(indicatorForSelf,true);
 	};
 
@@ -115,12 +115,11 @@
 
 	if (isClass(configFile>>"CfgPatches">>"ACE_Map")) then {
 		#define COMPONENT Map
-		Add(enabled, false);
 		Add(mapIllumination, true);
 		Add(mapGlow, true);
 		Add(mapShake, true);
-		Add(mapLimitZoom, true);
-		Add(mapShowCursorCoordinates, true);
+		Add(mapLimitZoom, false);
+		Add(mapShowCursorCoordinates, false);
 		Add(DefaultChannel, 3);
 		Add(BFT_Enabled, false);
 		Add(BFT_Interval, 5.0);
@@ -133,8 +132,8 @@
 	if (isClass(configFile>>"CfgPatches">>"ACE_Map_Gestures")) then {
 		#define COMPONENT Map_Gestures
 		Add(enabled, true);
-		Add(maxRange, 10);
-		Add(interval, 0.03);
+		Add(maxRange, 7);
+		Add(interval, 0.05);
 	};
 
 	if (isClass(configFile>>"CfgPatches">>"ACE_NightVision")) then {

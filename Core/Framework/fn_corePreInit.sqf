@@ -46,10 +46,8 @@
 // ================================================================
 
 		if (isServer) then {
-
 			#include "Includes\Version.hpp"
 			#include "Includes\Params.sqf"
-//			#include "Includes\Modules.sqf"
 
 			private ["_LogicCenter","_moduleGroup","_module"];
 			_LogicCenter = createCenter sideLogic;

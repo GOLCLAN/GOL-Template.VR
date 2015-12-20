@@ -58,7 +58,7 @@
 		_newGrpUnit SetDir _dir;
 		_newGrpUnit setRank "PRIVATE";
 		_newGrpUnit setSkill 0.3;
-		_newGrpUnit forceSpeed ([0,0,-1] call BIS_fnc_selectRandom);
+		_newGrpUnit forceSpeed GOL_UnitVarMove;
 		_newGrpUnit setVariable ["GOL_Caching", true, true];
 		doStop _newGrpUnit;
 		_buildingArray = _buildingArray - [_spawnLocation];

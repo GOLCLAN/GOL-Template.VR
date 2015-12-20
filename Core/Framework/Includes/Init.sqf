@@ -17,7 +17,7 @@
 		#include "GearLoadout.sqf";
 
 		if ((player getVariable "GOL_Player") select 2) then {
-			[[[], {	[] spawn GOL_Fnc_Roster; }], "bis_fnc_call", true] call BIS_fnc_MP;
+			[[], "GOL_Fnc_Roster", true, false, false] call BIS_fnc_MP;
 		} else {
 			[] spawn GOL_Fnc_Roster;
 		};
