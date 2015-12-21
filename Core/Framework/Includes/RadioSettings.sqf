@@ -38,7 +38,7 @@
 			#define	TFAR_setFreq	[0 ,7, ["10","20","30","40","50.1","50.2","50.3","50.5"], 0, nil, -1, 0]
 			#define	isLeader	(leader player == player)
 
-			player setVariable ["tf_receivingDistanceMultiplicator", 1.2]
+			player setVariable ["tf_receivingDistanceMultiplicator", 1.2];
 			player setVariable ["tf_sendingDistanceMultiplicator", 0.7];
 
 			if (isNil {(group player) getVariable "tf_sw_frequency"}) then {
