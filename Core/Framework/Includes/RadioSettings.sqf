@@ -41,15 +41,9 @@
 			player setVariable ["tf_receivingDistanceMultiplicator", 1.2];
 			player setVariable ["tf_sendingDistanceMultiplicator", 0.7];
 
-			if (isNil {(group player) getVariable "tf_sw_frequency"}) then {
-				(group player) setVariable ["tf_sw_frequency", TFAR_setFreq, isLeader];
-			};
-			if (isNil {(group player) getVariable "tf_lr_frequency"}) then {
-				(group player) setVariable ["tf_lr_frequency", TFAR_setFreq, isLeader];
-			};
-			if (isNil {(group player) getVariable "tf_dd_frequency"}) then {
-				(group player) setVariable ["tf_dd_frequency", TFAR_setFreq, isLeader];
-			};
+			(group player) setVariable ["tf_sw_frequency", TFAR_setFreq, isLeader];
+			(group player) setVariable ["tf_lr_frequency", TFAR_setFreq, isLeader];
+			(group player) setVariable ["tf_dd_frequency", TFAR_setFreq, isLeader];
 		};
 
 		_DebugName = "GOL_Radios";
