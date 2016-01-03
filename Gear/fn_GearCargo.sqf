@@ -188,9 +188,12 @@
 
         case "small_box":   {   //  Small Box
             [_cargo, _pistol_mag, 10] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _rifle_mag, 32] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _rifleGL_mag, 30] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _rifle_mag, 15] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _rifleGL_mag, 15] call GOL_Fnc_AddObjectsCargo;
             [_cargo, _carbine_mag, 5] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _rifle_mag_tr, 15] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _rifleGL_mag_tr, 15] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _carbine_mag_tr, 5] call GOL_Fnc_AddObjectsCargo;    
             [_cargo, _LMG_mag_tr, 12] call GOL_Fnc_AddObjectsCargo;
 
             [_cargo, _LAT, 3] call GOL_Fnc_AddObjectsCargo;
@@ -204,9 +207,12 @@
 
         case "big_box": {   //  Big Box
             [_cargo, _pistol_mag, 20] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _rifle_mag, 60] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _rifleGL_mag, 50] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _carbine_mag, 10] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _rifle_mag, 30] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _rifleGL_mag, 25] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _carbine_mag, 5] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _rifle_mag_tr, 30] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _rifleGL_mag_tr, 25] call GOL_Fnc_AddObjectsCargo;
+            [_cargo, _carbine_mag_tr, 5] call GOL_Fnc_AddObjectsCargo;            
             [_cargo, _LMG_mag_tr, 24] call GOL_Fnc_AddObjectsCargo;
 
             [_cargo, _LAT, 6] call GOL_Fnc_AddObjectsCargo;
