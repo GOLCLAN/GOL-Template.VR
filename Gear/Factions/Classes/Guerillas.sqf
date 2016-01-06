@@ -66,7 +66,7 @@ switch (GOL_Gear_Camo) do {
 _baseHelmet = ["SP_BaseballCap_Green","H_Bandanna_khk","SP_Hood_Green"] call BIS_fnc_selectRandom;
 _baseUniform = ["U_BG_Guerrilla_6_1","U_BG_Guerilla1_1","U_BG_Guerilla2_1","U_BG_Guerilla2_3"] call BIS_fnc_selectRandom;
 _baseVest = ["V_I_G_resistanceLeader_F","V_TacVest_oli","V_TacVest_camo"] call BIS_fnc_selectRandom;
-_baseGlasses = ["G_Combat","SP_Goggles_Black"] call BIS_fnc_selectRandom;
+_baseGlasses = ["G_Combat"] call BIS_fnc_selectRandom;
 
 // Pilot
 _pilotHelmet = "H_PilotHelmetHeli_B";
