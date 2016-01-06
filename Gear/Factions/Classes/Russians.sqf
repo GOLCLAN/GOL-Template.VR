@@ -126,7 +126,7 @@ switch (GOL_Gear_Camo) do {
 		_baseHelmet = ["rhs_6b26","rhs_6b26"] call BIS_fnc_selectRandom;
 		_baseUniform = ["rhs_uniform_flora_patchless"] call BIS_fnc_selectRandom;
 		_baseVest = ["rhs_6b13_Flora_6sh92"] call BIS_fnc_selectRandom;
-		_baseGlasses = ["SP_Goggles_Black"] call BIS_fnc_selectRandom;
+		_baseGlasses = [nil] call BIS_fnc_selectRandom;
 
 		// Pilot
 		_pilotHelmet = "rhs_zsh7a_mike";
