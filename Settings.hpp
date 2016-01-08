@@ -32,24 +32,31 @@
 									//			| 2: Advanced Debug - Shows information on screen as well as in rtp file
 									//			| 3: Advanced Debug - Only in the mission editor
 			DAC_Config = false;		//	BOOL: True: Enables DAC and its content
-			AI_Faction = "GOLUS";	//	STRING: Defines the default ai faction from the start of the mission
+			AI_Faction = "GOLCHEDAKI";	//	STRING: Defines the default ai faction from the start of the mission
 			// ==============================================================================
 			// *			Side: West
-			// *			GOLUS: US	||	GOLINS_W: Insurgents	||	GOLDEN: Royal Danish Army
-			// *			GOLBAF: BAF	||	GOLGER: Germans			||	GOLTFSPARTAN: USMC TF Spartan
-			// *			GOLFIA: FIA	||	GOLUKR: Ukrainian Army	||	GOLIDF: Israeli Defence Forces
+			// *			GOLUS: US	 ||	GOLANA: Afghan Army	||	GOLNATO: NATO
+			// *			GOLUSMC: USMC||	GOLCDF: Chernarus	||
+			// *			GOLFIA: FIA	 ||	GOLIRAQ: Iraqi Army	||
 			// ==============================================================================
 			// *			Side: East
-			// *			: Insurgents	||	GOLRU: Russians
-			// *			GOLINSGOLTALI: Taliban
+			// *			GOLRU: Russians		|| GOLTKA: Takistani Army
+			// *			GOLCHEDAKI: Chedaki || GOLNOVO: Novorussian Army
+			// *			GOLSLA: SLA 		|| GOLCSAT: CSAT
 			// ==============================================================================
+			// *			Side: Resistance
+			// *			GOLNAPA: NAPA 				|| GOLAFGHAN: Afghan Militia || GOLRACS: RACS
+			// *			GOLEASTERN: Eastern Militia || GOLISIL: ISIL			 || GOLUN: UN
+			// *			GOLAFRICAN: African Militia || GOLPMC: PMC				 || GOLULTRA: Ultranationalists	
+			// *			GOLAAF: AAF					||
+			// ==============================================================================			
 			#define	SelectFromWeatherParams	true;	// Allow Admin to select Time of day & weather from the lobby screen | Disable remove entire line
 			#define	SelectFromGearParams	true;	// Allow Admin to select Faction for all sides from the lobby screen | Disable remove entire line
 			// ==============================================================================
 			class Gear {
 				FullGear = false;	//	BOOL:	True: Respawned player will respawn with original gear	| False: Player will respawn with what they had when they died
 				Camoflage = 0;		//	BOOL:	0: Woodland	| 1: Desert
-				Blufor = 1;			//	NUMBER	1: NATO	| 2: FIA		| 3: USMC		|	4: BAF			|	5: IDF			|
+				Blufor = 3;			//	NUMBER	1: NATO	| 2: FIA		| 3: USMC		|	4: BAF			|	5: IDF			|
 				Opfor = 1;			//	NUMBER:	1: CSAT	| 2: Russians	| 3: Guerilla	|	4: Insurgents	|
 				Independent = 1;	//	NUMBER:	1: AAF	|
 			};
