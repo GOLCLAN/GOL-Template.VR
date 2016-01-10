@@ -33,7 +33,7 @@ switch (_faction) do {
     };
  
     case "GOLUSMC": {			// USMC West
-		EnemyUnits = ["rhsusf_usmc_marpat_wd_teamleader","rhsusf_usmc_marpat_wd_riflemanat","rhsusf_usmc_marpat_wd_machinegunner_ass","rhsusf_usmc_marpat_wd_machinegunner_ass"];
+		EnemyUnits = ["rhsusf_usmc_marpat_wd_teamleader","rhsusf_usmc_marpat_wd_riflemanat","rhsusf_usmc_marpat_wd_machinegunner_ass","rhsusf_usmc_marpat_wd_machinegunner"];
 		EnemySnipers = ["rhsusf_usmc_marpat_wd_marksman"];
 		EnemyAntiAir = ["rhsusf_usmc_marpat_wd_stinger"];
 		EnemySide = WEST;
