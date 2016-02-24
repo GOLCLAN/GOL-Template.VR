@@ -21,3 +21,23 @@
 			#include "Gear\functionList.hpp"
 		};
 	};
+
+showHUD[] = {
+    
+	true,    // Scripted HUD (same as showHUD command)
+    
+	true,    // Vehicle + soldier info
+    
+	true,    // Vehicle radar [HIDDEN]
+    
+	true,    // Vehicle compass [HIDDEN]
+    
+	false,    // Tank direction indicator
+    
+	false,    // Commanding menu
+    
+	false,    // Group Bar
+    
+	true    // HUD Weapon Cursors
+
+};
