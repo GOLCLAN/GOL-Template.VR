@@ -31,7 +31,7 @@ Fnc_Populate = {
 		if (PopulateType == 1) then {
 			GoLUnitCount = GoLUnitCount + _groupsize; sleep 2; //hint format["%1", GoLUnitCount];
 			["DeathSquad", _marker, _groupsize] call Fnc_SpawnGroup;
-			[NewGroup, _marker, _radius, 7, "MOVE", "NORMAL", "RED", "LIMITED", "FILE", "", [3,6,9]] call CBA_fnc_taskPatrol;
+			[NewGroup, _marker, _radius, 3, "MOVE", "NORMAL", "RED", "LIMITED", "FILE", "", [3,6,9]] call CBA_fnc_taskPatrol;
 		};
 	};
 		ObjectMarkerList = nil;
@@ -357,8 +357,8 @@ Fnc_FixVehiclePosition = {
 };
 
 Fnc_CreateSmoke = {
-	_vehicle = _this select 0;
-	_smoke = "test_EmptyObjectForSmoke" createVehicle position _vehicle; _smoke SetPos (GetPos _vehicle);
+	_location = _this select 0;
+	_smoke = createVehicle ["test_EmptyObjectForSmoke", _location, [], 0, "CAN_COLLIDE"];
 };
 
 Fnc_DefendArea = { // A function for a group to defend, run directly after spawning a group! [] spawn Fnc_DefendArea;
@@ -392,7 +392,20 @@ Fnc_AttackGroup = { // Force group to Search and Destroy random players, run dir
 
 Fnc_CreateExplosion = {
 	_location = _this select 0;
-	_bomb1 = createVehicle ["Bo_GBU12_LGB", _location, [], 0, "CAN_COLLIDE"];
+	_type = _this select 1;	
+	
+	if (_type == "VSMALL") then {
+		_bomb = createVehicle ["M_PG_AT", _location, [], 0, "CAN_COLLIDE"];
+	};
+	if (_type == "SMALL") then {
+		_bomb = createVehicle ["R_80mm_HE", _location, [], 0, "CAN_COLLIDE"];
+	};
+	if (_type == "MEDIUM") then {
+		_bomb = createVehicle ["Bo_Mk82", _location, [], 0, "CAN_COLLIDE"];
+	};
+	if (_type == "BIG") then {
+		_bomb = createVehicle ["Bo_GBU12_LGB", _location, [], 0, "CAN_COLLIDE"];
+	};
 };
 
 Fnc_Paradrop = {
