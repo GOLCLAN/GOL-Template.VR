@@ -50,9 +50,10 @@ switch (_this select 0) do {
 			ZONE4. Next edit the trigger with the radius and edit the name so that the name looks like zonetrigger4 and make sure this is replicated in the condition of that trigger. Finally change the
 			ON ACT to ZONE4 = 1; for example.
 
-	---[USEFUL-SNIPPETS]---15/05/2015
+	---[USEFUL-SNIPPETS]---13/02/2016
+	
+			[500,EAST] call GOL_Fnc_CopyAIEdenZeus;
 			hint format ["%1 %2", getposatl player, getdir player];copyToClipboard (str(text"this setposATL ") + str(getposatl player) + str(text"; this setDir ") + str(getdir player));
-
 			onMapSingleClick "copyToClipboard format ['%1',_pos]";
 			copyToClipboard format ["['zone1', %1, 'UP', 0] spawn Fnc_SpawnUnit;",getPosATL player];
 			copyToClipboard format ["['zone1', %1, 'UP'] spawn Fnc_SpawnSniper;",getPosATL player];
@@ -62,6 +63,7 @@ switch (_this select 0) do {
 			CopyToClipboard format ["['Land_fortified_nest_big_EP1', %1, %2 - 180, 2] spawn Fnc_SpawnBunker;",getPosATL player,getDir player];
 			CopyToClipboard format ["['RDS_KORD_high_CSAT', %1, %2] spawn Fnc_StaticWeapon;",getPosATL player,getDir player];
 			CopyToClipboard format ["['O_SD_Offroad_01_armed', %1, %2, 1, 2] spawn Fnc_SpawnVehicle;",getPosATL player,getDir player];
+			copyToClipboard format ["Weapons: %1 \n\n Magazines: %2 \n\n Items: %3 Vest: %4 \n\n Helmet: %5 \n\n Uniform: %6 \n\n Goggles: %7 \n\n Backpack: %8",weapons player, magazines player, items player, vest player, headgear player, uniform player, goggles player, backPack player];
 
 	---[POPULATE-FUNCTION]---15/05/2015
 
