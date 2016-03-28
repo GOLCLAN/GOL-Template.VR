@@ -23,8 +23,8 @@
 		Add(enableUnconsciousnessAI, 1);
 		Add(remoteControlledAI, false);
 		Add(preventInstaDeath, false);
-		Add(bleedingCoefficient, 2.0);
-		Add(painCoefficient, 2.0);
+		Add(bleedingCoefficient, 11.0);
+		Add(painCoefficient, 8.0);
 		Add(keepLocalSettingsSynced, true);
 
 		Add(enableOverdosing, true);
