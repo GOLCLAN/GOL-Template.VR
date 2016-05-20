@@ -6,7 +6,7 @@
 		Function can saves unlimited amount of units without clearing the array however recommended that you keep it less then 10 / group
 
 	Usage:
-		[] call GOL_Fnc_CopyLocation;		// Copy players stance, if crouched ai will be 2
+		[""] call GOL_Fnc_CopyLocation;		// Copy players stance, if crouched ai will be 2
 		["m2"] call GOL_Fnc_CopyLocation;	// Place static m2
 		[true] call GOL_Fnc_CopyLocation;	// Clear array
 
