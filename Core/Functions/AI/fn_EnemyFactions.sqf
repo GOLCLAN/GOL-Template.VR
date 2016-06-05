@@ -95,7 +95,14 @@ switch (_faction) do {
 		EnemySnipers = ["O_soldier_M_F"];
 		EnemyAntiAir = ["LOP_US_Infantry_AA"];
 		EnemySide = EAST;
-    };    
+    };
+
+    case "GOLFIAE": {		// FIA East
+		EnemyUnits = ["O_G_Soldier_SL_F","O_G_Soldier_TL_F","O_G_Soldier_LAT_F","B_G_Soldier_F","O_G_Soldier_AR_F","O_G_Soldier_A_F"];
+		EnemySnipers = ["O_G_Soldier_M_F"];
+		EnemyAntiAir = ["O_G_Soldier_LAT_F"];
+		EnemySide = EAST;  
+    };		
 
 //// Resistance/Independent Factions
 

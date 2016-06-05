@@ -42,7 +42,7 @@
 			// *			Side: East
 			// *			GOLRU: Russians		|| GOLTKA: Takistani Army
 			// *			GOLCHEDAKI: Chedaki || GOLTKM: Takistani Militia
-			// *			GOLSLA: SLA 		|| GOLCSAT: CSAT
+			// *			GOLSLA: SLA 		|| GOLCSAT: 		|| GOLFIAE:  FIA East
 			// ==============================================================================
 			// *			Side: Resistance
 			// *			GOLNAPA: NAPA 	|| GOLRACS: RACS
