@@ -1,26 +1,21 @@
 /*	================================================================
 	AUTHOR: GuzzenVonLidl
-
 	Description:
 		Copies position and direction in a array and should be used together with "GOL_Fnc_CreateAIStatic"
 		Function can saves unlimited amount of units without clearing the array however recommended that you keep it less then 10 / group
-
 	Usage:
 		[""] call GOL_Fnc_CopyLocation;		// Copy players stance, if crouched ai will be 2
 		["m2"] call GOL_Fnc_CopyLocation;	// Place static m2
 		[true] call GOL_Fnc_CopyLocation;	// Clear array
-
 	Parameters:
 		#0: String-Boolean: Position
 			Available static commands:
 				USMC:		m2,m2tri,mk19,tow
 				Russians:	kord,kordtri,ags,metis,igla
 				Guerrillas:	dshkm,dshkmtri,spg9,zu23
-
 	Returning Value:
 		Position is stored in your clipboard
 		Past it in to a document to store it
-
 // ================================================================ */
 
 	if (isMultiplayer) exitWith {false};

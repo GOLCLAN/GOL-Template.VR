@@ -26,37 +26,16 @@ switch (_faction) do {
 //// Western Factions
 
     case "GOLUS": {			// US West Army
-		EnemyUnits = ["rhsusf_army_ocp_squadleader","rhsusf_army_ocp_riflemanat","rhsusf_army_ocp_machinegunnera","rhsusf_army_ocp_machinegunner"];
-		EnemySnipers = ["rhsusf_army_ocp_marksman"];
-		EnemyAntiAir = ["rhsusf_army_ocp_aa"];
+		EnemyUnits = ["CUP_B_US_Soldier_AMG","CUP_B_US_Soldier_AR","CUP_B_US_Soldier_MG","CUP_B_US_Soldier_LAT","CUP_B_US_Soldier_SL"];
+		EnemySnipers = ["CUP_B_US_Soldier_Marksman"];
+		EnemyAntiAir = ["CUP_B_US_Soldier_AA"];
 		EnemySide = WEST;
     };
  
-    case "GOLUSMC": {			// USMC West
-		EnemyUnits = ["rhsusf_usmc_marpat_wd_teamleader","rhsusf_usmc_marpat_wd_riflemanat","rhsusf_usmc_marpat_wd_machinegunner_ass","rhsusf_usmc_marpat_wd_machinegunner"];
-		EnemySnipers = ["rhsusf_usmc_marpat_wd_marksman"];
-		EnemyAntiAir = ["rhsusf_usmc_marpat_wd_stinger"];
-		EnemySide = WEST;
-    };  
-    
-    case "GOLANA": {			// Leighs OPFOR Pack - Afghan National Army
-		EnemyUnits = ["LOP_AA_Infantry_TL","LOP_AA_Infantry_AT","LOP_AA_Infantry_MG_Asst","LOP_AA_Infantry_MG"];
-		EnemySnipers = ["LOP_AA_Infantry_Marksman"];
-		EnemyAntiAir = ["LOP_AA_Infantry_AT"];
-		EnemySide = WEST;
-    };   
-
-    case "GOLCDF": {			// Leighs OPFOR Pack - Chernarussian Defense Force
-		EnemyUnits = ["LOP_CDF_Infantry_SL","LOP_CDF_Infantry_AT","LOP_CDF_Infantry_MG_Asst","LOP_CDF_Infantry_MG"];
-		EnemySnipers = ["LOP_CDF_Infantry_Marksman"];
-		EnemyAntiAir = ["LOP_CDF_Infantry_AA"];
-		EnemySide = WEST;
-    };   
- 
-     case "GOLIRAQ": {			// Leighs OPFOR Pack - Iraqi Forces
-		EnemyUnits = ["LOP_IA_Infantry_SL","LOP_IA_Infantry_AT","LOP_IA_Infantry_MG_Asst","LOP_IA_Infantry_MG"];
-		EnemySnipers = ["LOP_IA_Infantry_Marksman"];
-		EnemyAntiAir = ["LOP_IA_Infantry_AT"];
+    case "GOLUSMC": {			// CUP USMC West
+		EnemyUnits = ["CUP_B_USMC_Soldier_AR","CUP_B_USMC_Soldier_TL","CUP_B_USMC_Soldier_MG","CUP_B_USMC_Soldier_LAT","CUP_B_USMC_Soldier"];
+		EnemySnipers = ["CUP_B_USMC_Soldier_Marksman"];
+		EnemyAntiAir = ["CUP_B_USMC_Soldier_AA"];
 		EnemySide = WEST;
     };  
 
@@ -76,38 +55,38 @@ switch (_faction) do {
 
 //// Eastern Factions
 	
-    case "GOLRU": {			// Russians East
-		EnemyUnits = ["rhs_msv_sergeant","rhs_msv_at","rhs_msv_machinegunner_assistant","rhs_msv_machinegunner"];
-		EnemySnipers = ["rhs_msv_marksman"];
-		EnemyAntiAir = ["rhs_msv_aa"];
+    case "GOLRU": {			// CUP Russians East
+		EnemyUnits = ["CUP_O_RU_Soldier_TL_EMR","CUP_O_RU_Soldier_LAT_EMR","CUP_O_RU_Soldier_MG_EMR","CUP_O_RU_Soldier_AR_EMR","CUP_O_RU_Engineer_EMR"];
+		EnemySnipers = ["CUP_O_RU_Soldier_Marksman_EMR"];
+		EnemyAntiAir = ["CUP_O_RU_Soldier_AA_EMR"];
 		EnemySide = EAST;
     };
 
-    case "GOLCHEDAKI": {			// Leighs OPFOR Pack - Chedaki
-		EnemyUnits = ["LOP_ChDKZ_Infantry_SL","LOP_ChDKZ_Infantry_AT","LOP_ChDKZ_Infantry_Rifleman","LOP_ChDKZ_Infantry_MG"];
-		EnemySnipers = ["LOP_ChDKZ_Infantry_Marksman"];
-		EnemyAntiAir = ["LOP_ChDKZ_Infantry_AT"];
+    case "GOLCHEDAKI": {			// CUP - Chedaki
+		EnemyUnits = ["CUP_O_INS_Story_Lopotev","CUP_O_INS_Soldier_AT","CUP_O_INS_Soldier_MG","CUP_O_INS_Soldier_AR","CUP_O_INS_Soldier_AK74"];
+		EnemySnipers = ["CUP_O_INS_Sniper"];
+		EnemyAntiAir = ["CUP_O_INS_Soldier_AA"];
 		EnemySide = EAST;
     };    
     
-    case "GOLSLA": {			// Leighs OPFOR Pack - SLA
-		EnemyUnits = ["LOP_SLA_Infantry_SL","LOP_SLA_Infantry_AT","LOP_SLA_Infantry_Rifleman","LOP_SLA_Infantry_MG"];
-		EnemySnipers = ["LOP_SLA_Infantry_Marksman"];
-		EnemyAntiAir = ["LOP_SLA_Infantry_AA"];
+    case "GOLSLA": {			// CUP SLA
+		EnemyUnits = ["CUP_O_sla_Soldier_AMG","CUP_O_sla_Soldier_AR","CUP_O_sla_Soldier_HAT","CUP_O_sla_Soldier_MG","CUP_O_sla_Soldier_AT","CUP_O_sla_Soldier_SL"];
+		EnemySnipers = ["CUP_O_sla_Sniper"];
+		EnemyAntiAir = ["CUP_O_sla_Soldier_AA"];
 		EnemySide = EAST;
     };    
 
-    case "GOLTKA": {			// Leighs OPFOR Pack - TKA
-		EnemyUnits = ["LOP_TKA_Infantry_SL","LOP_TKA_Infantry_AT","LOP_TKA_Infantry_Rifleman","LOP_TKA_Infantry_MG"];
-		EnemySnipers = ["LOP_TKA_Infantry_Marksman"];
-		EnemyAntiAir = ["LOP_TKA_Infantry_AA"];
+    case "GOLTKA": {			// CUP -TKA
+		EnemyUnits = ["CUP_O_TK_Soldier_SL","CUP_O_TK_Soldier_AMG","CUP_O_TK_Soldier_HAT","CUP_O_TK_Soldier_AR","CUP_O_TK_Soldier_AT"];
+		EnemySnipers = ["CUP_O_TK_Sniper"];
+		EnemyAntiAir = ["CUP_O_TK_Soldier_AA"];
 		EnemySide = EAST;
     };    
 
-    case "GOLNOVO": {			// Leighs OPFOR Pack - Novorussian Forces
-		EnemyUnits = ["LOP_US_Infantry_SL","LOP_US_Infantry_AT","LOP_US_Infantry_Rifleman","LOP_US_Infantry_MG"];
-		EnemySnipers = ["LOP_US_Infantry_Marksman"];
-		EnemyAntiAir = ["LOP_US_Infantry_AA"];
+    case "GOLTKM": {			// CUP - Takistani Militia
+		EnemyUnits = ["CUP_O_TK_INS_Soldier_AR","CUP_O_TK_INS_Soldier_MG","CUP_O_TK_INS_Commander","CUP_O_TK_INS_Soldier_AAT","CUP_O_TK_INS_Soldier_AT"];
+		EnemySnipers = ["CUP_O_TK_INS_Sniper"];
+		EnemyAntiAir = ["CUP_O_TK_INS_Soldier_AA"];
 		EnemySide = EAST;
     };    
 
@@ -121,65 +100,37 @@ switch (_faction) do {
 //// Resistance/Independent Factions
 
     case "GOLNAPA": {			// Leighs OPFOR Pack - NAPA
-		EnemyUnits = ["LOP_NAPA_Infantry_SL","LOP_NAPA_Infantry_AT","LOP_NAPA_Infantry_Rifleman","LOP_NAPA_Infantry_AR"];
-		EnemySnipers = ["LOP_NAPA_Infantry_Marksman"];
-		EnemyAntiAir = ["LOP_NAPA_Infantry_AT"];
+		EnemyUnits = ["CUP_I_GUE_Soldier_AR","CUP_I_GUE_Ammobearer","CUP_I_GUE_Officer","CUP_I_GUE_Soldier_AT","CUP_I_GUE_Commander","CUP_I_GUE_Soldier_MG"];
+		EnemySnipers = ["CUP_I_GUE_Gamekeeper"];
+		EnemyAntiAir = ["CUP_I_GUE_Soldier_AA"];
 		EnemySide = RESISTANCE;
     };
 
-    case "GOLEASTERN": {			// RHS - Eastern Militia
-		EnemyUnits = ["rhs_g_Soldier_SL_F","rhs_g_Soldier_AT_F","rhs_g_Soldier_F3","rhs_g_Soldier_AR_F"];
-		EnemySnipers = ["rhs_g_Soldier_M_F"];
-		EnemyAntiAir = ["rhs_g_Soldier_AA_F"];
+    case "GOLTKL": {			// CUP - Takistani Locals
+		EnemyUnits = ["CUP_I_TK_GUE_Soldier_AR","CUP_I_TK_GUE_Soldier_M16A2","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_TL"];
+		EnemySnipers = ["CUP_I_TK_GUE_Sniper"];
+		EnemyAntiAir = ["CUP_I_TK_GUE_Soldier_AA"];
 		EnemySide = RESISTANCE;
     };
 
-    case "GOLAFRICAN": {			// Leighs OPFOR Pack - African Militia
-		EnemyUnits = ["LOP_AFR_Infantry_SL","LOP_AFR_Infantry_AT","LOP_AFR_Infantry_Rifleman","LOP_AFR_Infantry_AR"];
-		EnemySnipers = ["LOP_AFR_Infantry_Marksman"];
-		EnemyAntiAir = ["LOP_AFR_Infantry_AT"];
+    case "GOLPMC": {			// CUP - PMC
+		EnemyUnits = ["CUP_I_PMC_Soldier_TL","CUP_I_PMC_Soldier_MG","CUP_I_PMC_Soldier","CUP_I_PMC_Soldier_M4A3","CUP_I_PMC_Engineer"];
+		EnemySnipers = ["CUP_I_PMC_Sniper"];
+		EnemyAntiAir = ["CUP_I_PMC_Soldier_AA"];
 		EnemySide = RESISTANCE;
     };
 
-    case "GOLAFGHAN": {			// Leighs OPFOR Pack - Afghan Militia / Insurgents
-		EnemyUnits = ["LOP_AM_Infantry_SL","LOP_AM_Infantry_AT","LOP_AM_Infantry_Rifleman","LOP_AM_Infantry_AR"];
-		EnemySnipers = ["LOP_AM_Infantry_Marksman"];
-		EnemyAntiAir = ["LOP_AM_Infantry_AT"];
+    case "GOLRACS": {			// CUP - RACS
+		EnemyUnits = ["CUP_I_RACS_Soldier_MAT","CUP_I_RACS_SL","CUP_I_RACS_RoyalGuard","CUP_I_RACS_MMG"];
+		EnemySnipers = ["CUP_I_RACS_Sniper"];
+		EnemyAntiAir = ["CUP_I_RACS_Soldier_AA"];
 		EnemySide = RESISTANCE;
     };
 
-    case "GOLISIL": {			// Leighs OPFOR Pack - ISIL
-		EnemyUnits = ["LOP_ISTS_Infantry_SL","LOP_ISTS_Infantry_AT","LOP_ISTS_Infantry_Rifleman","LOP_ISTS_Infantry_AR"];
-		EnemySnipers = ["LOP_ISTS_Infantry_Marksman"];
-		EnemyAntiAir = ["LOP_ISTS_Infantry_AT"];
-		EnemySide = RESISTANCE;
-    };
-
-    case "GOLPMC": {			// Leighs OPFOR Pack - ISIL
-		EnemyUnits = ["LOP_PMC_Infantry_SL","LOP_PMC_Infantry_AT","LOP_PMC_Infantry_Rifleman","LOP_PMC_Infantry_MG"];
-		EnemySnipers = ["LOP_PMC_Infantry_Marksman"];
-		EnemyAntiAir = ["LOP_PMC_Infantry_AT"];
-		EnemySide = RESISTANCE;
-    };
-
-    case "GOLRACS": {			// Leighs OPFOR Pack - RACS
-		EnemyUnits = ["LOP_RACS_Infantry_SL","LOP_RACS_Infantry_AT","LOP_RACS_Infantry_Rifleman","LOP_RACS_Infantry_MG"];
-		EnemySnipers = ["LOP_RACS_Infantry_Marksman"];
-		EnemyAntiAir = ["LOP_RACS_Infantry_AT"];
-		EnemySide = RESISTANCE;
-    };
-
-    case "GOLUN": {			// Leighs OPFOR Pack - United Nations
-		EnemyUnits = ["LOP_UN_Infantry_SL","LOP_UN_Infantry_AT","LOP_UN_Infantry_Rifleman","LOP_UN_Infantry_MG"];
-		EnemySnipers = ["LOP_UN_Infantry_Marksman"];
-		EnemyAntiAir = ["LOP_UN_Infantry_AA"];
-		EnemySide = RESISTANCE;
-    };
-
-    case "GOLULTRA": {			// Leighs OPFOR Pack - Ultranationalists
-		EnemyUnits = ["LOP_UA_Infantry_SL","LOP_UA_Infantry_AT","LOP_UA_Infantry_Rifleman","LOP_UA_Infantry_MG"];
-		EnemySnipers = ["LOP_UA_Infantry_Marksman"];
-		EnemyAntiAir = ["LOP_UA_Infantry_AT"];
+    case "GOLUN": {			// CUP - United Nations
+		EnemyUnits = ["CUP_I_UN_CDF_Soldier_SL","CUP_I_UN_CDF_Soldier_AMG","CUP_I_UN_CDF_Soldier_Backpack","CUP_I_UN_CDF_Soldier_AT","CUP_I_UN_CDF_Soldier","CUP_I_UN_CDF_Soldier_MG"];
+		EnemySnipers = ["CUP_I_UN_CDF_Soldier_MG"];
+		EnemyAntiAir = ["CUP_I_UN_CDF_Soldier_AT"];
 		EnemySide = RESISTANCE;
     };
 

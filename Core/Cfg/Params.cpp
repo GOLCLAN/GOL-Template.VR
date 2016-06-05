@@ -37,8 +37,8 @@
 // *
 	class GOL_Params_Faction_Independent {
 		title = "Selection of Independent Factions";
-		values[] = {1};
-		texts[] = {"AAF"};
+		values[] = {1,2};
+		texts[] = {"AAF","PMC"};
 		default = (getNumber (missionconfigfile >> "GOL_FRAMEWORK" >> "Modules" >> "Gear" >> "Independent"));
 	};
 

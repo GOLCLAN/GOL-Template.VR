@@ -38,8 +38,8 @@
 		if (hasInterface) then {	// * Client
 			0 fadeRadio 0;
 		} else {					// * Server & Headless
-			setViewDistance 2000;	// * View distance, affects AI and performance
-			setObjectViewDistance 1500;	// * Object distance, affects AI and performance
+			setViewDistance 1000;	// * View distance, affects AI and performance
+			setObjectViewDistance 1000;	// * Object distance, affects AI and performance
 			setTerrainGrid	25;	// * Terrain grid (grass)
 		};
 

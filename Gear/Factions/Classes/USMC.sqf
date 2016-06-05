@@ -10,8 +10,8 @@ _factionScript = "Default";
 switch (GOL_Gear_Camo) do {
 	case 1: {	// Desert
 		// WEAPON SELECTION
-		_pistol = "rhsusf_weap_m1911a1";
-		_pistol_mag = "rhsusf_mag_7x45acp_MHP";
+		_pistol = "CUP_hgun_M9";
+		_pistol_mag = "CUP_15Rnd_9x19_M9";
 			_secondaryPistol = [];
 
 		_rifle = "CUP_arifle_Mk16_CQC_FG";
@@ -40,8 +40,8 @@ switch (GOL_Gear_Camo) do {
 			_primaryLMG = ["CUP_optic_CompM2_Woodland","GVL_X2000_point"];
 
 		// Rifleman AT
-		_LAT = "rhs_weap_M136_hedp";
-		_LATmag = "rhs_m136_hedp_mag";
+		_LAT = "tf47_at4_HP";
+		_LATmag = "";
 
 		// Rifleman AT
 		_MAT = "CUP_launch_Mk153Mod0";
@@ -51,9 +51,9 @@ switch (GOL_Gear_Camo) do {
 		// ===========================
 
 		// Infantry
-		_baseHelmet = ["rhsusf_ach_helmet_ucp","rhsusf_ach_helmet_ess_ucp"] call BIS_fnc_selectRandom;
-		_baseUniform = ["rhs_uniform_cu_ucp_patchless"] call BIS_fnc_selectRandom;
-		_baseVest = ["rhsusf_iotv_ucp_Rifleman","rhsusf_iotv_ucp_Squadleader","rhsusf_iotv_ucp_Teamleader"] call BIS_fnc_selectRandom;
+		_baseHelmet = ["CUP_H_USArmy_HelmetMICH_earpro_ess","CUP_H_USArmy_HelmetMICH_earpro"] call BIS_fnc_selectRandom;
+		_baseUniform = ["CUP_U_B_USArmy_TwoKnee","CUP_U_B_USArmy_Base"] call BIS_fnc_selectRandom;
+		_baseVest = ["CUP_V_B_IOTV_MG","CUP_V_B_IOTV_AT","CUP_V_B_IOTV_AT"] call BIS_fnc_selectRandom;
 		_baseGlasses = [nil] call BIS_fnc_selectRandom;
 
 		// Pilot
@@ -62,51 +62,51 @@ switch (GOL_Gear_Camo) do {
 		_pilotVest = "V_TacVest_camo";
 
 		// Vehicle Crewman
-		_crewHelmet = "rhsusf_ach_bare_wood_headset_ess";
-		_crewVest = "rhsusf_iotv_ucp_repair";
+		_crewHelmet = "CUP_H_USMC_Crew_Helmet";
+		_crewVest = "CUP_V_B_IOTV_AT";
 
 		// Backpacks
-		_bagRifleman = "rhsusf_assault_eagleaiii_ucp";
-		_bagAG = "rhsusf_assault_eagleaiii_ucp_medic";
+		_bagRifleman = "CUP_B_MedicPack_ACU";
+		_bagAG = "CUP_B_USPack_Coyote";
 		_radioAirBackpack = "tf_rt1523g_big";
-		_radioBackpack = "tf_rt1523g_big";
+		_radioBackpack = "tf_anprc155_coyote";
 
 	};
 
     default {	// Woodland
 		// WEAPON SELECTION
-		_pistol = "rhsusf_weap_m1911a1";
-		_pistol_mag = "rhsusf_mag_7x45acp_MHP";
+		_pistol = "CUP_hgun_M9";
+		_pistol_mag = "CUP_15Rnd_9x19_M9";
 			_secondaryPistol = [];
 
-		_rifle = "rhs_weap_m4a1_carryhandle";
-		_rifle_mag = "rhs_mag_30Rnd_556x45_M855A1_Stanag";
-		_rifle_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
-			_primaryRifle = ["rhsusf_acc_eotech_552","GVL_X2000_point"];
+		_rifle = "CUP_arifle_M16A4_Base";
+		_rifle_mag = "30Rnd_556x45_Stanag";
+		_rifle_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
+			_primaryRifle = ["FHQ_optic_AIM","GVL_X2000_point"];
 
-		_rifleGL = "rhs_weap_m4a1_m203";
-		_rifleGL_mag = "rhs_mag_30Rnd_556x45_M855A1_Stanag";
-		_rifleGL_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
-			_primaryRifleGL = ["rhsusf_acc_eotech_552","GVL_X2000_point"];
+		_rifleGL = "CUP_arifle_M16A4_GL";
+		_rifleGL_mag = "30Rnd_556x45_Stanag";
+		_rifleGL_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
+			_primaryRifleGL = ["FHQ_optic_AIM","GVL_X2000_point"];
 
-		_rifleALT = "rhs_weap_m4a1_grip";
-		_rifleALT_mag = "rhs_mag_30Rnd_556x45_M855A1_Stanag";
-		_rifleALT_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
-			_primaryRifleALT = ["rhsusf_acc_eotech_552","GVL_X2000_point"];
+		_rifleALT = "CUP_arifle_M16A2";
+		_rifleALT_mag = "30Rnd_556x45_Stanag";
+		_rifleALT_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
+			_primaryRifleALT = ["FHQ_optic_AIM","GVL_X2000_point"];
 
-		_carbine = "rhs_weap_m4";
-		_carbine_mag = "rhs_mag_30Rnd_556x45_M855A1_Stanag";
-		_carbine_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
-			_primaryCarbine = ["rhsusf_acc_eotech_552","GVL_X2000_point"];
+		_carbine = "CUP_arifle_M4A1_black";
+		_carbine_mag = "30Rnd_556x45_Stanag";
+		_carbine_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
+			_primaryCarbine = ["FHQ_optic_AIM","GVL_X2000_point"];
 
-		_LMG = "rhs_weap_m249_pip";
-		_LMG_mag = "rhsusf_200Rnd_556x45_soft_pouch";
-		_LMG_mag_tr = "rhsusf_200Rnd_556x45_soft_pouch";
-			_primaryLMG = ["rhsusf_acc_eotech_552","GVL_X2000_point"];
+		_LMG = "CUP_lmg_m249_pip1";
+		_LMG_mag = "CUP_200Rnd_TE1_Red_Tracer_556x45_M249";
+		_LMG_mag_tr = "CUP_200Rnd_TE1_Red_Tracer_556x45_M249";
+			_primaryLMG = ["FHQ_optic_AIM","GVL_X2000_point"];
 
 		// Rifleman AT
-		_LAT = "rhs_weap_M136_hedp";
-		_LATmag = "rhs_m136_hedp_mag";
+		_LAT = "tf47_at4_HP";
+		_LATmag = "";
 
 		// Rifleman AT
 		_MAT = "CUP_launch_Mk153Mod0";
@@ -116,9 +116,9 @@ switch (GOL_Gear_Camo) do {
 		// ===========================
 
 		// Infantry
-		_baseHelmet = ["rhsusf_mich_helmet_marpatwd"] call BIS_fnc_selectRandom;
-		_baseUniform = ["rhs_uniform_FROG01_wd"] call BIS_fnc_selectRandom;
-		_baseVest = ["rhsusf_spc"] call BIS_fnc_selectRandom;
+		_baseHelmet = ["CUP_H_USMC_Headset_HelmetWDL","CUP_H_USMC_Headset_GoggleW_HelmetWDL","CUP_H_USMC_HelmetWDL"] call BIS_fnc_selectRandom;
+		_baseUniform = ["CUP_U_B_FR_DirAction","CUP_U_B_FR_DirAction2"] call BIS_fnc_selectRandom;
+		_baseVest = ["CUP_V_B_MTV_noCB","CUP_V_B_MTV_Marksman"] call BIS_fnc_selectRandom;
 		_baseGlasses = [nil] call BIS_fnc_selectRandom;
 
 		// Pilot
@@ -127,13 +127,13 @@ switch (GOL_Gear_Camo) do {
 		_pilotVest = "V_TacVest_camo";
 
 		// Vehicle Crewman
-		_crewHelmet = "rhsusf_ach_bare_wood_headset_ess";
-		_crewVest = "rhsusf_iotv_ocp_repair";
+		_crewHelmet = "CUP_H_USMC_Crew_Helmet";
+		_crewVest = "CUP_V_B_RRV_DA1";
 
 		// Backpacks
-		_bagRifleman = "rhsusf_assault_eagleaiii_coy";
-		_bagAG = "rhsusf_assault_eagleaiii_coy_medic";
+		_bagRifleman = "B_Kitbag_mcamo";
+		_bagAG = "B_Carryall_cbr";
 		_radioAirBackpack = "tf_rt1523g_big_bwmod";
-		_radioBackpack = "tf_rt1523g_big_bwmod";
+		_radioBackpack = "tf_anprc155_coyote";
 	};
 };

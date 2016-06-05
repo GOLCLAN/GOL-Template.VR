@@ -47,6 +47,7 @@ _earplugs = "ACE_EarBuds";
 _clacker = "ACE_M26_Clacker";
 _defusalKit = "ACE_DefusalKit";
 _cables = "ACE_CableTie";
+_Dagr = "ACE_DAGR";
 
 _bandage = "ACE_fieldDressing";
 _bandagePacking = "ACE_packingBandage";

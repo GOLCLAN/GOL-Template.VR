@@ -20,7 +20,7 @@
 // =====================================
 // CleanUp Settings for better performance
 	corpseManagerMode = 1;					// Enables this functions below, 0 will disable this
-	corpseLimit = 50;						// Max # corpses before CleanUp timer started
+	corpseLimit = 20;						// Max # corpses before CleanUp timer started
 	corpseRemovalMinTime = 600;				// 10 MIN
 	corpseRemovalMaxTime = 1200;			// 20 MAX
 

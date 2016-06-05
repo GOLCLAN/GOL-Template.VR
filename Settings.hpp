@@ -35,20 +35,19 @@
 			AI_Faction = "GOLCHEDAKI";	//	STRING: Defines the default ai faction from the start of the mission
 			// ==============================================================================
 			// *			Side: West
-			// *			GOLUS: US	 ||	GOLANA: Afghan Army	||	GOLNATO: NATO
-			// *			GOLUSMC: USMC||	GOLCDF: Chernarus	||
-			// *			GOLFIA: FIA	 ||	GOLIRAQ: Iraqi Army	||
+			// *			GOLUS: US	 || 	GOLNATO: NATO
+			// *			GOLUSMC: USMC||
+			// *			GOLFIA: FIA	 ||
 			// ==============================================================================
 			// *			Side: East
 			// *			GOLRU: Russians		|| GOLTKA: Takistani Army
-			// *			GOLCHEDAKI: Chedaki || GOLNOVO: Novorussian Army
+			// *			GOLCHEDAKI: Chedaki || GOLTKM: Takistani Militia
 			// *			GOLSLA: SLA 		|| GOLCSAT: CSAT
 			// ==============================================================================
 			// *			Side: Resistance
-			// *			GOLNAPA: NAPA 				|| GOLAFGHAN: Afghan Militia || GOLRACS: RACS
-			// *			GOLEASTERN: Eastern Militia || GOLISIL: ISIL			 || GOLUN: UN
-			// *			GOLAFRICAN: African Militia || GOLPMC: PMC				 || GOLULTRA: Ultranationalists	
-			// *			GOLAAF: AAF					||
+			// *			GOLNAPA: NAPA 	|| GOLRACS: RACS
+			// *			GOLUN: UN 		|| GOLPMC: PMC
+			// *			GOLAAF: AAF		|| GOLTKL: Takistani Locals
 			// ==============================================================================			
 			#define	SelectFromWeatherParams	true;	// Allow Admin to select Time of day & weather from the lobby screen | Disable remove entire line
 			#define	SelectFromGearParams	true;	// Allow Admin to select Faction for all sides from the lobby screen | Disable remove entire line
@@ -56,9 +55,9 @@
 			class Gear {
 				FullGear = false;	//	BOOL:	True: Respawned player will respawn with original gear	| False: Player will respawn with what they had when they died
 				Camoflage = 0;		//	BOOL:	0: Woodland	| 1: Desert
-				Blufor = 3;			//	NUMBER	1: NATO	| 2: FIA		| 3: USMC		|	4: BAF			|	5: IDF			|
-				Opfor = 1;			//	NUMBER:	1: CSAT	| 2: Russians	| 3: Guerilla	|	4: Insurgents	|
-				Independent = 1;	//	NUMBER:	1: AAF	|
+				Blufor = 3;			//	NUMBER	1: NATO	| 2: FIA		| 3: USMC		|
+				Opfor = 2;			//	NUMBER:	1: CSAT	| 2: Russians	|
+				Independent = 2;	//	NUMBER:	1: AAF	| 2: PMC		|
 			};
 //			class Cache {	// Coming in 0.8
 		};

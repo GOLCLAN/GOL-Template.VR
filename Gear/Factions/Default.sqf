@@ -68,13 +68,14 @@
 			ADD_BACKPACK(_radioBackpack);
 			DEFAULT_UNIFORM;
 			ADD_ITEM_LINKED(_radio1000a);
-			ADD_ITEM_LINKED(_Android);
+			//ADD_ITEM_LINKED(_Android);
 			NightTimeOnce(_nvg);
 			NightTimeOnce(_IRStrobe);
 			NightTimeOnce("ACE_Flashlight_XL50");
 			[
 				[_mapTools],
-				[_HelmetCam],
+				["ACE_DAGR"],
+				//[_HelmetCam],
 				[_pistol_mag,2],
 				[_rifleGL_mag_tr,5],
 				[_smokegrenadeY,3],
@@ -97,13 +98,14 @@
 			ADD_BACKPACK(_bagRifleman);
 			DEFAULT_UNIFORM;
 			ADD_ITEM_LINKED(_radio1000a);
-			ADD_ITEM_LINKED(_Android);
+			//ADD_ITEM_LINKED(_Android);
 			NightTimeOnce(_nvg);
 			NightTimeOnce(_IRStrobe);
 			NightTimeOnce("ACE_Flashlight_XL50");
 			[
 				[_mapTools],
-				[_HelmetCam],
+				["ACE_DAGR"],
+				//[_HelmetCam],
 				[_radio152],
 				[_pistol_mag,2],
 				[_rifleGL_mag_tr,5],

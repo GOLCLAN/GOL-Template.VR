@@ -25,24 +25,18 @@ switch (_TypNumber) do {
 	};
 
 	//-------------------------------------------------------------------------------------------------
-	case 1: {	//	RHS MSV
-		_Unit_Pool_S = ["rhs_msv_crew","rhs_pilot_combat_heli","rhs_msv_sergeant","rhs_msv_at","rhs_msv_LAT","rhs_msv_rifleman","rhs_msv_machinegunner","rhs_msv_grenadier","rhs_msv_medic","rhs_msv_engineer","rhs_msv_rifleman"];
-		_Unit_Pool_V = ["RHS_Ural_MSV_01","RHS_UAZ_MSV_01","rhs_btr70_msv","rhs_btr80_msv"];
-		_Unit_Pool_T = ["rhs_bmp1_tv","rhs_bmp2_tv","rhs_t72bb_tv","rhs_t80bv"];
-		_Unit_Pool_A = [];
+	case 1: {	//	CUP Russians
+		_Unit_Pool_S = ["CUP_O_RU_Soldier_TL_EMR","CUP_O_RU_Soldier_LAT_EMR","CUP_O_RU_Soldier_MG_EMR","CUP_O_RU_Soldier_AR_EMR","CUP_O_RU_Engineer_EMR","CUP_O_RU_Soldier_Marksman_EMR"];
+		_Unit_Pool_V = ["CUP_O_Ural_RU","CUP_O_UAZ_MG_RU","CUP_O_UAZ_METIS_RU","CUP_O_UAZ_SPG9_RU","CUP_O_GAZ_Vodnik_BPPU_RU","CUP_O_GAZ_Vodnik_AGS_RU","CUP_O_GAZ_Vodnik_PK_RU"];
+		_Unit_Pool_T = ["CUP_O_BMP2_RU","CUP_O_BMP3_RU","CUP_O_T72_RU"];
+		_Unit_Pool_A = ["CUP_O_Mi8_RU","CUP_O_Ka52_RU","CUP_O_Mi24_V_RU"];
 	};
 	//-------------------------------------------------------------------------------------------------
-	case 2: {	//	RHS VDV
-		_Unit_Pool_S = ["rhs_vdv_crew","rhs_pilot_combat_heli","rhs_vdv_sergeant","rhs_msv_at","rhs_vdv_LAT","rhs_vdv_rifleman","rhs_vdv_machinegunner","rhs_vdv_grenadier","rhs_vdv_medic","rhs_vdv_engineer","rhs_vdv_rifleman"];
-		_Unit_Pool_V = ["rhs_gaz66_vdv","rhs_uaz_open_vdv","rhs_btr70_msv","rhs_btr60_vdv"];
-		_Unit_Pool_T = ["rhs_bmd1","rhs_bmd2","rhs_bmd4_vdv","rhs_bmd4ma_vdv"];
-		_Unit_Pool_A = [];
-	};
-	case 9: {	//	Loyalists
-		_Unit_Pool_S = ["GOL_RM_LOYA","GOL_PI_LOYA","GOL_PL_LOYA","GOL_SL_LOYA","GOL_RM_LOYA","GOL_AG_LOYA","GOL_AR_LOYA","GOL_AR_LOYA"];
-		_Unit_Pool_V = [];
-		_Unit_Pool_T = [];
-		_Unit_Pool_A = [];
+	case 2: {	//	CUP Chedaki
+		_Unit_Pool_S = ["CUP_O_INS_Story_Lopotev","CUP_O_INS_Soldier_AT","CUP_O_INS_Soldier_MG","CUP_O_INS_Soldier_AR","CUP_O_INS_Soldier_AK74","CUP_O_INS_Sniper"];
+		_Unit_Pool_V = ["CUP_O_BRDM2_HQ_CHDKZ","CUP_O_BMP_HQ_CHDKZ","CUP_O_Datsun_PK","CUP_O_UAZ_MG_CHDKZ","CUP_O_Ural_CHDKZ","CUP_O_UAZ_SPG9_CHDKZ"];
+		_Unit_Pool_T = ["CUP_O_BRDM2_CHDKZ","CUP_O_BMP2_CHDKZ","CUP_O_BRDM2_ATGM_CHDKZ","CUP_O_T72_CHDKZ"];
+		_Unit_Pool_A = ["CUP_O_Mi8_CHDKZ","CUP_O_Mi8_medevac_CHDKZ"];
 	};
 
 	//-------------------------------------------------------------------------------------------------
@@ -54,18 +48,18 @@ switch (_TypNumber) do {
 		_Unit_Pool_A = ["B_Heli_Light_01_armed_F","B_Heli_Transport_01_camo_F","B_Heli_Light_01_F"];
 	};
 	//-------------------------------------------------------------------------------------------------
-	case 4: {	//	RHS US ARMY WOODLAND
-		_Unit_Pool_S = ["rhsusf_army_ocp_crewman","rhsusf_army_ocp_helipilot","rhsusf_army_ocp_squadleader","rhsusf_army_ocp_riflemanat","rhsusf_army_ocp_rifleman","rhsusf_army_ocp_rifleman","rhsusf_army_ocp_autorifleman","rhsusf_army_ocp_grenadier","rhsusf_army_ocp_medic","rhsusf_army_ocp_engineer","rhsusf_army_ocp_rifleman"];
-		_Unit_Pool_V = ["rhsusf_m1025_w_m2","rhsusf_m998_w_4dr_fulltop","rhsusf_m998_w_2dr_halftop","rhsusf_m113_usarmy"];
-		_Unit_Pool_T = ["RHS_M2A2_wd","RHS_M2A3_BUSKI_wd","rhsusf_m1a1aimwd_usarmy","rhsusf_m1a1aim_tuski_wd"];
-		_Unit_Pool_A = [];
+	case 4: {	//	CUP US ARMY
+		_Unit_Pool_S = ["CUP_B_US_Soldier_AMG","CUP_B_US_Soldier_AR","CUP_B_US_Soldier_MG","CUP_B_US_Soldier_LAT","CUP_B_US_Soldier_SL"];
+		_Unit_Pool_V = ["CUP_B_HMMWV_M2_GPK_USA","CUP_B_HMMWV_M2_USA","CUP_B_HMMWV_SOV_USA","CUP_B_HMMWV_MK19_USA","CUP_B_HMMWV_Crows_M2_USA"];
+		_Unit_Pool_T = ["CUP_B_M1128_MGS_Desert","CUP_B_M1130_CV_M2_Desert","CUP_B_M1A1_DES_US_Army","CUP_B_M1A2_TUSK_MG_DES_US_Army","CUP_B_M2Bradley_USA_D"];
+		_Unit_Pool_A = ["CUP_B_AH6J_Escort_USA","CUP_B_AH64D_USA","CUP_B_UH60L_FFV_US","CUP_B_CH47F_USA"];
 	};
 	//-------------------------------------------------------------------------------------------------
-	case 5: {	//	RHS US ARMY DESERT
-		_Unit_Pool_S = ["rhsusf_army_ucp_crewman","rhsusf_army_ucp_helipilot","rhsusf_army_ucp_squadleader","rhsusf_army_ucp_riflemanat","rhsusf_army_ucp_rifleman","rhsusf_army_ucp_rifleman","rhsusf_army_ucp_autorifleman","rhsusf_army_ucp_grenadier","rhsusf_army_ucp_medic","rhsusf_army_ucp_engineer","rhsusf_army_ucp_rifleman"];
-		_Unit_Pool_V = ["rhsusf_m1025_d_m2","rhsusf_m998_d_4dr_fulltop","rhsusf_m998_d_2dr_halftop","rhsusf_m113d_usarmy"];
-		_Unit_Pool_T = ["RHS_M2A2","RHS_M2A3_BUSKI","rhsusf_m1a1aimd_usarmy","rhsusf_m1a1aim_tuski_d"];
-		_Unit_Pool_A = [];
+	case 5: {	//	CUP US Marines
+		_Unit_Pool_S = ["CUP_B_USMC_Soldier_AR","CUP_B_USMC_Soldier_TL","CUP_B_USMC_Soldier_MG","CUP_B_USMC_Soldier_LAT","CUP_B_USMC_Soldier","CUP_B_USMC_Soldier_Marksman"];
+		_Unit_Pool_V = ["CUP_B_HMMWV_M2_USMC","CUP_B_HMMWV_M1114_USMC","CUP_B_HMMWV_MK19_USMC","CUP_B_RG31_M2_OD_USMC","CUP_B_RG31_Mk19_OD_USMC"];
+		_Unit_Pool_T = ["CUP_B_AAV_USMC","CUP_B_LAV25M240_USMC","CUP_B_M1A1_Woodland_USMC","CUP_B_M1A2_TUSK_MG_USMC"];
+		_Unit_Pool_A = ["CUP_B_AH1Z_14RndHydra","CUP_B_MH60S_FFV_USMC","CUP_B_UH1Y_GUNSHIP_USMC"];
 	};
 
 	//-------------------------------------------------------------------------------------------------
@@ -80,10 +74,10 @@ switch (_TypNumber) do {
 		_Unit_Pool_A = ["I_Heli_light_03_F"];
 	};
 	//-------------------------------------------------------------------------------------------------
-	case 7: {	//	RHS Insurgents
-		_Unit_Pool_S = ["rhs_g_Soldier_F","rhs_g_Soldier_F","rhs_g_Soldier_SL_F","rhs_g_Soldier_AT_F","rhs_g_Soldier_F","rhs_g_Soldier_AR_F","rhs_g_medic_F","rhs_g_Soldier_GL_F","rhs_g_Soldier_SL_F"];
-		_Unit_Pool_V = ["rhs_gaz66_vdv","rhs_uaz_vdv","rhs_btr60_vdv"];
-		_Unit_Pool_T = ["rhs_bmp1_tv","rhs_bmp2_tv","rhs_t72ba_tv"];
+	case 7: {	//	NAPA
+		_Unit_Pool_S = ["CUP_I_GUE_Soldier_AR","CUP_I_GUE_Ammobearer","CUP_I_GUE_Officer","CUP_I_GUE_Soldier_AT","CUP_I_GUE_Commander","CUP_I_GUE_Soldier_MG","CUP_I_GUE_Gamekeeper"];
+		_Unit_Pool_V = ["CUP_I_Datsun_PK","CUP_I_BRDM2_NAPA","CUP_I_BMP_HQ_NAPA","CUP_I_BRDM2_HQ_NAPA"];
+		_Unit_Pool_T = ["CUP_I_T34_NAPA","CUP_I_T72_NAPA","CUP_I_Ural_ZU23_NAPA"];
 		_Unit_Pool_A = [];
 	};
 

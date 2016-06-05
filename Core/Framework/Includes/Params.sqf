@@ -72,6 +72,9 @@
 	};
 
 	switch (_paramIndep) do {
+		case 2:	{
+			GOL_Faction_Indep = "PMC";
+		};
 		default	{
 			GOL_Faction_Indep = "AAF";
 		};
