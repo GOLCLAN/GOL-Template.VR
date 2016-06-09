@@ -9,6 +9,8 @@ if(daytime > 17 || (daytime > 0 && daytime < 6)) Then {
 
 // ===========================
 
+// PMC Ammo Default = off
+pmcammo = false;
 // Item
 _map = "ItemMap";
 _compass = "ItemCompass";

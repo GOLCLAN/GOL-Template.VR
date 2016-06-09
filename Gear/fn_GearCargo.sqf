@@ -62,7 +62,9 @@
 
 //  ====================================================================================
 
-    switch (_side) do {
+	// PMC Ammo Default = off
+	pmcammo = false;
+	switch (_side) do {
         case "west": {
             [] call compile preprocessFileLineNumbers ("Gear\Factions\Classes\" + GOL_Faction_West +".sqf");
         };
@@ -100,20 +102,22 @@
 		[_smokegrenadeG, 50,10,5]
     ];
 	
-	_pmc = [
-		[glHER, 50,50,20],
-		[glsmokeWR, 50,20,10],
-		[glsmokeGR, 50,10,5],
-		[glsmokeRR, 50,10,5],
-		[glHE, 50,50,20],
-		[glsmokeW, 50,20,10],
-		[glsmokeG, 50,10,5],
-		[glsmokeR, 50,10,5],
-		[_grenade, 50,30,20],
-		[_grenademini, 50,30,20],
-		[_smokegrenadeY, 50,30,20],
-		[_smokegrenadeG, 50,10,5]	
-	];
+	if (pmcammo) then { // Error Fix :S	
+		_pmc = [
+			[glHER, 50,50,20],
+			[glsmokeWR, 50,20,10],
+			[glsmokeGR, 50,10,5],
+			[glsmokeRR, 50,10,5],
+			[glHE, 50,50,20],
+			[glsmokeW, 50,20,10],
+			[glsmokeG, 50,10,5],
+			[glsmokeR, 50,10,5],
+			[_grenade, 50,30,20],
+			[_grenademini, 50,30,20],
+			[_smokegrenadeY, 50,30,20],
+			[_smokegrenadeG, 50,10,5]	
+		];
+	};	
 
     _Supplies = {
         if (GOL_Gear_Extra) Then {
