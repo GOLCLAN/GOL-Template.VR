@@ -12,6 +12,28 @@ _glflareW = "ACE_HandFlare_White";
 _glflareG = "ACE_HandFlare_Green";
 _glflareR = "ACE_HandFlare_Red";
 
+// Make Sure All Ammo Types Are available!
+pmcammo = true;
+ak545 = "hlc_30Rnd_545x39_B_AK";
+ak545_t = "hlc_30Rnd_545x39_t_ak";
+ak762 = "hlc_30Rnd_762x39_b_ak";
+ak762_t = "hlc_30Rnd_762x39_t_ak";
+stanag_mag = "30Rnd_556x45_Stanag";
+stanag_mag_t = "30Rnd_556x45_Stanag_Tracer_Red";
+stanag_65_mag = "30Rnd_65x39_caseless_green";
+stanag_65_mag_t = "30Rnd_65x39_caseless_green_mag_Tracer";
+dmr_762 = "20Rnd_762x51_Mag";
+dmr_762_t = "ACE_20Rnd_762x51_Mag_Tracer";
+// 203
+glHER = "hlc_VOG25_AK";
+glsmokeWR = "hlc_GRD_White";
+glsmokeGR = "hlc_GRD_Green";
+glsmokeRR = "hlc_GRD_Red";			
+glHE = "1Rnd_HE_Grenade_shell";
+glsmokeW = "1Rnd_Smoke_Grenade_shell";
+glsmokeG = "1Rnd_SmokeGreen_Grenade_shell";
+glsmokeR = "1Rnd_SmokeRed_Grenade_shell";
+
 // ==================
 // WEAPON SELECTION
 
@@ -49,9 +71,9 @@ switch (GOL_Gear_Camo) do {
 			_rifle_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 		};
 		if (_rifles == 4) then {
-			_rifle = "arifle_TRG21_F";
-			_rifle_mag = "30Rnd_556x45_Stanag";
-			_rifle_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
+			_rifle = "arifle_Katiba_F";
+			_rifle_mag = "30Rnd_65x39_caseless_green";
+			_rifle_mag_tr = "30Rnd_65x39_caseless_green_mag_Tracer";
 		};
 		if (_rifles == 5) then {
 			_rifle = "hlc_rifle_aek971";
@@ -110,9 +132,9 @@ switch (GOL_Gear_Camo) do {
 			_glflareR = "UGL_FlareRed_F";			
 		};
 		if (_riflesGL == 2) then {
-			_rifleGL = "arifle_Mk20_GL_plain_F";
-			_rifleGL_mag = "30Rnd_556x45_Stanag";
-			_rifleGL_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
+			_rifleGL = "arifle_Katiba_GL_F";
+			_rifleGL_mag = "30Rnd_65x39_caseless_green";
+			_rifleGL_mag_tr = "30Rnd_65x39_caseless_green_mag_Tracer";
 			_glHE = "1Rnd_HE_Grenade_shell";
 			_glsmokeW = "1Rnd_Smoke_Grenade_shell";
 			_glsmokeG = "1Rnd_SmokeGreen_Grenade_shell";
@@ -122,9 +144,9 @@ switch (GOL_Gear_Camo) do {
 			_glflareR = "UGL_FlareRed_F";	
 		};
 		if (_riflesGL == 3) then {
-			_rifleGL = "arifle_TRG21_GL_F";
-			_rifleGL_mag = "30Rnd_556x45_Stanag";
-			_rifleGL_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
+			_rifleGL = "arifle_Katiba_GL_F";
+			_rifleGL_mag = "30Rnd_65x39_caseless_green";
+			_rifleGL_mag_tr = "30Rnd_65x39_caseless_green_mag_Tracer";
 			_glHE = "1Rnd_HE_Grenade_shell";
 			_glsmokeW = "1Rnd_Smoke_Grenade_shell";
 			_glsmokeG = "1Rnd_SmokeGreen_Grenade_shell";
@@ -159,8 +181,8 @@ switch (GOL_Gear_Camo) do {
 		};
 		if (_riflesGL == 6) then {
 			_rifleGL = "hlc_rifle_akmgl";
-			_rifleGL_mag = "hlc_30Rnd_545x39_B_AK";
-			_rifleGL_mag_tr = "hlc_30Rnd_545x39_B_AK_tracer";
+			_rifleGL_mag = "hlc_30Rnd_762x39_b_ak";
+			_rifleGL_mag_tr = "hlc_30Rnd_762x39_t_ak";
 			_glHE = "hlc_VOG25_AK";
 			_glsmokeW = "hlc_GRD_White";
 			_glsmokeG = "hlc_GRD_Green";
@@ -181,7 +203,7 @@ switch (GOL_Gear_Camo) do {
 			_glflareG = "ACE_HandFlare_Green";
 			_glflareR = "ACE_HandFlare_Red";
 		};
-
+		
 		_primaryRifleGL = ["GVL_X2000_point"];
 
 		_rifleALT = ["hlc_rifle_Colt727","CUP_arifle_Mk16_CQC_FG","hlc_rifle_RU556","hlc_rifle_Bushmaster300","hlc_rifle_Colt727"] call BIS_fnc_selectRandom;

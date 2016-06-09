@@ -91,22 +91,45 @@
     ];
 
     _standard = [
-        [_glHE, 50,50,20],
-        [_glsmokeY, 50,20,10],
-        [_glflareW, 50,10,5],
-        [_grenade, 50,30,20],
-        [_grenademini, 50,30,20],
-        [_smokegrenadeY, 50,30,20],
-        [_smokegrenadeG, 50,10,5]
+		[_glHE, 50,50,20],
+		[_glsmokeY, 50,20,10],
+		[_glflareW, 50,10,5],
+		[_grenade, 50,30,20],
+		[_grenademini, 50,30,20],
+		[_smokegrenadeY, 50,30,20],
+		[_smokegrenadeG, 50,10,5]
     ];
+	
+	_pmc = [
+		[glHER, 50,50,20],
+		[glsmokeWR, 50,20,10],
+		[glsmokeGR, 50,10,5],
+		[glsmokeRR, 50,10,5],
+		[glHE, 50,50,20],
+		[glsmokeW, 50,20,10],
+		[glsmokeG, 50,10,5],
+		[glsmokeR, 50,10,5],
+		[_grenade, 50,30,20],
+		[_grenademini, 50,30,20],
+		[_smokegrenadeY, 50,30,20],
+		[_smokegrenadeG, 50,10,5]	
+	];
 
     _Supplies = {
         if (GOL_Gear_Extra) Then {
-            { [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddObjectsCargo; } forEach _standard;
+            if (pmcammo) then { 
+				{ [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddObjectsCargo; } forEach _pmc; 
+			} else { 
+				{ [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddObjectsCargo; } forEach _standard;
+			};
             { [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddObjectsCargo; } forEach _ACE_standard;
             { [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddObjectsCargo; } forEach _ACE_Advanced;
         } else {
-            { [_cargo, (_x select 0), (_x select 3)] call GOL_Fnc_AddObjectsCargo; } forEach _standard;
+            if (pmcammo) then { 
+				{ [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddObjectsCargo; } forEach _pmc; 
+			} else { 
+				{ [_cargo, (_x select 0), (_x select 2)] call GOL_Fnc_AddObjectsCargo; } forEach _standard;
+			};
             { [_cargo, (_x select 0), (_x select 3)] call GOL_Fnc_AddObjectsCargo; } forEach _ACE_standard;
         };
     };
@@ -148,8 +171,8 @@
             [_cargo, "FHQ_optic_MicroCCO", 50] call GOL_Fnc_AddObjectsCargo;
             [_cargo, "FHQ_optic_AIM", 50] call GOL_Fnc_AddObjectsCargo;
             [_cargo, "FHQ_optic_HWS", 50] call GOL_Fnc_AddObjectsCargo;
-//            [_cargo, "rhsusf_acc_eotech_552", 50] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, "rhsusf_acc_compm4", 50] call GOL_Fnc_AddObjectsCargo;
+//          [_cargo, "rhsusf_acc_eotech_552", 50] call GOL_Fnc_AddObjectsCargo;
+//          [_cargo, "rhsusf_acc_compm4", 50] call GOL_Fnc_AddObjectsCargo;
 
             // Items
             [_cargo, "ACE_muzzle_mzls_H", 50] call GOL_Fnc_AddObjectsCargo;
@@ -187,39 +210,62 @@
         };
 
         case "small_box":   {   //  Small Box
-            [_cargo, _pistol_mag, 10] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _rifle_mag, 15] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _rifleGL_mag, 15] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _carbine_mag, 5] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _rifle_mag_tr, 15] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _rifleGL_mag_tr, 15] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _carbine_mag_tr, 5] call GOL_Fnc_AddObjectsCargo;    
-            [_cargo, _LMG_mag_tr, 12] call GOL_Fnc_AddObjectsCargo;
-
-            [_cargo, _LAT, 3] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _LATmag, 3] call GOL_Fnc_AddObjectsCargo;
-
-            [_cargo, _demoCharge, 4] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _satchelCharge, 2] call GOL_Fnc_AddObjectsCargo;
-
+            if (pmcammo) then {			
+				[_cargo, ak545, 15] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, ak545_t, 10] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, ak762, 15] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, ak762_t, 10] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, stanag_mag, 15] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, stanag_mag_t, 10] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, stanag_65_mag, 15] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, stanag_65_mag_t, 10] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, dmr_762, 15] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, dmr_762_t, 10] call GOL_Fnc_AddObjectsCargo;
+			} else {
+				[_cargo, _rifle_mag, 15] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, _rifleGL_mag, 15] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, _carbine_mag, 5] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, _rifle_mag_tr, 15] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, _rifleGL_mag_tr, 15] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, _carbine_mag_tr, 5] call GOL_Fnc_AddObjectsCargo;    
+			};
+			
+			[_cargo, _pistol_mag, 10] call GOL_Fnc_AddObjectsCargo;
+			[_cargo, _LMG_mag_tr, 12] call GOL_Fnc_AddObjectsCargo;
+			[_cargo, _LAT, 3] call GOL_Fnc_AddObjectsCargo;
+			[_cargo, _LATmag, 3] call GOL_Fnc_AddObjectsCargo;
+			[_cargo, _demoCharge, 4] call GOL_Fnc_AddObjectsCargo;
+			[_cargo, _satchelCharge, 2] call GOL_Fnc_AddObjectsCargo;
             [] call _Supplies;
         };
 
         case "big_box": {   //  Big Box
-            [_cargo, _pistol_mag, 20] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _rifle_mag, 30] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _rifleGL_mag, 25] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _carbine_mag, 5] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _rifle_mag_tr, 30] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _rifleGL_mag_tr, 25] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _carbine_mag_tr, 5] call GOL_Fnc_AddObjectsCargo;            
-            [_cargo, _LMG_mag_tr, 24] call GOL_Fnc_AddObjectsCargo;
-
-            [_cargo, _LAT, 6] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _LATmag, 8] call GOL_Fnc_AddObjectsCargo;
-
-            [_cargo, _demoCharge, 8] call GOL_Fnc_AddObjectsCargo;
-            [_cargo, _satchelCharge, 4] call GOL_Fnc_AddObjectsCargo;
+            if (pmcammo) then {
+				[_cargo, ak545, 30] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, ak545_t, 25] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, ak762, 30] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, ak762_t, 25] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, stanag_mag, 30] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, stanag_mag_t, 25] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, stanag_65_mag, 30] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, stanag_65_mag_t, 25] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, dmr_762, 30] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, dmr_762_t, 25] call GOL_Fnc_AddObjectsCargo;
+			} else {
+				[_cargo, _rifle_mag, 30] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, _rifleGL_mag, 25] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, _carbine_mag, 5] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, _rifle_mag_tr, 30] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, _rifleGL_mag_tr, 25] call GOL_Fnc_AddObjectsCargo;
+				[_cargo, _carbine_mag_tr, 5] call GOL_Fnc_AddObjectsCargo;            
+			};
+			
+			[_cargo, _pistol_mag, 20] call GOL_Fnc_AddObjectsCargo;
+			[_cargo, _LMG_mag_tr, 24] call GOL_Fnc_AddObjectsCargo;
+			[_cargo, _LAT, 6] call GOL_Fnc_AddObjectsCargo;
+			[_cargo, _LATmag, 8] call GOL_Fnc_AddObjectsCargo;
+			[_cargo, _demoCharge, 8] call GOL_Fnc_AddObjectsCargo;
+			[_cargo, _satchelCharge, 4] call GOL_Fnc_AddObjectsCargo;
 
             [] call _Supplies;
         };

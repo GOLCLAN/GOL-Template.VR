@@ -34,7 +34,8 @@ _radio1000a = "tf_pnr1000a";	// ShortRange
 
 // Commander Tablet
 _cTab = "ItemcTab";
-_Android = "ItemAndroid";
+//_Android = "ItemAndroid";
+_Android = "ACE_DAGR";
 _microDAGR = "ItemMicroDAGR";
 _HelmetCam = "ItemcTabHCam";
 
@@ -47,7 +48,7 @@ _earplugs = "ACE_EarBuds";
 _clacker = "ACE_M26_Clacker";
 _defusalKit = "ACE_DefusalKit";
 _cables = "ACE_CableTie";
-_Dagr = "ACE_DAGR";
+
 
 _bandage = "ACE_fieldDressing";
 _bandagePacking = "ACE_packingBandage";
