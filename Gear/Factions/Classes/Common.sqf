@@ -9,22 +9,20 @@ if(daytime > 17 || (daytime > 0 && daytime < 6)) Then {
 
 // ===========================
 
-// PMC Ammo Default = off
-pmcammo = false;
 // Item
 _map = "ItemMap";
 _compass = "ItemCompass";
 _watch = "ItemWatch";
 _gps = "ItemGPS";
+_DAGR = "ACE_DAGR";
 _bino = "ACE_Vector";
 _rangefinder = "ACE_Vector";
-_laser = "LaserDesignator";
+_laser = "Laserdesignator";
+_laserb = "Laserbatteries";
 _nvg = "NVGoggles_Opfor";
 _toolkit = "ToolKit";
-
 _FAKBig = "MediKit";
 _FAKSmall = "FirstAidKit";
-
 _demoCharge = "DemoCharge_Remote_Mag";
 _satchelCharge = "SatchelCharge_Remote_Mag";
 
@@ -36,8 +34,7 @@ _radio1000a = "tf_pnr1000a";	// ShortRange
 
 // Commander Tablet
 _cTab = "ItemcTab";
-//_Android = "ItemAndroid";
-_Android = "ACE_DAGR";
+_Android = "ItemAndroid";
 _microDAGR = "ItemMicroDAGR";
 _HelmetCam = "ItemcTabHCam";
 
@@ -50,14 +47,18 @@ _earplugs = "ACE_EarBuds";
 _clacker = "ACE_M26_Clacker";
 _defusalKit = "ACE_DefusalKit";
 _cables = "ACE_CableTie";
-
-
 _bandage = "ACE_fieldDressing";
 _bandagePacking = "ACE_packingBandage";
 _bandageElastic = "ACE_elasticBandage";
 _morph = "ACE_morphine";
 _epi = "ACE_epinephrine";
 _blood = "ACE_bloodIV";
+_rangecard = "ACE_RangeCard";
+_rangecard88 = "ACE_RangeTable_82mm";
+_sprayG = "ACE_SpraypaintGreen";
+_sprayR = "ACE_SpraypaintRed";
+_sprayB = "ACE_SpraypaintBlue";
+_sprayBl = "ACE_SpraypaintBlack";
 
 // ===========================
 
@@ -81,6 +82,7 @@ _handFlareY = "ACE_HandFlare_Yellow";
 
 // GRENADE LAUNCHER ITEMS
 _glHE = "1Rnd_HE_Grenade_shell";
+_glHER = "hlc_VOG25_AK";
 
 _glsmokeW = "1Rnd_Smoke_Grenade_shell";
 _glsmokeG = "1Rnd_SmokeGreen_Grenade_shell";
@@ -89,6 +91,10 @@ _glsmokeY = "1Rnd_SmokeYellow_Grenade_shell";
 _glsmokeP = "1Rnd_SmokePurple_Grenade_shell";
 _glsmokeB = "1Rnd_SmokeBlue_Grenade_shell";
 _glsmokeO = "1Rnd_SmokeOrange_Grenade_shell";
+
+_glsmokeWR = "hlc_GRD_White";
+_glsmokeGR = "hlc_GRD_Green";
+_glsmokeRR = "hlc_GRD_Red";	
 
 _glflareW = "UGL_FlareWhite_F";
 _glflareG = "UGL_FlareGreen_F";

@@ -1,38 +1,19 @@
 #include "Common.sqf"
-
+pmcammo = true;
 _AllowNVG = false;
 _factionValue = false;		// True if value below is anything else then Default
 _factionScript = "Default";	// Name of the file that us going to be loading the loadout
 
-_glHE = "hlc_VOG25_AK";
-_glsmokeW = "hlc_GRD_White";
-_glsmokeG = "hlc_GRD_Green";
-_glsmokeR = "hlc_GRD_Red";
-_glflareW = "ACE_HandFlare_White";
-_glflareG = "ACE_HandFlare_Green";
-_glflareR = "ACE_HandFlare_Red";
-
-// Make Sure All Ammo Types Are available!
-pmcammo = true;
-ak545 = "hlc_30Rnd_545x39_B_AK";
-ak545_t = "hlc_30Rnd_545x39_t_ak";
-ak762 = "hlc_30Rnd_762x39_b_ak";
-ak762_t = "hlc_30Rnd_762x39_t_ak";
-stanag_mag = "30Rnd_556x45_Stanag";
-stanag_mag_t = "30Rnd_556x45_Stanag_Tracer_Red";
-stanag_65_mag = "30Rnd_65x39_caseless_green";
-stanag_65_mag_t = "30Rnd_65x39_caseless_green_mag_Tracer";
-dmr_762 = "20Rnd_762x51_Mag";
-dmr_762_t = "ACE_20Rnd_762x51_Mag_Tracer";
-// 203
-glHER = "hlc_VOG25_AK";
-glsmokeWR = "hlc_GRD_White";
-glsmokeGR = "hlc_GRD_Green";
-glsmokeRR = "hlc_GRD_Red";			
-glHE = "1Rnd_HE_Grenade_shell";
-glsmokeW = "1Rnd_Smoke_Grenade_shell";
-glsmokeG = "1Rnd_SmokeGreen_Grenade_shell";
-glsmokeR = "1Rnd_SmokeRed_Grenade_shell";
+_ak545 = "hlc_30Rnd_545x39_B_AK";
+_ak545_t = "hlc_30Rnd_545x39_t_ak";
+_ak762 = "hlc_30Rnd_762x39_b_ak";
+_ak762_t = "hlc_30Rnd_762x39_t_ak";
+_stanag_mag = "30Rnd_556x45_Stanag";
+_stanag_mag_t = "30Rnd_556x45_Stanag_Tracer_Red";
+_stanag_65_mag = "30Rnd_65x39_caseless_green";
+_stanag_65_mag_t = "30Rnd_65x39_caseless_green_mag_Tracer";
+_dmr_762 = "20Rnd_762x51_Mag";
+_dmr_762_t = "ACE_20Rnd_762x51_Mag_Tracer";
 
 // ==================
 // WEAPON SELECTION
@@ -232,25 +213,31 @@ switch (GOL_Gear_Camo) do {
 	};
 };
 
-// ==================
+	// ==================
+	// Infantry
+	_baseHelmet = ["H_Booniehat_khk_hs","H_Cap_headphones","H_Bandanna_sgg","H_Cap_oli","H_Bandanna_gry","G_Bandanna_tan","H_Watchcap_blk","H_Watchcap_camo","H_Watchcap_cbr","H_Watchcap_camo","H_Watchcap_khk","H_Booniehat_khk","CUP_H_USArmy_Helmet_Pro"] call BIS_fnc_selectRandom;
+	_baseUniform = ["CUP_U_C_Woodlander_04","CUP_U_C_Woodlander_03","CUP_U_C_Woodlander_02","CUP_U_C_Woodlander_01","CUP_U_O_TK_MixedCamo","CUP_U_O_Partisan_TTsKO_Mixed","CUP_U_I_GUE_Woodland1","CUP_U_I_GUE_Flecktarn2","U_C_HunterBody_grn","U_BG_Guerilla3_1","U_BG_Guerilla2_3","U_BG_Guerilla2_1","U_BG_Guerrilla_6_1","CUP_U_I_GUE_Anorak_03"] call BIS_fnc_selectRandom;
+	_baseVest = ["V_TacVestIR_blk","V_TacVest_oli","V_TacVestIR_blk"] call BIS_fnc_selectRandom;
+	_baseGlasses = ["G_Combat","G_Bandanna_oli","G_Bandanna_beast","G_Bandanna_khk","G_Bandanna_shades","G_Bandanna_tan","CUP_FR_NeckScarf2"] call BIS_fnc_selectRandom;
 
-// Infantry
-_baseHelmet = ["H_Booniehat_khk_hs","H_Cap_headphones","H_Bandanna_sgg","H_Cap_oli","H_Bandanna_gry","G_Bandanna_tan","H_Watchcap_blk","H_Watchcap_camo","H_Watchcap_cbr","H_Watchcap_camo","H_Watchcap_khk","H_Booniehat_khk","CUP_H_USArmy_Helmet_Pro"] call BIS_fnc_selectRandom;
-_baseUniform = ["CUP_U_C_Woodlander_04","CUP_U_C_Woodlander_03","CUP_U_C_Woodlander_02","CUP_U_C_Woodlander_01","CUP_U_O_TK_MixedCamo","CUP_U_O_Partisan_TTsKO_Mixed","CUP_U_I_GUE_Woodland1","CUP_U_I_GUE_Flecktarn2","U_C_HunterBody_grn","U_BG_Guerilla3_1","U_BG_Guerilla2_3","U_BG_Guerilla2_1","U_BG_Guerrilla_6_1","CUP_U_I_GUE_Anorak_03"] call BIS_fnc_selectRandom;
-_baseVest = ["V_TacVestIR_blk","V_TacVest_oli","V_TacVestIR_blk"] call BIS_fnc_selectRandom;
-_baseGlasses = ["G_Combat","G_Bandanna_oli","G_Bandanna_beast","G_Bandanna_khk","G_Bandanna_shades","G_Bandanna_tan","CUP_FR_NeckScarf2"] call BIS_fnc_selectRandom;
+	// Echo Helo
+	_pilotHelmet = "H_PilotHelmetHeli_O";
+	_pilotUniform = "U_I_pilotCoveralls";
+	_pilotVest = "V_TacVest_oli";
 
-// Pilot
-_pilotHelmet = "H_PilotHelmetHeli_O";
-_pilotUniform = "U_B_PilotCoveralls";
-_pilotVest = "V_TacVest_oli";
+	// Echo Ground
+	_pilotHelmetG = "H_PilotHelmetHeli_B";
+	_pilotUniformG = ["CUP_U_C_Woodlander_04","CUP_U_C_Woodlander_03","CUP_U_C_Woodlander_02","CUP_U_C_Woodlander_01","CUP_U_O_TK_MixedCamo","CUP_U_O_Partisan_TTsKO_Mixed","CUP_U_I_GUE_Woodland1","CUP_U_I_GUE_Flecktarn2","U_C_HunterBody_grn","U_BG_Guerilla3_1","U_BG_Guerilla2_3","U_BG_Guerilla2_1","U_BG_Guerrilla_6_1","CUP_U_I_GUE_Anorak_03"] call BIS_fnc_selectRandom;
+	_pilotVestG = "V_TacVest_oli";
+		
+	// Echo Plane
+	_pilotHelmetP = "H_PilotHelmetFighter_B";
+	_pilotUniformP = "U_B_PilotCoveralls";
+	_pilotVestP = "V_TacVest_oli";
 
-// Vehicle Crewman
-_crewHelmet = "H_PilotHelmetHeli_O";
-_crewVest = "V_TacVest_oli";
-
-// Backpacks
-_bagRifleman = ["CUP_B_Bergen_BAF","B_Kitbag_cbr","B_Kitbag_rgr","B_Kitbag_mcamo","B_AssaultPack_rgr"] call BIS_fnc_selectRandom;
-_bagAG = ["B_Carryall_cbr","B_Carryall_oli"] call BIS_fnc_selectRandom;
-_radioAirBackpack = "tf_rt1523g_big_rhs";
-_radioBackpack = "tf_rt1523g_big_rhs";
+	// Backpacks
+	_bagRifleman = ["CUP_B_Bergen_BAF","B_Kitbag_cbr","B_Kitbag_rgr","B_Kitbag_mcamo","B_AssaultPack_rgr"] call BIS_fnc_selectRandom;
+	_bagAG = ["B_Carryall_cbr","B_Carryall_oli"] call BIS_fnc_selectRandom;
+	_radioAirBackpack = "tf_rt1523g_big_rhs";
+	_radioBackpack = "tf_rt1523g_big_rhs";
+	_bagPilot = "B_Parachute";

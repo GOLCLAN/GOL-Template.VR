@@ -1,3 +1,4 @@
+
 	#include "functions\macros.sqf"
 
 	REMOVE_ALL;
@@ -5,7 +6,7 @@
 	switch (_typeofUnit) do {
 
 		case "pl": {
-			ADD_Uniform(_baseHelmet,_baseUniform,_baseVest,_baseGlasses);
+			ADD_Uniform(_baseHelmetALT,_baseUniform,_baseVest,_baseGlasses);
 			ADD_BACKPACK(_radioBackpack);
 			DEFAULT_UNIFORM;
 			ADD_ITEM_LINKED(_radio152);
@@ -16,15 +17,15 @@
 			[
 				[_mapTools],		// Items
 				[_pistol_mag,2],	// Magazines
-				[_rifle_mag,4],
-				[_rifle_mag_tr,3],
+				[_rifleALT_mag,4],
+				[_rifleALT_mag_tr,3],
 				[_smokegrenadeR,3],
 				[_smokegrenadeY,5],
 				[_bandage,4, true],
 				[_smokegrenadeG,5, true],	// Backpack Slots
 				[_rangefinder],
 				[_pistol],
-				[_rifle]
+				[_rifleALT]
 			] call GOL_Fnc_AddObjects;
 			_unit setVariable ["ACE_Medical_MedicClass", 1, true];
 			_primaryAttachments = _primaryRifle;
@@ -59,7 +60,7 @@
 		};
 
 		case "sl": {
-			ADD_Uniform(_baseHelmet,_baseUniform,_baseVest,_baseGlasses);
+			ADD_Uniform(_baseHelmetALT,_baseUniform,_baseVest,_baseGlasses);
 			ADD_BACKPACK(_radioBackpack);
 			DEFAULT_UNIFORM;
 			ADD_ITEM_LINKED(_radio1000a);
@@ -126,8 +127,8 @@
 			NightTimeOnce("ACE_Flashlight_XL50");
 			[
 				[_pistol_mag,2],
-				[_rifle_mag,3],
-				[_rifle_mag_tr,3],
+				[_rifleALT_mag,3],
+				[_rifleALT_mag_tr,3],
 				[_smokegrenadeY,2],
 				[_grenademini,2],
 				[_grenade,1],
@@ -138,7 +139,7 @@
 				[_defusalKit,1, true],
 				[_cables,3, true],
 				[_pistol],
-				[_rifle],
+				[_rifleALT],
 				[_LAT]
 			] call GOL_Fnc_AddObjects;
 			_primaryAttachments = _primaryRifle;

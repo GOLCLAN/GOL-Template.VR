@@ -19,9 +19,9 @@
 	private [
 		"_unit","_typeofUnit","_isMan","_isCar","_isTank","_camo","_captivity","_Color","_boxConfigs","_item","_DebugName",
 		"_nightTime","_AllowNVG","_weaponCamo","_camoflage","_state","_factionValue","_factionScript",
-		"_map","_compass","_watch","_gps","_bino","_rangefinder","_laser",
+		"_map","_compass","_watch","_gps","_bino","_rangefinder","_laser","_laserb","_rangecard","_rangecard88","_sprayG","_sprayR","_sprayB","_sprayBl",
 		"_nvg","_toolkit","_IRStrobe","_radio152","_radio1000a",
-		"_cTab","_Android","_microDAGR","_HelmetCam",
+		"_cTab","_Android","_microDAGR","_HelmetCam","_DAGR",
 		"_mapTools","_kestrel","_barrel","_earplugs","_cables",
 		"_demoCharge","_satchelCharge","_clacker","_defusalKit",
 		"_FAKBig","_FAKSmall","_bandage","_bandagePacking","_bandageElastic","_morph","_epi","_blood",
@@ -40,13 +40,15 @@
 		"_LMG","_LMG_mag","_LMG_mag_tr","_primaryLMG",
 		"_LAT","_LATmag",
 		"_MAT","_MATmag1","_MATmag2",
-		"_baseHelmet","_baseUniform","_baseVest","_baseGlasses",
-		"_pilotHelmet","_pilotUniform","_pilotVest",
-		"_crewHelmet","_crewVest",
-		"_bagRifleman","_bagAG","_radioAirBackpack","_radioBackpack",
-		"_secondaryAttachments","_primaryAttachments"
+		"_baseHelmet","_baseHelmetALT","_baseUniform","_baseUniformALT","_baseVest","_baseGlasses",
+		"_pilotHelmet","_pilotUniform","_pilotVest",		
+		"_pilotHelmetG","_pilotUniformG","_pilotVestG",
+		"_pilotHelmetP","_pilotUniformP","_pilotVestP",		
+		"_bagRifleman","_bagAG","_radioAirBackpack","_radioBackpack","_bagPilot",
+		"_secondaryAttachments","_primaryAttachments",
+		"_ak545","_ak545_t","_ak762","_ak762_t","_stanag_mag","_stanag_mag_t","_stanag_65_mag","_stanag_65_mag_t","_dmr_762","_dmr_762_t","_glHER","_glsmokeWR","_glsmokeGR","_glsmokeRR"		
 	];
-
+	
 	//	====================================================================================
 
 	//	The following interpret formats what has been passed to this script element
@@ -80,6 +82,8 @@
 				[] call compile preprocessFileLineNumbers ("Gear\Factions\Classes\" + GOL_Faction_Indep +".sqf");
 		    };
 		};
+		
+		//hint format["FACTION: %1", GOL_Faction_Indep];
 
 		switch (_factionValue) do {
 		    case true: {
@@ -92,13 +96,13 @@
 		};
 
 		switch (true) do {
-		    case (_typeofUnit in ["pl","sl","ftl"]): {
+		    case (_typeofUnit in ["pl","sl","ftl","pi"]): {
 				_Color = "GREEN";
 		    };
 		    case (_typeofUnit in ["r","g"]): {
 				_Color = "RED";
 		    };
-		    case (_typeofUnit in ["ag","ar","lr"]): {
+		    case (_typeofUnit in ["ag","ar","lr","pg"]): {
 				_Color = "BLUE";
 		    };
 		    case (_typeofUnit in ["fac","p"]): {
@@ -155,3 +159,21 @@
 	_DebugName = "GOL_Fnc_GearHandler";
 	scriptName _DebugName;
 	[["Unit: %1 || Loadout: %2 ",_unit, _typeofUnit],[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;
+	
+	_uid = getPlayerUID player;
+	_uidList = ["_SP_PLAYER_"];
+	if (_uid in _uidList) then {
+		{
+			_x disableAI "TARGET";
+			_x disableAI "AUTOTARGET";
+			_x disableAI "MOVE";
+			_x disableAI "ANIM";
+			_x disableAI "TEAMSWITCH";
+			_x disableAI "FSM";
+			_x disableAI "AIMINGERROR";
+			_x disableAI "SUPPRESSION";
+			_x disableAI "CHECKVISIBLE";
+			_x disableAI "COVER";
+			_x disableAI "AUTOCOMBAT";
+		} forEach AllUnits;
+	}

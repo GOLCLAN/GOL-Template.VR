@@ -1,6 +1,6 @@
 
 // *	Settings for the mission
-	briefingName = "GOL@108 Template";
+	briefingName = "GOL@114 Template";
 	overviewText = "GOL Template";
 
 	author = "GOL Editing Team";					// shown in loading screen and briefing
@@ -55,7 +55,7 @@
 			class Gear {
 				FullGear = false;	//	BOOL:	True: Respawned player will respawn with original gear	| False: Player will respawn with what they had when they died
 				Camoflage = 0;		//	BOOL:	0: Woodland	| 1: Desert
-				Blufor = 3;			//	NUMBER	1: NATO	| 2: FIA		| 3: USMC		|
+				Blufor = 5;			//	NUMBER	1: NATO	| 2: FIA		| 3: USMC		| 4: BAF		| 5: CSFB		|
 				Opfor = 2;			//	NUMBER:	1: CSAT	| 2: Russians	|
 				Independent = 2;	//	NUMBER:	1: AAF	| 2: PMC		|
 			};

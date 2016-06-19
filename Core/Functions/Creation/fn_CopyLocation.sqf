@@ -46,49 +46,34 @@
 // ================================================================
 //		USMC
 		case "m2": {
-			_type = "RHS_M2StaticMG_WD";
+			_type = "CUP_B_M2StaticMG_US";
 		};
 		case "m2tri": {
-			_type = "RHS_M2StaticMG_MiniTripod_WD";
+			_type = "CUP_B_M2StaticMG_MiniTripod_US";
 		};
 		case "mk19": {
-			_type = "RHS_MK19_TriPod_WD";
+			_type = "CUP_B_M119_US";
 		};
 		case "tow": {
-			_type = "RDS_TOW_TriPod_FIA";
+			_type = "CUP_B_TOW_TriPod_US";
 		};
-
+		
 // ================================================================
 //		Russian
 		case "kord": {
-			_type = "RDS_KORD_high_FIA";
+			_type = "CUP_O_KORD_high_RU";
 		};
 		case "kordtri": {
-			_type = "RDS_KORD_FIA";
+			_type = "CUP_O_KORD_RU";
 		};
 		case "ags": {
-			_type = "RDS_AGS_FIA";
+			_type = "CUP_O_D30_AT_RU";
 		};
 		case "metis": {
-			_type = "RDS_Metis_FIA";
+			_type = "CUP_O_Metis_RU";
 		};
 		case "igla": {
-			_type = "RDS_Igla_AA_pod_FIA";
-		};
-
-// ================================================================
-//		Insurgents
-		case "dshkm": {
-			_type = "RDS_DSHKM_FIA";
-		};
-		case "dshkmtri": {
-			_type = "RDS_DSHkM_Mini_TriPod_FIA";
-		};
-		case "spg9": {
-			_type = "RDS_SPG9_FIA";
-		};
-		case "zu23": {
-			_type = "RDS_ZU23_FIA";
+			_type = "CUP_O_ZU23_RU";
 		};
 
 // ================================================================

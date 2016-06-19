@@ -1,0 +1,4 @@
+//	If using radio calls, add this to init.sqf. If you're not using it, you can skip this.
+
+//	this is to be run on player.
+[] execVM "Scripts\NEKY_Supply\NEKY_SupplyInit.sqf";
