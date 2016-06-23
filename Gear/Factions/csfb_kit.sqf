@@ -16,7 +16,7 @@
 			NightTimeOnce("ACE_Flashlight_XL50");
 			[
 				[_mapTools],		// Items
-				[_pistol_mag,2],	// Magazines
+				[_pistol_mag,1],	// Magazines
 				[_rifleALT_mag,4],
 				[_rifleALT_mag_tr,3],
 				[_smokegrenadeR,3],
@@ -45,7 +45,7 @@
 				[_mapTools],
 				[_laser],
 				[_laserb],
-				[_pistol_mag,2],
+				[_pistol_mag,1],
 				[_rifle_mag,4],
 				[_smokegrenadeG,3],
 				[_smokegrenadeY,3],
@@ -70,7 +70,7 @@
 			[
 				[_mapTools],
 				[_DAGR],
-				[_pistol_mag,2],
+				[_pistol_mag,1],
 				[_rifleGL_mag_tr,7],
 				[_smokegrenadeY,3],
 				[_smokegrenadeG,4],
@@ -100,7 +100,7 @@
 				[_radio152],
 				[_mapTools],
 				[_DAGR],
-				[_pistol_mag,2],
+				[_pistol_mag,1],
 				[_rifleGL_mag_tr,7],
 				[_smokegrenadeY,3],
 				[_smokegrenadeG,4],
@@ -126,7 +126,7 @@
 			NightTimeOnce(_nvg);
 			NightTimeOnce("ACE_Flashlight_XL50");
 			[
-				[_pistol_mag,2],
+				[_pistol_mag,1],
 				[_rifle_mag,2],
 				[_rifle_mag_tr,3],
 				[_smokegrenadeY,2],
@@ -154,7 +154,7 @@
 			NightTimeOnce(_nvg);
 			NightTimeOnce("ACE_Flashlight_XL50");
 			[
-				[_pistol_mag,2],
+				[_pistol_mag,1],
 				[_rifleGL_mag,2],
 				[_rifleGL_mag_tr,3],
 				[_smokegrenadeY,2],
@@ -186,7 +186,7 @@
 			NightTimeOnce(_nvg);
 			NightTimeOnce("ACE_Flashlight_XL50");
 			[
-				[_pistol_mag,2],
+				[_pistol_mag,1],
 				[_rifle_mag,2],
 				[_rifle_mag_tr,3],
 				[_smokegrenadeY,3],
@@ -224,7 +224,7 @@
 			NightTimeOnce(_nvg);
 			NightTimeOnce("ACE_Flashlight_XL50");
 			[
-				[_pistol_mag,2],
+				[_pistol_mag,1],
 				[_smokegrenadeY,2],
 				[_grenademini,2],
 				[_grenade,2],
