@@ -43,15 +43,15 @@
 			NightTimeOnce("ACE_Flashlight_XL50");
 			[
 				[_mapTools],
+				[_laser],
+				[_laserb],
 				[_pistol_mag,2],
-				[_rifle_mag,6],
+				[_rifle_mag,4],
 				[_smokegrenadeG,3],
 				[_smokegrenadeY,3],
 				[_smokegrenadeG,6, true],
-				[_glsmokeR,20, false],
-				[_glsmokeG,20, false],
-				[_laser],
-				[_laserb],
+				[_glsmokeR,10, false],
+				[_glsmokeG,10, false],
 				[_pistol],
 				[_rifleGL]
 			] call GOL_Fnc_AddObjects;
@@ -127,8 +127,8 @@
 			NightTimeOnce("ACE_Flashlight_XL50");
 			[
 				[_pistol_mag,2],
-				[_rifleALT_mag,3],
-				[_rifleALT_mag_tr,3],
+				[_rifle_mag,2],
+				[_rifle_mag_tr,3],
 				[_smokegrenadeY,2],
 				[_grenademini,2],
 				[_grenade,1],
@@ -139,7 +139,7 @@
 				[_defusalKit,1, true],
 				[_cables,3, true],
 				[_pistol],
-				[_rifleALT],
+				[_rifle],
 				[_LAT]
 			] call GOL_Fnc_AddObjects;
 			_primaryAttachments = _primaryRifle;
@@ -155,7 +155,7 @@
 			NightTimeOnce("ACE_Flashlight_XL50");
 			[
 				[_pistol_mag,2],
-				[_rifleGL_mag,3],
+				[_rifleGL_mag,2],
 				[_rifleGL_mag_tr,3],
 				[_smokegrenadeY,2],
 				[_smokegrenadeR,2],
@@ -187,13 +187,13 @@
 			NightTimeOnce("ACE_Flashlight_XL50");
 			[
 				[_pistol_mag,2],
-				[_rifle_mag,3],
+				[_rifle_mag,2],
 				[_rifle_mag_tr,3],
 				[_smokegrenadeY,3],
 				[_grenademini,2],
 				[_grenade,2],
-				[_bandage,20, true],
-				[_morph,6, true],
+				[_bandage,15, true],
+				[_morph,4, true],
 				[_LMG_mag_tr,Count_AG_Mags(_LMG_mag_tr), true],
 				[_rangefinder],
 				[_pistol],
@@ -261,15 +261,15 @@
 			ADD_ITEM_LINKED(_cTab);
 			NightTimeOnce(_nvg);
 			[
+				[_laser],
+				[_laserb],
+				[_rangecard88],
+				[_rifleALT],
+				[_rifle_mag,2],
 				[_bandage,20, true],
 				[_morph,5, true],
 				[_epi,5, true],
-				[_blood,3, true],
-				[_laser],
-				[_laserb],
-				[_pistol_mag,1],
-				[_pistol],
-				[_rangecard88]
+				[_blood,3, true]				
 			] call GOL_Fnc_AddObjects;
 			_unit setVariable ["ACE_Medical_MedicClass", 1, true];
 		};

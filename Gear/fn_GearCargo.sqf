@@ -203,6 +203,7 @@
 			[_cargo, _laserb, 50] call GOL_Fnc_AddObjectsCargo;			
 			[_cargo, _rangecard, 50] call GOL_Fnc_AddObjectsCargo;
 			[_cargo, _rangecard88, 50] call GOL_Fnc_AddObjectsCargo;
+			[_cargo, _nvg, 50] call GOL_Fnc_AddObjectsCargo;
         };
 
         case "med_box": {   //  Medical Box
@@ -269,7 +270,6 @@
 			[_cargo, _LATmag, 8] call GOL_Fnc_AddObjectsCargo;
 			[_cargo, _demoCharge, 8] call GOL_Fnc_AddObjectsCargo;
 			[_cargo, _satchelCharge, 4] call GOL_Fnc_AddObjectsCargo;
-
             [] call _Supplies;
         };
 

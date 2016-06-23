@@ -14,17 +14,17 @@ switch (GOL_Gear_Camo) do {
 		_pistol_mag = "CUP_8Rnd_9x18_Makarov_M";
 		_secondaryPistol = [];
 
-		_rifle = "hlc_rifle_aks74";
+		_rifle = "hlc_rifle_ak12";
 		_rifle_mag = "hlc_30Rnd_545x39_B_AK";
 		_rifle_mag_tr = "hlc_30Rnd_545x39_t_ak";
 
-		_rifleGL = "hlc_rifle_aks74_GL";
+		_rifleGL = "hlc_rifle_ak12GL";
 		_rifleGL_mag = "hlc_30Rnd_545x39_B_AK";
 		_rifleGL_mag_tr = "hlc_30Rnd_545x39_t_ak";		
 		
 		_rifleALT = "hlc_rifle_aks74u";
 		_rifleALT_mag = "hlc_30Rnd_545x39_B_AK";
-		_rifleALT_mag_tr = "hlc_30Rnd_545x39_B_AK_tracer";
+		_rifleALT_mag_tr = "hlc_30Rnd_545x39_t_ak";
 
 		_glHE = "hlc_VOG25_AK";
 		_glsmokeW = "hlc_GRD_White";
