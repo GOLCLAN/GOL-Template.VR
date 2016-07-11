@@ -14,43 +14,43 @@ switch (GOL_Gear_Camo) do {
 		_pistol_mag = "CUP_8Rnd_9x18_Makarov_M";
 		_secondaryPistol = [];
 
-		_rifle = "hlc_rifle_ak12";
-		_rifle_mag = "hlc_30Rnd_545x39_B_AK";
-		_rifle_mag_tr = "hlc_30Rnd_545x39_t_ak";
+		_rifle = "arifle_AK12_F";
+		_rifle_mag = "30Rnd_762x39_Mag_F";
+		_rifle_mag_tr = "30Rnd_762x39_Mag_Green_F";
 
-		_rifleGL = "hlc_rifle_ak12GL";
-		_rifleGL_mag = "hlc_30Rnd_545x39_B_AK";
-		_rifleGL_mag_tr = "hlc_30Rnd_545x39_t_ak";		
+		_rifleGL = "arifle_AK12_GL_F";
+		_rifleGL_mag = "30Rnd_762x39_Mag_F";
+		_rifleGL_mag_tr = "30Rnd_762x39_Mag_Green_F";		
 		
-		_rifleALT = "hlc_rifle_aks74u";
-		_rifleALT_mag = "hlc_30Rnd_545x39_B_AK";
-		_rifleALT_mag_tr = "hlc_30Rnd_545x39_t_ak";
+		_rifleALT = "arifle_AKS_F";
+		_rifleALT_mag = "30Rnd_545x39_Mag_F";
+		_rifleALT_mag_tr = "30Rnd_545x39_Mag_Green_F";
 
-		_glHE = "hlc_VOG25_AK";
-		_glsmokeW = "hlc_GRD_White";
-		_glsmokeG = "hlc_GRD_Green";
-		_glsmokeR = "hlc_GRD_Red";
+		_glHE = "1Rnd_HE_Grenade_shell";
+		_glsmokeW = "1Rnd_Smoke_Grenade_shell";
+		_glsmokeG = "1Rnd_SmokeGreen_Grenade_shell";
+		_glsmokeR = "1Rnd_SmokeRed_Grenade_shell";
 		_glflareW = "UGL_FlareWhite_F";
 		_glflareG = "UGL_FlareGreen_F";
 		_glflareR = "UGL_FlareRed_F";			
 	
-		_carbine = ["hlc_rifle_aek971","hlc_rifle_ak74","hlc_rifle_akm","hlc_rifle_ak12"] call BIS_fnc_selectRandom;
-		_carbine_mag = "hlc_30Rnd_545x39_B_AK";
-		_carbine_mag_tr = "hlc_30Rnd_545x39_t_ak";		
+		_carbine = ["arifle_AKM_F","arifle_AK12_F"] call BIS_fnc_selectRandom;
+		_carbine_mag = "30Rnd_762x39_Mag_F";
+		_carbine_mag_tr = "30Rnd_762x39_Mag_Green_F";		
 		
-		_LMG = "hlc_rifle_rpk";
-		_LMG_mag = "hlc_75Rnd_762x39_m_rpk";
-		_LMG_mag_tr = "hlc_75Rnd_762x39_m_rpk";
+		_LMG = "CUP_arifle_RPK74";
+		_LMG_mag = "CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M";
+		_LMG_mag_tr = "CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M";
 		_primaryLMG = ["GVL_X2000_point"];
 
 		// Rifleman AT
-		_LAT = "launch_RPG32_F";
-		_LATmag = "RPG32_F";
+		_LAT = "launch_RPG7_F";
+		_LATmag = "RPG7_F";
 
 		// Rifleman AT
-		_MAT = "launch_RPG32_F";
-		_MATmag1 = "RPG32_F";
-		_MATmag2 = "RPG32_HE_F";
+		_MAT = "launch_RPG7_F";
+		_MATmag1 = "RPG7_F";
+		_MATmag2 = "RPG7_F";
 		
 		_primaryRifle = ["GVL_X2000_point"];
 		_primaryRifleGL = ["GVL_X2000_point"];

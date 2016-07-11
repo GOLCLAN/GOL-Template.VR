@@ -82,7 +82,7 @@ _handFlareY = "ACE_HandFlare_Yellow";
 
 // GRENADE LAUNCHER ITEMS
 _glHE = "1Rnd_HE_Grenade_shell";
-_glHER = "hlc_VOG25_AK";
+_glHER = "1Rnd_HE_Grenade_shell";
 
 _glsmokeW = "1Rnd_Smoke_Grenade_shell";
 _glsmokeG = "1Rnd_SmokeGreen_Grenade_shell";
@@ -92,9 +92,9 @@ _glsmokeP = "1Rnd_SmokePurple_Grenade_shell";
 _glsmokeB = "1Rnd_SmokeBlue_Grenade_shell";
 _glsmokeO = "1Rnd_SmokeOrange_Grenade_shell";
 
-_glsmokeWR = "hlc_GRD_White";
-_glsmokeGR = "hlc_GRD_Green";
-_glsmokeRR = "hlc_GRD_Red";	
+_glsmokeWR = "1Rnd_Smoke_Grenade_shell";
+_glsmokeGR = "1Rnd_SmokeGreen_Grenade_shell";
+_glsmokeRR = "1Rnd_SmokeRed_Grenade_shell";	
 
 _glflareW = "UGL_FlareWhite_F";
 _glflareG = "UGL_FlareGreen_F";

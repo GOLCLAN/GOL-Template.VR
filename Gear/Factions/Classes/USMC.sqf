@@ -12,12 +12,12 @@ switch (GOL_Gear_Camo) do {
 		_pistol_mag = "CUP_15Rnd_9x19_M9";
 		_secondaryPistol = [];
 
-		_rifle = "CUP_arifle_Mk16_CQC_FG";
+		_rifle = "arifle_SPAR_01_blk_F";
 		_rifle_mag = "30Rnd_556x45_Stanag";
 		_rifle_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 		_primaryRifle = ["CUP_optic_Eotech533","GVL_X2000_point","CUP_muzzle_mfsup_SCAR_L"];
 
-		_rifleGL = "CUP_arifle_Mk16_CQC_EGLM";
+		_rifleGL = "arifle_SPAR_01_GL_blk_F";
 		_rifleGL_mag = "30Rnd_556x45_Stanag";
 		_rifleGL_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 		_primaryRifleGL = ["CUP_optic_Eotech533","GVL_X2000_point","CUP_muzzle_mfsup_SCAR_L"];

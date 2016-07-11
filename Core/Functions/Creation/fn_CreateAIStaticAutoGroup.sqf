@@ -31,12 +31,14 @@
 		};
 		if (_loop == _team) then {
 			_loop = 0;
-		};	
-
+		};
 		_spawnLocation = (_x select 0);
 		_dir = (_x select 1);
 		_stance = (_x select 2);
 		if (isNil "_stance") then { _stance = "AUTO"; };
+		if (_stance == "random") then {
+			_stance = ["MIDDLE","UP"] call BIS_fnc_selectRandom;
+		};
 		
 		_randomSelection = (EnemyUnits call BIS_fnc_selectRandom);
 		

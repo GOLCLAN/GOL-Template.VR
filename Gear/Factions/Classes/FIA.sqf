@@ -39,13 +39,13 @@ switch (GOL_Gear_Camo) do {
 		_primaryLMG = ["acc_flashlight","optic_Holosight","bipod_03_F_blk"];
 
 		// Rifleman AT
-		_LAT = "launch_RPG32_F";
-		_LATmag = "RPG32_F";
+		_LAT = "launch_RPG7_F";
+		_LATmag = "RPG7_F";
 
 		// Rifleman AT
-		_MAT = "launch_RPG32_F";
-		_MATmag1 = "RPG32_F";
-		_MATmag2 = "RPG32_HE_F";
+		_MAT = "launch_RPG7_F";
+		_MATmag1 = "RPG7_F";
+		_MATmag2 = "RPG7_F";
 	};
 };
 
