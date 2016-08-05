@@ -28,7 +28,8 @@
 			] call GOL_Fnc_AddObjects;
 			_unit setVariable ["ACE_Medical_MedicClass", 1, true];
 			_primaryAttachments = _primaryRifle;
-			_secondaryAttachments = _secondaryPistol;
+			_secondaryAttachments = _secondaryPistol;			
+			_headGear = headgear player; if(_headGear != _baseHelmet) then { player addHeadgear _baseHelmet; };
 		};
 
 		case "fac": {
@@ -56,6 +57,7 @@
 			] call GOL_Fnc_AddObjects;
 			_primaryAttachments = _primaryRifle;
 			_secondaryAttachments = _secondaryPistol;
+			_headGear = headgear player; if(_headGear != _baseHelmet) then { player addHeadgear _baseHelmet; };
 		};
 
 		case "sl": {
@@ -85,6 +87,7 @@
 			] call GOL_Fnc_AddObjects;
 			_primaryAttachments = _primaryRifleGL;
 			_secondaryAttachments = _secondaryPistol;
+			_headGear = headgear player; if(_headGear != _baseHelmet) then { player addHeadgear _baseHelmet; };
 		};
 
 		case "ftl": {
@@ -114,7 +117,8 @@
 				[_sprayG]
 			] call GOL_Fnc_AddObjects;
 			_primaryAttachments = _primaryRifleGL;
-			_secondaryAttachments = _secondaryPistol;
+			_secondaryAttachments = _secondaryPistol;			
+			_headGear = headgear player; if(_headGear != _baseHelmet) then { player addHeadgear _baseHelmet; };
 		};
 
 		case "r": {
@@ -142,7 +146,8 @@
 				[_LAT]
 			] call GOL_Fnc_AddObjects;
 			_primaryAttachments = _primaryRifle;
-			_secondaryAttachments = _secondaryPistol;
+			_secondaryAttachments = _secondaryPistol;			
+			_headGear = headgear player; if(_headGear != _baseHelmet) then { player addHeadgear _baseHelmet; };
 		};
 
 		case "g": {
@@ -175,6 +180,7 @@
 					[_glsmokeW,3, true]
 				] call GOL_Fnc_AddObjects;
 			};
+			_headGear = headgear player; if(_headGear != _baseHelmet) then { player addHeadgear _baseHelmet; };
 		};
 
 		case "ag": {
@@ -213,6 +219,7 @@
 					[_blood,2, true]
 				] call GOL_Fnc_AddObjects;
 			};
+			_headGear = headgear player; if(_headGear != _baseHelmet) then { player addHeadgear _baseHelmet; };
 		};
 
 		case "ar": {
@@ -234,6 +241,7 @@
 			] call GOL_Fnc_AddObjects;
 			_primaryAttachments = _primaryLMG;
 			_secondaryAttachments = _secondaryPistol;
+			_headGear = headgear player; if(_headGear != _baseHelmet) then { player addHeadgear _baseHelmet; };
 		};
 
 		case "p": {
@@ -247,9 +255,12 @@
 				[_bandage,20, true],
 				[_morph,5, true],
 				[_epi,5, true],
+				[_carbine_mag,2],
+				[_carbine],
 				[_blood,3, true]
 			] call GOL_Fnc_AddObjects;
 			_unit setVariable ["ACE_Medical_MedicClass", 1, true];
+			_headGear = headgear player; if(_headGear != _pilotHelmet) then { player addHeadgear _pilotHelmet; };
 		};
 		
 		case "pg": {
@@ -271,6 +282,7 @@
 				[_blood,3, true]
 			] call GOL_Fnc_AddObjects;
 			_unit setVariable ["ACE_Medical_MedicClass", 1, true];
+			_headGear = headgear player; if(_headGear != _pilotHelmetG) then { player addHeadgear _pilotHelmetG; };
 		};
 		
 		case "pi": {
@@ -287,8 +299,10 @@
 				[_blood,3, true]
 			] call GOL_Fnc_AddObjects;
 			_unit setVariable ["ACE_Medical_MedicClass", 1, true];
+			_headGear = headgear player; if(_headGear != _pilotHelmetP) then { player addHeadgear _pilotHelmetP; };
 		};
 		
 	};
+	
 
 //	====================================================================================

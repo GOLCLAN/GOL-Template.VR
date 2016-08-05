@@ -10,8 +10,8 @@ _factionScript = "csfb_kit";	// Name of the file that us going to be loading the
 switch (GOL_Gear_Camo) do {
     default {	// Woodland
 		
-		_pistol = "CUP_hgun_PB6P9";
-		_pistol_mag = "CUP_8Rnd_9x18_Makarov_M";
+		_pistol = "hgun_Pistol_01_F";
+		_pistol_mag = "10Rnd_9x21_Mag";
 		_secondaryPistol = [];
 
 		_rifle = "arifle_AK12_F";
@@ -38,10 +38,9 @@ switch (GOL_Gear_Camo) do {
 		_carbine_mag = "30Rnd_762x39_Mag_F";
 		_carbine_mag_tr = "30Rnd_762x39_Mag_Green_F";		
 		
-		_LMG = "CUP_arifle_RPK74";
-		_LMG_mag = "CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M";
-		_LMG_mag_tr = "CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M";
-		_primaryLMG = ["GVL_X2000_point"];
+		_LMG = "LMG_Zafir_F";
+		_LMG_mag = "150Rnd_762x51_Box_Tracer";
+		_LMG_mag_tr = "150Rnd_762x51_Box_Tracer";
 
 		// Rifleman AT
 		_LAT = "launch_RPG7_F";
@@ -56,6 +55,7 @@ switch (GOL_Gear_Camo) do {
 		_primaryRifleGL = ["GVL_X2000_point"];
 		_primaryRifleALT = ["GVL_X2000_point"];
 		_primaryCarbine = ["GVL_X2000_point"];
+		_primaryLMG = ["GVL_X2000_point"];
 	};
 };
 
