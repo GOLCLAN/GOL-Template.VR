@@ -1,8 +1,8 @@
 #include "Common.sqf"
 pmcammo = true;
 _AllowNVG = false;
-_factionValue = false;		// True if value below is anything else then Default
-_factionScript = "Default";	// Name of the file that us going to be loading the loadout
+_factionValue = true;		// True if value below is anything else then Default
+_factionScript = "pmc_kit";	// Name of the file that us going to be loading the loadout
 
 _ak545 = "30Rnd_545x39_Mag_F";
 _ak545_t = "30Rnd_545x39_Mag_Green_F";
@@ -32,7 +32,7 @@ switch (GOL_Gear_Camo) do {
 		
 		_rifles = rifles;
 		
-		_riflesGL = [1,2,3,4,5,6,7] call BIS_fnc_selectRandom;
+		_riflesGL = [1,2,3,4] call BIS_fnc_selectRandom;
 		
 		//hint format["%1 - %2", _rifles, _riflesGL];
 		
@@ -125,9 +125,21 @@ switch (GOL_Gear_Camo) do {
 			_glflareR = "UGL_FlareRed_F";	
 		};
 		if (_riflesGL == 3) then {
-			_rifleGL = "arifle_Katiba_GL_F";
-			_rifleGL_mag = "30Rnd_65x39_caseless_green";
-			_rifleGL_mag_tr = "30Rnd_65x39_caseless_green_mag_Tracer";
+			_rifleGL = "arifle_AK12_GL_F";
+			_rifleGL_mag = "30Rnd_762x39_Mag_F";
+			_rifleGL_mag_tr = "30Rnd_762x39_Mag_F_tracer";
+			_glHE = "1Rnd_HE_Grenade_shell";
+			_glsmokeW = "1Rnd_Smoke_Grenade_shell";
+			_glsmokeG = "1Rnd_SmokeGreen_Grenade_shell";
+			_glsmokeR = "1Rnd_SmokeRed_Grenade_shell";
+			_glflareW = "ACE_HandFlare_White";
+			_glflareG = "ACE_HandFlare_Green";
+			_glflareR = "ACE_HandFlare_Red";
+		};
+		if (_riflesGL == 4) then {
+			_rifleGL = "arifle_MX_GL_Black_F";
+			_rifleGL_mag = "30Rnd_65x39_caseless_mag";
+			_rifleGL_mag_tr = "30Rnd_65x39_caseless_mag_Tracer";
 			_glHE = "1Rnd_HE_Grenade_shell";
 			_glsmokeW = "1Rnd_Smoke_Grenade_shell";
 			_glsmokeG = "1Rnd_SmokeGreen_Grenade_shell";
@@ -136,58 +148,10 @@ switch (GOL_Gear_Camo) do {
 			_glflareG = "UGL_FlareGreen_F";
 			_glflareR = "UGL_FlareRed_F";
 		};
-		if (_riflesGL == 4) then {
-			_rifleGL = "arifle_AK12_GL_F";
-			_rifleGL_mag = "30Rnd_762x39_Mag_F";
-			_rifleGL_mag_tr = "30Rnd_762x39_Mag_F_tracer";
-			_glHE = "1Rnd_HE_Grenade_shell";
-			_glsmokeW = "1Rnd_Smoke_Grenade_shell";
-			_glsmokeG = "1Rnd_SmokeGreen_Grenade_shell";
-			_glsmokeR = "1Rnd_SmokeRed_Grenade_shell";
-			_glflareW = "ACE_HandFlare_White";
-			_glflareG = "ACE_HandFlare_Green";
-			_glflareR = "ACE_HandFlare_Red";
-		};
-		if (_riflesGL == 5) then {
-			_rifleGL = "arifle_AK12_GL_F";
-			_rifleGL_mag = "30Rnd_762x39_Mag_F";
-			_rifleGL_mag_tr = "30Rnd_762x39_Mag_Green_F";
-			_glHE = "1Rnd_HE_Grenade_shell";
-			_glsmokeW = "1Rnd_Smoke_Grenade_shell";
-			_glsmokeG = "1Rnd_SmokeGreen_Grenade_shell";
-			_glsmokeR = "1Rnd_SmokeRed_Grenade_shell";
-			_glflareW = "ACE_HandFlare_White";
-			_glflareG = "ACE_HandFlare_Green";
-			_glflareR = "ACE_HandFlare_Red";
-		};
-		if (_riflesGL == 6) then {
-			_rifleGL = "arifle_AKM_Fgl";
-			_rifleGL_mag = "hlc_30Rnd_762x39_b_ak";
-			_rifleGL_mag_tr = "hlc_30Rnd_762x39_t_ak";
-			_glHE = "1Rnd_HE_Grenade_shell";
-			_glsmokeW = "1Rnd_Smoke_Grenade_shell";
-			_glsmokeG = "1Rnd_SmokeGreen_Grenade_shell";
-			_glsmokeR = "1Rnd_SmokeRed_Grenade_shell";
-			_glflareW = "ACE_HandFlare_White";
-			_glflareG = "ACE_HandFlare_Green";
-			_glflareR = "ACE_HandFlare_Red";
-		};
-		if (_riflesGL == 7) then {
-			_rifleGL = "arifle_AK12_GL_F"; // arifle_AK12_F_gp25 broken?
-			_rifleGL_mag = "30Rnd_762x39_Mag_F";
-			_rifleGL_mag_tr = "30Rnd_762x39_Mag_F_tracer";
-			_glHE = "1Rnd_HE_Grenade_shell";
-			_glsmokeW = "1Rnd_Smoke_Grenade_shell";
-			_glsmokeG = "1Rnd_SmokeGreen_Grenade_shell";
-			_glsmokeR = "1Rnd_SmokeRed_Grenade_shell";
-			_glflareW = "ACE_HandFlare_White";
-			_glflareG = "ACE_HandFlare_Green";
-			_glflareR = "ACE_HandFlare_Red";
-		};
 		
 		_primaryRifleGL = ["GVL_X2000_point"];
 
-		_rifleALT = ["arifle_SPAR_01_blk_F","hlc_rifle_RU556","arifle_SPAR_01_blk_F","arifle_SPAR_01_blk_F"] call BIS_fnc_selectRandom;
+		_rifleALT = ["arifle_SPAR_01_blk_F","arifle_SPAR_01_blk_F","arifle_SPAR_01_blk_F"] call BIS_fnc_selectRandom;
 		_rifleALT_mag = "30Rnd_556x45_Stanag";
 		_rifleALT_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 		_primaryRifleALT = ["GVL_X2000_point"];
