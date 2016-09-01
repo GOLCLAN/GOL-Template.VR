@@ -118,11 +118,12 @@
 		if !(_captivity == 0) then { _unit setCaptive _captivity; };
 		[] call GOL_Fnc_Attachments;
 		_unit selectWeapon primaryWeapon _unit;
-		_unit setVariable ["GOL_GroupColor", _Color, true];
+		_unit setVariable ["GOL_GroupColor", _Color, true];	// Keeping it for backward compatibility
+		_unit assignTeam _Color;
 
 		[_unit] Spawn {
 			private ["_unit"];
-		    waitUntil {sleep 0.1; !isNull player};
+			waitUntil {sleep 0.1; !isNull player};
 			_unit = _this select 0;
 			if (!local _unit || !alive _unit) exitWith {false};
 			_unit switchMove "AmovPknlMstpSlowWrflDnon";
@@ -132,10 +133,12 @@
 					if !(isNil "GOL_Gear_Respawn") Then { player removeEventHandler ["respawn", GOL_Gear_Respawn]; };
 					GOL_Gear_Respawn = player addEventHandler ["respawn", { [player, (player getVariable "GOL_Loadout") select 0] call GOL_Fnc_GearHandler; } ];
 				};
-				[_unit, currentWeapon _unit, currentMuzzle _unit] call ACE_SafeMode_fnc_lockSafety;
-				waitUntil {sleep 5; player distance (markerPos ([_unit] call GOL_Fnc_GetSide)) > 100};
-				if ((currentWeapon _unit) in (_unit getVariable ["ACE_SafeMode_safedWeapons", []])) then {
-					[_unit, currentWeapon _unit, currentMuzzle _unit] call ACE_SafeMode_fnc_unlockSafety;
+				if (player distance (markerPos ([_unit] call GOL_Fnc_GetSide)) <= 100) {
+					[_unit, currentWeapon _unit, currentMuzzle _unit] call ACE_SafeMode_fnc_lockSafety;
+					waitUntil {sleep 5; player distance (markerPos ([_unit] call GOL_Fnc_GetSide)) > 100};
+					if ((currentWeapon _unit) in (_unit getVariable ["ACE_SafeMode_safedWeapons", []])) then {
+						[_unit, currentWeapon _unit, currentMuzzle _unit] call ACE_SafeMode_fnc_unlockSafety;
+					};
 				};
 			};
 		};
