@@ -160,20 +160,12 @@
 	scriptName _DebugName;
 	[["Unit: %1 || Loadout: %2 ",_unit, _typeofUnit],[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;
 	
-	_uid = getPlayerUID player;
-	_uidList = ["_SP_PLAYER_"];
-	if (_uid in _uidList) then {
+	if !(isMultiplayer) then {
 		{
-			_x disableAI "TARGET";
-			_x disableAI "AUTOTARGET";
-			_x disableAI "MOVE";
-			_x disableAI "ANIM";
-			_x disableAI "TEAMSWITCH";
-			_x disableAI "FSM";
-			_x disableAI "AIMINGERROR";
-			_x disableAI "SUPPRESSION";
-			_x disableAI "CHECKVISIBLE";
-			_x disableAI "COVER";
-			_x disableAI "AUTOCOMBAT";
-		} forEach AllUnits;
-	}
+			private _unit = _x;
+			{
+				_unit disableAI _x;
+			} forEach ["TARGET","AUTOTARGET","MOVE","ANIM","FSM","CHECKVISIBLE"];
+		} forEach switchableUnits;
+
+	};
