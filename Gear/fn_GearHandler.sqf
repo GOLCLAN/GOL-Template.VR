@@ -118,7 +118,7 @@
 		if !(_captivity == 0) then { _unit setCaptive _captivity; };
 		[] call GOL_Fnc_Attachments;
 		_unit selectWeapon primaryWeapon _unit;
-		_unit setVariable ["GOL_GroupColor", _Color, true];	// Keeping it for backward compatibility
+		_unit setVariable ["GOL_GroupColor", _Color];	// Keeping it for backward compatibility
 		_unit assignTeam _Color;
 
 		[_unit] Spawn {
