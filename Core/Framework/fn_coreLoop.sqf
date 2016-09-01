@@ -1,6 +1,5 @@
 
-		private ["_DebugName"];
-		_DebugName = "GOL-coreLoop";
+		private _DebugName = "GOL-coreLoop";
 		scriptName _DebugName;
 		if (isServer) then {
 			{
@@ -25,8 +24,7 @@
 					};
 				}ForEach (playableUnits + switchableUnits);
 				while {true} do {
-					private ["_players"];
-					_players = (call GOL_Fnc_Players);
+					private _players = (call GOL_Fnc_Players);
 					if !(_players isEqualTo GOL_PlayerList) then {
 						GOL_PlayerList = _players;
 						publicVariable "GOL_PlayerList";
@@ -46,14 +44,12 @@
 
 		if (hasInterface) then {
 			[] spawn {
-				private ["_time"];
-				_time = time;
+				private _time = time;
 				waitUntil {sleep 0.1; !isNull player; time > (_time + 5)};
 				if (!isNil {(player getVariable "GOL_Loadout")}) then {
 					if (leader player == player) then {
 						player setGroupIdGlobal [((player getVariable "GOL_Loadout") select 1)];
 					};
-					["CBA_teamColorChanged", [player, (player getVariable "GOL_GroupColor")]] call CBA_fnc_globalEvent;
 				};
 
 				if ((player getVariable "GOL_Player") select 2) then {	// JIP
@@ -65,7 +61,6 @@
 			};
 		};
 
-		private ["_DebugName"];
-		_DebugName = "GOL-coreLoop";
+		private _DebugName = "GOL-coreLoop";
 		scriptName _DebugName;
 		["PreInit INITIALIZED",[_DebugName,__FILE__,__LINE__],"log"] call GOL_Fnc_DebugLog;
