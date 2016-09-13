@@ -129,11 +129,11 @@
 			_unit switchMove "AmovPknlMstpSlowWrflDnon";
 			sleep 2;
 			if (isPlayer _unit) then {
-				if ((["Gear", "FullGear"] call GOL_Fnc_GetConfig) == 1) Then {
+				if ((["Gear", "FullGear"] call GOL_Fnc_GetConfig) == 1) then {
 					if !(isNil "GOL_Gear_Respawn") Then { player removeEventHandler ["respawn", GOL_Gear_Respawn]; };
 					GOL_Gear_Respawn = player addEventHandler ["respawn", { [player, (player getVariable "GOL_Loadout") select 0] call GOL_Fnc_GearHandler; } ];
 				};
-				if (player distance (markerPos ([_unit] call GOL_Fnc_GetSide)) <= 100) {
+				if (player distance (markerPos ([_unit] call GOL_Fnc_GetSide)) <= 100) then {
 					[_unit, currentWeapon _unit, currentMuzzle _unit] call ACE_SafeMode_fnc_lockSafety;
 					waitUntil {sleep 5; player distance (markerPos ([_unit] call GOL_Fnc_GetSide)) > 100};
 					if ((currentWeapon _unit) in (_unit getVariable ["ACE_SafeMode_safedWeapons", []])) then {
