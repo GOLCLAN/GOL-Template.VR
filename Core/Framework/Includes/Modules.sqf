@@ -63,6 +63,16 @@
 		Add(enabled, false);
 	};
 
+	if (isClass(configFile>>"CfgPatches">>"ACE_Advanced_Ballistics")) then {
+		#define COMPONENT Advanced_Fatigue
+		Add(enabled, true);
+		Add(enableStaminaBar, 1);
+		Add(performanceFactor, 10);
+		Add(recoveryFactor, 10);
+		Add(loadFactor, 0);
+		Add(terrainGradientFactor, 0);
+	};
+
 	if (isClass(configFile>>"CfgPatches">>"ACE_Captives")) then {
 		#define COMPONENT Captives
 		Add(allowHandcuffOwnSide, false);
