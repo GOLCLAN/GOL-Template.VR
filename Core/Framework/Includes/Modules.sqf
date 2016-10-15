@@ -66,7 +66,7 @@
 	if (isClass(configFile>>"CfgPatches">>"ACE_Advanced_Ballistics")) then {
 		#define COMPONENT Advanced_Fatigue
 		Add(enabled, true);
-		Add(enableStaminaBar, 1);
+		Add(enableStaminaBar, false);
 		Add(performanceFactor, 10);
 		Add(recoveryFactor, 10);
 		Add(loadFactor, 0);
