@@ -63,7 +63,7 @@
 		Add(enabled, false);
 	};
 
-	if (isClass(configFile>>"CfgPatches">>"ACE_Advanced_Ballistics")) then {
+	if (isClass(configFile>>"CfgPatches">>"ACE_Advanced_Fatigue")) then {
 		#define COMPONENT Advanced_Fatigue
 		Add(enabled, true);
 		Add(enableStaminaBar, false);
