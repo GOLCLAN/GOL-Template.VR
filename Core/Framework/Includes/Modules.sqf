@@ -67,10 +67,19 @@
 		#define COMPONENT Advanced_Fatigue
 		Add(enabled, true);
 		Add(enableStaminaBar, false);
-		Add(performanceFactor, 10);
-		Add(recoveryFactor, 10);
+		Add(performanceFactor, 1.5);
+		Add(recoveryFactor, 2);
 		Add(loadFactor, 0);
 		Add(terrainGradientFactor, 0);
+	};
+
+	if (isClass(configFile>>"CfgPatches">>"ACE_Advanced_Throwing")) then {
+		#define COMPONENT Advanced_Throwing
+		Add(enabled, true);
+		Add(showThrowArc, true);
+		Add(showMouseControls, true);
+		Add(enablePickUp, true);
+		Add(enablePickUpAttached, false);
 	};
 
 	if (isClass(configFile>>"CfgPatches">>"ACE_Captives")) then {
@@ -144,6 +153,11 @@
 		Add(enabled, true);
 		Add(maxRange, 7);
 		Add(interval, 0.05);
+	};
+
+	if (isClass(configFile>>"CfgPatches">>"ACE_Nametags")) then {
+		#define COMPONENT Nametags
+		Add(playerNamesViewDistance, 50);
 	};
 
 	if (isClass(configFile>>"CfgPatches">>"ACE_NightVision")) then {
