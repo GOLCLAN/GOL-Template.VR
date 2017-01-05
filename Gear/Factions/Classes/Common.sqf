@@ -1,7 +1,7 @@
 // ===========================
 
 // Adds NVG's when its getting dark or 3 hours until darkness
-if(daytime > 17 || (daytime > 0 && daytime < 6)) Then {
+if(daytime > 17 || (daytime >= 0 && daytime < 6)) Then {
 	_nightTime = true;
 } else {
 	_nightTime = false;
